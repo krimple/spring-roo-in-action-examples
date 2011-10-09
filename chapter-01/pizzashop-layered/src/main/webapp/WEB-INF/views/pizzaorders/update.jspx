@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_springsource_pizzashop_domain_PizzaOrder" modelAttribute="pizzaOrder" path="/pizzaorders" versionField="Version" z="0gXXYxiW7Gx/Du9SuPjMJRV+fIs=">
+        <field:input field="name" id="c_com_springsource_pizzashop_domain_PizzaOrder_name" min="2" required="true" z="FzRS03Kj3igOwUK+UGbj8+mRsP8="/>
+        <field:input field="address" id="c_com_springsource_pizzashop_domain_PizzaOrder_address" max="30" z="bxMpFcTrG0522DJO+XX9a9ig+KI="/>
+        <field:input field="total" id="c_com_springsource_pizzashop_domain_PizzaOrder_total" validationMessageCode="field_invalid_number" z="6oLp6M3w7dAJHJyfZvM7VWQI5iw="/>
+        <field:datetime dateTimePattern="${pizzaOrder_deliverydate_date_format}" field="deliveryDate" id="c_com_springsource_pizzashop_domain_PizzaOrder_deliveryDate" z="wvNNdqzLpR+KpvDhFzJcm2jtW0I="/>
+        <field:select field="pizzas" id="c_com_springsource_pizzashop_domain_PizzaOrder_pizzas" itemValue="id" items="${pizzas}" multiple="true" path="/pizzas" z="RcB1CRjdKIIbpAyD3Bzbs2UqIYU="/>
+    </form:update>
+</div>

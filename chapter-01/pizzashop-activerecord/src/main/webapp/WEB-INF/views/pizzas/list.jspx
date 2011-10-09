@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_springsource_pizzashop_domain_Pizza" items="${pizzas}" z="arvQ1EPaPIdJ02dkMfcxOz67OBs=">
+        <table:table data="${pizzas}" id="l_com_springsource_pizzashop_domain_Pizza" path="/pizzas" z="HYqPTcX8kl9MXzpRNYp42ynlSJU=">
+            <table:column id="c_com_springsource_pizzashop_domain_Pizza_name" property="name" z="9PjzyfWUNQP+TfUnjxgDAB8pr8c="/>
+            <table:column id="c_com_springsource_pizzashop_domain_Pizza_price" property="price" z="oGrVCQOSMArhDNTrTkCiueWA+QQ="/>
+            <table:column id="c_com_springsource_pizzashop_domain_Pizza_toppings" property="toppings" z="RKwY2jLnhyP8CSOfCoJdNDPvSK8="/>
+            <table:column id="c_com_springsource_pizzashop_domain_Pizza_base" property="base" z="ylkZ3coletw0S1AD81rXdD/w4rw="/>
+        </table:table>
+    </page:list>
+</div>

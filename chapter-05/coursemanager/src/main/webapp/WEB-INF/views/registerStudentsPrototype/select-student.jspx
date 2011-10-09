@@ -1,0 +1,28 @@
+<div xmlns:spring="http://www.springframework.org/tags" 
+	 xmlns:fn="http://java.sun.com/jsp/jstl/functions" 
+	 xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" 
+	 xmlns:jsp="http://java.sun.com/JSP/Page" 
+	 xmlns:c="http://java.sun.com/jsp/jstl/core"
+	 version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8" />
+  <jsp:output omit-xml-declaration="yes" />  
+  <spring:message var="title" text="Add/Drop Students"/>
+  <util:panel id="title" title="${title}">
+    <h1>${title}</h1>
+    <c:if test="${not empty message}">
+	    <p style="color: red; font-weight: bold; width: 80%; text-align: center; border: 1px solid black;">
+	      ${message}
+	    </p>
+    </c:if>
+    <form method="POST">
+      <div class="submit">        
+        <input type="submit" id="cancel" name="_eventId_cancel" value="Cancel" />
+        <input type="submit" id="previous" name="_eventId_previous" value="Previous" />
+        <br/>
+        <input type="submit" id="add" name="_eventId_addStudent" value="Add" />
+        <input type="submit" id="remove" name="_eventId_removeStudent" value="Remove" />
+        <input type="submit" id="process" name="_eventId_processStudents" value-="Process Students" />
+      </div>
+    </form>
+  </util:panel>
+</div>

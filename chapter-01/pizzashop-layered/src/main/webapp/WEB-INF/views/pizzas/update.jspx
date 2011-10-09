@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_springsource_pizzashop_domain_Pizza" modelAttribute="pizza" path="/pizzas" versionField="Version" z="D2KWzsY5Bd09rlxq98ZOBaYEBDg=">
+        <field:input field="name" id="c_com_springsource_pizzashop_domain_Pizza_name" min="2" required="true" z="RMCZpfy0mBF8KXWloVgfqcr/ehY="/>
+        <field:input field="price" id="c_com_springsource_pizzashop_domain_Pizza_price" validationMessageCode="field_invalid_number" z="xucuA4ilCykN48gzRhiTJzgOL9c="/>
+        <field:select field="toppings" id="c_com_springsource_pizzashop_domain_Pizza_toppings" itemValue="id" items="${toppings}" multiple="true" path="/toppings" z="+UgnUGGQyoNzNuUJz7EeWetbhrQ="/>
+        <field:select field="base" id="c_com_springsource_pizzashop_domain_Pizza_base" itemValue="id" items="${bases}" path="/bases" z="N3Hq/yaNuWsNI9bdlmt7k4ukVk8="/>
+    </form:update>
+</div>

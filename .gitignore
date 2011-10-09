@@ -1,0 +1,9 @@
+target
+*.class
+*.ipr
+*.iws
+.classpath
+.project
+.eclipse
+log.roo
+

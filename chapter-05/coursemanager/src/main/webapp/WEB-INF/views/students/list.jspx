@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_rooinaction_coursemanager_model_Student" items="${students}" z="mlO1vt+QtrtdlCp5j4D8+KDTCF0=">
+        <table:table data="${students}" id="l_org_rooinaction_coursemanager_model_Student" path="/students" z="CkFu8w+MQca2youzen5DzVOpmk8=">
+            <table:column id="c_org_rooinaction_coursemanager_model_Student_firstName" property="firstName" z="YTw+En12W5WI2Pdyv9fKXkZsTb0="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Student_middleNameOrInitial" property="middleNameOrInitial" z="2R9o96Sb5AQz3n+wVNWn3c6jUug="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Student_lastName" property="lastName" z="5yHojaLjGM4M2NwRdKc62a++cqs="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Student_addressLine1" property="addressLine1" z="HC1I8U9gzZCg7bNBoXQQINUSM3E="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Student_addressLine2" property="addressLine2" z="MeRBFNbVzub+rJBxLxkmbr1lTbc="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Student_city" property="city" z="gJdiZjJdlcbYUr4KhH+mdm5gqQU="/>
+        </table:table>
+    </page:list>
+</div>

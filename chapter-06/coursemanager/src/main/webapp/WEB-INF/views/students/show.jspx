@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_rooinaction_coursemanager_model_Student" object="${student}" path="/students" z="gHE+g1QlVqBo7WGU1iX8G4eUeO8=">
+        <field:display field="firstName" id="s_org_rooinaction_coursemanager_model_Student_firstName" object="${student}" z="4uAnRWNHG9as1uNFUUz5o+IiLyg="/>
+        <field:display field="middleNameOrInitial" id="s_org_rooinaction_coursemanager_model_Student_middleNameOrInitial" object="${student}" z="Ut6eu3eky7TErkXZeVMZ7Y2Vbn8="/>
+        <field:display field="lastName" id="s_org_rooinaction_coursemanager_model_Student_lastName" object="${student}" z="j4zbcu9KNGSNIdJRtBgR6W1JMd4="/>
+        <field:display field="addressLine1" id="s_org_rooinaction_coursemanager_model_Student_addressLine1" object="${student}" z="GZhEimiLL4Tpb0x7GfLyq61f5wI="/>
+        <field:display field="addressLine2" id="s_org_rooinaction_coursemanager_model_Student_addressLine2" object="${student}" z="sLuQ+331AClQaAilKtTkfwNQJcQ="/>
+        <field:display field="city" id="s_org_rooinaction_coursemanager_model_Student_city" object="${student}" z="m0IlO4cF/krxc50m6cpSeZ3jltQ="/>
+        <field:display field="stateCode" id="s_org_rooinaction_coursemanager_model_Student_stateCode" object="${student}" z="MuAKHHXjlo7LhU0tFo7Iusfimx8="/>
+        <field:display field="postalCode" id="s_org_rooinaction_coursemanager_model_Student_postalCode" object="${student}" z="nnoF3YGQaYPSUZ0TLTmVdo4ImqE="/>
+        <field:display field="emailAddress" id="s_org_rooinaction_coursemanager_model_Student_emailAddress" object="${student}" z="bVc5NIe3Fg6RpMJ7HUJ4H5W1fJo="/>
+        <field:display field="emergencyContactName" id="s_org_rooinaction_coursemanager_model_Student_emergencyContactName" object="${student}" z="gXOC+mKAJR/nXqv1xnNftMwsN0A="/>
+        <field:display field="emergencyContactInfo" id="s_org_rooinaction_coursemanager_model_Student_emergencyContactInfo" object="${student}" z="+qLBoHpkxgnwZFPoD36CnHE9wok="/>
+        <field:display field="dietaryRestrictions" id="s_org_rooinaction_coursemanager_model_Student_dietaryRestrictions" object="${student}" z="Ae1TlCzlrTXOsusTFshM4iZRgMs="/>
+    </page:show>
+</div>

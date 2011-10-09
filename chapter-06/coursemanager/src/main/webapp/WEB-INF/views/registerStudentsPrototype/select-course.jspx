@@ -1,0 +1,14 @@
+<div xmlns:spring="http://www.springframework.org/tags" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8" />
+  <jsp:output omit-xml-declaration="yes" />
+  <spring:message var="title" text="Select Course" />
+  <util:panel id="title" title="${title}">
+    <h1>${title}</h1>
+    <form method="POST">
+      <div class="submit">        
+        <input type="submit" id="cancel" name="_eventId_cancel" value="Cancel" />
+        <input type="submit" id="next" name="_eventId_next" value="Next" />
+      </div>
+    </form>
+  </util:panel>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_rooinaction_taskmanager_model_Task" items="${tasks}" z="doAa+A4VyAyDKOFoGNoNTMXARTI=">
+        <table:table data="${tasks}" id="l_org_rooinaction_taskmanager_model_Task" path="/tasks" z="TNKkQ2kS5P9oGuN//l7Rem/2EiU=">
+            <table:column id="c_org_rooinaction_taskmanager_model_Task_task" maxLength="40" property="task" z="user-managed"/>
+            <table:column id="c_org_rooinaction_taskmanager_model_Task_completed" property="completed" z="UOiLeIGhC0zZg1R5xJsBg9L7C08="/>
+        </table:table>
+    </page:list>
+</div>

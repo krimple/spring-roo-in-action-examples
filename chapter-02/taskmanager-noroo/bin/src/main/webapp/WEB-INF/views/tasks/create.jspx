@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_org_rooinaction_taskmanager_model_Task" modelAttribute="task" path="/tasks" render="${empty dependencies}" z="93eOjqRPoEhu9mi9qUmUfCOZKd0=">
+        <field:textarea field="task" id="c_org_rooinaction_taskmanager_model_Task_task" required="true" z="lWz56bGrGfYcv0jdNcxN+42/cZY="/>
+        <field:checkbox field="completed" id="c_org_rooinaction_taskmanager_model_Task_completed" z="5zv/49txPJAAAPeAgZM62nofTFs="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_org_rooinaction_taskmanager_model_Task" render="${not empty dependencies}" z="LRiLPref3RLI6Z8pks9LvWX5VuM="/>
+</div>
