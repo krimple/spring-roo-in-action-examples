@@ -62,6 +62,16 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     
+    <servlet id="jsp">
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+       <init-param>
+            <param-name>keepgenerated</param-name>
+            <param-value>true</param-value>
+       </init-param>
+     </servlet>    
+    
+    
     <!-- Handles Spring requests -->
     <servlet>
         <servlet-name>coursemgrwebflow</servlet-name>

@@ -38,6 +38,14 @@ privileged aspect Course_Roo_JavaBean {
         this.cost = cost;
     }
     
+    public int Course.getNumDays() {
+        return this.numDays;
+    }
+    
+    public void Course.setNumDays(int numDays) {
+        this.numDays = numDays;
+    }
+    
     public Integer Course.getMaxiumumCapacity() {
         return this.maxiumumCapacity;
     }

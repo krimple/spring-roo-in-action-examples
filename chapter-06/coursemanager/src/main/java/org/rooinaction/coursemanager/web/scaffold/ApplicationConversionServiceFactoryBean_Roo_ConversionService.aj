@@ -6,7 +6,6 @@ package org.rooinaction.coursemanager.web.scaffold;
 import java.lang.Long;
 import java.lang.String;
 import org.apache.commons.codec.binary.Base64;
-import org.rooinaction.coursemanager.model.Course;
 import org.rooinaction.coursemanager.model.Instructor;
 import org.rooinaction.coursemanager.model.Offering;
 import org.rooinaction.coursemanager.model.PaymentPK;
@@ -20,30 +19,6 @@ import org.springframework.format.FormatterRegistry;
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
-    
-    public Converter<Course, String> ApplicationConversionServiceFactoryBean.getCourseToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<org.rooinaction.coursemanager.model.Course, java.lang.String>() {
-            public String convert(Course course) {
-                return new StringBuilder().append(course.getName()).append(" ").append(course.getDescription()).append(" ").append(course.getCost()).append(" ").append(course.getMaxiumumCapacity()).toString();
-            }
-        };
-    }
-    
-    public Converter<Long, Course> ApplicationConversionServiceFactoryBean.getIdToCourseConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Long, org.rooinaction.coursemanager.model.Course>() {
-            public org.rooinaction.coursemanager.model.Course convert(java.lang.Long id) {
-                return Course.findCourse(id);
-            }
-        };
-    }
-    
-    public Converter<String, Course> ApplicationConversionServiceFactoryBean.getStringToCourseConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, org.rooinaction.coursemanager.model.Course>() {
-            public org.rooinaction.coursemanager.model.Course convert(String id) {
-                return getObject().convert(getObject().convert(id, Long.class), Course.class);
-            }
-        };
-    }
     
     public Converter<Instructor, String> ApplicationConversionServiceFactoryBean.getInstructorToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<org.rooinaction.coursemanager.model.Instructor, java.lang.String>() {
@@ -182,9 +157,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
-        registry.addConverter(getCourseToStringConverter());
-        registry.addConverter(getIdToCourseConverter());
-        registry.addConverter(getStringToCourseConverter());
         registry.addConverter(getInstructorToStringConverter());
         registry.addConverter(getIdToInstructorConverter());
         registry.addConverter(getStringToInstructorConverter());

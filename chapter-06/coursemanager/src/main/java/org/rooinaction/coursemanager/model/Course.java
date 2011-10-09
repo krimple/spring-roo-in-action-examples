@@ -48,6 +48,12 @@ public class Course {
     private BigDecimal cost;
     
     @NotNull
+    @Column(name = "num_days")
+    @Min(1L)
+    @Max(5L)
+    private int numDays;
+    
+    @NotNull
     @Column(name = "max_capacity")
     @Min(1L)
     @Max(9999L)

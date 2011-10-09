@@ -33,6 +33,7 @@ privileged aspect CourseDataOnDemand_Roo_DataOnDemand {
         setDescription(obj, index);
         setMaxiumumCapacity(obj, index);
         setName(obj, index);
+        setNumDays(obj, index);
         setTrainingProgram(obj, index);
         return obj;
     }
@@ -72,6 +73,14 @@ privileged aspect CourseDataOnDemand_Roo_DataOnDemand {
             name = name.substring(0, 60);
         }
         obj.setName(name);
+    }
+    
+    public void CourseDataOnDemand.setNumDays(Course obj, int index) {
+        int numDays = index;
+        if (numDays < 1 || numDays > 5) {
+            numDays = 5;
+        }
+        obj.setNumDays(numDays);
     }
     
     public void CourseDataOnDemand.setTrainingProgram(Course obj, int index) {

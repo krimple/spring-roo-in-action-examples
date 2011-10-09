@@ -25,7 +25,7 @@ privileged aspect PaymentPK_Roo_Identifier {
     }
 
     public Long PaymentPK.getId() {
-        return this.id;
+        return id;
     }
     
     public boolean PaymentPK.equals(Object obj) {
