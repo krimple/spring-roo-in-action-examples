@@ -6,8 +6,8 @@
         <field:display field="name" id="s_org_rooinaction_coursemanager_model_Course_name" object="${course}" z="yZD4KdR6ciSu6TW2468SYcFMVGA="/>
         <field:display field="description" id="s_org_rooinaction_coursemanager_model_Course_description" object="${course}" z="/EYozAzYNULXsSjBiK0ngVBEvxE="/>
         <field:display field="cost" id="s_org_rooinaction_coursemanager_model_Course_cost" object="${course}" z="T5MViHc0PXnvBhkOlpd/vItNd1U="/>
-        <field:display field="maxiumumCapacity" id="s_org_rooinaction_coursemanager_model_Course_maxiumumCapacity" object="${course}" z="djnqup5QkAnKeDPS00VDotS+vdc="/>
-        <field:display field="courseType" id="s_org_rooinaction_coursemanager_model_Course_courseType" object="${course}" z="xcREAwaX3ObsyMtt8vXxXmYeW14="/>
+        <field:display field="maximumCapacity" id="s_org_rooinaction_coursemanager_model_Course_maximumCapacity" object="${course}" z="djnqup5QkAnKeDPS00VDotS+vdc="/>
+        <field:display field="courseType" id="s_org_rooinaction_coursemanager_model_Course_courseType" render="false" object="${course}" z="xcREAwaX3ObsyMtt8vXxXmYeW14="/>
         <field:display field="trainingProgram" id="s_org_rooinaction_coursemanager_model_Course_trainingProgram" object="${course}" z="+298sFDo7eErz5vYftitwThd11Q="/>
         <field:display field="tags" id="s_org_rooinaction_coursemanager_model_Course_tags" object="${course}" z="IVOBSk9nfBO3+ew5GDNLEAaGhiY="/>
     </page:show>

@@ -102,7 +102,7 @@ public class RegistrationServiceBeanImplTest {
 		Student newTransientStudent1 = studentDod.getNewTransientStudent(0);		
 		newTransientStudent1.setId(1l);
 		
-		offering.getCourse().setMaxiumumCapacity(1);
+		offering.getCourse().setMaximumCapacity(1);
 		offering.addRegistration(registration);
 		
 		Offering.findOffering(1l);

@@ -19,7 +19,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -33,7 +32,6 @@
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.6.12.M2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: net.sf.flexjson:flexjson:2.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.roo:org.springframework.roo.annotations:1.2.0.M1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:3.0.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-asm:3.0.6.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:3.0.6.RELEASE" level="project" />
@@ -45,9 +43,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:3.0.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:3.0.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.0.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.derby:derby:10.8.1.2" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.persistence:eclipselink:2.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.persistence:javax.persistence:2.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-validator:4.2.0.Final" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib-nodep:2.2.2" level="project" />
@@ -75,6 +70,15 @@
     <orderEntry type="library" name="Maven: org.apache.tiles:tiles-template:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-jpa:1.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons-core:1.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.hsqldb:hsqldb:1.8.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:3.6.7.Final" level="project" />
+    <orderEntry type="library" name="Maven: antlr:antlr:2.7.6" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.1" level="project" />
+    <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-commons-annotations:3.2.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:3.6.7.Final" level="project" />
+    <orderEntry type="library" name="Maven: javassist:javassist:3.12.0.GA" level="project" />
   </component>
 </module>
 

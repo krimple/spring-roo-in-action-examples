@@ -22,7 +22,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Task, String> ApplicationConversionServiceFactoryBean.getTaskToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<org.rooinaction.taskmanager.model.Task, java.lang.String>() {
             public String convert(Task task) {
-                return new StringBuilder().append(task.getTask()).toString();
+                return task.getDisplayString();
             }
         };
     }

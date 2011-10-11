@@ -3,14 +3,17 @@ package org.rooinaction.coursemanager.web.scaffold;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Collection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import org.rooinaction.coursemanager.model.Course;
 import org.rooinaction.coursemanager.model.CourseTypeEnum;
 import org.rooinaction.coursemanager.model.Offering;
 import org.rooinaction.coursemanager.model.Tag;
 import org.rooinaction.coursemanager.model.TrainingProgram;
-import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,11 +28,14 @@ import org.springframework.web.util.WebUtils;
 @RequestMapping("/courses")
 @Controller
 public class CourseController {
-	
+
+	private Logger log = LoggerFactory.getLogger(getClass());
+
 	@RequestMapping(method = RequestMethod.POST)
     public String create(@Valid Course course, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("course", course);
+            log.debug("Validation failed : " + bindingResult.getAllErrors());
             return "courses/create";
         }
         uiModel.asMap().clear();

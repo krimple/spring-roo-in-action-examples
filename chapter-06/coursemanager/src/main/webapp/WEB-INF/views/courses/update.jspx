@@ -17,13 +17,12 @@
 
       dojo.addOnLoad(function(){ 
          dojo.parser.parse();
+         console.debug("hi mom");
       }
     </script>
-	<util:panel id="myPanel" title="Create Course">
-		<form:form id="courseForm" method="PUT" modelAttribute="course">
-			<tiles:insertAttribute name="formfields" />
-			<form:hidden path="id" />
-			<form:hidden path="version" />
-		</form:form>
-	</util:panel>
+<util:panel id="myPanel" title="Create Course">
+	<form:form id="courseForm" method="PUT" modelAttribute="course">
+	  <tiles:insertAttribute name="formfields" />
+	</form:form>
+</util:panel>
 </div>

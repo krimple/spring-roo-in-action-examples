@@ -7,62 +7,65 @@
 	xmlns:tiles="http://tiles.apache.org/tags-tiles"
 	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
 	<jsp:output omit-xml-declaration="yes" />
-	<div>
-		<label for="name">Course Name : </label>
-		<form:input dojoType="dijit.form.ValidationTextBox" id="name"
-			path="name" promptMessage="Enter the course name" required="true" />
-		<form:errors cssClass="errors" path="name" />
-	</div>
-	<br />
-	<div>
-		<label for="description">Description : </label>
-		<form:input id="description" path="description" />
-		<form:errors cssClass="errors" path="description" />
-	</div>
-	<br />
-	<div>
-		<label for="numDays"># of Days : </label>
-		<form:input constraints="{ min: 1, max: 90, places: 0}"
-			dojoType="dijit.form.NumberSpinner" id="numDays" path="numDays"
-			smallDelta="1" value="${course.numDays}" />
-		<form:errors cssClass="errors" path="numDays" />
-	</div>
-	<br />
-	<div>
-		<label for="maxCapacity">Maximum Capacity : </label>
-		<form:input dojoType="dijit.form.ValidationTextBox" id="maxCapacity"
-			invalidMessage="${field_invalid_integer}" path="maxCapacity"
-			promptMessage="Enter the maximum capacity" />
-		<form:errors cssClass="errors" path="maxCapacity" />
-	</div>
-	<br />
-	<div>
-		<label for="cost">Cost : </label>
-		<form:input dojoType="dijit.form.ValidationTextBox" id="cost"
-			invalidMessage="${field_invalid_integer}" path="cost"
-			promptMessage="Enter the cost of the course" />
-		<form:errors cssClass="errors" path="cost" />
-	</div>
-	<br />
-	<div>
-		<label for="_curriculum">Training Program : </label>
-		<form:select id="trainingProgram" itemValue="id"
-			items="${trainingPrograms}" path="trainingProgram" />
-		<form:errors cssClass="errors" path="trainingProgram" />
-	</div>
-	<br />
-	<div>
-		<label for="_curriculum">Tags : </label>
-		<form:select id="tags" itemLabel="tag" itemValue="id" items="${tags}"
-			path="tags" />
-		<form:errors cssClass="errors" path="tags" />
-	</div>
-	<br />
-	<div>
-		<label for="marketingBlurb">Marketing Pitch : </label>
-		<form:textarea id="marketingBlurb" path="marketingBlurb" />
-		<form:errors cssClass="errors" path="marketingBlurb" />
-	</div>
-	
-	<input type="submit" value="Submit" />
+	<form:form id="courseForm" method="PUT" modelAttribute="course">
+		<div>
+			<label for="name">Course Name : </label>
+			<form:input dojoType="dijit.form.ValidationTextBox" id="name"
+				path="name" promptMessage="Enter the course name" required="true" />
+			<form:errors cssClass="errors" path="name" />
+		</div>
+		<br />
+		<div>
+			<label for="description">Description : </label>
+			<form:input id="description" path="description" />
+			<form:errors cssClass="errors" path="description" />
+		</div>
+		<br />
+		<div>
+			<label for="numDays"># of Days : </label>
+			<form:input constraints="{ min: 1, max: 90, places: 0}"
+				dojoType="dijit.form.NumberSpinner" id="numDays" path="numDays"
+				smallDelta="1" value="${course.numDays}" />
+			<form:errors cssClass="errors" path="numDays" />
+		</div>
+		<br />
+		<div>
+			<label for="maximumCapacity">Maximum Capacity : </label>
+			<form:input dojoType="dijit.form.ValidationTextBox" id="maximumCapacity"
+				invalidMessage="${field_invalid_integer}" path="maximumCapacity"
+				promptMessage="Enter the maximum capacity" />
+			<form:errors cssClass="errors" path="maximumCapacity" />
+		</div>
+		<br />
+		<div>
+			<label for="cost">Cost : </label>
+			<form:input dojoType="dijit.form.ValidationTextBox" id="cost"
+				invalidMessage="${field_invalid_integer}" path="cost"
+				promptMessage="Enter the cost of the course" />
+			<form:errors cssClass="errors" path="cost" />
+		</div>
+		<br />
+		<div>
+			<label for="curriculum">Training Program : </label>
+			<form:select id="trainingProgram" itemLabel="name" itemValue="id"
+				items="${trainingprograms}" path="trainingProgram" />
+			<form:errors cssClass="errors" path="trainingProgram" />
+		</div>
+		<br />
+		<div>
+			<label for="tags">Tags : </label>
+			<form:select id="tags" itemLabel="tag" itemValue="id" items="${tags}"
+				path="tags" />
+			<form:errors cssClass="errors" path="tags" />
+		</div>
+		<br />
+		<div>
+			<label for="marketingBlurb">Marketing Pitch : </label>
+			<form:textarea id="marketingBlurb" path="marketingBlurb" />
+			<form:errors cssClass="errors" path="marketingBlurb" />
+		</div>
+
+		<input type="submit" value="Submit" />
+		
+	</form:form>
 </div>

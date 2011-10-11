@@ -524,7 +524,7 @@
                     <webAppConfig>
                         <contextPath>/${project.name}</contextPath>
                     </webAppConfig>
-                 <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <scanIntervalSeconds>5</scanIntervalSeconds>
                 </configuration>
             </plugin>
         </plugins>

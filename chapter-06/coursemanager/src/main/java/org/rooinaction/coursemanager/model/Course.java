@@ -13,7 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
@@ -24,12 +23,10 @@ import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooSerializable
 @RooEntity(finders = { "findCoursesByNameLike" })
 public class Course {
 
@@ -41,6 +38,10 @@ public class Course {
     @Size(max = 1000)
     private String description;
 
+    @NotNull
+    @Size(max = 2000)
+    private String marketingBlurb;
+    
     @NotNull
     @DecimalMin("0.0")
     @DecimalMax("99999.00") //see JIRA ROO-2027
@@ -57,12 +58,12 @@ public class Course {
     @Column(name = "max_capacity")
     @Min(1L)
     @Max(9999L)
-    private java.lang.Integer maxiumumCapacity;
+    private java.lang.Integer maximumCapacity;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    @Column(name = "course_type")
-    private CourseTypeEnum courseType;
+//    @NotNull
+//    @Enumerated(EnumType.STRING)
+//    @Column(name = "course_type")
+//    private CourseTypeEnum courseType;
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="training_program")

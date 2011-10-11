@@ -7,7 +7,6 @@ import java.lang.Integer;
 import java.lang.String;
 import java.math.BigDecimal;
 import java.util.Set;
-import org.rooinaction.coursemanager.model.CourseTypeEnum;
 import org.rooinaction.coursemanager.model.Offering;
 import org.rooinaction.coursemanager.model.Tag;
 import org.rooinaction.coursemanager.model.TrainingProgram;
@@ -30,6 +29,14 @@ privileged aspect Course_Roo_JavaBean {
         this.description = description;
     }
     
+    public String Course.getMarketingBlurb() {
+        return this.marketingBlurb;
+    }
+    
+    public void Course.setMarketingBlurb(String marketingBlurb) {
+        this.marketingBlurb = marketingBlurb;
+    }
+    
     public BigDecimal Course.getCost() {
         return this.cost;
     }
@@ -46,20 +53,12 @@ privileged aspect Course_Roo_JavaBean {
         this.numDays = numDays;
     }
     
-    public Integer Course.getMaxiumumCapacity() {
-        return this.maxiumumCapacity;
+    public Integer Course.getMaximumCapacity() {
+        return this.maximumCapacity;
     }
     
-    public void Course.setMaxiumumCapacity(Integer maxiumumCapacity) {
-        this.maxiumumCapacity = maxiumumCapacity;
-    }
-    
-    public CourseTypeEnum Course.getCourseType() {
-        return this.courseType;
-    }
-    
-    public void Course.setCourseType(CourseTypeEnum courseType) {
-        this.courseType = courseType;
+    public void Course.setMaximumCapacity(Integer maximumCapacity) {
+        this.maximumCapacity = maximumCapacity;
     }
     
     public TrainingProgram Course.getTrainingProgram() {

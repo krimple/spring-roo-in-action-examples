@@ -14,7 +14,6 @@ import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import org.rooinaction.coursemanager.model.Course;
-import org.rooinaction.coursemanager.model.CourseTypeEnum;
 import org.rooinaction.coursemanager.model.TrainingProgram;
 import org.springframework.stereotype.Component;
 
@@ -29,9 +28,9 @@ privileged aspect CourseDataOnDemand_Roo_DataOnDemand {
     public Course CourseDataOnDemand.getNewTransientCourse(int index) {
         Course obj = new Course();
         setCost(obj, index);
-        setCourseType(obj, index);
         setDescription(obj, index);
-        setMaxiumumCapacity(obj, index);
+        setMarketingBlurb(obj, index);
+        setMaximumCapacity(obj, index);
         setName(obj, index);
         setNumDays(obj, index);
         setTrainingProgram(obj, index);
@@ -46,11 +45,6 @@ privileged aspect CourseDataOnDemand_Roo_DataOnDemand {
         obj.setCost(cost);
     }
     
-    public void CourseDataOnDemand.setCourseType(Course obj, int index) {
-        CourseTypeEnum courseType = CourseTypeEnum.class.getEnumConstants()[0];
-        obj.setCourseType(courseType);
-    }
-    
     public void CourseDataOnDemand.setDescription(Course obj, int index) {
         String description = "description_" + index;
         if (description.length() > 1000) {
@@ -59,12 +53,20 @@ privileged aspect CourseDataOnDemand_Roo_DataOnDemand {
         obj.setDescription(description);
     }
     
-    public void CourseDataOnDemand.setMaxiumumCapacity(Course obj, int index) {
-        Integer maxiumumCapacity = new Integer(index);
-        if (maxiumumCapacity < 1 || maxiumumCapacity > 9999) {
-            maxiumumCapacity = 9999;
+    public void CourseDataOnDemand.setMarketingBlurb(Course obj, int index) {
+        String marketingBlurb = "marketingBlurb_" + index;
+        if (marketingBlurb.length() > 2000) {
+            marketingBlurb = marketingBlurb.substring(0, 2000);
         }
-        obj.setMaxiumumCapacity(maxiumumCapacity);
+        obj.setMarketingBlurb(marketingBlurb);
+    }
+    
+    public void CourseDataOnDemand.setMaximumCapacity(Course obj, int index) {
+        Integer maximumCapacity = new Integer(index);
+        if (maximumCapacity < 1 || maximumCapacity > 9999) {
+            maximumCapacity = 9999;
+        }
+        obj.setMaximumCapacity(maximumCapacity);
     }
     
     public void CourseDataOnDemand.setName(Course obj, int index) {

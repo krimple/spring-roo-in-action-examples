@@ -70,7 +70,6 @@
       </list>
     </property>
   </bean>
-<import resource="webflow-config.xml"/>
 
 	<!--Installs application converters and formatters-->
 	<bean class="org.rooinaction.coursemanager.web.scaffold.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>

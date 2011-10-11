@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_rooina_coursemanager_model_Invoice" object="${invoice}" path="/invoices" z="mE7ORsl7KycL0Fq0Q3g48y2mUD0=">
+        <field:display field="payments" id="s_org_rooina_coursemanager_model_Invoice_payments" object="${invoice}" z="3YUAQ7mkiuoibFAVR81Wn4Y2zjs="/>
+        <field:display field="amount" id="s_org_rooina_coursemanager_model_Invoice_amount" object="${invoice}" z="J1CGbL7zTzirAkn82xLngSEpwMg="/>
+        <field:display date="true" dateTimePattern="${invoice_duedate_date_format}" field="dueDate" id="s_org_rooina_coursemanager_model_Invoice_dueDate" object="${invoice}" z="liyOkGacgPrlmSef1P6eqO6dJGw="/>
+        <field:display field="studentName" id="s_org_rooina_coursemanager_model_Invoice_studentName" object="${invoice}" z="cnMkH1ml96/ljPDnpytmzIcHxco="/>
+        <field:display field="emailAddress" id="s_org_rooina_coursemanager_model_Invoice_emailAddress" object="${invoice}" z="04DqvagQ5jXsYBr1Ka5ZyEhU5gQ="/>
+    </page:show>
+</div>
