@@ -25,45 +25,21 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
     @Autowired
-    BaseService ApplicationConversionServiceFactoryBean.baseService;
-    
-    @Autowired
     PizzaService ApplicationConversionServiceFactoryBean.pizzaService;
     
     @Autowired
     PizzaOrderService ApplicationConversionServiceFactoryBean.pizzaOrderService;
     
     @Autowired
+    BaseService ApplicationConversionServiceFactoryBean.baseService;
+    
+    @Autowired
     ToppingService ApplicationConversionServiceFactoryBean.toppingService;
-    
-    public Converter<Base, String> ApplicationConversionServiceFactoryBean.getBaseToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<com.springsource.pizzashop.domain.Base, java.lang.String>() {
-            public String convert(Base base) {
-                return new StringBuilder().append(base.getName()).toString();
-            }
-        };
-    }
-    
-    public Converter<Long, Base> ApplicationConversionServiceFactoryBean.getIdToBaseConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.springsource.pizzashop.domain.Base>() {
-            public com.springsource.pizzashop.domain.Base convert(java.lang.Long id) {
-                return baseService.findBase(id);
-            }
-        };
-    }
-    
-    public Converter<String, Base> ApplicationConversionServiceFactoryBean.getStringToBaseConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.springsource.pizzashop.domain.Base>() {
-            public com.springsource.pizzashop.domain.Base convert(String id) {
-                return getObject().convert(getObject().convert(id, Long.class), Base.class);
-            }
-        };
-    }
     
     public Converter<Pizza, String> ApplicationConversionServiceFactoryBean.getPizzaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.springsource.pizzashop.domain.Pizza, java.lang.String>() {
             public String convert(Pizza pizza) {
-                return new StringBuilder().append(pizza.getName()).append(" ").append(pizza.getPrice()).toString();
+                return pizza.getDisplayString();
             }
         };
     }
@@ -87,7 +63,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<PizzaOrder, String> ApplicationConversionServiceFactoryBean.getPizzaOrderToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.springsource.pizzashop.domain.PizzaOrder, java.lang.String>() {
             public String convert(PizzaOrder pizzaOrder) {
-                return new StringBuilder().append(pizzaOrder.getName()).append(" ").append(pizzaOrder.getAddress()).append(" ").append(pizzaOrder.getTotal()).append(" ").append(pizzaOrder.getDeliveryDate()).toString();
+                return pizzaOrder.getDisplayString();
             }
         };
     }
@@ -108,10 +84,34 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Base, String> ApplicationConversionServiceFactoryBean.getBaseToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.springsource.pizzashop.domain.Base, java.lang.String>() {
+            public String convert(Base base) {
+                return base.getDisplayString();
+            }
+        };
+    }
+    
+    public Converter<Long, Base> ApplicationConversionServiceFactoryBean.getIdToBaseConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.springsource.pizzashop.domain.Base>() {
+            public com.springsource.pizzashop.domain.Base convert(java.lang.Long id) {
+                return baseService.findBase(id);
+            }
+        };
+    }
+    
+    public Converter<String, Base> ApplicationConversionServiceFactoryBean.getStringToBaseConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.springsource.pizzashop.domain.Base>() {
+            public com.springsource.pizzashop.domain.Base convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Base.class);
+            }
+        };
+    }
+    
     public Converter<Topping, String> ApplicationConversionServiceFactoryBean.getToppingToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.springsource.pizzashop.domain.Topping, java.lang.String>() {
             public String convert(Topping topping) {
-                return new StringBuilder().append(topping.getName()).toString();
+                return topping.getDisplayString();
             }
         };
     }
@@ -149,15 +149,15 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
-        registry.addConverter(getBaseToStringConverter());
-        registry.addConverter(getIdToBaseConverter());
-        registry.addConverter(getStringToBaseConverter());
         registry.addConverter(getPizzaToStringConverter());
         registry.addConverter(getIdToPizzaConverter());
         registry.addConverter(getStringToPizzaConverter());
         registry.addConverter(getPizzaOrderToStringConverter());
         registry.addConverter(getIdToPizzaOrderConverter());
         registry.addConverter(getStringToPizzaOrderConverter());
+        registry.addConverter(getBaseToStringConverter());
+        registry.addConverter(getIdToBaseConverter());
+        registry.addConverter(getStringToBaseConverter());
         registry.addConverter(getToppingToStringConverter());
         registry.addConverter(getIdToToppingConverter());
         registry.addConverter(getStringToToppingConverter());
