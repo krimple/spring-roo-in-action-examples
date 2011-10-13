@@ -106,7 +106,8 @@ privileged aspect TrainingProgramController_Roo_Controller {
         }
         try {
             pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
-        } catch (UnsupportedEncodingException uee) {}
+        }
+        catch (UnsupportedEncodingException uee) {}
         return pathSegment;
     }
     

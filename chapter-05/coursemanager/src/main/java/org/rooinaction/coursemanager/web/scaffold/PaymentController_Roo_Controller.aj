@@ -4,103 +4,12 @@
 package org.rooinaction.coursemanager.web.scaffold;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
 import java.lang.String;
-import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import org.rooinaction.coursemanager.model.Payment;
-import org.rooinaction.coursemanager.model.PaymentPK;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.ConversionService;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect PaymentController_Roo_Controller {
-    
-    private ConversionService PaymentController.conversionService;
-    
-    @Autowired
-    public PaymentController.new(ConversionService conversionService) {
-        this.conversionService = conversionService;
-    }
-
-    @RequestMapping(method = RequestMethod.POST)
-    public String PaymentController.create(@Valid Payment payment, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("payment", payment);
-            return "payments/create";
-        }
-        uiModel.asMap().clear();
-        payment.persist();
-        return "redirect:/payments/" + encodeUrlPathSegment(conversionService.convert(payment.getId(), String.class), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String PaymentController.createForm(Model uiModel) {
-        uiModel.addAttribute("payment", new Payment());
-        return "payments/create";
-    }
-    
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String PaymentController.show(@PathVariable("id") PaymentPK id, Model uiModel) {
-        uiModel.addAttribute("payment", Payment.findPayment(id));
-        uiModel.addAttribute("itemId", conversionService.convert(id, String.class));
-        return "payments/show";
-    }
-    
-    @RequestMapping(method = RequestMethod.GET)
-    public String PaymentController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        if (page != null || size != null) {
-            int sizeNo = size == null ? 10 : size.intValue();
-            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("payments", Payment.findPaymentEntries(firstResult, sizeNo));
-            float nrOfPages = (float) Payment.countPayments() / sizeNo;
-            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
-        } else {
-            uiModel.addAttribute("payments", Payment.findAllPayments());
-        }
-        return "payments/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT)
-    public String PaymentController.update(@Valid Payment payment, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("payment", payment);
-            return "payments/update";
-        }
-        uiModel.asMap().clear();
-        payment.merge();
-        return "redirect:/payments/" + encodeUrlPathSegment(conversionService.convert(payment.getId(), String.class), httpServletRequest);
-    }
-    
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String PaymentController.updateForm(@PathVariable("id") PaymentPK id, Model uiModel) {
-        uiModel.addAttribute("payment", Payment.findPayment(id));
-        return "payments/update";
-    }
-    
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String PaymentController.delete(@PathVariable("id") PaymentPK id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Payment payment = Payment.findPayment(id);
-        payment.remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/payments";
-    }
-    
-    @ModelAttribute("payments")
-    public Collection<Payment> PaymentController.populatePayments() {
-        return Payment.findAllPayments();
-    }
     
     String PaymentController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
