@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+    <var class="org.rooina.coursemanager.web.RegisterStudentsForm"
+         name="registerStudentsForm"/>
+
+    <view-state id="select-course"
+            view="registerStudents/select-course"
+            model="registerStudentsForm">
+            <on-entry>
+                <evaluate expression="registrationFlowService.retrieveAllCourses()"
+                          result="viewScope.courseList"/>
+            </on-entry>
+            <transition on="proceed" to="select-offering"/>
+        <transition on="cancel" to="end-state"/>
+    </view-state>
+
+    <view-state id="select-offering"
+            view="registerStudents/select-offering"
+            model="registerStudentsForm">
+            <on-entry>
+                <evaluate expression="registrationFlowService.retrieveCourseOfferings" 
+                  result="viewScope.offeringList"/>
+            </on-entry>
+            <transition on="proceed" to="select-students"/>
+        <transition on="cancel" to="end-state"/>
+        <transition on="back" to="select-course" bind="false" validate="false" />
+    </view-state>
+
+    <view-state id="select-students"
+         view="registerStudents/select-student"
+             model="registerStudentsForm">
+        <on-render>
+            <evaluate expression="registrationFlowService.search" />
+            <evaluate expression="registrationFlowService.findPendingStudents" />
+        </on-render>
+        <transition on="search"/>
+        <transition on="addStudent">
+            <evaluate expression="registrationFlowService.addStudent"/>
+        </transition>
+        <transition on="removeStudent">
+            <evaluate expression="registrationFlowService.removeStudent"/>
+        </transition>
+
+        <transition on="processStudents" bind="false" validate="false" to="process-students"/>
+
+    </view-state>
+
+    <action-state id="process-students">
+            <evaluate expression="registrationFlowService.completeRegistration" />
+            <transition to="end-state"/>
+    </action-state>
+
+    <end-state id="end-state" view="registerStudents/end-state"/>
+
+    <end-state id="cancel-state" commit="false" view="registerStudents/cancel-state"/>
+
+    <global-transitions>
+        <transition on="cancel" to="cancel-state" bind="false" validate="false"/>
+    </global-transitions>
+</flow>

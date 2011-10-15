@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+<jsp:directive.page contentType="text/html;charset=UTF-8" /> <jsp:output
+	omit-xml-declaration="yes" /> 
+  <page:list
+	id="pl_org_rooina_coursemanager_model_Registration"
+	items="${registrations}" z="QCDawepZ63SGZG/N5NrVN+mt77M=">
+	<table:table data="${registrations}"
+		id="l_org_rooina_coursemanager_model_Registration"
+		path="/registrations" z="+1qTtnaDqyvwqx6o9wBc4jHpVFw=">
+		<table:column
+			id="c_org_rooina_coursemanager_model_Registration_student"
+			property="student" z="wrUX8eVPB7rv2MZIrVCZ7Y6495Y=" />
+		<table:column
+			id="c_org_rooina_coursemanager_model_Registration_offering"
+			property="offering" z="Rj67zfOuJzUhqFNjx8gpM5vfFEI=" />
+		<table:column
+			id="c_org_rooina_coursemanager_model_Registration_attended"
+			property="attended" z="zFAUEAnVxmvMz6JNeBaDrVV4x/g=" />
+		<table:column
+			id="c_org_rooina_coursemanager_model_Registration_paymentMade"
+			property="paymentMade" z="EuC+ocf9kDiHTaJkhQ7+ng7Rnyc=" />
+	</table:table>
+  </page:list>
+</div>

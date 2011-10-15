@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_rooina_coursemanager_model_Course" object="${course}" path="/courses" z="Qrf8vecfH2gWwxWHG3q4QtjF0Zg=">
+        <field:display field="name" id="s_org_rooina_coursemanager_model_Course_name" object="${course}" z="k6vilxSyD8vQwd4un1clBGrNjXI="/>
+        <field:display field="description" id="s_org_rooina_coursemanager_model_Course_description" object="${course}" z="xJ5FmXhKpHUB540/gl4Z7Ybos98="/>
+        <field:display field="cost" id="s_org_rooina_coursemanager_model_Course_cost" object="${course}" z="lSOx7wlcsiU5883Q52Thm0iHa5U="/>
+        <field:display field="maxiumumCapacity" id="s_org_rooina_coursemanager_model_Course_maxiumumCapacity" object="${course}" z="xu44dfzDQoWL9YqTx0WCuNQu/0s="/>
+        <field:display field="courseType" id="s_org_rooina_coursemanager_model_Course_courseType" object="${course}" z="2Zps3qQqWwod6sujEYUhStzrr6g="/>
+        <field:display field="trainingProgram" id="s_org_rooina_coursemanager_model_Course_trainingProgram" object="${course}" z="VSvnt5OzE4DnUUWRH5S037n6mgk="/>
+        <field:display field="tags" id="s_org_rooina_coursemanager_model_Course_tags" object="${course}" z="BjWe6lwmHACs2c3cQ5RcWV/eke0="/>
+    </page:show>
+</div>
