@@ -1,0 +1,28 @@
+<div xmlns:spring="http://www.springframework.org/tags"
+	xmlns:webflow="urn:jsptagdir:/WEB-INF/tags/webflow"
+	xmlns:fields="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+	<jsp:directive.page contentType="text/html;charset=UTF-8" /> 
+	<jsp:output omit-xml-declaration="yes" /> 
+	
+	<webflow:form id="selectStudentForm" 
+	   title="Register Students - Select Course" 
+		 modelAttribute="registerStudentsForm">
+		 
+    <fields:select
+	    id="selectCourseId" 
+	    label="Course"
+	    path="courseId"
+	    field="courseId"
+	    items="${courseList}"
+	    itemValue="id"
+	    required="true" />
+
+	  <div class="submit">
+		  <webflow:formbutton id="buttonCancel" event="cancel" label="Cancel" />
+		  <webflow:formbutton id="buttonProceed" event="proceed" label="Proceed" />
+	  </div>
+	  
+	</webflow:form>
+</div>

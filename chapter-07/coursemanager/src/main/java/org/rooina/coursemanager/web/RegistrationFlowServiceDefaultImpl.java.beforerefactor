@@ -1,0 +1,141 @@
+package org.rooina.coursemanager.web;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.rooina.coursemanager.model.Course;
+import org.rooina.coursemanager.model.Offering;
+import org.rooina.coursemanager.model.Registration;
+import org.rooina.coursemanager.model.Student;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.webflow.action.MultiAction;
+import org.springframework.webflow.execution.Event;
+import org.springframework.webflow.execution.RequestContext;
+
+@Service("registrationFlowService")
+public class RegistrationFlowServiceDefaultImpl extends MultiAction implements
+		RegistrationFlowService {
+
+	Logger logger = LoggerFactory.getLogger(getClass());
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Course> retrieveAllCourses() {
+		return Course.findAllCourses();
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public Event retrieveCourseOfferings(RequestContext context) {
+		RegisterStudentsForm form = getForm(context);
+		List<Offering> resultList = Offering.findOfferingsByCourseId(
+				form.getCourseId()).getResultList();
+		context.getViewScope().asMap().put("offeringList", resultList);
+		return success();
+	}
+
+	/**
+	 * Naive implementation - don't bother un-registering previously processed
+	 * students, only look at ones from the current web flow... Ignore those
+	 * that may have already been registered for now. This will cause a problem
+	 * if you try to re-register a student for a course they already have
+	 * registered for...
+	 */
+	@Transactional(readOnly = true)
+	@Override
+	public Event search(RequestContext context) {
+		RegisterStudentsForm form = getForm(context);
+		String name = form.getCurrentSearch();
+		List<Student> students = name == null ? new ArrayList<Student>()
+				: Student.findStudentsByName(name).getResultList();
+		List<RegisterStudentsSearchResult> results = new ArrayList<RegisterStudentsSearchResult>();
+		Iterator<Student> iterator = students.iterator();
+		while (iterator.hasNext()) {
+			Student student = iterator.next();
+			results.add(new RegisterStudentsSearchResult(student, form
+					.getStudentsToRegister().contains(student.getId())));
+		}
+		context.getViewScope().asMap().put("searchResults", results);
+		return success();
+	}
+	
+	@Override
+	public Event addStudent(RequestContext context) {
+
+		Long studentId = (Long) context.getExternalContext()
+				.getRequestParameterMap().getRequiredLong("id");
+		RegisterStudentsForm form = getForm(context);
+		Course course = Course.findCourse(form.getCourseId());
+		Offering offering = Offering.findOffering(form.getOfferingId());
+		long size = form.getStudentsToRegister().size()
+				+ offering.countStudentsRegisteredInOffering();
+		long maxCapacity = course.getMaxiumumCapacity();
+		if (size >= maxCapacity) {
+			throw new CourseFullException();
+		} else {
+			if (form.getStudentsToRegister().contains(studentId)) {
+				throw new RuntimeException(
+						"Student should already be registered.");
+			} else {
+				form.getStudentsToRegister().add(studentId);
+			}
+		}
+		return success();
+	}
+
+	@Override
+	public Event removeStudent(RequestContext context) {
+		Long studentId = (Long) context.getExternalContext()
+				.getRequestParameterMap().getRequiredLong("id");
+		RegisterStudentsForm form = getForm(context);
+		if (form.getStudentsToRegister().contains(studentId)) {
+			form.getStudentsToRegister().remove(studentId);
+		}
+		return success();
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public Event findPendingStudents(RequestContext context) {
+		RegisterStudentsForm form = getForm(context);
+		List<Long> studentsToRegister = form.getStudentsToRegister();
+
+		List<Student> pendingStudents = studentsToRegister.size() > 0 ? Student
+				.findStudentsByIdIn(studentsToRegister).getResultList()
+				: new ArrayList<Student>();
+
+		context.getViewScope().asMap().put("pendingStudents", pendingStudents);
+		return success();
+	}
+
+	@Override
+	@Transactional
+	public Event completeRegistration(RequestContext context) {
+		RegisterStudentsForm form = getForm(context);
+		Offering offering = Offering.findOffering(form.getOfferingId());
+		Iterator<Long> studentIterator = form.getStudentsToRegister()
+				.iterator();
+		while (studentIterator.hasNext()) {
+			Long studentId = studentIterator.next();
+			Student student = Student.findStudent(studentId);
+
+			Registration registration = new Registration();
+			registration.setOffering(offering);
+			registration.setStudent(student);
+			registration.setPaymentMade(false);
+			registration.setAttended(false);
+			registration.persist();
+		}
+		return success();
+	}
+
+	private RegisterStudentsForm getForm(RequestContext context) {
+		return (RegisterStudentsForm) context.getFlowScope().get(
+				"registerStudentsForm");
+	}
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_rooina_coursemanager_model_Student" object="${student}" path="/students" z="QPpxsoNkupaqAeZMJd8AGicLCdI=">
+        <field:display field="firstName" id="s_org_rooina_coursemanager_model_Student_firstName" object="${student}" z="TZfxhkA8EGwclh+4lMX6SxQJSpw="/>
+        <field:display field="middleNameOrInitial" id="s_org_rooina_coursemanager_model_Student_middleNameOrInitial" object="${student}" z="zYCmMrpRRxgkzosIdA2T0j71TaQ="/>
+        <field:display field="lastName" id="s_org_rooina_coursemanager_model_Student_lastName" object="${student}" z="ZltOU/LDmfUH0kfpP7kpJiF1YZ8="/>
+        <field:display field="addressLine1" id="s_org_rooina_coursemanager_model_Student_addressLine1" object="${student}" z="rhpygxrmbF86mPaxinQGvxMXPkQ="/>
+        <field:display field="addressLine2" id="s_org_rooina_coursemanager_model_Student_addressLine2" object="${student}" z="MLtT+5QRRZi7wtMCjnQBGwPDtPg="/>
+        <field:display field="city" id="s_org_rooina_coursemanager_model_Student_city" object="${student}" z="D6kTg4YKRk9+MD1CaYo7yt8UVoM="/>
+        <field:display field="stateCode" id="s_org_rooina_coursemanager_model_Student_stateCode" object="${student}" z="auTq6pkENpZHVAS8QMEdW9A8eMc="/>
+        <field:display field="postalCode" id="s_org_rooina_coursemanager_model_Student_postalCode" object="${student}" z="q+6pVSZSrJ16VhM96mNFZ4//hCE="/>
+        <field:display field="emailAddress" id="s_org_rooina_coursemanager_model_Student_emailAddress" object="${student}" z="mrlGmcpr+/m9T3EXx4UdIHMM46I="/>
+        <field:display field="emergencyContactName" id="s_org_rooina_coursemanager_model_Student_emergencyContactName" object="${student}" z="Zy0FeYYd1st5BySVVuwj1qSIN74="/>
+        <field:display field="emergencyContactInfo" id="s_org_rooina_coursemanager_model_Student_emergencyContactInfo" object="${student}" z="L7i7m5ZfYi+ZJM4CQfDxkofAO/w="/>
+        <field:display field="dietaryRestrictions" id="s_org_rooina_coursemanager_model_Student_dietaryRestrictions" object="${student}" z="dhpxr4casgNyHuwG5KjPZSt+doI="/>
+    <field:reference field="registrations" path="registrations" id="s_org_rooina_coursemanager_model_Student_registrations"></field:reference>
+    <field:display field="registrations" id="s_org_rooina_coursemanager_model_Student_registrations" object="${student}" z="user-managed" render="false"/>
+    </page:show>
+</div>

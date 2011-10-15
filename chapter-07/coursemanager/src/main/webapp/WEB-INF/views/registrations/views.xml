@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="registrations/list">
+        <put-attribute name="body" value="/WEB-INF/views/registrations/list.jspx"/>
+    </definition>
+<definition extends="default" name="registrations/show">
+        <put-attribute name="body" value="/WEB-INF/views/registrations/show.jspx"/>
+    </definition>
+<definition extends="default" name="registrations/create">
+        <put-attribute name="body" value="/WEB-INF/views/registrations/create.jspx"/>
+    </definition>
+<definition extends="default" name="registrations/update">
+        <put-attribute name="body" value="/WEB-INF/views/registrations/update.jspx"/>
+    </definition>
+<definition extends="default" name="registrations/findRegistrationsByStudent">
+        <put-attribute name="body" value="/WEB-INF/views/registrations/findRegistrationsByStudent.jspx"/>
+    </definition>
+<definition extends="default" name="registrations/findRegistrationsByStudentAndOffering">
+        <put-attribute name="body" value="/WEB-INF/views/registrations/findRegistrationsByStudentAndOffering.jspx"/>
+    </definition>
+<definition extends="default" name="registrations/findRegistrationsByStudentAndOfferingNot">
+        <put-attribute name="body" value="/WEB-INF/views/registrations/findRegistrationsByStudentAndOfferingNot.jspx"/>
+    </definition>
+</tiles-definitions>

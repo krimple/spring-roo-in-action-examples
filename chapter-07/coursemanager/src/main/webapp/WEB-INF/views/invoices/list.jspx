@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_rooina_coursemanager_model_Invoice" items="${invoices}" z="pM5MsFRdV4uVh65QGonZtWQ1S9A=">
+        <table:table data="${invoices}" id="l_org_rooina_coursemanager_model_Invoice" path="/invoices" typeIdFieldName="invoiceId" z="w/cWb9USe26FBWgdqoe/WAh7vGE=">
+            <table:column id="c_org_rooina_coursemanager_model_Invoice_payments" property="payments" z="i/ImkUBLSSsO69FhdnOCBmIk7II="/>
+            <table:column id="c_org_rooina_coursemanager_model_Invoice_amount" property="amount" z="mnNIG9wDOkMA+sFmZaOpr+Yw68I="/>
+            <table:column id="c_org_rooina_coursemanager_model_Invoice_dueDate" property="dueDate" z="KJsOI0Jo1cVZrG4OLrSRHvZ9XtU="/>
+            <table:column id="c_org_rooina_coursemanager_model_Invoice_studentName" property="studentName" z="5MBM77QEma08KSP3WPv6/sJxLtc="/>
+            <table:column id="c_org_rooina_coursemanager_model_Invoice_emailAddress" property="emailAddress" z="W5f00dWOKcBD/bQAP5LWJpMqo0U="/>
+        </table:table>
+    </page:list>
+</div>
