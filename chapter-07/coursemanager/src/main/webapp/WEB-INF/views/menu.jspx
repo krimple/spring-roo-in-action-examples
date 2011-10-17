@@ -7,9 +7,7 @@
             <menu:item id="i_controller__fooindex_id" messageCode="global_generic" url="/foo/index" z="HOdiyJAkzsHgGxVRCohmHaoz/Jg="/>
         </menu:category>
         <menu:category id="c_flows" z="5igpkb/e+HPIN8iUErvmM38Eqqk=">
-            <menu:item id="i_flows_sampleflow" messageCode="webflow_menu_enter" url="/sampleflow" z="JMM+dAVQySYHXliwJ5d5AQocPfk="/>
             <menu:item id="i_flows_registerstudents" messageCode="webflow_menu_enter" url="/registerStudents" z="wUF1hqHpDWzG1pOCb1MUul/t87c="/>
-            <menu:item id="i_flows_demoflow" messageCode="webflow_menu_enter" url="/demoFlow" z="tXI9oSXeleDJOfCtOztWsH+xC2M="/>
         </menu:category>
         <menu:category id="c_trainingprogram" z="ra/9z2mJQlWQHYO6WZW1ScX0gt0=">
             <menu:item id="i_trainingprogram_new" messageCode="global_menu_new" url="/trainingprograms?form" z="ob2ydEe4M3KOTkX1U3Vr9yypj9A="/>

@@ -10,14 +10,15 @@
 	   title="Register Students - Select Course" 
 		 modelAttribute="registerStudentsForm">
 		 
-    <fields:select
-	    id="selectCourseId" 
-	    label="Course"
-	    path="courseId"
-	    field="courseId"
-	    items="${courseList}"
-	    itemValue="id"
-	    required="true" />
+     <fields:select
+ 	    id="id_register_students_flow_select_course_id"
+ 	    label="Course"
+ 	    path="courses"
+ 	    field="courseId"
+ 	    items="${courseList}"
+ 	    itemLabel="name"
+ 	    itemValue="id"
+ 	     />
 
 	  <div class="submit">
 		  <webflow:formbutton id="buttonCancel" event="cancel" label="Cancel" />

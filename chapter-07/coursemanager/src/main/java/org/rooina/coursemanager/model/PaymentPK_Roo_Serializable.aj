@@ -3,11 +3,7 @@
 
 package org.rooina.coursemanager.model;
 
-import java.io.Serializable;
-
 privileged aspect PaymentPK_Roo_Serializable {
-    
-    declare parents: PaymentPK implements Serializable;
     
     private static final long PaymentPK.serialVersionUID = 1L;
     

@@ -3,10 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_org_rooina_coursemanager_model_Invoice" items="${invoices}" z="pM5MsFRdV4uVh65QGonZtWQ1S9A=">
-        <table:table data="${invoices}" id="l_org_rooina_coursemanager_model_Invoice" path="/invoices" typeIdFieldName="invoiceId" z="w/cWb9USe26FBWgdqoe/WAh7vGE=">
-            <table:column id="c_org_rooina_coursemanager_model_Invoice_payments" property="payments" z="i/ImkUBLSSsO69FhdnOCBmIk7II="/>
+        <table:table data="${invoices}" id="l_org_rooina_coursemanager_model_Invoice" path="/invoices" z="2+ytSXF0M9QZKiGSASzTT95yXXE=">
             <table:column id="c_org_rooina_coursemanager_model_Invoice_amount" property="amount" z="mnNIG9wDOkMA+sFmZaOpr+Yw68I="/>
-            <table:column id="c_org_rooina_coursemanager_model_Invoice_dueDate" property="dueDate" z="KJsOI0Jo1cVZrG4OLrSRHvZ9XtU="/>
+            <table:column date="true" dateTimePattern="${invoice_duedate_date_format}" id="c_org_rooina_coursemanager_model_Invoice_dueDate" property="dueDate" z="DfnM+C+ZyAm4F3wLnM5jeinQnbo="/>
             <table:column id="c_org_rooina_coursemanager_model_Invoice_studentName" property="studentName" z="5MBM77QEma08KSP3WPv6/sJxLtc="/>
             <table:column id="c_org_rooina_coursemanager_model_Invoice_emailAddress" property="emailAddress" z="W5f00dWOKcBD/bQAP5LWJpMqo0U="/>
         </table:table>

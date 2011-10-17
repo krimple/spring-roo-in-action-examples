@@ -9,7 +9,10 @@ privileged aspect Payment_Roo_ToString {
     
     public String Payment.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(getId());
+        sb.append("Amount: ").append(getAmount()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
+        sb.append("Invoice: ").append(getInvoice()).append(", ");
+        sb.append("PaymentDate: ").append(getPaymentDate());
         return sb.toString();
     }
     

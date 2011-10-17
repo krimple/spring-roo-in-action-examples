@@ -2,5 +2,9 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_org_rooina_coursemanager_model_Payment" object="${payment}" path="/payments" z="SEBfG0Ybv1JEGi0EUZU9LnpAII4="/>
+    <page:show id="ps_org_rooina_coursemanager_model_Payment" object="${payment}" path="/payments" z="SEBfG0Ybv1JEGi0EUZU9LnpAII4=">
+        <field:display field="amount" id="s_org_rooina_coursemanager_model_Payment_amount" object="${payment}" z="QkheVpTkwIYqd5sF/E8sdj5dV+0="/>
+        <field:display date="true" dateTimePattern="${payment_paymentdate_date_format}" field="paymentDate" id="s_org_rooina_coursemanager_model_Payment_paymentDate" object="${payment}" z="dm3FJ7Yx9NfkYGJ0qY3FlWNLsZc="/>
+        <field:display field="invoice" id="s_org_rooina_coursemanager_model_Payment_invoice" object="${payment}" z="xaz36Toayh5vsshRtbejSZjzZRs="/>
+    </page:show>
 </div>

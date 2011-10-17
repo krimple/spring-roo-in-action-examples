@@ -4,6 +4,9 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create compositePkField="id" id="fc_org_rooina_coursemanager_model_Payment" modelAttribute="payment" path="/payments" render="${empty dependencies}" z="p6v5uEMnA5DyG20VD2cs2tK54i0=">
         <field:input disableFormBinding="true" field="id.id" id="c_org_rooina_coursemanager_model_Payment_id_id" required="true" validationMessageCode="field_invalid_integer" z="sMyazBnJeTgc2bhJMTwCZDZRpBs="/>
+        <field:input field="amount" id="c_org_rooina_coursemanager_model_Payment_amount" validationMessageCode="field_invalid_number" z="WgSCp7OMC4Tb3D66SapvC4VY0q4="/>
+        <field:datetime dateTimePattern="${payment_paymentdate_date_format}" field="paymentDate" id="c_org_rooina_coursemanager_model_Payment_paymentDate" z="DLV0sDePUA7A+4N2j2ZzfYBkaSA="/>
+        <field:select field="invoice" id="c_org_rooina_coursemanager_model_Payment_invoice" itemValue="id" items="${invoices}" path="/invoices" required="true" z="teViNYVu0GonOx46tWmDeoXwSV4="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_org_rooina_coursemanager_model_Payment" render="${not empty dependencies}" z="TzR1fmgwV9Y20ZGr5JtnNSbCQzY="/>
 </div>

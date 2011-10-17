@@ -6,12 +6,17 @@ package org.rooina.coursemanager.web.scaffold;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
+import org.rooina.coursemanager.model.Invoice;
 import org.rooina.coursemanager.model.Payment;
 import org.rooina.coursemanager.model.PaymentPK;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -36,6 +41,7 @@ privileged aspect PaymentController_Roo_Controller {
     public String PaymentController.create(@Valid Payment payment, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("payment", payment);
+            addDateTimeFormatPatterns(uiModel);
             return "payments/create";
         }
         uiModel.asMap().clear();
@@ -46,11 +52,18 @@ privileged aspect PaymentController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String PaymentController.createForm(Model uiModel) {
         uiModel.addAttribute("payment", new Payment());
+        addDateTimeFormatPatterns(uiModel);
+        List<String[]> dependencies = new ArrayList<String[]>();
+        if (Invoice.countInvoices() == 0) {
+            dependencies.add(new String[] { "invoice", "invoices" });
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "payments/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String PaymentController.show(@PathVariable("id") PaymentPK id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("payment", Payment.findPayment(id));
         uiModel.addAttribute("itemId", conversionService.convert(id, String.class));
         return "payments/show";
@@ -67,6 +80,7 @@ privileged aspect PaymentController_Roo_Controller {
         } else {
             uiModel.addAttribute("payments", Payment.findAllPayments());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "payments/list";
     }
     
@@ -74,6 +88,7 @@ privileged aspect PaymentController_Roo_Controller {
     public String PaymentController.update(@Valid Payment payment, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("payment", payment);
+            addDateTimeFormatPatterns(uiModel);
             return "payments/update";
         }
         uiModel.asMap().clear();
@@ -84,6 +99,7 @@ privileged aspect PaymentController_Roo_Controller {
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String PaymentController.updateForm(@PathVariable("id") PaymentPK id, Model uiModel) {
         uiModel.addAttribute("payment", Payment.findPayment(id));
+        addDateTimeFormatPatterns(uiModel);
         return "payments/update";
     }
     
@@ -97,9 +113,18 @@ privileged aspect PaymentController_Roo_Controller {
         return "redirect:/payments";
     }
     
+    @ModelAttribute("invoices")
+    public Collection<Invoice> PaymentController.populateInvoices() {
+        return Invoice.findAllInvoices();
+    }
+    
     @ModelAttribute("payments")
     public Collection<Payment> PaymentController.populatePayments() {
         return Payment.findAllPayments();
+    }
+    
+    void PaymentController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("payment_paymentdate_date_format", DateTimeFormat.patternForStyle("SS", LocaleContextHolder.getLocale()));
     }
     
     String PaymentController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

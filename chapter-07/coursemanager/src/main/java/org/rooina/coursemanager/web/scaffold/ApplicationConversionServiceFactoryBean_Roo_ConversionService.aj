@@ -48,30 +48,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<Instructor, String> ApplicationConversionServiceFactoryBean.getInstructorToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<org.rooina.coursemanager.model.Instructor, java.lang.String>() {
-            public String convert(Instructor instructor) {
-                return instructor.getDisplayString();
-            }
-        };
-    }
-    
-    public Converter<Long, Instructor> ApplicationConversionServiceFactoryBean.getIdToInstructorConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Long, org.rooina.coursemanager.model.Instructor>() {
-            public org.rooina.coursemanager.model.Instructor convert(java.lang.Long id) {
-                return Instructor.findInstructor(id);
-            }
-        };
-    }
-    
-    public Converter<String, Instructor> ApplicationConversionServiceFactoryBean.getStringToInstructorConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, org.rooina.coursemanager.model.Instructor>() {
-            public org.rooina.coursemanager.model.Instructor convert(String id) {
-                return getObject().convert(getObject().convert(id, Long.class), Instructor.class);
-            }
-        };
-    }
-    
     public Converter<Tag, String> ApplicationConversionServiceFactoryBean.getTagToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<org.rooina.coursemanager.model.Tag, java.lang.String>() {
             public String convert(Tag tag) {
@@ -92,6 +68,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, org.rooina.coursemanager.model.Tag>() {
             public org.rooina.coursemanager.model.Tag convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Tag.class);
+            }
+        };
+    }
+    
+    public Converter<Instructor, String> ApplicationConversionServiceFactoryBean.getInstructorToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.rooina.coursemanager.model.Instructor, java.lang.String>() {
+            public String convert(Instructor instructor) {
+                return instructor.getDisplayString();
+            }
+        };
+    }
+    
+    public Converter<Long, Instructor> ApplicationConversionServiceFactoryBean.getIdToInstructorConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, org.rooina.coursemanager.model.Instructor>() {
+            public org.rooina.coursemanager.model.Instructor convert(java.lang.Long id) {
+                return Instructor.findInstructor(id);
+            }
+        };
+    }
+    
+    public Converter<String, Instructor> ApplicationConversionServiceFactoryBean.getStringToInstructorConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, org.rooina.coursemanager.model.Instructor>() {
+            public org.rooina.coursemanager.model.Instructor convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Instructor.class);
             }
         };
     }
@@ -120,30 +120,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<Payment, String> ApplicationConversionServiceFactoryBean.getPaymentToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<org.rooina.coursemanager.model.Payment, java.lang.String>() {
-            public String convert(Payment payment) {
-                return payment.getDisplayString();
-            }
-        };
-    }
-    
-    public Converter<PaymentPK, Payment> ApplicationConversionServiceFactoryBean.getIdToPaymentConverter() {
-        return new org.springframework.core.convert.converter.Converter<org.rooina.coursemanager.model.PaymentPK, org.rooina.coursemanager.model.Payment>() {
-            public org.rooina.coursemanager.model.Payment convert(org.rooina.coursemanager.model.PaymentPK id) {
-                return Payment.findPayment(id);
-            }
-        };
-    }
-    
-    public Converter<String, Payment> ApplicationConversionServiceFactoryBean.getStringToPaymentConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, org.rooina.coursemanager.model.Payment>() {
-            public org.rooina.coursemanager.model.Payment convert(String id) {
-                return getObject().convert(getObject().convert(id, PaymentPK.class), Payment.class);
-            }
-        };
-    }
-    
     public Converter<TrainingProgram, String> ApplicationConversionServiceFactoryBean.getTrainingProgramToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<org.rooina.coursemanager.model.TrainingProgram, java.lang.String>() {
             public String convert(TrainingProgram trainingProgram) {
@@ -164,6 +140,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, org.rooina.coursemanager.model.TrainingProgram>() {
             public org.rooina.coursemanager.model.TrainingProgram convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), TrainingProgram.class);
+            }
+        };
+    }
+    
+    public Converter<Payment, String> ApplicationConversionServiceFactoryBean.getPaymentToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.rooina.coursemanager.model.Payment, java.lang.String>() {
+            public String convert(Payment payment) {
+                return payment.getDisplayString();
+            }
+        };
+    }
+    
+    public Converter<PaymentPK, Payment> ApplicationConversionServiceFactoryBean.getIdToPaymentConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.rooina.coursemanager.model.PaymentPK, org.rooina.coursemanager.model.Payment>() {
+            public org.rooina.coursemanager.model.Payment convert(org.rooina.coursemanager.model.PaymentPK id) {
+                return Payment.findPayment(id);
+            }
+        };
+    }
+    
+    public Converter<String, Payment> ApplicationConversionServiceFactoryBean.getStringToPaymentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, org.rooina.coursemanager.model.Payment>() {
+            public org.rooina.coursemanager.model.Payment convert(String id) {
+                return getObject().convert(getObject().convert(id, PaymentPK.class), Payment.class);
             }
         };
     }
@@ -260,21 +260,21 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getCourseToStringConverter());
         registry.addConverter(getIdToCourseConverter());
         registry.addConverter(getStringToCourseConverter());
-        registry.addConverter(getInstructorToStringConverter());
-        registry.addConverter(getIdToInstructorConverter());
-        registry.addConverter(getStringToInstructorConverter());
         registry.addConverter(getTagToStringConverter());
         registry.addConverter(getIdToTagConverter());
         registry.addConverter(getStringToTagConverter());
+        registry.addConverter(getInstructorToStringConverter());
+        registry.addConverter(getIdToInstructorConverter());
+        registry.addConverter(getStringToInstructorConverter());
         registry.addConverter(getInvoiceToStringConverter());
         registry.addConverter(getIdToInvoiceConverter());
         registry.addConverter(getStringToInvoiceConverter());
-        registry.addConverter(getPaymentToStringConverter());
-        registry.addConverter(getIdToPaymentConverter());
-        registry.addConverter(getStringToPaymentConverter());
         registry.addConverter(getTrainingProgramToStringConverter());
         registry.addConverter(getIdToTrainingProgramConverter());
         registry.addConverter(getStringToTrainingProgramConverter());
+        registry.addConverter(getPaymentToStringConverter());
+        registry.addConverter(getIdToPaymentConverter());
+        registry.addConverter(getStringToPaymentConverter());
         registry.addConverter(getOfferingToStringConverter());
         registry.addConverter(getIdToOfferingConverter());
         registry.addConverter(getStringToOfferingConverter());

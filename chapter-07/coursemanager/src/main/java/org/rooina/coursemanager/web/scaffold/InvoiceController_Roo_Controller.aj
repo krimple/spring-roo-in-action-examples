@@ -10,7 +10,10 @@ import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
 import org.rooina.coursemanager.model.Invoice;
+import org.rooina.coursemanager.model.Payment;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,6 +30,7 @@ privileged aspect InvoiceController_Roo_Controller {
     public String InvoiceController.create(@Valid Invoice invoice, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("invoice", invoice);
+            addDateTimeFormatPatterns(uiModel);
             return "invoices/create";
         }
         uiModel.asMap().clear();
@@ -37,11 +41,13 @@ privileged aspect InvoiceController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String InvoiceController.createForm(Model uiModel) {
         uiModel.addAttribute("invoice", new Invoice());
+        addDateTimeFormatPatterns(uiModel);
         return "invoices/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String InvoiceController.show(@PathVariable("id") Long id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("invoice", Invoice.findInvoice(id));
         uiModel.addAttribute("itemId", id);
         return "invoices/show";
@@ -58,6 +64,7 @@ privileged aspect InvoiceController_Roo_Controller {
         } else {
             uiModel.addAttribute("invoices", Invoice.findAllInvoices());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "invoices/list";
     }
     
@@ -65,6 +72,7 @@ privileged aspect InvoiceController_Roo_Controller {
     public String InvoiceController.update(@Valid Invoice invoice, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("invoice", invoice);
+            addDateTimeFormatPatterns(uiModel);
             return "invoices/update";
         }
         uiModel.asMap().clear();
@@ -75,6 +83,7 @@ privileged aspect InvoiceController_Roo_Controller {
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String InvoiceController.updateForm(@PathVariable("id") Long id, Model uiModel) {
         uiModel.addAttribute("invoice", Invoice.findInvoice(id));
+        addDateTimeFormatPatterns(uiModel);
         return "invoices/update";
     }
     
@@ -91,6 +100,15 @@ privileged aspect InvoiceController_Roo_Controller {
     @ModelAttribute("invoices")
     public Collection<Invoice> InvoiceController.populateInvoices() {
         return Invoice.findAllInvoices();
+    }
+    
+    @ModelAttribute("payments")
+    public Collection<Payment> InvoiceController.populatePayments() {
+        return Payment.findAllPayments();
+    }
+    
+    void InvoiceController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("invoice_duedate_date_format", DateTimeFormat.patternForStyle("S-", LocaleContextHolder.getLocale()));
     }
     
     String InvoiceController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

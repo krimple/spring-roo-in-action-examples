@@ -19,7 +19,7 @@
             view="registerStudents/select-offering"
             model="registerStudentsForm">
             <on-entry>
-                <evaluate expression="registrationFlowService.retrieveCourseOfferings" 
+                <evaluate expression="registrationFlowService.retrieveCourseOfferings(flowRequestContext)"
                   result="viewScope.offeringList"/>
             </on-entry>
             <transition on="proceed" to="select-students"/>

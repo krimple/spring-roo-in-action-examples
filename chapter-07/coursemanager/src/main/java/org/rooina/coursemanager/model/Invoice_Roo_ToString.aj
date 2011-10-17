@@ -9,7 +9,12 @@ privileged aspect Invoice_Roo_ToString {
     
     public String Invoice.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(getId());
+        sb.append("Amount: ").append(getAmount()).append(", ");
+        sb.append("DueDate: ").append(getDueDate()).append(", ");
+        sb.append("EmailAddress: ").append(getEmailAddress()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
+        sb.append("Payments: ").append(getPayments() == null ? "null" : getPayments().size()).append(", ");
+        sb.append("StudentName: ").append(getStudentName());
         return sb.toString();
     }
     

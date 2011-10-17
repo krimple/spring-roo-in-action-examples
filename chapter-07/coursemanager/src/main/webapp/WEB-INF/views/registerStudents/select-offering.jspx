@@ -11,9 +11,9 @@
        modelAttribute="registerStudentsForm">
       
 	  <fields:select
-	    id="selectOfferingId" 
+	    id="id_register_students_flow_select_offering_id"
 	    label="Offering"
-	    path="offeringId"
+	    path="offerings"
 	    field="offeringId"
 	    items="${offeringList}"
 	    itemLabel="runDate"
