@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.proxy;
+package org.rooinaction.coursemanager.proxy;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanClassLoaderAware;

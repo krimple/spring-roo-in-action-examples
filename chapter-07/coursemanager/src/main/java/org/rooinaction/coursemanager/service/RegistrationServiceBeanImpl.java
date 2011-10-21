@@ -1,11 +1,11 @@
-package org.rooina.coursemanager.service;
+package org.rooinaction.coursemanager.service;
 
 import java.util.Iterator;
 import java.util.List;
 
-import org.rooina.coursemanager.model.Offering;
-import org.rooina.coursemanager.model.Registration;
-import org.rooina.coursemanager.model.Student;
+import org.rooinaction.coursemanager.model.Offering;
+import org.rooinaction.coursemanager.model.Registration;
+import org.rooinaction.coursemanager.model.Student;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

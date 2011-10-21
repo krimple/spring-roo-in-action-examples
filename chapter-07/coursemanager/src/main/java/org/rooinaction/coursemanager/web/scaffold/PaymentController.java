@@ -1,7 +1,7 @@
-package org.rooina.coursemanager.web.scaffold;
+package org.rooinaction.coursemanager.web.scaffold;
 
-import org.rooina.coursemanager.model.Payment;
-import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
+import org.rooinaction.coursemanager.model.Payment;
+import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

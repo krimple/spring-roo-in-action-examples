@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <appendix xmlns="http://docbook.org/ns/docbook" version="5.0" xml:id="command-index">
     <title>Command Index</title>
-    <para>This appendix was automatically built from Roo 1.1.2.BUILD-SNAPSHOT [rev 3dc0546].</para>
+    <para>This appendix was automatically built from Roo 1.2.0.BUILD-SNAPSHOT [rev 9e53670].</para>
     <para>Commands are listed in alphabetic order, and are shown in monospaced font with any mandatory options you must specify when using the command. Most commands accept a large number of options, and all of the possible options for each command are presented in this appendix.</para>
     <section xml:id="command-index-add-on-commands">
         <title>Add On Commands</title>
@@ -113,6 +113,12 @@
                     </listitem>
                 </varlistentry>
                 <varlistentry>
+                    <term>--communityOnly</term>
+                    <listitem>
+                        <para>Only display community provided add-ons in search results; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
                     <term>--compatibleOnly</term>
                     <listitem>
                         <para>Only display compatible add-ons in search results; default if option present: 'true'; default if option not present: 'false'</para>
@@ -172,6 +178,12 @@
                     <term>--compatibleOnly</term>
                     <listitem>
                         <para>Only display compatible add-ons in search results; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--communityOnly</term>
+                    <listitem>
+                        <para>Only display community provided add-ons in search results; default if option present: 'true'; default if option not present: 'false'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -391,7 +403,7 @@
         <para>Controller Commands are contained in org.springframework.roo.addon.web.mvc.controller.ControllerCommands.</para>
         <section xml:id="command-index-controller-all">
             <title>controller all</title>
-            <para>Scaffold a controller for all entities without an existing controller</para>
+            <para>Scaffold controllers for all project entities without an existing controller - deprecated, use 'web mvc setup' + 'web mvc all' instead</para>
             <programlisting><![CDATA[controller all --package]]></programlisting>
             <variablelist>
                 <varlistentry>
@@ -404,7 +416,7 @@
         </section>
         <section xml:id="command-index-controller-scaffold">
             <title>controller scaffold</title>
-            <para>Create a new scaffold Controller (ie where we maintain CRUD automatically)</para>
+            <para>Create a new scaffold Controller (ie where we maintain CRUD automatically) - deprecated, use 'web mvc scaffold' instead</para>
             <programlisting><![CDATA[controller scaffold --class]]></programlisting>
             <variablelist>
                 <varlistentry>
@@ -417,6 +429,50 @@
                     <term>--entity</term>
                     <listitem>
                         <para>The name of the entity object which the controller exposes to the web tier; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--path</term>
+                    <listitem>
+                        <para>The base path under which the controller listens for RESTful requests (defaults to the simple name of the form backing object); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--disallowedOperations</term>
+                    <listitem>
+                        <para>A comma separated list of operations (only create, update, delete allowed) that should not be generated in the controller; no default value</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-all">
+            <title>web mvc all</title>
+            <para>Scaffold Spring MVC controllers for all project entities without an existing controller</para>
+            <programlisting><![CDATA[web mvc all --package]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which new controllers will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-scaffold">
+            <title>web mvc scaffold</title>
+            <para>Create a new scaffold Controller (ie where Roo maintains CRUD functionality automatically)</para>
+            <programlisting><![CDATA[web mvc scaffold --class]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>The path and name of the controller object to be created; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--backingType</term>
+                    <listitem>
+                        <para>The name of the form backing type which the controller exposes to the web tier; default if option not present: '*'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -604,6 +660,35 @@
             </variablelist>
         </section>
     </section>
+    <section xml:id="command-index-data-on-demand-commands">
+        <title>Data On Demand Commands</title>
+        <para>Data On Demand Commands are contained in org.springframework.roo.addon.dod.DataOnDemandCommands.</para>
+        <section xml:id="command-index-dod">
+            <title>dod</title>
+            <para>Creates a new data on demand for the specified entity</para>
+            <programlisting><![CDATA[dod]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--entity</term>
+                    <listitem>
+                        <para>The entity which this data on demand class will create and modify as required; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>The class which will be created to hold this data on demand provider (defaults to the entity name + 'DataOnDemand'); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--permitReservedWords</term>
+                    <listitem>
+                        <para>Indicates whether reserved words are ignored by Roo; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+    </section>
     <section xml:id="command-index-dbre-commands">
         <title>Dbre Commands</title>
         <para>Dbre Commands are contained in org.springframework.roo.addon.dbre.DbreCommands.</para>
@@ -615,7 +700,7 @@
                 <varlistentry>
                     <term>--schema</term>
                     <listitem>
-                        <para>The database schema name; no default value (mandatory) </para>
+                        <para>The database schema names. Multiple schema names must be a double-quoted list separated by spaces; no default value (mandatory) </para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -640,7 +725,7 @@
                 <varlistentry>
                     <term>--schema</term>
                     <listitem>
-                        <para>The database schema name; no default value (mandatory) </para>
+                        <para>The database schema names. Multiple schema names must be a double-quoted list separated by spaces; no default value (mandatory) </para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -664,13 +749,25 @@
                 <varlistentry>
                     <term>--includeTables</term>
                     <listitem>
-                        <para>The tables to include in reverse engineering. Must be separated by spaces and enclosed by pairs of double quotes</para>
+                        <para>The tables to include in reverse engineering. Multiple table names must be a double-quoted list separated by spaces</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
                     <term>--excludeTables</term>
                     <listitem>
-                        <para>The tables to exclude from reverse engineering. Must be separated by spaces and enclosed by pairs of double quotes</para>
+                        <para>The tables to exclude from reverse engineering. Multiple table names must be a double-quoted list separated by spaces</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--includeNonPortableAttributes</term>
+                    <listitem>
+                        <para>Include non-portable JPA @Column attributes such as 'columnDefinition'; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--activeRecord</term>
+                    <listitem>
+                        <para>Generate CRUD active record methods for each entity; default: 'true'</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -694,25 +791,6 @@
                     <term>--documentId</term>
                     <listitem>
                         <para>The id of the document; no default value (mandatory) </para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term>--viewName</term>
-                    <listitem>
-                        <para>The name of the jspx view; no default value</para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-        </section>
-        <section xml:id="command-index-web-mvc-embed-finances">
-            <title>web mvc embed finances</title>
-            <para>Embed a stock ticker into your WEB MVC application</para>
-            <programlisting><![CDATA[web mvc embed finances --stockSymbol]]></programlisting>
-            <variablelist>
-                <varlistentry>
-                    <term>--stockSymbol</term>
-                    <listitem>
-                        <para>The stock symbol; no default value (mandatory) </para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -884,31 +962,6 @@
     <section xml:id="command-index-entity-commands">
         <title>Entity Commands</title>
         <para>Entity Commands are contained in org.springframework.roo.addon.entity.EntityCommands.</para>
-        <section xml:id="command-index-dod">
-            <title>dod</title>
-            <para>Creates a new data on demand for the specified entity</para>
-            <programlisting><![CDATA[dod]]></programlisting>
-            <variablelist>
-                <varlistentry>
-                    <term>--entity</term>
-                    <listitem>
-                        <para>The entity which this data on demand class will create and modify as required; default if option not present: '*'</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term>--class</term>
-                    <listitem>
-                        <para>The class which will be created to hold this data on demand provider (defaults to the entity name + 'DataOnDemand'); no default value</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term>--permitReservedWords</term>
-                    <listitem>
-                        <para>Indicates whether reserved words are ignored by Roo; default if option present: 'true'; default if option not present: 'false'</para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-        </section>
         <section xml:id="command-index-embeddable">
             <title>embeddable</title>
             <para>Creates a new Java class source file with the JPA @Embeddable annotation in SRC_MAIN_JAVA</para>
@@ -934,10 +987,10 @@
                 </varlistentry>
             </variablelist>
         </section>
-        <section xml:id="command-index-entity">
-            <title>entity</title>
+        <section xml:id="command-index-entity-jpa">
+            <title>entity jpa</title>
             <para>Creates a new JPA persistent entity in SRC_MAIN_JAVA</para>
-            <programlisting><![CDATA[entity --class]]></programlisting>
+            <programlisting><![CDATA[entity jpa --class]]></programlisting>
             <variablelist>
                 <varlistentry>
                     <term>--class</term>
@@ -1012,6 +1065,12 @@
                     </listitem>
                 </varlistentry>
                 <varlistentry>
+                    <term>--versionType</term>
+                    <listitem>
+                        <para>The data type that will be used for the JPA version field (defaults to java.lang.Integer); default if option not present: 'java.lang.Integer'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
                     <term>--inheritanceType</term>
                     <listitem>
                         <para>The JPA @Inheritance value; no default value</para>
@@ -1021,6 +1080,12 @@
                     <term>--mappedSuperclass</term>
                     <listitem>
                         <para>Apply @MappedSuperclass for this entity; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--equals</term>
+                    <listitem>
+                        <para>Whether the generated class should implement equals and hashCode methods; default if option present: 'true'; default if option not present: 'false'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -1036,28 +1101,56 @@
                     </listitem>
                 </varlistentry>
                 <varlistentry>
+                    <term>--transactionManager</term>
+                    <listitem>
+                        <para>The transaction manager name; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
                     <term>--permitReservedWords</term>
                     <listitem>
                         <para>Indicates whether reserved words are ignored by Roo; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--entityName</term>
+                    <listitem>
+                        <para>The name used to refer to the entity in queries; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--activeRecord</term>
+                    <listitem>
+                        <para>Generate CRUD active record methods for this entity; default: 'true'</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
         </section>
-        <section xml:id="command-index-test-integration">
-            <title>test integration</title>
-            <para>Creates a new integration test for the specified entity</para>
-            <programlisting><![CDATA[test integration]]></programlisting>
+    </section>
+    <section xml:id="command-index-equals-commands">
+        <title>Equals Commands</title>
+        <para>Equals Commands are contained in org.springframework.roo.addon.equals.EqualsCommands.</para>
+        <section xml:id="command-index-equals">
+            <title>equals</title>
+            <para>Add equals and hashCode methods to a class</para>
+            <programlisting><![CDATA[equals]]></programlisting>
             <variablelist>
                 <varlistentry>
-                    <term>--entity</term>
+                    <term>--class</term>
                     <listitem>
-                        <para>The name of the entity to create an integration test for; default if option not present: '*'</para>
+                        <para>The name of the class; default if option not present: '*'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term>--permitReservedWords</term>
+                    <term>--appendSuper</term>
                     <listitem>
-                        <para>Indicates whether reserved words are ignored by Roo; default if option present: 'true'; default if option not present: 'false'</para>
+                        <para>Whether to call the super class equals and hashCode methods; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--excludeFields</term>
+                    <listitem>
+                        <para>The fields to exclude in the equals and hashcode methods. Multiple field names must be a double-quoted list separated by spaces</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -1544,7 +1637,7 @@
                 <varlistentry>
                     <term>--dateFormat</term>
                     <listitem>
-                        <para>Indicates the style of the date format (ignored if dateTimeFormatPattern is specified); default: 'SHORT'</para>
+                        <para>Indicates the style of the date format (ignored if dateTimeFormatPattern is specified); default: 'MEDIUM'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -1891,7 +1984,7 @@
                 <varlistentry>
                     <term>--cardinality</term>
                     <listitem>
-                        <para>The relationship cardinarily at a JPA level; default: 'MANY_TO_ONE'</para>
+                        <para>The relationship cardinality at a JPA level; default: 'MANY_TO_ONE'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -1976,7 +2069,7 @@
                 <varlistentry>
                     <term>--cardinality</term>
                     <listitem>
-                        <para>The relationship cardinarily at a JPA level; default: 'MANY_TO_MANY'</para>
+                        <para>The relationship cardinality at a JPA level; default: 'MANY_TO_MANY'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -2127,7 +2220,7 @@
         </section>
         <section xml:id="command-index-finder-list">
             <title>finder list</title>
-            <para>List all finders for a given target (must be an entity</para>
+            <para>List all finders for a given target (must be an entity)</para>
             <programlisting><![CDATA[finder list]]></programlisting>
             <variablelist>
                 <varlistentry>
@@ -2151,118 +2244,165 @@
             </variablelist>
         </section>
     </section>
-    <section xml:id="command-index-git-commands">
-        <title>Git Commands</title>
-        <para>Git Commands are contained in org.springframework.roo.addon.git.GitCommands.</para>
-        <section xml:id="command-index-git-commit-all">
-            <title>git commit all</title>
-            <para>Trigger a commit manually for the project</para>
-            <programlisting><![CDATA[git commit all --message]]></programlisting>
-            <variablelist>
-                <varlistentry>
-                    <term>--message</term>
-                    <listitem>
-                        <para>The commit message; no default value (mandatory) </para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-        </section>
-        <section xml:id="command-index-git-config">
-            <title>git config</title>
-            <para>Git revision control configuration (.git/config)</para>
-            <programlisting><![CDATA[git config]]></programlisting>
-            <variablelist>
-                <varlistentry>
-                    <term>--userName</term>
-                    <listitem>
-                        <para>The user name; no default value</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term>--email</term>
-                    <listitem>
-                        <para>The user email; no default value</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term>--repoUrl</term>
-                    <listitem>
-                        <para>The URL of the remote repository; no default value</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term>--colorCoding</term>
-                    <listitem>
-                        <para>Enable color coding of commands in OS shell; default if option present: 'true'; default if option not present: 'false'</para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-        </section>
-        <section xml:id="command-index-git-log">
-            <title>git log</title>
-            <para>Commit log</para>
-            <programlisting><![CDATA[git log]]></programlisting>
-            <variablelist>
-                <varlistentry>
-                    <term>--maxMessages</term>
-                    <listitem>
-                        <para>Number of commit messages to display; no default value</para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-        </section>
-        <section xml:id="command-index-git-revert-commit">
-            <title>git revert commit</title>
-            <para>Roll project back to a specific commit</para>
-            <programlisting><![CDATA[git revert commit --revString --message]]></programlisting>
-            <variablelist>
-                <varlistentry>
-                    <term>--revString</term>
-                    <listitem>
-                        <para>Commit id; no default value (mandatory) </para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term>--message</term>
-                    <listitem>
-                        <para>The commit message; no default value (mandatory) </para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-        </section>
-        <section xml:id="command-index-git-revert-last">
-            <title>git revert last</title>
-            <para>Revert (last x) commit(s)</para>
-            <programlisting><![CDATA[git revert last --message]]></programlisting>
-            <variablelist>
-                <varlistentry>
-                    <term>--commitCount</term>
-                    <listitem>
-                        <para>Number of commits to revert; no default value</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term>--message</term>
-                    <listitem>
-                        <para>The commit message; no default value (mandatory) </para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-        </section>
-        <section xml:id="command-index-git-setup">
-            <title>git setup</title>
-            <para>Setup Git revision control</para>
-            <programlisting><![CDATA[git setup]]></programlisting>
-            <para>This command does not accept any options.</para>
-        </section>
-    </section>
     <section xml:id="command-index-gwt-commands">
         <title>Gwt Commands</title>
         <para>Gwt Commands are contained in org.springframework.roo.addon.gwt.GwtCommands.</para>
         <section xml:id="command-index-gwt-setup">
             <title>gwt setup</title>
-            <para>Install Google Web Toolkit (GWT) into your project</para>
+            <para>Install Google Web Toolkit (GWT) into your project - deprecated, use 'web gwt setup' instead</para>
             <programlisting><![CDATA[gwt setup]]></programlisting>
+            <para>This command does not accept any options.</para>
+        </section>
+        <section xml:id="command-index-web-gwt-all">
+            <title>web gwt all</title>
+            <para>Locates all entities in the project and creates GWT requests, proxies and creates the scaffold</para>
+            <programlisting><![CDATA[web gwt all --proxyPackage --requestPackage]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--proxyPackage</term>
+                    <listitem>
+                        <para>The package in which created proxies will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--requestPackage</term>
+                    <listitem>
+                        <para>The package in which created requests will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-gwt-gae-update">
+            <title>web gwt gae update</title>
+            <para>Updates the GWT project to support GAE</para>
+            <programlisting><![CDATA[web gwt gae update]]></programlisting>
+            <para>This command does not accept any options.</para>
+        </section>
+        <section xml:id="command-index-web-gwt-proxy-all">
+            <title>web gwt proxy all</title>
+            <para>Locates all entities in the project and creates GWT proxies</para>
+            <programlisting><![CDATA[web gwt proxy all --package]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which created proxies will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-gwt-proxy-request-all">
+            <title>web gwt proxy request all</title>
+            <para>Locates all entities in the project and creates GWT requests and proxies</para>
+            <programlisting><![CDATA[web gwt proxy request all --package]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which created proxies and requests will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-gwt-proxy-request-type">
+            <title>web gwt proxy request type</title>
+            <para>Creates a proxy and request based on the specified type</para>
+            <programlisting><![CDATA[web gwt proxy request type --package --type]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which created proxies and requests will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--type</term>
+                    <listitem>
+                        <para>The type to base the created proxy and request on; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-gwt-proxy-type">
+            <title>web gwt proxy type</title>
+            <para>Creates a GWT proxy based on the specified type</para>
+            <programlisting><![CDATA[web gwt proxy type --package --type]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which created proxies will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--type</term>
+                    <listitem>
+                        <para>The type to base the created request on; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-gwt-request-all">
+            <title>web gwt request all</title>
+            <para>Locates all entities in the project and creates GWT requests</para>
+            <programlisting><![CDATA[web gwt request all --package]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which created requests will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-gwt-request-type">
+            <title>web gwt request type</title>
+            <para>Creates a GWT proxy based on the specified type</para>
+            <programlisting><![CDATA[web gwt request type --package --type]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which created requests will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--type</term>
+                    <listitem>
+                        <para>The type to base the created request on; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-gwt-scaffold">
+            <title>web gwt scaffold</title>
+            <para>Creates a GWT request, proxy and scaffold for the specified</para>
+            <programlisting><![CDATA[web gwt scaffold --proxyPackage --requestPackage --type]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--proxyPackage</term>
+                    <listitem>
+                        <para>The package in which created proxies will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--requestPackage</term>
+                    <listitem>
+                        <para>The package in which created requests will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--type</term>
+                    <listitem>
+                        <para>The type to base the created scaffold on; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-gwt-setup">
+            <title>web gwt setup</title>
+            <para>Install Google Web Toolkit (GWT) into your project</para>
+            <programlisting><![CDATA[web gwt setup]]></programlisting>
             <para>This command does not accept any options.</para>
         </section>
     </section>
@@ -2286,6 +2426,31 @@
     <section xml:id="command-index-integration-test-commands">
         <title>Integration Test Commands</title>
         <para>Integration Test Commands are contained in org.springframework.roo.addon.test.IntegrationTestCommands.</para>
+        <section xml:id="command-index-test-integration">
+            <title>test integration</title>
+            <para>Creates a new integration test for the specified entity</para>
+            <programlisting><![CDATA[test integration]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--entity</term>
+                    <listitem>
+                        <para>The name of the entity to create an integration test for; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--permitReservedWords</term>
+                    <listitem>
+                        <para>Indicates whether reserved words are ignored by Roo; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--transactional</term>
+                    <listitem>
+                        <para>Indicates whether the created test cases should be run withing a Spring transaction; default: 'true'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
         <section xml:id="command-index-test-mock">
             <title>test mock</title>
             <para>Creates a mock test for the specified entity</para>
@@ -2307,13 +2472,13 @@
         </section>
         <section xml:id="command-index-test-stub">
             <title>test stub</title>
-            <para>Creates a test stub for the specified entity</para>
+            <para>Creates a test stub for the specified class</para>
             <programlisting><![CDATA[test stub]]></programlisting>
             <variablelist>
                 <varlistentry>
-                    <term>--entity</term>
+                    <term>--class</term>
                     <listitem>
-                        <para>The name of the entity this mock test is targeting; default if option not present: '*'</para>
+                        <para>The name of the class this mock test is targeting; default if option not present: '*'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -2402,13 +2567,13 @@
         <para>Jms Commands are contained in org.springframework.roo.addon.jms.JmsCommands.</para>
         <section xml:id="command-index-field-jms-template">
             <title>field jms template</title>
-            <para>insert a JmsTemplate field into an existing type</para>
+            <para>Insert a JmsOperations field into an existing type</para>
             <programlisting><![CDATA[field jms template]]></programlisting>
             <variablelist>
                 <varlistentry>
                     <term>--fieldName</term>
                     <listitem>
-                        <para>The name of the field to add; default: 'jmsTemplate'</para>
+                        <para>The name of the field to add; default: 'jmsOperations'</para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -2427,7 +2592,7 @@
         </section>
         <section xml:id="command-index-jms-listener-class">
             <title>jms listener class</title>
-            <para>Create a new class which is a asynchronous JMS consumer</para>
+            <para>Create an asynchronous JMS consumer</para>
             <programlisting><![CDATA[jms listener class --class]]></programlisting>
             <variablelist>
                 <varlistentry>
@@ -2452,7 +2617,7 @@
         </section>
         <section xml:id="command-index-jms-setup">
             <title>jms setup</title>
-            <para>Install a JMS provider in your project</para>
+            <para>Install a JMS provider into your project</para>
             <programlisting><![CDATA[jms setup --provider]]></programlisting>
             <variablelist>
                 <varlistentry>
@@ -2517,9 +2682,76 @@
                 </varlistentry>
             </variablelist>
         </section>
+        <section xml:id="command-index-jpa-setup">
+            <title>jpa setup</title>
+            <para>Install or updates a JPA persistence provider in your project</para>
+            <programlisting><![CDATA[jpa setup --provider --database]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--provider</term>
+                    <listitem>
+                        <para>The persistence provider to support; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--database</term>
+                    <listitem>
+                        <para>The database to support; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--applicationId</term>
+                    <listitem>
+                        <para>The Google App Engine application identifier to use; default if option not present: 'the project's name'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--jndiDataSource</term>
+                    <listitem>
+                        <para>The JNDI datasource to use; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--hostName</term>
+                    <listitem>
+                        <para>The host name to use; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--databaseName</term>
+                    <listitem>
+                        <para>The database name to use; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--userName</term>
+                    <listitem>
+                        <para>The username to use; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--password</term>
+                    <listitem>
+                        <para>The password to use; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--transactionManager</term>
+                    <listitem>
+                        <para>The transaction manager name; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--persistenceUnit</term>
+                    <listitem>
+                        <para>The persistence unit name to be used in the persistence.xml file; no default value</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
         <section xml:id="command-index-persistence-setup">
             <title>persistence setup</title>
-            <para>Install or updates a JPA persistence provider in your project</para>
+            <para>Install or updates a JPA persistence provider in your project - deprecated, use 'jpa setup' instead</para>
             <programlisting><![CDATA[persistence setup --provider --database]]></programlisting>
             <variablelist>
                 <varlistentry>
@@ -2571,9 +2803,156 @@
                     </listitem>
                 </varlistentry>
                 <varlistentry>
+                    <term>--transactionManager</term>
+                    <listitem>
+                        <para>The transaction manager name; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
                     <term>--persistenceUnit</term>
                     <listitem>
                         <para>The persistence unit name to be used in the persistence.xml file; no default value</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+    </section>
+    <section xml:id="command-index-jsf-commands">
+        <title>Jsf Commands</title>
+        <para>Jsf Commands are contained in org.springframework.roo.addon.jsf.JsfCommands.</para>
+        <section xml:id="command-index-field-file">
+            <title>field file</title>
+            <para>Adds a field for storing uploaded file contents</para>
+            <programlisting><![CDATA[field file --fieldName --contentType]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--fieldName</term>
+                    <listitem>
+                        <para>The name of the file upload field to add; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>The name of the class to receive this field; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--autoUpload</term>
+                    <listitem>
+                        <para>Whether the file is uploaded automatically when selected; default if option present: 'true'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--contentType</term>
+                    <listitem>
+                        <para>The content type of the file; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--column</term>
+                    <listitem>
+                        <para>The JPA @Column name; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--notNull</term>
+                    <listitem>
+                        <para>Whether this value cannot be null; default if option present: 'true'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--permitReservedWords</term>
+                    <listitem>
+                        <para>Indicates whether reserved words are ignored by Roo; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-jsf-all">
+            <title>web jsf all</title>
+            <para>Create JSF managed beans for all entities</para>
+            <programlisting><![CDATA[web jsf all --package]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which new JSF managed beans will be placed; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-jsf-media">
+            <title>web jsf media</title>
+            <para>Add a cross-browser generic player to embed multimedia content</para>
+            <programlisting><![CDATA[web jsf media --url]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--url</term>
+                    <listitem>
+                        <para>The url of the media source; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--player</term>
+                    <listitem>
+                        <para>The name of the media player; no default value</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-jsf-scaffold">
+            <title>web jsf scaffold</title>
+            <para>Create JSF managed bean for an entity</para>
+            <programlisting><![CDATA[web jsf scaffold --class]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>The path and name of the JSF managed bean to be created; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--entity</term>
+                    <listitem>
+                        <para>The entity which this JSF managed bean class will create and modify as required; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--beanName</term>
+                    <listitem>
+                        <para>The name of the managed bean to use in the 'name' attribute of the @ManagedBean annotation; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--includeOnMenu</term>
+                    <listitem>
+                        <para>Include this entity on the generated JSF menu; default: 'true'</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--createConverter</term>
+                    <listitem>
+                        <para>Create JSF converter for the entity; default: 'true'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-jsf-setup">
+            <title>web jsf setup</title>
+            <para>Set up JSF environment</para>
+            <programlisting><![CDATA[web jsf setup]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--implementation</term>
+                    <listitem>
+                        <para>The JSF implementation to use; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--theme</term>
+                    <listitem>
+                        <para>The name of the theme; no default value</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -2599,13 +2978,26 @@
                         <para>The root name which should be used to wrap the JSON document; no default value</para>
                     </listitem>
                 </varlistentry>
+                <varlistentry>
+                    <term>--deepSerialize</term>
+                    <listitem>
+                        <para>Indication if deep serialization should be enabled.; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
             </variablelist>
         </section>
         <section xml:id="command-index-json-all">
             <title>json all</title>
             <para>Adds @RooJson annotation to all types annotated with @RooJavaBean</para>
             <programlisting><![CDATA[json all]]></programlisting>
-            <para>This command does not accept any options.</para>
+            <variablelist>
+                <varlistentry>
+                    <term>--deepSerialize</term>
+                    <listitem>
+                        <para>Indication if deep serialization should be enabled; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
         </section>
     </section>
     <section xml:id="command-index-jsp-commands">
@@ -2613,8 +3005,27 @@
         <para>Jsp Commands are contained in org.springframework.roo.addon.web.mvc.jsp.JspCommands.</para>
         <section xml:id="command-index-controller-class">
             <title>controller class</title>
-            <para>Create a new manual Controller (ie where you write the methods)</para>
+            <para>Create a new manual Controller (ie where you write the methods) - deprecated, use 'web mvc controller' instead</para>
             <programlisting><![CDATA[controller class --class]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>The path and name of the controller object to be created; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--preferredMapping</term>
+                    <listitem>
+                        <para>Indicates a specific request mapping path for this controller (eg /foo/); no default value</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-controller">
+            <title>web mvc controller</title>
+            <para>Create a new manual Controller (ie where you write the methods)</para>
+            <programlisting><![CDATA[web mvc controller --class]]></programlisting>
             <variablelist>
                 <varlistentry>
                     <term>--class</term>
@@ -2647,6 +3058,63 @@
             <title>web mvc install view</title>
             <para>Create a new static view.</para>
             <programlisting><![CDATA[web mvc install view --path --viewName --title]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--path</term>
+                    <listitem>
+                        <para>The path the static view to create in (required, ie '/foo/blah'); no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--viewName</term>
+                    <listitem>
+                        <para>The view name the mapping this view should adopt (required, ie 'index'); no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--title</term>
+                    <listitem>
+                        <para>The title of the view; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-language">
+            <title>web mvc language</title>
+            <para>Install new internationalization bundle for MVC scaffolded UI.</para>
+            <programlisting><![CDATA[web mvc language --code]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--code</term>
+                    <listitem>
+                        <para>The language code for the desired bundle; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-setup">
+            <title>web mvc setup</title>
+            <para>Setup a basic project structure for a Spring MVC / JSP application</para>
+            <programlisting><![CDATA[web mvc setup]]></programlisting>
+            <para>This command does not accept any options.</para>
+        </section>
+        <section xml:id="command-index-web-mvc-update-tags">
+            <title>web mvc update tags</title>
+            <para>Replace an existing application tagx library with the latest version (use --backup option to backup your application first)</para>
+            <programlisting><![CDATA[web mvc update tags]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--backup</term>
+                    <listitem>
+                        <para>Backup your application before replacing your existing tag library; default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-view">
+            <title>web mvc view</title>
+            <para>Create a new static view.</para>
+            <programlisting><![CDATA[web mvc view --path --viewName --title]]></programlisting>
             <variablelist>
                 <varlistentry>
                     <term>--path</term>
@@ -2785,7 +3253,7 @@
     </section>
     <section xml:id="command-index-maven-commands">
         <title>Maven Commands</title>
-        <para>Maven Commands are contained in org.springframework.roo.addon.maven.MavenCommands.</para>
+        <para>Maven Commands are contained in org.springframework.roo.project.MavenCommands.</para>
         <section xml:id="command-index-dependency-add">
             <title>dependency add</title>
             <para>Adds a new dependency to the Maven project object model (POM)</para>
@@ -2807,6 +3275,18 @@
                     <term>--version</term>
                     <listitem>
                         <para>The version of the dependency; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--classifier</term>
+                    <listitem>
+                        <para>The classifier of the dependency; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--scope</term>
+                    <listitem>
+                        <para>The scope of the dependency; no default value</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -2832,6 +3312,43 @@
                     <term>--version</term>
                     <listitem>
                         <para>The version of the dependency; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--classifier</term>
+                    <listitem>
+                        <para>The classifier of the dependency; no default value</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-module">
+            <title>module</title>
+            <para>Creates a new module within an existing Maven project</para>
+            <programlisting><![CDATA[module --topLevelPackage]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--topLevelPackage</term>
+                    <listitem>
+                        <para>The uppermost package name (this becomes the &lt;groupId&gt; in Maven and also the '~' value when using Roo's shell); no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--name</term>
+                    <listitem>
+                        <para>The name of the module (last segment of package name used as default); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--parent</term>
+                    <listitem>
+                        <para>The Maven coordinates of the parent POM, in the form "groupId:artifactId:version"; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--packaging</term>
+                    <listitem>
+                        <para>The Maven packaging (pom, war, jar, ear, etc.); default if option not present: 'jar'</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -2881,7 +3398,7 @@
         </section>
         <section xml:id="command-index-project">
             <title>project</title>
-            <para>Creates a new project</para>
+            <para>Creates a new Maven project</para>
             <programlisting><![CDATA[project --topLevelPackage]]></programlisting>
             <variablelist>
                 <varlistentry>
@@ -2900,6 +3417,18 @@
                     <term>--java</term>
                     <listitem>
                         <para>Forces a particular major version of Java to be used (will be auto-detected if unspecified; specify 5 or 6 or 7 only); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--parent</term>
+                    <listitem>
+                        <para>The Maven coordinates of the parent POM, in the form "groupId:artifactId:version"; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--packaging</term>
+                    <listitem>
+                        <para>The Maven packaging (pom, war, jar, ear, etc.); default if option not present: 'jar'</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -2967,27 +3496,118 @@
             </variablelist>
         </section>
     </section>
-    <section xml:id="command-index-op4j-commands">
-        <title>Op4j Commands</title>
-        <para>Op4j Commands are contained in org.springframework.roo.addon.op4j.Op4jCommands.</para>
-        <section xml:id="command-index-op4j-add">
-            <title>op4j add</title>
-            <para>Some helpful description</para>
-            <programlisting><![CDATA[op4j add]]></programlisting>
+    <section xml:id="command-index-mongo-commands">
+        <title>Mongo Commands</title>
+        <para>Mongo Commands are contained in org.springframework.roo.addon.layers.repository.mongo.MongoCommands.</para>
+        <section xml:id="command-index-entity-mongo">
+            <title>entity mongo</title>
+            <para>Creates a domain entity which can be backed by a MongoDB repository</para>
+            <programlisting><![CDATA[entity mongo --class]]></programlisting>
             <variablelist>
                 <varlistentry>
                     <term>--class</term>
                     <listitem>
-                        <para>The java type to apply the RooOp4j annotation to; default if option not present: '*'</para>
+                        <para>Implementation class for the specified interface; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--identifierType</term>
+                    <listitem>
+                        <para>The ID type to be used for this domain type (defaults to BigInteger); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--testAutomatically</term>
+                    <listitem>
+                        <para>Create automatic integration tests for this entity; default if option present: 'true'; default if option not present: 'false'</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
         </section>
-        <section xml:id="command-index-op4j-setup">
-            <title>op4j setup</title>
-            <para>Setup Op4j addon</para>
-            <programlisting><![CDATA[op4j setup]]></programlisting>
-            <para>This command does not accept any options.</para>
+        <section xml:id="command-index-mongo-setup">
+            <title>mongo setup</title>
+            <para>Configures the project for MongoDB peristence.</para>
+            <programlisting><![CDATA[mongo setup]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--username</term>
+                    <listitem>
+                        <para>Username for accessing the database (defaults to ''); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--password</term>
+                    <listitem>
+                        <para>Password for accessing the database (defaults to ''); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--databaseName</term>
+                    <listitem>
+                        <para>Name of the database (defaults to project name); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--port</term>
+                    <listitem>
+                        <para>Port for the database (defaults to '27017'); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--host</term>
+                    <listitem>
+                        <para>Host for the database (defaults to '127.0.0.1'); no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--cloudFoundry</term>
+                    <listitem>
+                        <para>Deploy to CloudFoundry (defaults to 'false'); default if option present: 'true'; default if option not present: 'false'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-repository-mongo">
+            <title>repository mongo</title>
+            <para>Adds @RooMongoRepository annotation to target type</para>
+            <programlisting><![CDATA[repository mongo --interface]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--interface</term>
+                    <listitem>
+                        <para>The java interface to apply this annotation to; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>Implementation class for the specified interface; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--entity</term>
+                    <listitem>
+                        <para>The domain entity this repository should expose; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+    </section>
+    <section xml:id="command-index-os-commands">
+        <title>Os Commands</title>
+        <para>Os Commands are contained in org.springframework.roo.addon.oscommands.OsCommands.</para>
+        <section xml:id="command-index-!">
+            <title>!</title>
+            <para>Allows execution of operating system (OS) commands.</para>
+            <programlisting><![CDATA[!]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--command</term>
+                    <listitem>
+                        <para>The command to execute; default: '*'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
         </section>
     </section>
     <section xml:id="command-index-pgp-commands">
@@ -3205,6 +3825,35 @@
             <para>This command does not accept any options.</para>
         </section>
     </section>
+    <section xml:id="command-index-repository-jpa-commands">
+        <title>Repository Jpa Commands</title>
+        <para>Repository Jpa Commands are contained in org.springframework.roo.addon.layers.repository.jpa.RepositoryJpaCommands.</para>
+        <section xml:id="command-index-repository-jpa">
+            <title>repository jpa</title>
+            <para>Adds @RooJpaRepository annotation to target type</para>
+            <programlisting><![CDATA[repository jpa --interface]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--interface</term>
+                    <listitem>
+                        <para>The java interface to apply this annotation to; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>Implementation class for the specified interface; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--entity</term>
+                    <listitem>
+                        <para>The domain entity this repository should expose; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+    </section>
     <section xml:id="command-index-security-commands">
         <title>Security Commands</title>
         <para>Security Commands are contained in org.springframework.roo.addon.security.SecurityCommands.</para>
@@ -3244,6 +3893,35 @@
             </variablelist>
         </section>
     </section>
+    <section xml:id="command-index-service-commands">
+        <title>Service Commands</title>
+        <para>Service Commands are contained in org.springframework.roo.addon.layers.service.ServiceCommands.</para>
+        <section xml:id="command-index-service">
+            <title>service</title>
+            <para>Adds @RooService annotation to target type</para>
+            <programlisting><![CDATA[service --interface]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--interface</term>
+                    <listitem>
+                        <para>The java interface to apply this annotation to; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>Implementation class for the specified interface; no default value</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--entity</term>
+                    <listitem>
+                        <para>The domain entity this service should expose; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+    </section>
     <section xml:id="command-index-simple-parser-component">
         <title>Simple Parser Component</title>
         <para>Simple Parser Component are contained in org.springframework.roo.shell.osgi.SimpleParserComponent.</para>
@@ -3278,26 +3956,26 @@
                 <varlistentry>
                     <term>--class</term>
                     <listitem>
-                        <para>The target type which is made searchable; default if option not present: '*'</para>
+                        <para>The type to be made searchable; default if option not present: '*'</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
         </section>
         <section xml:id="command-index-solr-all">
             <title>solr all</title>
-            <para>Make all elegible project types searchable</para>
+            <para>Make all eligible project types searchable</para>
             <programlisting><![CDATA[solr all]]></programlisting>
             <para>This command does not accept any options.</para>
         </section>
         <section xml:id="command-index-solr-setup">
             <title>solr setup</title>
-            <para>Install a support for Solr search integration</para>
+            <para>Install support for Solr search integration</para>
             <programlisting><![CDATA[solr setup]]></programlisting>
             <variablelist>
                 <varlistentry>
                     <term>--searchServerUrl</term>
                     <listitem>
-                        <para>The Url of the Solr search server; default: 'http://localhost:8983/solr'</para>
+                        <para>The URL of the Solr search server; default: 'http://localhost:8983/solr'</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -3351,6 +4029,35 @@
             </variablelist>
         </section>
     </section>
+    <section xml:id="command-index-web-finder-commands">
+        <title>Web Finder Commands</title>
+        <para>Web Finder Commands are contained in org.springframework.roo.addon.web.mvc.controller.finder.WebFinderCommands.</para>
+        <section xml:id="command-index-web-mvc-finder-add">
+            <title>web mvc finder add</title>
+            <para>Adds @RooWebFinder annotation to MVC controller type</para>
+            <programlisting><![CDATA[web mvc finder add --formBackingType]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--formBackingType</term>
+                    <listitem>
+                        <para>The finder-enabled type; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>The controller java type to apply this annotation to; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-finder-all">
+            <title>web mvc finder all</title>
+            <para>Adds  @RooWebFinder annotation to existing MVC controllers</para>
+            <programlisting><![CDATA[web mvc finder all]]></programlisting>
+            <para>This command does not accept any options.</para>
+        </section>
+    </section>
     <section xml:id="command-index-web-flow-commands">
         <title>Web Flow Commands</title>
         <para>Web Flow Commands are contained in org.springframework.roo.addon.web.flow.WebFlowCommands.</para>
@@ -3366,6 +4073,48 @@
                     </listitem>
                 </varlistentry>
             </variablelist>
+        </section>
+    </section>
+    <section xml:id="command-index-web-json-commands">
+        <title>Web Json Commands</title>
+        <para>Web Json Commands are contained in org.springframework.roo.addon.web.mvc.controller.json.WebJsonCommands.</para>
+        <section xml:id="command-index-web-mvc-json-add">
+            <title>web mvc json add</title>
+            <para>Adds @RooJson annotation to target type</para>
+            <programlisting><![CDATA[web mvc json add --jsonObject]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--jsonObject</term>
+                    <listitem>
+                        <para>The JSON-enabled object which backs this Spring MVC controller.; no default value (mandatory) </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>--class</term>
+                    <listitem>
+                        <para>The java type to apply this annotation to; default if option not present: '*'</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-json-all">
+            <title>web mvc json all</title>
+            <para>Adds or creates MVC controllers annotated with @RooWebJson annotation</para>
+            <programlisting><![CDATA[web mvc json all]]></programlisting>
+            <variablelist>
+                <varlistentry>
+                    <term>--package</term>
+                    <listitem>
+                        <para>The package in which new controllers will be placed; no default value</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="command-index-web-mvc-json-setup">
+            <title>web mvc json setup</title>
+            <para>Setup Spring MVC for Json support.</para>
+            <programlisting><![CDATA[web mvc json setup]]></programlisting>
+            <para>This command does not accept any options.</para>
         </section>
     </section>
 </appendix>

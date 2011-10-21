@@ -2,18 +2,18 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_org_rooina_coursemanager_model_Instructor" object="${instructor}" path="/instructors" z="3dhO/frPqD/kQEq5iuMNzUxq1UU=">
-        <field:display field="firstName" id="s_org_rooina_coursemanager_model_Instructor_firstName" object="${instructor}" z="sX5J0XmXrTTL36K+66/uNZGt+uE="/>
-        <field:display field="middleNameOrInitial" id="s_org_rooina_coursemanager_model_Instructor_middleNameOrInitial" object="${instructor}" z="DfbNf/LKMbswkEVc05P7HxlgdVA="/>
-        <field:display field="lastName" id="s_org_rooina_coursemanager_model_Instructor_lastName" object="${instructor}" z="xArPSKmvfeFKGBfGDC5bhqHyDzI="/>
-        <field:display field="addressLine1" id="s_org_rooina_coursemanager_model_Instructor_addressLine1" object="${instructor}" z="K8/MCn8pZbhWuVCwQbfQKRaYqQM="/>
-        <field:display field="addressLine2" id="s_org_rooina_coursemanager_model_Instructor_addressLine2" object="${instructor}" z="5Z8a6Jd7NiVa173/dcqh6ksbxmU="/>
-        <field:display field="city" id="s_org_rooina_coursemanager_model_Instructor_city" object="${instructor}" z="UVqBtRpfrB0JCf8dMlz0vjmGpqs="/>
-        <field:display field="stateCode" id="s_org_rooina_coursemanager_model_Instructor_stateCode" object="${instructor}" z="tDhP22vKXtMyc++PohswHcPKeDk="/>
-        <field:display field="postalCode" id="s_org_rooina_coursemanager_model_Instructor_postalCode" object="${instructor}" z="hXFJGdfCMKPJu4mbMKpMD3Ynz4o="/>
-        <field:display field="emailAddress" id="s_org_rooina_coursemanager_model_Instructor_emailAddress" object="${instructor}" z="o+Is3MfJIOqlTOJuNA9Rq2bZcxw="/>
-        <field:display field="taxNumber" id="s_org_rooina_coursemanager_model_Instructor_taxNumber" object="${instructor}" z="TSTsOSj4zS+toHth22kVtjNN+UY="/>
-    
-    <field:display field="active" id="s_org_rooina_coursemanager_model_Instructor_active" object="${instructor}" z="U+rwKxxwQSCYJFVaz1C7YNoLKdM="/>
+    <page:show id="ps_org_rooinaction_coursemanager_model_Instructor" object="${instructor}" path="/instructors" z="k2GLolnQ5lpVRItxR5P0q8o/MTE=">
+        <field:display field="firstName" id="s_org_rooinaction_coursemanager_model_Instructor_firstName" object="${instructor}" z="UOVtQNQT9cPNSmP4YcBjWlBTrfU="/>
+        <field:display field="middleNameOrInitial" id="s_org_rooinaction_coursemanager_model_Instructor_middleNameOrInitial" object="${instructor}" z="q2D15BnrQKu89S6l8ocxMsRDmqE="/>
+        <field:display field="lastName" id="s_org_rooinaction_coursemanager_model_Instructor_lastName" object="${instructor}" z="7yUkKmx6cylTQC0CkNLfdr0TfBA="/>
+        <field:display field="addressLine1" id="s_org_rooinaction_coursemanager_model_Instructor_addressLine1" object="${instructor}" z="44fKINaN0KeLE6v2btb9cr38oC0="/>
+        <field:display field="addressLine2" id="s_org_rooinaction_coursemanager_model_Instructor_addressLine2" object="${instructor}" z="DXbqsgZX9AxZbCpcBxevBWPRed8="/>
+        <field:display field="city" id="s_org_rooinaction_coursemanager_model_Instructor_city" object="${instructor}" z="ppH3nZCNwBNiJcSptFgiBd9ZbDc="/>
+        <field:display field="stateCode" id="s_org_rooinaction_coursemanager_model_Instructor_stateCode" object="${instructor}" z="UW6flkezxPdvCmfXhNLqSraRnQY="/>
+        <field:display field="postalCode" id="s_org_rooinaction_coursemanager_model_Instructor_postalCode" object="${instructor}" z="5E6cMBH/ADtN6AoePHVeZZ1mLN4="/>
+        <field:display field="emailAddress" id="s_org_rooinaction_coursemanager_model_Instructor_emailAddress" object="${instructor}" z="pgG6ZUK6SPG+pFRdwFzzZAG8MSg="/>
+        <field:display field="taxNumber" id="s_org_rooinaction_coursemanager_model_Instructor_taxNumber" object="${instructor}" z="9KtSSZ38z8fTItlTS0MhbMn1Q0I="/>
+        <field:display field="active" id="s_org_rooinaction_coursemanager_model_Instructor_active" object="${instructor}" z="+h5gIzgjtV4FkNGrL0vJAVkuujA="/>
+        <field:display field="id" id="s_org_rooinaction_coursemanager_model_Instructor_id" object="${instructor}" z="iBoI1oGyPNZajy74wltdvqvxWco="/>
     </page:show>
 </div>

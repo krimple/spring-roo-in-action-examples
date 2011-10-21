@@ -1,11 +1,11 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
+
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.serializable.RooSerializable;
 
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.serializable.RooSerializable;
 
 @Embeddable
 @RooSerializable

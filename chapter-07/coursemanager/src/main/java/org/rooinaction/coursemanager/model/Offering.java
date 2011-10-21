@@ -1,30 +1,22 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.TypedQuery;
-import javax.validation.constraints.AssertTrue;
-
-import org.rooina.coursemanager.web.CourseFullException;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
 
+import javax.persistence.*;
+import javax.validation.constraints.AssertTrue;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 @RooJavaBean
 @RooToString
 @RooSerializable
-@RooEntity
+@RooJpaActiveRecord
 public class Offering {
 
     @Temporal(TemporalType.TIMESTAMP)

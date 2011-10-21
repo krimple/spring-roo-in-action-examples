@@ -2,10 +2,10 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_org_rooina_coursemanager_model_Registration" modelAttribute="registration" path="/registrations" versionField="Version" z="ObwbYqR++7SrH8u/3eKWe8ot078=">
-        <field:select field="student" id="c_org_rooina_coursemanager_model_Registration_student" itemValue="id" items="${students}" path="/students" z="UNuxWp63ElUZ2pj0WeaVoMEZsLA="/>
-        <field:select field="offering" id="c_org_rooina_coursemanager_model_Registration_offering" itemValue="id" items="${offerings}" path="/offerings" z="TAda/VOFxz2BxQ3dxkW0QNVLSbQ="/>
-    <field:checkbox field="attended" id="c_org_rooina_coursemanager_model_Registration_attended" z="Nl8v0OiNqJ4A/WlVXhniOUImaes="/>
-        <field:checkbox field="paymentMade" id="c_org_rooina_coursemanager_model_Registration_paymentMade" z="b7QSvFTgnBxmzuJ9urQTuBJp6fo="/>
+    <form:update id="fu_org_rooinaction_coursemanager_model_Registration" modelAttribute="registration" path="/registrations" versionField="Version" z="nvwRM0Y0csV0FFrUG1soxsnpVK8=">
+        <field:select field="student" id="c_org_rooinaction_coursemanager_model_Registration_student" itemValue="id_" items="${students}" path="/students" z="+FbB6ZqTkj6lX4iFYSY1h+gDcJc="/>
+        <field:select field="offering" id="c_org_rooinaction_coursemanager_model_Registration_offering" itemValue="id" items="${offerings}" path="/offerings" z="9/MyCIuDTLbOnBq/nHPPDXufjFA="/>
+        <field:checkbox field="paymentMade" id="c_org_rooinaction_coursemanager_model_Registration_paymentMade" z="FQcb1Hm24yW1Vmt8tWi+dAkOs5Q="/>
+        <field:checkbox field="attended" id="c_org_rooinaction_coursemanager_model_Registration_attended" z="ZhMVZ0ZRp/CY/IGGniV0NmHGvnI="/>
     </form:update>
 </div>

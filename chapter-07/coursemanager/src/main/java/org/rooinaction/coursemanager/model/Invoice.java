@@ -1,15 +1,13 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
 import org.hibernate.validator.constraints.Email;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.roo.addon.dbre.RooDbManaged;
-import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -19,7 +17,7 @@ import java.util.Set;
 
 @RooJavaBean
 @RooToString
-@RooEntity(versionField = "", table = "invoice")
+@RooJpaActiveRecord(versionField = "", table = "invoice")
 public class Invoice {
     @NotNull
     @DecimalMin("0.0")

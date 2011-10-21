@@ -2,11 +2,11 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_org_rooina_coursemanager_model_Payment" items="${payments}" z="fypthyc1iovAVMIgTAhmmlWqyLs=">
-        <table:table data="${payments}" id="l_org_rooina_coursemanager_model_Payment" path="/payments" z="NxuAA4Q3ZEijfRle14DQkTUNeZo=">
-            <table:column id="c_org_rooina_coursemanager_model_Payment_amount" property="amount" z="d5GGZJH/RsE9fjD4eGyjO4JwenA="/>
-            <table:column date="true" dateTimePattern="${payment_paymentdate_date_format}" id="c_org_rooina_coursemanager_model_Payment_paymentDate" property="paymentDate" z="MaeGbpnUcRQYbjc05LQyGLt1zVQ="/>
-            <table:column id="c_org_rooina_coursemanager_model_Payment_invoice" property="invoice" z="UyD3h/cOfwC6x65Osd0qgqnWqR4="/>
+    <page:list id="pl_org_rooinaction_coursemanager_model_Payment" items="${payments}" z="upGe3EUI9OED/kjkcmEDPg+A93o=">
+        <table:table data="${payments}" id="l_org_rooinaction_coursemanager_model_Payment" path="/payments" z="P0i7EyjaQc/5ypF0S8Bb0VllpUc=">
+            <table:column id="c_org_rooinaction_coursemanager_model_Payment_amount" property="amount" z="+oHqTrPRgB4+Q8t793cbFpDQDns="/>
+            <table:column date="true" dateTimePattern="${payment_paymentdate_date_format}" id="c_org_rooinaction_coursemanager_model_Payment_paymentDate" property="paymentDate" z="5TPKfnaSnZT4NZC/gKzFxpPJboc="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Payment_invoice" property="invoice" z="v/TsiFoWekZJMcBLbHBs6eE8Eos="/>
         </table:table>
     </page:list>
 </div>

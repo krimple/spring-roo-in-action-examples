@@ -1,9 +1,9 @@
-package org.rooina.coursemanager.web;
+package org.rooinaction.coursemanager.web;
 
 import java.util.List;
 
-import org.rooina.coursemanager.model.Course;
-import org.rooina.coursemanager.model.Offering;
+import org.rooinaction.coursemanager.model.Course;
+import org.rooinaction.coursemanager.model.Offering;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
 

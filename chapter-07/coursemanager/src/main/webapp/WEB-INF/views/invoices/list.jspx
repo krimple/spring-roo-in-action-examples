@@ -2,12 +2,13 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_org_rooina_coursemanager_model_Invoice" items="${invoices}" z="pM5MsFRdV4uVh65QGonZtWQ1S9A=">
-        <table:table data="${invoices}" id="l_org_rooina_coursemanager_model_Invoice" path="/invoices" z="2+ytSXF0M9QZKiGSASzTT95yXXE=">
-            <table:column id="c_org_rooina_coursemanager_model_Invoice_amount" property="amount" z="mnNIG9wDOkMA+sFmZaOpr+Yw68I="/>
-            <table:column date="true" dateTimePattern="${invoice_duedate_date_format}" id="c_org_rooina_coursemanager_model_Invoice_dueDate" property="dueDate" z="DfnM+C+ZyAm4F3wLnM5jeinQnbo="/>
-            <table:column id="c_org_rooina_coursemanager_model_Invoice_studentName" property="studentName" z="5MBM77QEma08KSP3WPv6/sJxLtc="/>
-            <table:column id="c_org_rooina_coursemanager_model_Invoice_emailAddress" property="emailAddress" z="W5f00dWOKcBD/bQAP5LWJpMqo0U="/>
+    <page:list id="pl_org_rooinaction_coursemanager_model_Invoice" items="${invoices}" z="xgf0RwADiqLoxOjnzFJBJJEvQHU=">
+        <table:table data="${invoices}" id="l_org_rooinaction_coursemanager_model_Invoice" path="/invoices" z="sqF//xj7BQ5fucfsRp59ddKc/vo=">
+            <table:column id="c_org_rooinaction_coursemanager_model_Invoice_amount" property="amount" z="ZAkv8cj8Fhh18l04od6YGzVB0B0="/>
+            <table:column date="true" dateTimePattern="${invoice_duedate_date_format}" id="c_org_rooinaction_coursemanager_model_Invoice_dueDate" property="dueDate" z="XtQvWD/B2Ek+mVP/KzBbzDcV0io="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Invoice_studentName" property="studentName" z="/OEhlMdl1eguCZ67ILOauCzPzvc="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Invoice_emailAddress" property="emailAddress" z="yN+oiKbGovrxxhr3Spyen/TOvss="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Invoice_payments" property="payments" z="Lv52IjtJhxCVBW1jTnCfawQCz+c="/>
         </table:table>
     </page:list>
 </div>

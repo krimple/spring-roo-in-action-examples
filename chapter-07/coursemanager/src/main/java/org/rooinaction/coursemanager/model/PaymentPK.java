@@ -1,6 +1,5 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
-import org.springframework.roo.addon.displaystring.RooDisplayString;
 import org.springframework.roo.addon.entity.RooIdentifier;
 
 import java.io.Serializable;

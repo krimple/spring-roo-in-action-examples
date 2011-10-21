@@ -1,13 +1,11 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.roo.addon.dbre.RooDbManaged;
 import org.springframework.roo.addon.displaystring.RooDisplayString;
-import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 
-import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,7 +16,7 @@ import java.util.Date;
 
 @RooJavaBean
 @RooToString
-@RooEntity(identifierType = PaymentPK.class, versionField = "", table = "payment")
+@RooJpaActiveRecord(identifierType = PaymentPK.class, versionField = "", table = "payment")
 @RooDisplayString
 public class Payment {
 

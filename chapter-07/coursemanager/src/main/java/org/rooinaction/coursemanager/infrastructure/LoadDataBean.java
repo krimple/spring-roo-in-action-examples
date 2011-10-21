@@ -1,6 +1,6 @@
-package org.rooina.coursemanager.infrastructure;
+package org.rooinaction.coursemanager.infrastructure;
 
-import org.rooina.coursemanager.model.TrainingProgram;
+import org.rooinaction.coursemanager.model.TrainingProgram;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.DependsOn;

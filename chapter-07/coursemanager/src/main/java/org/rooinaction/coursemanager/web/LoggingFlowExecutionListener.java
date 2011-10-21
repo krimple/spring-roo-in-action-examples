@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.web;
+package org.rooinaction.coursemanager.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

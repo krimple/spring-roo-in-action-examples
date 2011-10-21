@@ -1,6 +1,6 @@
-package org.rooina.coursemanager.web;
+package org.rooinaction.coursemanager.web;
 
-import org.rooina.coursemanager.model.Student;
+import org.rooinaction.coursemanager.model.Student;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.serializable.RooSerializable;
 

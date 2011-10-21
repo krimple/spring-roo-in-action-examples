@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.web;
+package org.rooinaction.coursemanager.web;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.serializable.RooSerializable;

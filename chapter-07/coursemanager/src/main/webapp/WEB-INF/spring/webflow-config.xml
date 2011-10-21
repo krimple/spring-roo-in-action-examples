@@ -23,7 +23,7 @@
 	<!-- Dispatches requests mapped to org.springframework.web.servlet.mvc.Controller implementations -->
 	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
 	
-	<bean class="org.rooina.coursemanager.web.LoggingFlowExecutionListener" id="loggingListener" />
+	<bean class="org.rooinaction.coursemanager.web.LoggingFlowExecutionListener" id="loggingListener" />
 	
 	<!-- Executes flows: the entry point into the Spring Web Flow system -->
 	<webflow:flow-executor id="flowExecutor">

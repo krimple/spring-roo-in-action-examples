@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 	<persistence-context />
-	<var class="org.rooina.coursemanager.model.Course" name="course" />
+	<var class="org.rooinaction.coursemanager.model.Course" name="course" />
     <!-- A sample view state -->
     <view-state id="view-state-1" view="sampleflow/view-state-1">
         <on-entry>

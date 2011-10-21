@@ -1,13 +1,13 @@
-package org.rooina.coursemanager.web;
+package org.rooinaction.coursemanager.web;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.rooina.coursemanager.model.Course;
-import org.rooina.coursemanager.model.Offering;
-import org.rooina.coursemanager.model.Registration;
-import org.rooina.coursemanager.model.Student;
+import org.rooinaction.coursemanager.model.Course;
+import org.rooinaction.coursemanager.model.Offering;
+import org.rooinaction.coursemanager.model.Registration;
+import org.rooinaction.coursemanager.model.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

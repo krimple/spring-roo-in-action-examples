@@ -1,7 +1,9 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import org.springframework.roo.addon.entity.RooJpaActiveRecord;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.serializable.RooSerializable;
+import org.springframework.roo.addon.tostring.RooToString;
 
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
@@ -9,15 +11,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.springframework.roo.addon.entity.RooEntity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.serializable.RooSerializable;
-import org.springframework.roo.addon.tostring.RooToString;
+import java.util.HashSet;
+import java.util.Set;
 
 @RooJavaBean
 @RooToString
-@RooEntity
+@RooJpaActiveRecord
 @RooSerializable
 public class Tag {
 

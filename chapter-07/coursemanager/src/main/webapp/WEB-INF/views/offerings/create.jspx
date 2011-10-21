@@ -2,12 +2,11 @@
 <div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:create id="fc_org_rooina_coursemanager_model_Offering" modelAttribute="offering" path="/offerings" render="${empty dependencies}" z="5GqqCu76nCq3IxZ+RWnTmYLm/qE=">
-        <field:datetime dateTimePattern="${offering_rundate_date_format}" field="runDate" id="c_org_rooina_coursemanager_model_Offering_runDate" z="/PzkyGigafZMPcvuI1CfNcs9MCI="/>
-        <field:select field="course" id="c_org_rooina_coursemanager_model_Offering_course" itemValue="id" items="${courses}" path="/courses" z="5v2OZp9TJt9ZkMyltyNrNMI0zaU="/>
-        <field:select field="instructor" id="c_org_rooina_coursemanager_model_Offering_instructor" itemValue="id" items="${instructors}" path="/instructors" z="1fj/huzjah864hmxOiRdeT4QHPU="/>
-    
-    <field:simple field="registrations" id="c_org_rooina_coursemanager_model_Offering_registrations" messageCode="entity_reference_not_managed" messageCodeAttribute="Registration" z="2iQk8H1ReutNKNx5lS56qV/YMuw="/>
+    <form:create id="fc_org_rooinaction_coursemanager_model_Offering" modelAttribute="offering" path="/offerings" render="${empty dependencies}" z="svw9cE0hXsr1GAc2UCGoY7fo/yY=">
+        <field:datetime dateTimePattern="${offering_rundate_date_format}" field="runDate" id="c_org_rooinaction_coursemanager_model_Offering_runDate" z="/UQhwjMSXf/9+unEKQGm+h00Bzc="/>
+        <field:input field="course" id="c_org_rooinaction_coursemanager_model_Offering_course" z="+XFSkwiOFTndUQEX1/T9IfE7GwE="/>
+        <field:input field="registrations" id="c_org_rooinaction_coursemanager_model_Offering_registrations" z="jUcoRjwvoVD9mVsrB8lpHIowIFA="/>
+        <field:input field="instructor" id="c_org_rooinaction_coursemanager_model_Offering_instructor" z="us9PepTrr/KRkpuSFidvSgvnoh4="/>
     </form:create>
-    <form:dependency dependencies="${dependencies}" id="d_org_rooina_coursemanager_model_Offering" render="${not empty dependencies}" z="61SiQicUkECiKHGwSkrBYP7tw4o="/>
+    <form:dependency dependencies="${dependencies}" id="d_org_rooinaction_coursemanager_model_Offering" render="${not empty dependencies}" z="/0JiWJaCJ5sznIMvFNpA7WLLyLc="/>
 </div>

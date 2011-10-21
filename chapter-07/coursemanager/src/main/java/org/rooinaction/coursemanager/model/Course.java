@@ -1,36 +1,20 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
-import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
 
+import javax.persistence.*;
+import javax.validation.constraints.*;
+import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
+
 @RooJavaBean
 @RooToString
 @RooSerializable
-@RooEntity(finders = { "findCoursesByNameLike" })
+@RooJpaActiveRecord(finders = { "findCoursesByNameLike" })
 public class Course {
 
     @NotNull
