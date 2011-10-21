@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_rooina_coursemanager_model_PeriodicCourse" object="${periodiccourse}" path="/periodiccourses" z="aTMgyeOsuBop++fJvDhvpICJqhQ=">
+        <field:display field="course" id="s_org_rooina_coursemanager_model_PeriodicCourse_course" object="${periodiccourse}" z="BqrQBv8LYU7LHBGILeW7MHzm7Ic="/>
+        <field:display field="location" id="s_org_rooina_coursemanager_model_PeriodicCourse_location" object="${periodiccourse}" z="nZrXRhVrjnDVCJRbQTPLjaPLt8Q="/>
+        <field:display date="true" dateTimePattern="${periodicCourse_startdate_date_format}" field="startDate" id="s_org_rooina_coursemanager_model_PeriodicCourse_startDate" object="${periodiccourse}" z="ItdRfvayNawQ3YKeK4lqYg+J6wU="/>
+        <field:display field="frequency" id="s_org_rooina_coursemanager_model_PeriodicCourse_frequency" object="${periodiccourse}" z="ug5DbyGM3kD6KOgFKp3Ez6Z0jR0="/>
+        <field:display date="true" dateTimePattern="${periodicCourse_enddate_date_format}" field="endDate" id="s_org_rooina_coursemanager_model_PeriodicCourse_endDate" object="${periodiccourse}" z="WYJbb/+ZDT45PdxR7Tih+fL2ZAI="/>
+    
+    </page:show>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_rooina_coursemanager_model_SingleEvent" object="${singleevent}" path="/singleevents" z="v+EJFM4aVMEIfE6ZxzV8NDjaPns=">
+        <field:display field="course" id="s_org_rooina_coursemanager_model_SingleEvent_course" object="${singleevent}" z="0EtdnBMpBeIK1p20I25tEQ4bkSw="/>
+        <field:display field="location" id="s_org_rooina_coursemanager_model_SingleEvent_location" object="${singleevent}" z="ytUUedxGSkctSqPrt6E5A8VLhPI="/>
+        <field:display date="true" dateTimePattern="${singleEvent_rundate_date_format}" field="runDate" id="s_org_rooina_coursemanager_model_SingleEvent_runDate" object="${singleevent}" z="1CFcBqQsBCVDPnLaDlzkqLmw5Bs="/>
+    
+    </page:show>
+</div>

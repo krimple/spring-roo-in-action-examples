@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_rooina_coursemanager_model_SingleEvent" items="${singleevents}" z="7CWfvb4aXwH554GT5xE9954+ftc=">
+        <table:table data="${singleevents}" id="l_org_rooina_coursemanager_model_SingleEvent" path="/singleevents" z="9IAsiXO7KG2A7AL8oJjVX2pEtMo=">
+            <table:column id="c_org_rooina_coursemanager_model_SingleEvent_course" property="course" z="RQkypBup4Va2858Pn6pbP6X9440="/>
+            <table:column id="c_org_rooina_coursemanager_model_SingleEvent_location" property="location" z="L4xh17kMMgq64Atobf0wExcLMbg="/>
+            <table:column date="true" dateTimePattern="${singleEvent_rundate_date_format}" id="c_org_rooina_coursemanager_model_SingleEvent_runDate" property="runDate" z="no90mr6iIm6jVbsXRgvSa9ibaoI="/>
+        
+        </table:table>
+    </page:list>
+</div>
