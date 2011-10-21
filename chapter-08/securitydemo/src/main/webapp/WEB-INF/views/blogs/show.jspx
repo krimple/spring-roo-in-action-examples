@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_rooina_samples_security_model_Blog" object="${blog}" path="/blogs" z="LPjGj7eXH3aMnqnka4idA2CySgo=">
+        <field:display field="blogName" id="s_com_rooina_samples_security_model_Blog_blogName" object="${blog}" z="G64YWzHjVfyFwZMefLWh9QPXv/g="/>
+        <field:display field="posts" id="s_com_rooina_samples_security_model_Blog_posts" object="${blog}" z="ZH5D2lJJVgQx2CFV98G/nSiPUJM="/>
+    </page:show>
+</div>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.roo.wrapping:org.springframework.roo.wrapping.bcprov-jdk15:1.45.0.0001">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/roo/wrapping/org.springframework.roo.wrapping.bcprov-jdk15/1.45.0.0001/org.springframework.roo.wrapping.bcprov-jdk15-1.45.0.0001.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/roo/wrapping/org.springframework.roo.wrapping.bcprov-jdk15/1.45.0.0001/org.springframework.roo.wrapping.bcprov-jdk15-1.45.0.0001-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/roo/wrapping/org.springframework.roo.wrapping.bcprov-jdk15/1.45.0.0001/org.springframework.roo.wrapping.bcprov-jdk15-1.45.0.0001-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

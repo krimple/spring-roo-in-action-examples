@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_rooina_addons_standalone_jmxexample_model_Blog" items="${blogs}" z="Y9u7EClVUjiD8MWSEA14ByHg+ZY=">
+        <table:table data="${blogs}" id="l_org_rooina_addons_standalone_jmxexample_model_Blog" path="/blogs" z="CeB1TFGUSMicajQK3/uVafe7RKY=">
+            <table:column id="c_org_rooina_addons_standalone_jmxexample_model_Blog_title" property="title" z="FW8v0/UId+9lDEw3XUR7ScRVDmk="/>
+            <table:column id="c_org_rooina_addons_standalone_jmxexample_model_Blog_entry" property="entry" z="lq8Azv8biTQjWDULclBE6srwGBc="/>
+        </table:table>
+    </page:list>
+</div>

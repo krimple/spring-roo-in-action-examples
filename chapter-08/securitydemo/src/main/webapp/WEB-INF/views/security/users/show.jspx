@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0"><jsp:output
+	omit-xml-declaration="yes" /> <page:show
+	id="ps_com_rooina_samples_security_model_security_Principal"
+	object="${principal}" path="/security/users"
+	z="gfs2jdrLcFmIDxlLKZpMOMvzTUA=">
+	<field:display field="username"
+		id="s_com_rooina_samples_security_model_security_Principal_username"
+		object="${principal}" z="xTEsfyRbYE76v7cXKZ9W+TCF13E=" />
+	<field:display field="enabled"
+		id="s_com_rooina_samples_security_model_security_Principal_enabled"
+		object="${principal}" z="U/XQgABdqEOJ5qrRj+gQQNcnfI8=" />
+	<field:display field="password" render="false"
+		id="s_com_rooina_samples_security_model_security_Principal_password"
+		object="${principal}" z="user-managed" />
+</page:show></div>

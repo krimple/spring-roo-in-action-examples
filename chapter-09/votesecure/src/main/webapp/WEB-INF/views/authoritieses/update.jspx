@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_springsource_votesecure_domain_security_Authorities" modelAttribute="authorities" path="/authoritieses" z="4BnKQxlKWYg03+lCK/9yiirQHns=">
+        <field:input field="authority" id="c_com_springsource_votesecure_domain_security_Authorities_authority" required="true" validationRegex="^ROLE_[A-Z]*" z="user-managed"/>
+    </form:update>
+</div>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_springsource_votesecure_domain_security_Authorities" items="${authoritieses}" z="hNbgCKyKNrfqWywkT/XlVwJH5l8=">
+        <table:table data="${authoritieses}" id="l_com_springsource_votesecure_domain_security_Authorities" path="/authoritieses" z="zQ8TcwgZ3zsV5z+VRvIOJtdH1nQ=">
+            <table:column id="c_com_springsource_votesecure_domain_security_Authorities_authority" property="authority" z="3HsErZshjnw5pqsCASUVBIm56Nc="/>
+        </table:table>
+    </page:list>
+</div>

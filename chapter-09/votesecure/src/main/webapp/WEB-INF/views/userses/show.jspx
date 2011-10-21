@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_springsource_votesecure_domain_security_Users" object="${users}" path="/userses" z="jPk2HUsIUMf4asUDz+PQza/MJtQ=">
+        <field:display field="passwordAgain" id="s_com_springsource_votesecure_domain_security_Users_passwordAgain" object="${users}" z="UnI9QPRgiCTQG7wXVp8aRTVFlyA="/>
+        <field:display field="username" id="s_com_springsource_votesecure_domain_security_Users_username" object="${users}" z="r8/TK30cl09/CTvZqNs+dmSuKE0="/>
+        <field:display field="password" id="s_com_springsource_votesecure_domain_security_Users_password" object="${users}" z="3swhroeB7webQoFpwi6GyOoV3aU="/>
+        <field:display field="salt" id="s_com_springsource_votesecure_domain_security_Users_salt" object="${users}" z="TN24v/4UCqDrSU92e90if+4+DLU="/>
+        <field:display field="enabled" id="s_com_springsource_votesecure_domain_security_Users_enabled" object="${users}" z="CmBlypjdae+S8hwn0rQlcY25NVU="/>
+    </page:show>
+</div>

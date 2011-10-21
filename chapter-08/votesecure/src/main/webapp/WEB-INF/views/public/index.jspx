@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+	<jsp:output omit-xml-declaration="yes"/>	
+   	<spring:message code="label_public_index" var="title"/>
+   	<page:page id="_public_index" title="${title}">
+   		<spring:message code="application_name" var="app_name"/>
+  		<h3>
+            <spring:message arguments="${app_name}" code="welcome_titlepane"/>
+        </h3>
+  	</page:page>
+</div>

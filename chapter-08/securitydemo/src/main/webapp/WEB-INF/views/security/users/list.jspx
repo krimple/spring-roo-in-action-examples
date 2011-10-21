@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+<jsp:output omit-xml-declaration="yes" /> <page:list
+	id="pl_com_rooina_samples_security_model_security_Principal"
+	items="${principals}" z="lnVnCSXHlpUq5PZ29DefM5mZBMk=">
+	<table:table data="${principals}"
+		id="l_com_rooina_samples_security_model_security_Principal"
+		path="/security/users" z="8UiucYXDy8SjPCZJxTOVf0WNSyo=">
+		<table:column
+			id="c_com_rooina_samples_security_model_security_Principal_username"
+			property="username" z="0EcBwFeu1KHEiWJNnEXHtwKUabA=" />
+		<table:column
+			id="c_com_rooina_samples_security_model_security_Principal_enabled"
+			property="enabled" z="fgcMV+iysVrxSSk6/XSnQMGyao4=" />
+		<table:column render="false"
+			id="c_com_rooina_samples_security_model_security_Principal_password"
+			property="password" z="user-managed" />
+	</table:table>
+</page:list></div>

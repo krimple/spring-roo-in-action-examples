@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_springsource_votesecure_domain_security_UserAuthority" modelAttribute="userAuthority" path="/userauthoritys" render="${empty dependencies}" z="FQowMunu7Uex3l9aH7Wp41o7BZs=">
+        <field:select field="users" id="c_com_springsource_votesecure_domain_security_UserAuthority_users" itemValue="id" items="${userses}" path="/userses" z="c4H5vk5q4pwp6OEhFE1UauLmeqQ="/>
+        <field:select field="authorities" id="c_com_springsource_votesecure_domain_security_UserAuthority_authorities" itemValue="id" items="${authoritieses}" path="/authoritieses" z="T9N2PT5I1AWcsMp3aK+mphE6/yE="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_springsource_votesecure_domain_security_UserAuthority" render="${not empty dependencies}" z="pxGg1ZWXDvhHEoEsZR7Se+V/lvY="/>
+</div>

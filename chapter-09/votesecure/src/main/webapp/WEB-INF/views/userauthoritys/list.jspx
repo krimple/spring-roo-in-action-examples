@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_springsource_votesecure_domain_security_UserAuthority" items="${userauthoritys}" z="y71PLMaTBNutgUBzs8FKYPf2VJc=">
+        <table:table data="${userauthoritys}" id="l_com_springsource_votesecure_domain_security_UserAuthority" path="/userauthoritys" z="rK/dasXPYnvmepljYvQdzvf2g9I=">
+            <table:column id="c_com_springsource_votesecure_domain_security_UserAuthority_users" property="users" z="8VU9B3zPmR+7wwqzkY9CtfsvZyY="/>
+            <table:column id="c_com_springsource_votesecure_domain_security_UserAuthority_authorities" property="authorities" z="SfBGSX6QNCeONXiW1bMp4gQvc40="/>
+        </table:table>
+    </page:list>
+</div>

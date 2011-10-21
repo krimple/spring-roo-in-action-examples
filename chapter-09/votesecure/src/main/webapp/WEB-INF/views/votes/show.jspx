@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_springsource_votesecure_domain_Vote" object="${vote}" path="/votes" z="Xz5D9vQTt64QdcIwSHALsNmb8ww=">
+        <field:display field="choice" id="s_com_springsource_votesecure_domain_Vote_choice" object="${vote}" z="uhVa8Kl0nzjytPGvHA+LneNKjow="/>
+        <field:display field="ip" id="s_com_springsource_votesecure_domain_Vote_ip" object="${vote}" z="mEd2nwcqP1AEnCp7iyVtbk3IyWQ="/>
+        <field:display date="true" dateTimePattern="${vote_registered_date_format}" field="registered" id="s_com_springsource_votesecure_domain_Vote_registered" object="${vote}" z="e4oIbxYxszxuHDskQoqHO07oh+Q="/>
+    </page:show>
+</div>

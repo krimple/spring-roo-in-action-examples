@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_springsource_votesecure_domain_Choice" modelAttribute="choice" path="/choices" z="ssmJct7dqRsOhXw7nqWbgpVzho8=">
+        <field:input field="namingChoice" id="c_com_springsource_votesecure_domain_Choice_namingChoice" max="30" min="1" required="true" z="Dixtuq+IY5G6E25n3cy+wYsPf6Q="/>
+        <field:textarea field="description" id="c_com_springsource_votesecure_domain_Choice_description" z="lihzs0wVQTzTkDiaRB2qB16HMCg="/>
+    </form:update>
+</div>
