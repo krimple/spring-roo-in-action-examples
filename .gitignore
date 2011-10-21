@@ -2,6 +2,7 @@ target
 *.class
 *.ipr
 *.iws
+*.iml
 .classpath
 .project
 .eclipse
