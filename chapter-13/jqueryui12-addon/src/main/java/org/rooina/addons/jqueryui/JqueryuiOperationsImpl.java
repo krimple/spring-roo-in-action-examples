@@ -36,15 +36,16 @@ public class JqueryuiOperationsImpl extends AbstractOperations implements Jquery
 
 	 /** {@inheritDoc} */
 	public boolean isInstalljQueryCommandAvailable() {
-		String id = projectOperations.getProjectMetadata().getPathResolver().getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
+		String id = projectOperations.getPathResolver().getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
         boolean needsInstall =  !fileManager.exists(id);
         return needsInstall;
 	}
 
     /** {@inheritDoc} */
     public boolean isInstalljQueryUICommandAvailable() {
-        String jQueryFileLocation = projectOperations.getProjectMetadata().getPathResolver().getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
-        String jQueryUIFileLocation = projectOperations.getProjectMetadata().getPathResolver().getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-ui-1.8.14.custom.min.js");
+        PathResolver resolver = projectOperations.getPathResolver();
+        String jQueryFileLocation = resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
+        String jQueryUIFileLocation = resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-ui-1.8.14.custom.min.js");
         if (projectOperations.isProjectAvailable()) {
             return fileManager.exists(jQueryFileLocation) && !fileManager.exists(jQueryUIFileLocation);
         } else {
