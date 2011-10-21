@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rooina_samples_security_model_security_Authority" items="${authoritys}" z="E0UZ5ozsbI6IGRB7Qe3y9U2Mt4A=">
+        <table:table data="${authoritys}" id="l_com_rooina_samples_security_model_security_Authority" path="/security/roles" z="C1vnXFgPQmnexQ8+NJk6ufNjL6A=">
+            <table:column id="c_com_rooina_samples_security_model_security_Authority_authority" property="authority" z="m4ivHFZn8IphH8CQivAbxI6BBiw="/>
+        </table:table>
+    </page:list>
+</div>

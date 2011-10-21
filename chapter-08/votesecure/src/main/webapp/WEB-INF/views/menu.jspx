@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0"
+	xmlns:security="http://www.springframework.org/security/tags">
+<jsp:output omit-xml-declaration="yes" /> <menu:menu id="_menu"
+	z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+	<menu:category id="c_choice" z="PLrBP+Ue9rzKSMjSbNJbbirwAuI=">
+		<menu:item id="i_choice_new" messageCode="global_menu_new"
+			url="/choices?form" z="+c+Bhd4XwhaXE0ur5R66971rLi0=" />
+		<menu:item id="i_choice_list" messageCode="global_menu_list"
+			url="/choices?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}"
+			z="+DVqBdBUldTomvBSnBIJlssOaLk=" />
+	</menu:category>
+	<menu:category id="c_vote" z="+l+uTi5AIPpdgfc7whLR5luw7eU=">
+		<menu:item id="i_vote_new" messageCode="global_menu_new"
+			url="/votes?form" z="sZsqwgsqHnXADErSf0DejwLvVYM=" />
+		<menu:item id="i_vote_list" messageCode="global_menu_list"
+			url="/votes?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}"
+			z="7rRgQ8F4Bbos9Cz0GvwqOsEmgQE=" />
+	</menu:category>
+	<menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+		<menu:item id="i_controller__publicindex_id"
+			messageCode="global_menu_new" url="/public/index"
+			z="GtSt7+lxRIRjD1qVzKu3IWyn2c4=" />
+	</menu:category>
+	<security:authorize ifAnyGranted="ROLE_ADMIN">
+		<menu:category id="c_users" z="Ysam8XVhG5uotPoUGGxkia1RE/s=">
+			<menu:item id="i_users_new" messageCode="global_menu_new"
+				url="/userses?form" z="utrdLkYms6xk5f4IDxc9zrg5FWs=" />
+			<menu:item id="i_users_list" messageCode="global_menu_list"
+				url="/userses?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}"
+				z="VTI+AC9EVOo0oNllWLaXBGLLkog=" />
+		</menu:category>
+		<menu:category id="c_authorities" z="GIjKsVX7q9V5I+B/i5YP+XPvlK0=">
+			<menu:item id="i_authorities_new" messageCode="global_menu_new"
+				url="/authoritieses?form" z="2mmPz62GZozb3OilbywIxJnKcBc=" />
+			<menu:item id="i_authorities_list" messageCode="global_menu_list"
+				url="/authoritieses?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}"
+				z="V8a75m6rmsfztnPJe9v2Z6Ac/m8=" />
+		</menu:category>
+		<menu:category id="c_userauthority" z="7ce/3wXFWX0FKyPbbs8TnfdX784=">
+			<menu:item id="i_userauthority_new" messageCode="global_menu_new"
+				url="/userauthoritys?form" z="hZf/PvFb/1bQw1pAak9twIBV5g8=" />
+			<menu:item id="i_userauthority_list" messageCode="global_menu_list"
+				url="/userauthoritys?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}"
+				z="AXQliVRtlHzJ/msS8LGmO048SeE=" />
+		</menu:category>
+	</security:authorize>
+</menu:menu></div>

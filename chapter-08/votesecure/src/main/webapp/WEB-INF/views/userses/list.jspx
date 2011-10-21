@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_springsource_votesecure_domain_security_Users" items="${userses}" z="ugag8j14311Vi2Jyb1inumzgwKk=">
+        <table:table data="${userses}" id="l_com_springsource_votesecure_domain_security_Users" path="/userses" z="8TpFF22/ZDk5fgjYf4y62kd4MRI=">
+            <table:column id="c_com_springsource_votesecure_domain_security_Users_username" property="username" z="UOfn0AlwLx0fIU+2BVoJ571l4fI="/>
+            <table:column id="c_com_springsource_votesecure_domain_security_Users_enabled" property="enabled" z="f5qwIfR7Q3YjmSgUV05S9PTri2s="/>
+        <table:column id="c_com_springsource_votesecure_domain_security_Users_passwordAgain" property="passwordAgain" z="Gg6SJfZHjwgKUyeujgsfNX5NssE="/>
+            <table:column id="c_com_springsource_votesecure_domain_security_Users_password" property="password" z="tZym2j32buz/VRXWbuJqvV0U7i0="/>
+            <table:column id="c_com_springsource_votesecure_domain_security_Users_salt" property="salt" z="En1yED5pNAJusHbvjEMPGh2hIlo="/>
+        </table:table>
+    </page:list>
+</div>

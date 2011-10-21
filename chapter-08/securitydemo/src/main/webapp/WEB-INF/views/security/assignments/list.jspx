@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rooina_samples_security_model_security_AuthorityPrincipalAssignment" items="${authorityprincipalassignments}" z="gfT/IpibTSEFf3xQeMvOzYA2D9Y=">
+        <table:table data="${authorityprincipalassignments}" id="l_com_rooina_samples_security_model_security_AuthorityPrincipalAssignment" path="/security/assignments" z="eevAQrWRK0z4LlhOq+Njo7uQwjo=">
+            <table:column id="c_com_rooina_samples_security_model_security_AuthorityPrincipalAssignment_principal" property="principal" z="H1Fz3rvpr9Z9mwaocIperFMw5XI="/>
+            <table:column id="c_com_rooina_samples_security_model_security_AuthorityPrincipalAssignment_authority" property="authority" z="Yz5I3sZRFeNuBqzgaXHjhCwdG58="/>
+        </table:table>
+    </page:list>
+</div>

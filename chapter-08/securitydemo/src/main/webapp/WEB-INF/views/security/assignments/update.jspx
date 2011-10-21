@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rooina_samples_security_model_security_AuthorityPrincipalAssignment" modelAttribute="authorityPrincipalAssignment" path="/security/assignments" z="2J/0D40VpWVYGeYVwDtkfCt4RjM=">
+        <field:select field="principal" id="c_com_rooina_samples_security_model_security_AuthorityPrincipalAssignment_principal" itemValue="id" items="${principals}" path="/principals" z="+JUROH/dt/4M4No4j/DprC/9WtA="/>
+        <field:select field="authority" id="c_com_rooina_samples_security_model_security_AuthorityPrincipalAssignment_authority" itemValue="id" items="${authoritys}" path="/authoritys" z="WEeUi220o2FPCj6MJTG+3lZN7eo="/>
+    </form:update>
+</div>

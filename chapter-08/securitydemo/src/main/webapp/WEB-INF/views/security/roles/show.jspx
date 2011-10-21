@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_rooina_samples_security_model_security_Authority" object="${authority}" path="/security/roles" z="+VAgSZ5/261P9jwe0PvNVyiyfSU=">
+        <field:display field="authority" id="s_com_rooina_samples_security_model_security_Authority_authority" object="${authority}" z="o9fFNuMkpIfPADikKbYeLYXzI1M="/>
+    </page:show>
+</div>

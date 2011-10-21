@@ -1,0 +1,40 @@
+project --topLevelPackage com.springsource.votesecure
+
+persistence setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT
+
+entity --class ~.domain.Choice --testAutomatically
+field string namingChoice --notNull --sizeMin 1 --sizeMax 30
+field string description --sizeMax 80
+controller scaffold ~.web.ChoiceController
+
+entity --class Vote --testAutomatically
+field reference choice --type Choice
+field string ip --notNull /* --sizeMin 7 --sizeMax 15 //disabled until ROO-733 is fixed*/
+field date registered --type java.util.Date --notNull --past
+controller scaffold ~.web.VoteController
+
+controller class ~.web.PublicVoteController --preferredMapping /public
+
+entity --class ~.domain.security.Users --table security_users  /* --testAutomatically //disabled until ROO-733 is fixed*/
+field string  --fieldName username --notNull --sizeMax 50 --sizeMin 3 --class  ~.domain.security.Users
+field string  --fieldName password --notNull --sizeMax 50 --sizeMin 3 --class  ~.domain.security.Users
+field string  --fieldName passwordAgain --transient --notNull --sizeMax 50 --sizeMin 3 --class  ~.domain.security.Users
+field string  --fieldName salt --notNull --sizeMax 25 --class  ~.domain.security.Users
+field boolean --fieldName enabled --class  ~.domain.security.Users
+controller scaffold --class ~.web.security.UsersController --entity ~.domain.security.Users
+
+entity --class ~.domain.security.Authorities --table security_roles /* --testAutomatically //disabled until ROO-733 is fixed*/
+field string authority --notNull --sizeMax 50 --sizeMin 8 --regexp ^ROLE_[A-Z]* --class ~.domain.security.Authorities
+controller scaffold --class ~.web.security.AuthoritiesController --entity ~.domain.security.Authorities
+
+entity --class ~.domain.security.UserAuthority --table security_role_user  /* --testAutomatically //disabled until ROO-733 is fixed*/
+field reference --fieldName users --type ~.domain.security.Users --class ~.domain.security.UserAuthority
+field reference --fieldName authorities --type ~.domain.security.Authorities --class ~.domain.security.UserAuthority
+controller scaffold --class ~.web.security.UserAuthorityController --entity ~.domain.security.UserAuthority
+
+
+security setup
+
+finder list --class ~.domain.Vote --depth 2 --filter reg,betw,IpEq
+
+logging setup --level DEBUG

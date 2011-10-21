@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rooinaction_cmsapp_domain_CourseRegistration" idField="_id" modelAttribute="courseRegistration" path="/courseregistrations" z="o3pqUGa+i7L/f1iehyo8P75zl3I=">
+        <field:input field="id" id="c_com_rooinaction_cmsapp_domain_CourseRegistration_id" validationMessageCode="field_invalid_integer" z="9jlRbJTZCRSfUhjsEUUIcEqZ520="/>
+        <field:input field="name" id="c_com_rooinaction_cmsapp_domain_CourseRegistration_name" min="2" required="true" z="Un9lsaA1zGlfWSv4VKSrNtdsHUs="/>
+        <field:input field="studentId" id="c_com_rooinaction_cmsapp_domain_CourseRegistration_studentId" validationMessageCode="field_invalid_integer" z="5DtQ0F3rO+m2z8Als87i3QJFyoY="/>
+        <field:input field="courseId" id="c_com_rooinaction_cmsapp_domain_CourseRegistration_courseId" validationMessageCode="field_invalid_integer" z="vHiEJQkqNqfuwfvJ+la61zbgHIk="/>
+    </form:update>
+</div>

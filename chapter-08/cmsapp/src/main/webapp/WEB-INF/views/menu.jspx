@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8"/>
+	<jsp:output omit-xml-declaration="yes"/>
+
+<menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_coursedetails" z="P9v3XahRiqjQu4HuZTyxNc2URjU=">
+            <menu:item id="i_coursedetails_new" messageCode="global_menu_new" url="/coursedetailses?form" z="47otdQyQYUVZLm2m9brRFmWwZAc="/>
+        <menu:item id="i_coursedetails_list" messageCode="global_menu_list" url="/coursedetailses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Gmt9DPoKA8kApNGiGa/3fo1QdSk="/>
+        </menu:category>
+    <menu:category id="c_student" z="VA/5j81jpINYUQQoxpb8LUYLpWk=">
+            <menu:item id="i_student_new" messageCode="global_menu_new" url="/students?form" z="xCEWOyB2txSvWmV9Fxwd+H7BxCM="/>
+        <menu:item id="i_student_list" messageCode="global_menu_list" url="/students?page=1&amp;size=${empty param.size ? 10 : param.size}" z="PSLnBxZ6Z7hXmOglFNorqDjA2H0="/>
+        </menu:category>
+    <menu:category id="c_coursecatalog" z="TFTDfYFXZztWvNyhfSYVPwbo/5s=">
+            <menu:item id="i_coursecatalog_new" messageCode="global_menu_new" url="/coursecatalogs?form" z="FTYARDBqeRKPp03sr7WgdOmF/rU="/>
+        <menu:item id="i_coursecatalog_list" messageCode="global_menu_list" url="/coursecatalogs?page=1&amp;size=${empty param.size ? 10 : param.size}" z="r+0j/xYOUCNGX2fHKKojJWeUUUc="/>
+        </menu:category>
+    <menu:category id="c_courseregistration" z="G9nbN3KhUxthAfOKvu3P4AISW8I=">
+            <menu:item id="i_courseregistration_new" messageCode="global_menu_new" url="/courseregistrations?form" z="+70/BGONi/PlPY1E2Bc7cIvFYo4="/>
+        <menu:item id="i_courseregistration_list" messageCode="global_menu_list" url="/courseregistrations?page=1&amp;size=${empty param.size ? 10 : param.size}" z="t3T5Gdi6VMsLpjyDpa1wLb2qBug="/>
+        </menu:category>
+    </menu:menu>
+</div>
