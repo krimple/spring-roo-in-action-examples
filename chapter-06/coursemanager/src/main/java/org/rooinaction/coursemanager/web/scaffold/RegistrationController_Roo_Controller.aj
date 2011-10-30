@@ -4,9 +4,6 @@
 package org.rooinaction.coursemanager.web.scaffold;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
-import java.lang.Long;
-import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -26,7 +23,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect RegistrationController_Roo_Controller {
     
     @RequestMapping(method = RequestMethod.POST)
-    public String RegistrationController.create(@Valid Registration registration, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String RegistrationController.create(@Valid Registration registration, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("registration", registration);
             return "registrations/create";
@@ -37,20 +34,20 @@ privileged aspect RegistrationController_Roo_Controller {
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String RegistrationController.createForm(Model uiModel) {
+    public java.lang.String RegistrationController.createForm(Model uiModel) {
         uiModel.addAttribute("registration", new Registration());
         return "registrations/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String RegistrationController.show(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String RegistrationController.show(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("registration", Registration.findRegistration(id));
         uiModel.addAttribute("itemId", id);
         return "registrations/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
-    public String RegistrationController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String RegistrationController.list(@RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
@@ -64,7 +61,7 @@ privileged aspect RegistrationController_Roo_Controller {
     }
     
     @RequestMapping(method = RequestMethod.PUT)
-    public String RegistrationController.update(@Valid Registration registration, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String RegistrationController.update(@Valid Registration registration, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("registration", registration);
             return "registrations/update";
@@ -75,13 +72,13 @@ privileged aspect RegistrationController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String RegistrationController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String RegistrationController.updateForm(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("registration", Registration.findRegistration(id));
         return "registrations/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String RegistrationController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String RegistrationController.delete(@PathVariable("id") java.lang.Long id, @RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         Registration registration = Registration.findRegistration(id);
         registration.remove();
         uiModel.asMap().clear();
@@ -105,15 +102,14 @@ privileged aspect RegistrationController_Roo_Controller {
         return Student.findAllStudents();
     }
     
-    String RegistrationController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
+    java.lang.String RegistrationController.encodeUrlPathSegment(java.lang.String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {
             enc = WebUtils.DEFAULT_CHARACTER_ENCODING;
         }
         try {
             pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
-        }
-        catch (UnsupportedEncodingException uee) {}
+        } catch (UnsupportedEncodingException uee) {}
         return pathSegment;
     }
     

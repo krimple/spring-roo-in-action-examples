@@ -3,15 +3,13 @@
 
 package org.rooinaction.coursemanager.web;
 
-import java.lang.String;
-
 privileged aspect RegisterStudentSearchForm_Roo_JavaBean {
     
-    public String RegisterStudentSearchForm.getSearchCriteria() {
+    public java.lang.String RegisterStudentSearchForm.getSearchCriteria() {
         return this.searchCriteria;
     }
     
-    public void RegisterStudentSearchForm.setSearchCriteria(String searchCriteria) {
+    public void RegisterStudentSearchForm.setSearchCriteria(java.lang.String searchCriteria) {
         this.searchCriteria = searchCriteria;
     }
     

@@ -13,15 +13,15 @@ import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 
 @RooJavaBean
 @RooToString
-@RooEntity
+@RooJpaActiveRecord
 @RooSerializable
 public class Student extends Person {
 	

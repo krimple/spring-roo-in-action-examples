@@ -3,7 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;

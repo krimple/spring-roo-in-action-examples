@@ -3,10 +3,10 @@
 
 package org.rooinaction.coursemanager.model;
 
-privileged aspect TrainingProgram_Roo_DisplayString {
+privileged aspect Payment_Roo_DisplayString {
     
-    public java.lang.String TrainingProgram.getDisplayString() {
-        return new StringBuilder().append(getName()).toString();
+    public java.lang.String Payment.getDisplayString() {
+        return new StringBuilder().append(getId()).toString();
     }
     
 }

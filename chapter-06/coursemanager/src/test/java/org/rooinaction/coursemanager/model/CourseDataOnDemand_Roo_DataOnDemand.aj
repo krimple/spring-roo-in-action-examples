@@ -3,8 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Integer;
-import java.lang.String;
 import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.util.ArrayList;

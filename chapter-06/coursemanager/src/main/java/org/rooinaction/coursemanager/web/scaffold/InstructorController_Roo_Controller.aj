@@ -4,9 +4,6 @@
 package org.rooinaction.coursemanager.web.scaffold;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
-import java.lang.Long;
-import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -24,7 +21,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect InstructorController_Roo_Controller {
     
     @RequestMapping(method = RequestMethod.POST)
-    public String InstructorController.create(@Valid Instructor instructor, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String InstructorController.create(@Valid Instructor instructor, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("instructor", instructor);
             return "instructors/create";
@@ -35,20 +32,20 @@ privileged aspect InstructorController_Roo_Controller {
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String InstructorController.createForm(Model uiModel) {
+    public java.lang.String InstructorController.createForm(Model uiModel) {
         uiModel.addAttribute("instructor", new Instructor());
         return "instructors/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String InstructorController.show(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String InstructorController.show(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("instructor", Instructor.findInstructor(id));
         uiModel.addAttribute("itemId", id);
         return "instructors/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
-    public String InstructorController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String InstructorController.list(@RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
@@ -62,7 +59,7 @@ privileged aspect InstructorController_Roo_Controller {
     }
     
     @RequestMapping(method = RequestMethod.PUT)
-    public String InstructorController.update(@Valid Instructor instructor, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String InstructorController.update(@Valid Instructor instructor, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("instructor", instructor);
             return "instructors/update";
@@ -73,13 +70,13 @@ privileged aspect InstructorController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String InstructorController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String InstructorController.updateForm(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("instructor", Instructor.findInstructor(id));
         return "instructors/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String InstructorController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String InstructorController.delete(@PathVariable("id") java.lang.Long id, @RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         Instructor instructor = Instructor.findInstructor(id);
         instructor.remove();
         uiModel.asMap().clear();
@@ -93,15 +90,14 @@ privileged aspect InstructorController_Roo_Controller {
         return Instructor.findAllInstructors();
     }
     
-    String InstructorController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
+    java.lang.String InstructorController.encodeUrlPathSegment(java.lang.String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {
             enc = WebUtils.DEFAULT_CHARACTER_ENCODING;
         }
         try {
             pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
-        }
-        catch (UnsupportedEncodingException uee) {}
+        } catch (UnsupportedEncodingException uee) {}
         return pathSegment;
     }
     

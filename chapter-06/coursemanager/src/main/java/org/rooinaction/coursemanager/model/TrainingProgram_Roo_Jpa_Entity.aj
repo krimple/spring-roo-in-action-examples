@@ -3,8 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Integer;
-import java.lang.Long;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,25 +17,25 @@ privileged aspect TrainingProgram_Roo_Jpa_Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long TrainingProgram.id;
+    private java.lang.Long TrainingProgram.id;
     
     @Version
     @Column(name = "version")
-    private Integer TrainingProgram.version;
+    private java.lang.Integer TrainingProgram.version;
     
-    public Long TrainingProgram.getId() {
+    public java.lang.Long TrainingProgram.getId() {
         return this.id;
     }
     
-    public void TrainingProgram.setId(Long id) {
+    public void TrainingProgram.setId(java.lang.Long id) {
         this.id = id;
     }
     
-    public Integer TrainingProgram.getVersion() {
+    public java.lang.Integer TrainingProgram.getVersion() {
         return this.version;
     }
     
-    public void TrainingProgram.setVersion(Integer version) {
+    public void TrainingProgram.setVersion(java.lang.Integer version) {
         this.version = version;
     }
     

@@ -4,9 +4,6 @@
 package org.rooinaction.coursemanager.web.scaffold;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
-import java.lang.Long;
-import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -25,7 +22,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect TrainingProgramController_Roo_Controller {
     
     @RequestMapping(method = RequestMethod.POST)
-    public String TrainingProgramController.create(@Valid TrainingProgram trainingProgram, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String TrainingProgramController.create(@Valid TrainingProgram trainingProgram, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("trainingProgram", trainingProgram);
             return "trainingprograms/create";
@@ -36,20 +33,20 @@ privileged aspect TrainingProgramController_Roo_Controller {
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String TrainingProgramController.createForm(Model uiModel) {
+    public java.lang.String TrainingProgramController.createForm(Model uiModel) {
         uiModel.addAttribute("trainingProgram", new TrainingProgram());
         return "trainingprograms/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String TrainingProgramController.show(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String TrainingProgramController.show(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("trainingprogram", TrainingProgram.findTrainingProgram(id));
         uiModel.addAttribute("itemId", id);
         return "trainingprograms/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
-    public String TrainingProgramController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String TrainingProgramController.list(@RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
@@ -63,7 +60,7 @@ privileged aspect TrainingProgramController_Roo_Controller {
     }
     
     @RequestMapping(method = RequestMethod.PUT)
-    public String TrainingProgramController.update(@Valid TrainingProgram trainingProgram, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String TrainingProgramController.update(@Valid TrainingProgram trainingProgram, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("trainingProgram", trainingProgram);
             return "trainingprograms/update";
@@ -74,13 +71,13 @@ privileged aspect TrainingProgramController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String TrainingProgramController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String TrainingProgramController.updateForm(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("trainingProgram", TrainingProgram.findTrainingProgram(id));
         return "trainingprograms/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String TrainingProgramController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String TrainingProgramController.delete(@PathVariable("id") java.lang.Long id, @RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         TrainingProgram trainingProgram = TrainingProgram.findTrainingProgram(id);
         trainingProgram.remove();
         uiModel.asMap().clear();
@@ -99,15 +96,14 @@ privileged aspect TrainingProgramController_Roo_Controller {
         return TrainingProgram.findAllTrainingPrograms();
     }
     
-    String TrainingProgramController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
+    java.lang.String TrainingProgramController.encodeUrlPathSegment(java.lang.String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {
             enc = WebUtils.DEFAULT_CHARACTER_ENCODING;
         }
         try {
             pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
-        }
-        catch (UnsupportedEncodingException uee) {}
+        } catch (UnsupportedEncodingException uee) {}
         return pathSegment;
     }
     

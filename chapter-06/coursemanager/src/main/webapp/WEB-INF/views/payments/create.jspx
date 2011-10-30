@@ -4,6 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create compositePkField="id" id="fc_org_rooinaction_coursemanager_model_Payment" modelAttribute="payment" path="/payments" render="${empty dependencies}" z="b49FXyRijSur3H0Rc+pIwcjHtO0=">
         <field:input disableFormBinding="true" field="id.id" id="c_org_rooinaction_coursemanager_model_Payment_id_id" required="true" validationMessageCode="field_invalid_integer" z="DWqpzbojYZucM21bitsiwy6jAHc="/>
+        <field:input disableFormBinding="true" field="id.serialVersionUID" id="c_org_rooinaction_coursemanager_model_Payment_id_serialVersionUID" z="QQDcRvvmQ81rxKGTTp2N8Eon900="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_org_rooinaction_coursemanager_model_Payment" render="${not empty dependencies}" z="Pomc89fFUHnAI5SdfkCY5U54yQE="/>
 </div>

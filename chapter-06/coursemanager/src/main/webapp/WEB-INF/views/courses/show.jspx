@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_org_rooinaction_coursemanager_model_Course" object="${course}" path="/courses" z="eBafIdGrFi8BjAepyA3D3xRWZMw=">
-        <field:display field="name" id="s_org_rooinaction_coursemanager_model_Course_name" object="${course}" z="yZD4KdR6ciSu6TW2468SYcFMVGA="/>
-        <field:display field="description" id="s_org_rooinaction_coursemanager_model_Course_description" object="${course}" z="/EYozAzYNULXsSjBiK0ngVBEvxE="/>
-        <field:display field="cost" id="s_org_rooinaction_coursemanager_model_Course_cost" object="${course}" z="T5MViHc0PXnvBhkOlpd/vItNd1U="/>
-        <field:display field="maximumCapacity" id="s_org_rooinaction_coursemanager_model_Course_maximumCapacity" object="${course}" z="djnqup5QkAnKeDPS00VDotS+vdc="/>
-        <field:display field="courseType" id="s_org_rooinaction_coursemanager_model_Course_courseType" render="false" object="${course}" z="xcREAwaX3ObsyMtt8vXxXmYeW14="/>
-        <field:display field="trainingProgram" id="s_org_rooinaction_coursemanager_model_Course_trainingProgram" object="${course}" z="+298sFDo7eErz5vYftitwThd11Q="/>
-        <field:display field="tags" id="s_org_rooinaction_coursemanager_model_Course_tags" object="${course}" z="IVOBSk9nfBO3+ew5GDNLEAaGhiY="/>
+    <page:show id="ps_org_rooinaction_coursemanager_model_Course" object="${course}" path="/courses">
+        <field:display field="name" id="s_org_rooinaction_coursemanager_model_Course_name" object="${course}"/>
+        <field:display field="description" id="s_org_rooinaction_coursemanager_model_Course_description"
+                       object="${course}"/>
+        <field:display field="cost" id="s_org_rooinaction_coursemanager_model_Course_cost" object="${course}"/>
+        <field:display field="numDays" id="s_org_rooinaction_coursemanager_model_Course_numdays" object="${course}"/>
+        <field:display field="maximumCapacity" id="s_org_rooinaction_coursemanager_model_Course_maximumCapacity"
+                       object="${course}"/>
+        <field:display field="courseType" id="s_org_rooinaction_coursemanager_model_Course_courseType" render="false"
+                       object="${course}"/>
+        <field:display field="trainingProgram" id="s_org_rooinaction_coursemanager_model_Course_trainingProgram"
+                       object="${course}"/>
+        <field:display field="tags" id="s_org_rooinaction_coursemanager_model_Course_tags" object="${course}"/>
     </page:show>
 </div>

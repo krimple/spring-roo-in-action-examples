@@ -5,7 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.ManyToOne;
 import javax.persistence.TypedQuery;
-import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -13,7 +13,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooSerializable
-@RooEntity(finders = { "findRegistrationsByStudentAndOffering", "findRegistrationsByStudentAndOfferingNot" })
+@RooJpaActiveRecord(finders = { "findRegistrationsByStudentAndOffering", "findRegistrationsByStudentAndOfferingNot" })
 public class Registration {
 	
 	public Registration(Student student, Offering offering) {

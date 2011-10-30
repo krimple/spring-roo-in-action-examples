@@ -3,33 +3,32 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
 import java.util.Set;
 import org.rooinaction.coursemanager.model.Registration;
 
 privileged aspect Student_Roo_JavaBean {
     
-    public String Student.getEmergencyContactName() {
+    public java.lang.String Student.getEmergencyContactName() {
         return this.emergencyContactName;
     }
     
-    public void Student.setEmergencyContactName(String emergencyContactName) {
+    public void Student.setEmergencyContactName(java.lang.String emergencyContactName) {
         this.emergencyContactName = emergencyContactName;
     }
     
-    public String Student.getEmergencyContactInfo() {
+    public java.lang.String Student.getEmergencyContactInfo() {
         return this.emergencyContactInfo;
     }
     
-    public void Student.setEmergencyContactInfo(String emergencyContactInfo) {
+    public void Student.setEmergencyContactInfo(java.lang.String emergencyContactInfo) {
         this.emergencyContactInfo = emergencyContactInfo;
     }
     
-    public String Student.getDietaryRestrictions() {
+    public java.lang.String Student.getDietaryRestrictions() {
         return this.dietaryRestrictions;
     }
     
-    public void Student.setDietaryRestrictions(String dietaryRestrictions) {
+    public void Student.setDietaryRestrictions(java.lang.String dietaryRestrictions) {
         this.dietaryRestrictions = dietaryRestrictions;
     }
     

@@ -4,15 +4,10 @@
 package org.rooinaction.coursemanager.web.scaffold;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
-import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.rooinaction.coursemanager.model.Payment;
-import org.rooinaction.coursemanager.model.PaymentPK;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.ConversionService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,39 +20,32 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect PaymentController_Roo_Controller {
     
-    private ConversionService PaymentController.conversionService;
-    
-    @Autowired
-    public PaymentController.new(ConversionService conversionService) {
-        this.conversionService = conversionService;
-    }
-
     @RequestMapping(method = RequestMethod.POST)
-    public String PaymentController.create(@Valid Payment payment, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String PaymentController.create(@Valid Payment payment, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("payment", payment);
             return "payments/create";
         }
         uiModel.asMap().clear();
         payment.persist();
-        return "redirect:/payments/" + encodeUrlPathSegment(conversionService.convert(payment.getId(), String.class), httpServletRequest);
+        return "redirect:/payments/" + encodeUrlPathSegment(payment.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String PaymentController.createForm(Model uiModel) {
+    public java.lang.String PaymentController.createForm(Model uiModel) {
         uiModel.addAttribute("payment", new Payment());
         return "payments/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String PaymentController.show(@PathVariable("id") PaymentPK id, Model uiModel) {
+    public java.lang.String PaymentController.show(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("payment", Payment.findPayment(id));
-        uiModel.addAttribute("itemId", conversionService.convert(id, String.class));
+        uiModel.addAttribute("itemId", id);
         return "payments/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
-    public String PaymentController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String PaymentController.list(@RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
@@ -71,24 +59,24 @@ privileged aspect PaymentController_Roo_Controller {
     }
     
     @RequestMapping(method = RequestMethod.PUT)
-    public String PaymentController.update(@Valid Payment payment, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String PaymentController.update(@Valid Payment payment, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("payment", payment);
             return "payments/update";
         }
         uiModel.asMap().clear();
         payment.merge();
-        return "redirect:/payments/" + encodeUrlPathSegment(conversionService.convert(payment.getId(), String.class), httpServletRequest);
+        return "redirect:/payments/" + encodeUrlPathSegment(payment.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String PaymentController.updateForm(@PathVariable("id") PaymentPK id, Model uiModel) {
+    public java.lang.String PaymentController.updateForm(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("payment", Payment.findPayment(id));
         return "payments/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String PaymentController.delete(@PathVariable("id") PaymentPK id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String PaymentController.delete(@PathVariable("id") java.lang.Long id, @RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         Payment payment = Payment.findPayment(id);
         payment.remove();
         uiModel.asMap().clear();
@@ -102,15 +90,14 @@ privileged aspect PaymentController_Roo_Controller {
         return Payment.findAllPayments();
     }
     
-    String PaymentController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
+    java.lang.String PaymentController.encodeUrlPathSegment(java.lang.String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {
             enc = WebUtils.DEFAULT_CHARACTER_ENCODING;
         }
         try {
             pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
-        }
-        catch (UnsupportedEncodingException uee) {}
+        } catch (UnsupportedEncodingException uee) {}
         return pathSegment;
     }
     

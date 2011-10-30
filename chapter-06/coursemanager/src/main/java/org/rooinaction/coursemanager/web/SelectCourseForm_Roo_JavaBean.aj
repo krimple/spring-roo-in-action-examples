@@ -3,15 +3,13 @@
 
 package org.rooinaction.coursemanager.web;
 
-import java.lang.Long;
-
 privileged aspect SelectCourseForm_Roo_JavaBean {
     
-    public Long SelectCourseForm.getCourseId() {
+    public java.lang.Long SelectCourseForm.getCourseId() {
         return this.courseId;
     }
     
-    public void SelectCourseForm.setCourseId(Long courseId) {
+    public void SelectCourseForm.setCourseId(java.lang.Long courseId) {
         this.courseId = courseId;
     }
     

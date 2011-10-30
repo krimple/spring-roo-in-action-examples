@@ -3,13 +3,12 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Payment_Roo_ToString {
     
-    public String Payment.toString() {
+    public java.lang.String Payment.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(getId());
+        sb.append("Id: ").append(getId()).append(", ");
+        sb.append("Version: ").append(getVersion());
         return sb.toString();
     }
     

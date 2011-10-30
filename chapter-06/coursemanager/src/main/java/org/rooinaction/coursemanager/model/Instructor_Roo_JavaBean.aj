@@ -3,15 +3,13 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Instructor_Roo_JavaBean {
     
-    public String Instructor.getTaxNumber() {
+    public java.lang.String Instructor.getTaxNumber() {
         return this.taxNumber;
     }
     
-    public void Instructor.setTaxNumber(String taxNumber) {
+    public void Instructor.setTaxNumber(java.lang.String taxNumber) {
         this.taxNumber = taxNumber;
     }
     

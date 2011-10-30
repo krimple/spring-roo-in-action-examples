@@ -3,11 +3,9 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Tag_Roo_DisplayString {
     
-    public String Tag.getDisplayString() {
+    public java.lang.String Tag.getDisplayString() {
         return new StringBuilder().append(getTag()).append(" ").append(getDescription()).toString();
     }
     

@@ -7,20 +7,20 @@
 	<definition extends="default" name="courses/show">
 		<put-attribute name="body" value="/WEB-INF/views/courses/show.jspx" />
 	</definition>
+
 	<definition extends="default" name="courses/create">
-		<put-attribute name="body" value="/WEB-INF/views/courses/create.jspx"/>
+		<put-attribute name="body">
+            <definition template="/WEB-INF/views/courses/create.jspx">
+                <put-attribute name="formfields" value="/WEB-INF/views/courses/form-fields.jspx"/>
+            </definition>
+        </put-attribute>
 	</definition>
-			
-	
+
 	<definition extends="default" name="courses/update">
-		<put-attribute name="body" value="/WEB-INF/views/courses/update.jspx">
-			<definition template="/WEB-INF/views/courses/form-fields.jspx" />
-		</put-attribute>
-	</definition>
-	<definition extends="default" name="courses/findCoursesByNameLike">
-		<put-attribute name="body "
-			value="/WEB-INF/views/courses/findCoursesByNameLike.jspx" >
-			<definition template="/WEB-INF/views/courses/form-fields.jspx" />
-		</put-attribute>
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/courses/update.jspx">
+                <put-attribute name="formfields" value="/WEB-INF/views/courses/form-fields.jspx"/>
+            </definition>
+        </put-attribute>
 	</definition>
 </tiles-definitions>

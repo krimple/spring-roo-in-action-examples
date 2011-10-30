@@ -3,11 +3,9 @@
 
 package org.rooinaction.coursemanager.web;
 
-import java.lang.String;
-
 privileged aspect SelectCourseForm_Roo_ToString {
     
-    public String SelectCourseForm.toString() {
+    public java.lang.String SelectCourseForm.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("CourseId: ").append(getCourseId());
         return sb.toString();

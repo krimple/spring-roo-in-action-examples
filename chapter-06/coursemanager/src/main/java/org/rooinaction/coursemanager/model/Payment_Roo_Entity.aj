@@ -7,7 +7,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.rooinaction.coursemanager.model.Payment;
-import org.rooinaction.coursemanager.model.PaymentPK;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Payment_Roo_Entity {
@@ -66,7 +65,7 @@ privileged aspect Payment_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Payment o", Payment.class).getResultList();
     }
     
-    public static Payment Payment.findPayment(PaymentPK id) {
+    public static Payment Payment.findPayment(java.lang.Long id) {
         if (id == null) return null;
         return entityManager().find(Payment.class, id);
     }

@@ -16,7 +16,7 @@ import javax.validation.constraints.AssertTrue;
 
 import org.rooinaction.coursemanager.web.CourseFullException;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -24,7 +24,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooSerializable
-@RooEntity
+@RooJpaActiveRecord
 public class Offering {
 
     @Temporal(TemporalType.TIMESTAMP)

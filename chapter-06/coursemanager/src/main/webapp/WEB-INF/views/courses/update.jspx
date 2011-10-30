@@ -18,11 +18,13 @@
       dojo.addOnLoad(function(){ 
          dojo.parser.parse();
          console.debug("hi mom");
-      }
+      });
+
+
+      alert("FUBAR!");
     </script>
 <util:panel id="myPanel" title="Create Course">
-	<form:form id="courseForm" method="PUT" modelAttribute="course">
+      <c:set var="method" value="PUT" />
 	  <tiles:insertAttribute name="formfields" />
-	</form:form>
 </util:panel>
 </div>

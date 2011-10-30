@@ -3,26 +3,40 @@
 
 package org.rooinaction.coursemanager.model;
 
-import javax.persistence.EmbeddedId;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import org.rooinaction.coursemanager.model.PaymentPK;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Version;
 
 privileged aspect Payment_Roo_Jpa_Entity {
     
     declare @type: Payment: @Entity;
     
-    declare @type: Payment: @Table(name = "payment");
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private java.lang.Long Payment.id;
     
-    @EmbeddedId
-    private PaymentPK Payment.id;
+    @Version
+    @Column(name = "version")
+    private java.lang.Integer Payment.version;
     
-    public PaymentPK Payment.getId() {
+    public java.lang.Long Payment.getId() {
         return this.id;
     }
     
-    public void Payment.setId(PaymentPK id) {
+    public void Payment.setId(java.lang.Long id) {
         this.id = id;
+    }
+    
+    public java.lang.Integer Payment.getVersion() {
+        return this.version;
+    }
+    
+    public void Payment.setVersion(java.lang.Integer version) {
+        this.version = version;
     }
     
 }

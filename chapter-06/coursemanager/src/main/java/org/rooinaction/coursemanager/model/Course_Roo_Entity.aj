@@ -3,7 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -66,7 +65,7 @@ privileged aspect Course_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Course o", Course.class).getResultList();
     }
     
-    public static Course Course.findCourse(Long id) {
+    public static Course Course.findCourse(java.lang.Long id) {
         if (id == null) return null;
         return entityManager().find(Course.class, id);
     }

@@ -7,7 +7,13 @@
 	xmlns:tiles="http://tiles.apache.org/tags-tiles"
 	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
 	<jsp:output omit-xml-declaration="yes" />
-	<form:form id="courseForm" method="PUT" modelAttribute="course">
+    <c:out value="${method}" />
+	<form:form id="courseForm" method="${method}" modelAttribute="course">
+
+        <c:if test="${method eq 'PUT'}">
+            <form:hidden path="id" />
+            <form:hidden path="version" />
+        </c:if>
 		<div>
 			<label for="name">Course Name : </label>
 			<form:input dojoType="dijit.form.ValidationTextBox" id="name"

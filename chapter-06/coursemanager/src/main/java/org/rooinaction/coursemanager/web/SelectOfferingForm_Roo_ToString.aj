@@ -3,11 +3,9 @@
 
 package org.rooinaction.coursemanager.web;
 
-import java.lang.String;
-
 privileged aspect SelectOfferingForm_Roo_ToString {
     
-    public String SelectOfferingForm.toString() {
+    public java.lang.String SelectOfferingForm.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("OfferingId: ").append(getOfferingId());
         return sb.toString();

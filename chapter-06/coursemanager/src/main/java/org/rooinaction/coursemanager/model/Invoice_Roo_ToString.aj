@@ -3,11 +3,9 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Invoice_Roo_ToString {
     
-    public String Invoice.toString() {
+    public java.lang.String Invoice.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Id: ").append(getId());
         return sb.toString();

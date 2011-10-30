@@ -3,41 +3,39 @@
 
 package org.rooinaction.coursemanager.web;
 
-import java.lang.Long;
-import java.lang.String;
 import java.util.List;
 
 privileged aspect RegisterStudentsForm_Roo_JavaBean {
     
-    public Long RegisterStudentsForm.getCourseId() {
+    public java.lang.Long RegisterStudentsForm.getCourseId() {
         return this.courseId;
     }
     
-    public void RegisterStudentsForm.setCourseId(Long courseId) {
+    public void RegisterStudentsForm.setCourseId(java.lang.Long courseId) {
         this.courseId = courseId;
     }
     
-    public Long RegisterStudentsForm.getOfferingId() {
+    public java.lang.Long RegisterStudentsForm.getOfferingId() {
         return this.offeringId;
     }
     
-    public void RegisterStudentsForm.setOfferingId(Long offeringId) {
+    public void RegisterStudentsForm.setOfferingId(java.lang.Long offeringId) {
         this.offeringId = offeringId;
     }
     
-    public String RegisterStudentsForm.getCurrentSearch() {
+    public java.lang.String RegisterStudentsForm.getCurrentSearch() {
         return this.currentSearch;
     }
     
-    public void RegisterStudentsForm.setCurrentSearch(String currentSearch) {
+    public void RegisterStudentsForm.setCurrentSearch(java.lang.String currentSearch) {
         this.currentSearch = currentSearch;
     }
     
-    public List<Long> RegisterStudentsForm.getStudentsToRegister() {
+    public List<java.lang.Long> RegisterStudentsForm.getStudentsToRegister() {
         return this.studentsToRegister;
     }
     
-    public void RegisterStudentsForm.setStudentsToRegister(List<Long> studentsToRegister) {
+    public void RegisterStudentsForm.setStudentsToRegister(List<java.lang.Long> studentsToRegister) {
         this.studentsToRegister = studentsToRegister;
     }
     

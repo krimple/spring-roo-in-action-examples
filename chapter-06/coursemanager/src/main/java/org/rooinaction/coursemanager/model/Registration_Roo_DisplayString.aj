@@ -3,12 +3,10 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Registration_Roo_DisplayString {
     
-    public String Registration.getDisplayString() {
-        return new StringBuilder().append(isPaymentMade()).append(" ").append(isAttended()).toString();
+    public java.lang.String Registration.getDisplayString() {
+        return new StringBuilder().append(getId()).toString();
     }
     
 }

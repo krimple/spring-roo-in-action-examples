@@ -4,9 +4,6 @@
 package org.rooinaction.coursemanager.web.scaffold;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
-import java.lang.Long;
-import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -25,7 +22,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect StudentController_Roo_Controller {
     
     @RequestMapping(method = RequestMethod.POST)
-    public String StudentController.create(@Valid Student student, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String StudentController.create(@Valid Student student, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("student", student);
             return "students/create";
@@ -36,20 +33,20 @@ privileged aspect StudentController_Roo_Controller {
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String StudentController.createForm(Model uiModel) {
+    public java.lang.String StudentController.createForm(Model uiModel) {
         uiModel.addAttribute("student", new Student());
         return "students/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String StudentController.show(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String StudentController.show(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("student", Student.findStudent(id));
         uiModel.addAttribute("itemId", id);
         return "students/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
-    public String StudentController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String StudentController.list(@RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
@@ -63,7 +60,7 @@ privileged aspect StudentController_Roo_Controller {
     }
     
     @RequestMapping(method = RequestMethod.PUT)
-    public String StudentController.update(@Valid Student student, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String StudentController.update(@Valid Student student, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("student", student);
             return "students/update";
@@ -74,13 +71,13 @@ privileged aspect StudentController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String StudentController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String StudentController.updateForm(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("student", Student.findStudent(id));
         return "students/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String StudentController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String StudentController.delete(@PathVariable("id") java.lang.Long id, @RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         Student student = Student.findStudent(id);
         student.remove();
         uiModel.asMap().clear();
@@ -99,15 +96,14 @@ privileged aspect StudentController_Roo_Controller {
         return Student.findAllStudents();
     }
     
-    String StudentController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
+    java.lang.String StudentController.encodeUrlPathSegment(java.lang.String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {
             enc = WebUtils.DEFAULT_CHARACTER_ENCODING;
         }
         try {
             pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
-        }
-        catch (UnsupportedEncodingException uee) {}
+        } catch (UnsupportedEncodingException uee) {}
         return pathSegment;
     }
     

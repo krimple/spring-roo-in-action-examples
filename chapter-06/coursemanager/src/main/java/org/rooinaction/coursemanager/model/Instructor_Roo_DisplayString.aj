@@ -3,11 +3,9 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Instructor_Roo_DisplayString {
     
-    public String Instructor.getDisplayString() {
+    public java.lang.String Instructor.getDisplayString() {
         return new StringBuilder().append(getFirstName()).append(" ").append(getMiddleNameOrInitial()).append(" ").append(getLastName()).append(" ").append(getAddressLine1()).append(" ").append(getAddressLine2()).toString();
     }
     

@@ -3,8 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Integer;
-import java.lang.String;
 import java.math.BigDecimal;
 import java.util.Set;
 import org.rooinaction.coursemanager.model.Offering;
@@ -13,27 +11,27 @@ import org.rooinaction.coursemanager.model.TrainingProgram;
 
 privileged aspect Course_Roo_JavaBean {
     
-    public String Course.getName() {
+    public java.lang.String Course.getName() {
         return this.name;
     }
     
-    public void Course.setName(String name) {
+    public void Course.setName(java.lang.String name) {
         this.name = name;
     }
     
-    public String Course.getDescription() {
+    public java.lang.String Course.getDescription() {
         return this.description;
     }
     
-    public void Course.setDescription(String description) {
+    public void Course.setDescription(java.lang.String description) {
         this.description = description;
     }
     
-    public String Course.getMarketingBlurb() {
+    public java.lang.String Course.getMarketingBlurb() {
         return this.marketingBlurb;
     }
     
-    public void Course.setMarketingBlurb(String marketingBlurb) {
+    public void Course.setMarketingBlurb(java.lang.String marketingBlurb) {
         this.marketingBlurb = marketingBlurb;
     }
     
@@ -53,11 +51,11 @@ privileged aspect Course_Roo_JavaBean {
         this.numDays = numDays;
     }
     
-    public Integer Course.getMaximumCapacity() {
+    public java.lang.Integer Course.getMaximumCapacity() {
         return this.maximumCapacity;
     }
     
-    public void Course.setMaximumCapacity(Integer maximumCapacity) {
+    public void Course.setMaximumCapacity(java.lang.Integer maximumCapacity) {
         this.maximumCapacity = maximumCapacity;
     }
     

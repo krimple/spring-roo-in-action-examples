@@ -3,11 +3,9 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Student_Roo_ToString {
     
-    public String Student.toString() {
+    public java.lang.String Student.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("AddressLine1: ").append(getAddressLine1()).append(", ");
         sb.append("AddressLine2: ").append(getAddressLine2()).append(", ");

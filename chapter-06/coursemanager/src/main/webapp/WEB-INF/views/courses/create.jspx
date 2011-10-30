@@ -1,83 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:tiles="http://tiles.apache.org/tags-tiles" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
-    <jsp:output omit-xml-declaration="yes"/>
-
-    <c:set value="POST" var="formAction" />
-    <c:set value="false" var="includeIdentifiers" />
-    <util:panel id="myPanel" title="Create Course">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+     xmlns:form="http://www.springframework.org/tags/form"
+     xmlns:jsp="http://java.sun.com/JSP/Page"
+     xmlns:spring="http://www.springframework.org/tags"
+     xmlns:tiles="http://tiles.apache.org/tags-tiles"
+     xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes" />
     <script type="text/javascript">
-    dojo.require("dojo.parser");
-    dojo.require("dijit.form.ValidationTextBox");
-    dojo.require("dijit.form.SimpleTextarea");
-    dojo.require("dijit.form.Button");
-    dojo.require("dijit.form.FilteringSelect");
-    dojo.require("dijit.form.NumberSpinner");
-      dojo.addOnLoad(function(){
-         dojo.parser.parse();
-         console.debug("parsing stuff...");
-      });
-    </script>
-        <form:form id="courseForm" method="PUT" modelAttribute="course">
-        <div>
-            <label for="name">Name : </label>
-            <form:input dojoType="dijit.form.ValidationTextBox" id="name"
-                path="name" promptMessage="Enter the course name" required="true" />
-            <form:errors cssClass="errors" path="name" />
-        </div>
-        <br />
-        <div>
-            <label for="description">Description : </label>
-            <form:input id="description" path="description" />
-            <form:errors cssClass="errors" path="description" />
-        </div>
-        <br />
-        <div>
-            <label for="numDays"># of Days : </label>
-            <form:input value="1" constraints="{ min: 1, max: 90, places: 0,  1}"
-                dojoType="dijit.form.NumberSpinner" id="numDays" path="numDays"
-                smallDelta="1" value="${course.numDays}" />
-            <form:errors cssClass="errors" path="numDays" />
-        </div>
-        <br />
-        <div>
-            <label for="maximumCapacity">Maximum Capacity : </label>
-            <form:input dojoType="dijit.form.ValidationTextBox" id="maximumCapacity"
-                invalidMessage="${field_invalid_integer}" path="maximumCapacity"
-                promptMessage="Enter the maximum capacity" />
-            <form:errors cssClass="errors" path="maximumCapacity" />
-        </div>
-        <br />
-        <div>
-            <label for="cost">Cost : </label>
-            <form:input dojoType="dijit.form.ValidationTextBox" id="cost"
-                invalidMessage="${field_invalid_integer}" path="cost"
-                promptMessage="Enter the cost of the course" />
-            <form:errors cssClass="errors" path="cost" />
-        </div>
-        <br />
-        <div>
-            <label for="curriculum">Training Program : </label>
-            <form:select id="trainingProgram" itemLabel="name" itemValue="id"
-                items="${trainingprograms}" path="trainingProgram" />
-            <form:errors cssClass="errors" path="trainingProgram" />
-        </div>
-        <br />
-        <div>
-            <label for="tags">Tags : </label>
-            <form:select id="tags" itemLabel="tag" itemValue="id" items="${tags}"
-                path="tags" />
-            <form:errors cssClass="errors" path="tags" />
-        </div>
-        <br />
-        <div>
-            <label for="marketingBlurb">Marketing Pitch : </label>
-            <form:textarea id="marketingBlurb" path="marketingBlurb" />
-            <form:errors cssClass="errors" path="marketingBlurb" />
-        </div>
+        dojo.require("dojo.parser");
+        dojo.require("dijit.form.ValidationTextBox");
+        dojo.require("dijit.form.SimpleTextarea");
+        dojo.require("dijit.form.Button");
+        dojo.require("dijit.form.FilteringSelect");
+        dojo.require("dijit.form.NumberSpinner");
 
-        <input type="submit" value="Submit" />
-        
-    </form:form>
+        dojo.addOnLoad(function(){
+            dojo.parser.parse();
+            console.debug("hi mom");
+        });
+
+
+        alert("FUBAR!");
+    </script>
+    <util:panel id="myPanel" title="Create Course">
+        <c:set var="method" value="PUT" />
+        <tiles:insertAttribute name="formfields" />
     </util:panel>
-        
 </div>

@@ -4,9 +4,6 @@
 package org.rooinaction.coursemanager.web.scaffold;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
-import java.lang.Long;
-import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -24,7 +21,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect InvoiceController_Roo_Controller {
     
     @RequestMapping(method = RequestMethod.POST)
-    public String InvoiceController.create(@Valid Invoice invoice, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String InvoiceController.create(@Valid Invoice invoice, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("invoice", invoice);
             return "invoices/create";
@@ -35,20 +32,20 @@ privileged aspect InvoiceController_Roo_Controller {
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String InvoiceController.createForm(Model uiModel) {
+    public java.lang.String InvoiceController.createForm(Model uiModel) {
         uiModel.addAttribute("invoice", new Invoice());
         return "invoices/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String InvoiceController.show(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String InvoiceController.show(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("invoice", Invoice.findInvoice(id));
         uiModel.addAttribute("itemId", id);
         return "invoices/show";
     }
     
     @RequestMapping(method = RequestMethod.GET)
-    public String InvoiceController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String InvoiceController.list(@RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
@@ -62,7 +59,7 @@ privileged aspect InvoiceController_Roo_Controller {
     }
     
     @RequestMapping(method = RequestMethod.PUT)
-    public String InvoiceController.update(@Valid Invoice invoice, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public java.lang.String InvoiceController.update(@Valid Invoice invoice, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("invoice", invoice);
             return "invoices/update";
@@ -73,13 +70,13 @@ privileged aspect InvoiceController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String InvoiceController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+    public java.lang.String InvoiceController.updateForm(@PathVariable("id") java.lang.Long id, Model uiModel) {
         uiModel.addAttribute("invoice", Invoice.findInvoice(id));
         return "invoices/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String InvoiceController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public java.lang.String InvoiceController.delete(@PathVariable("id") java.lang.Long id, @RequestParam(value = "page", required = false) java.lang.Integer page, @RequestParam(value = "size", required = false) java.lang.Integer size, Model uiModel) {
         Invoice invoice = Invoice.findInvoice(id);
         invoice.remove();
         uiModel.asMap().clear();
@@ -93,15 +90,14 @@ privileged aspect InvoiceController_Roo_Controller {
         return Invoice.findAllInvoices();
     }
     
-    String InvoiceController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
+    java.lang.String InvoiceController.encodeUrlPathSegment(java.lang.String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {
             enc = WebUtils.DEFAULT_CHARACTER_ENCODING;
         }
         try {
             pathSegment = UriUtils.encodePathSegment(pathSegment, enc);
-        }
-        catch (UnsupportedEncodingException uee) {}
+        } catch (UnsupportedEncodingException uee) {}
         return pathSegment;
     }
     

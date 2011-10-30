@@ -7,7 +7,7 @@
 	<version>0.1.0.BUILD-SNAPSHOT</version>
 	<name>coursemgrch6-webria</name>
 	<properties>
-		<roo.version>1.2.0.M1</roo.version>
+		<roo.version>1.2.0.BUILD-SNAPSHOT</roo.version>
 		<spring.version>3.0.5.RELEASE</spring.version>
 		<aspectj.version>1.6.11.M1</aspectj.version>
 		<slf4j.version>1.6.1</slf4j.version>
@@ -15,6 +15,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<repositories>
+        <repository>
+            <id>spring-maven-snapshot</id>
+            <name>Spring Maven Snapshot Repository</name>
+            <url>http://maven.springframework.org/snapshot</url>
+        </repository>
         <repository>
             <id>spring-maven-release</id>
             <name>Spring Maven Release Repository</name>
@@ -24,6 +29,11 @@
             <id>spring-maven-milestone</id>
             <name>Spring Maven Milestone Repository</name>
             <url>http://maven.springframework.org/milestone</url>
+        </repository>
+        <repository>
+            <id>spring-roo-snapshot-repository</id>
+            <name>Spring Roo Snapshot Repository</name>
+            <url>http://spring-roo-repository.springsource.org/snapshot</url>
         </repository>
         <repository>
             <id>spring-roo-repository</id>
@@ -37,6 +47,11 @@
         </repository>
     </repositories>
     <pluginRepositories>
+        <pluginRepository>
+            <id>spring-roo-snapshot-repository</id>
+            <name>Spring Roo Snapshot Repository</name>
+            <url>http://spring-roo-repository.springsource.org/snapshot</url>
+        </pluginRepository>
         <pluginRepository>
             <id>spring-maven-release</id>
             <name>Spring Maven Release Repository</name>
