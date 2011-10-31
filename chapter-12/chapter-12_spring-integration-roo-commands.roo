@@ -1,0 +1,17 @@
+
+
+
+REM integration project --name cms-app-spring-int --rootDomain com.rooinaction.cmsapp
+
+integration flow start --name course-mgmt-int
+
+produce via channel-adapter jms --name cmsapp-jms-input-adapter
+
+transform --name cmsapp-transformer
+
+route --name cmsapp-router
+
+send via adapter mail --name cmsapp-mail-output-adapter
+
+diagram
+

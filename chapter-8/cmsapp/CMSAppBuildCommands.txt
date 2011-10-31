@@ -1,0 +1,123 @@
+
+REM c:\dev\DevDocs\Srini\setBaseEnv.bat
+
+c:
+set JAVA_HOME=c:\dev\java\jdk1.6.0_26
+
+set PATH=%JAVA_HOME%\bin
+
+REM set ROO_HOME=C:\dev\frameworks\spring-roo-1.1.5.RELEASE
+
+set ROO_HOME=C:\dev\frameworks\spring-roo-1.2.0.M1
+
+set PATH=%PATH%;%ROO_HOME%\bin
+
+cd C:\dev\projects\ResearchLabs\SpringRooProjects\RooTutorial
+
+cd cmsapp
+
+roo
+
+hint
+
+project --topLevelPackage com.rooinaction.cmsapp
+
+hint
+
+persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+
+hint
+
+entity --class ~.domain.CourseCatalog --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity --class ~.domain.CourseDetails --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity --class ~.domain.Student --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName age --type java.lang.Integer
+field number --fieldName id --type java.lang.Long
+
+entity --class ~.domain.CourseRegistration --testAutomatically
+field number --fieldName id --type java.lang.Integer
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName studentId --type java.lang.Long
+field number --fieldName courseId --type java.lang.Long
+
+
+
+field set --fieldName studentId --element ~.domain.Student
+
+field reference --fieldName base --type ~.domain.Base
+
+entity --class ~.domain.PizzaOrder --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+field string --fieldName address --sizeMax 30
+field number --fieldName total --type java.lang.Float
+field date --fieldName deliveryDate --type java.util.Date
+
+field set --fieldName pizzas --element ~.domain.Pizza
+
+
+perform tests
+
+perform eclipse
+
+controller all --package ~.web
+
+security setup
+
+
+flex setup
+
+flex remoting all --package ~.model
+
+==========================================================
+
+c:
+c:\dev\DevDocs\Srini\setBaseEnv.bat
+
+cd C:\dev\projects\ResearchLabs\SpringRooProjects\RooTutorial
+cd cmsapp
+
+mvn clean install
+
+mvn eclipse:clean eclipse:eclipse
+
+mvn tomcat:run
+
+
+
+
+mvn package jetty:run-exploded
+
+mvn tomcat:run
+
+mvn jetty:run
+
+
+http://localhost:8080/cmsapp
+
+Login URL:
+http://localhost:8080/cmsapp/login
+
+admin/test
+
+
+OpenDS Commands:
+-----------------
+
+c:
+cd\
+c:\dev\DevDocs\Srini\setBaseEnv.bat
+
+set OPEN_DS_HOME=C:\dev\servers\OpenDS-2.2.0
+cd %OPEN_DS_HOME%\bat
+control-panel.bat
+
+cn=Directory Manager
+test123
+
+dc=cmsapp,dc=com
+

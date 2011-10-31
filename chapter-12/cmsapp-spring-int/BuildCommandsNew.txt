@@ -1,0 +1,25 @@
+
+c:
+cd\
+
+set JAVA_HOME=C:\dev\java\jdk1.6.0_26
+set PATH=%JAVA_HOME%\bin
+
+set MAVEN_HOME=C:\dev\tools\apache-maven-3.0.3
+set PATH=%PATH%;%MAVEN_HOME%\bin
+
+set MAVEN_OPTS=-Xmx1024m -XX:MaxPermSize=512m
+
+REM set PROJECT_HOME=C:\dev\projects\ResearchLabs\SpringRooProjects\RooTutorial\cmsapp-spring-int
+set PROJECT_HOME=C:\dev\projects\ResearchLabs\SpringRooProjects\RooTutorial\spring-roo-in-action-examples\chapter-12\cmsapp-spring-int
+cd %PROJECT_HOME%
+
+mvn clean
+
+mvn eclipse:clean eclipse:eclipse
+
+mvn install
+
+mvn javadoc:aggregate
+
+

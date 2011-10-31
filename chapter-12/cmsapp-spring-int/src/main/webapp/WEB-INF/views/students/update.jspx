@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rooinaction_cmsapp_domain_Student" idField="id_" modelAttribute="student" path="/students" versionField="Version" z="S+fDtyKHcKLMLF1wVQ63FsakVGU=">
+        <field:input field="name" id="c_com_rooinaction_cmsapp_domain_Student_name" min="2" required="true" z="nnx5m2Sjj1myxJIq1RE7JIxJDCA="/>
+        <field:input field="age" id="c_com_rooinaction_cmsapp_domain_Student_age" validationMessageCode="field_invalid_integer" z="HLHD800imvwlFYXWw+3h4HimbOI="/>
+        <field:input field="id" id="c_com_rooinaction_cmsapp_domain_Student_id" validationMessageCode="field_invalid_integer" z="NKxKxVDGKFWWCLCgvWR4TKZ7X7g="/>
+    </form:update>
+</div>

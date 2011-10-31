@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rooinaction_cmsapp_domain_CourseRegistration" items="${courseregistrations}" z="20a76xQvJZSHV7rzD+BLOefWijI=">
+        <table:table data="${courseregistrations}" id="l_com_rooinaction_cmsapp_domain_CourseRegistration" path="/courseregistrations" typeIdFieldName="id_" z="YxncZhSbgAmoIDRIXhFmoM2Gk64=">
+            <table:column id="c_com_rooinaction_cmsapp_domain_CourseRegistration_id" property="id" z="Lx2DOl0kcHBWF+GkyxsKKwT05RM="/>
+            <table:column id="c_com_rooinaction_cmsapp_domain_CourseRegistration_name" property="name" z="MJaeFDvbq3bz9bmroyhLsA6aJfs="/>
+            <table:column id="c_com_rooinaction_cmsapp_domain_CourseRegistration_studentId" property="studentId" z="JHgansGYr8GHunUvoAMM/PzZ9Vk="/>
+            <table:column id="c_com_rooinaction_cmsapp_domain_CourseRegistration_courseId" property="courseId" z="HM1lUFilCLW3qIXTSb0A/qWmoGo="/>
+        </table:table>
+    </page:list>
+</div>
