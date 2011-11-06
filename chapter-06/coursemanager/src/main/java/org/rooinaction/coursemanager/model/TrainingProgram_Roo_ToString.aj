@@ -7,8 +7,8 @@ privileged aspect TrainingProgram_Roo_ToString {
     
     public java.lang.String TrainingProgram.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Courses: ").append(getCourses() == null ? "null" : getCourses().size()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
+        sb.append("Courses: ").append(getCourses() == null ? "null" : getCourses().size()).append(", ");
         sb.append("Name: ").append(getName()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();

@@ -1,12 +1,14 @@
 package org.rooinaction.coursemanager.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.ManyToOne;
 import javax.persistence.TypedQuery;
-import org.springframework.roo.addon.entity.RooJpaActiveRecord;
+
 import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
 

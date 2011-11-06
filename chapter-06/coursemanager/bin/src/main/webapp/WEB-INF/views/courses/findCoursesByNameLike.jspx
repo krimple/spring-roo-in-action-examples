@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:find finderName="ByNameLike" id="ff_org_rooina_coursemanager_model_Course" path="/courses" z="k3hdwSIjdzSMtH+Mq/PLkX/DncQ=">
-        <field:input disableFormBinding="true" field="name" id="f_org_rooina_coursemanager_model_Course_name" max="60" min="1" required="true" z="BzcFluP/3uh3WVUGRuRjjFIXBT4="/>
-    </form:find>
-</div>
