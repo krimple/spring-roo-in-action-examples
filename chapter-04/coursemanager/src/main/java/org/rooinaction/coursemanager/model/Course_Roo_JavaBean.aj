@@ -3,8 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Integer;
-import java.lang.String;
 import java.math.BigDecimal;
 import java.util.Set;
 import org.rooinaction.coursemanager.model.CourseTypeEnum;
@@ -14,19 +12,19 @@ import org.rooinaction.coursemanager.model.TrainingProgram;
 
 privileged aspect Course_Roo_JavaBean {
     
-    public String Course.getName() {
+    public java.lang.String Course.getName() {
         return this.name;
     }
     
-    public void Course.setName(String name) {
+    public void Course.setName(java.lang.String name) {
         this.name = name;
     }
     
-    public String Course.getDescription() {
+    public java.lang.String Course.getDescription() {
         return this.description;
     }
     
-    public void Course.setDescription(String description) {
+    public void Course.setDescription(java.lang.String description) {
         this.description = description;
     }
     
@@ -38,11 +36,11 @@ privileged aspect Course_Roo_JavaBean {
         this.cost = cost;
     }
     
-    public Integer Course.getMaxiumumCapacity() {
+    public java.lang.Integer Course.getMaxiumumCapacity() {
         return this.maxiumumCapacity;
     }
     
-    public void Course.setMaxiumumCapacity(Integer maxiumumCapacity) {
+    public void Course.setMaxiumumCapacity(java.lang.Integer maxiumumCapacity) {
         this.maxiumumCapacity = maxiumumCapacity;
     }
     

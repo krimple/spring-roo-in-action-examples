@@ -3,11 +3,9 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect TrainingProgram_Roo_DisplayString {
     
-    public String TrainingProgram.getDisplayString() {
+    public java.lang.String TrainingProgram.getDisplayString() {
         return new StringBuilder().append(getName()).toString();
     }
     

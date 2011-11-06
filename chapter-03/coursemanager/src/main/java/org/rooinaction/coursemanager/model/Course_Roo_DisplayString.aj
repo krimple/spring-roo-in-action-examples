@@ -3,12 +3,11 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
 import java.text.DateFormat;
 
 privileged aspect Course_Roo_DisplayString {
     
-    public String Course.getDisplayString() {
+    public java.lang.String Course.getDisplayString() {
         return new StringBuilder().append(getName()).append(" ").append(getDescription()).append(" ").append(getListPrice()).append(" ").append(getMaxiumumCapacity()).append(" ").append(getRunDate() == null ? "" : DateFormat.getDateInstance(DateFormat.LONG).format(getRunDate())).toString();
     }
     

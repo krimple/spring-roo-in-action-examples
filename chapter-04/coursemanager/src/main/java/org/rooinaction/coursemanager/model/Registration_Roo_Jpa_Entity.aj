@@ -3,8 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Integer;
-import java.lang.Long;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,25 +17,25 @@ privileged aspect Registration_Roo_Jpa_Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long Registration.id;
+    private java.lang.Long Registration.id;
     
     @Version
     @Column(name = "version")
-    private Integer Registration.version;
+    private java.lang.Integer Registration.version;
     
-    public Long Registration.getId() {
+    public java.lang.Long Registration.getId() {
         return this.id;
     }
     
-    public void Registration.setId(Long id) {
+    public void Registration.setId(java.lang.Long id) {
         this.id = id;
     }
     
-    public Integer Registration.getVersion() {
+    public java.lang.Integer Registration.getVersion() {
         return this.version;
     }
     
-    public void Registration.setVersion(Integer version) {
+    public void Registration.setVersion(java.lang.Integer version) {
         this.version = version;
     }
     

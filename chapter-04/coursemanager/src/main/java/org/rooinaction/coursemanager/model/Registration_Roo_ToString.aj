@@ -3,11 +3,9 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Registration_Roo_ToString {
     
-    public String Registration.toString() {
+    public java.lang.String Registration.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Offering: ").append(getOffering()).append(", ");

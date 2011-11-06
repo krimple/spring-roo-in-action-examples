@@ -3,17 +3,16 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
 import java.util.Set;
 import org.rooinaction.coursemanager.model.Course;
 
 privileged aspect TrainingProgram_Roo_JavaBean {
     
-    public String TrainingProgram.getName() {
+    public java.lang.String TrainingProgram.getName() {
         return this.name;
     }
     
-    public void TrainingProgram.setName(String name) {
+    public void TrainingProgram.setName(java.lang.String name) {
         this.name = name;
     }
     

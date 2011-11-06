@@ -71,7 +71,7 @@ privileged aspect StudentDataOnDemand_Roo_DataOnDemand {
     }
     
     public void StudentDataOnDemand.setEmailAddress(Student obj, int index) {
-        String emailAddress = "emailAddress_" + index;
+        String emailAddress = "foo" + index + "@bar.com";
         if (emailAddress.length() > 80) {
             emailAddress = emailAddress.substring(0, 80);
         }

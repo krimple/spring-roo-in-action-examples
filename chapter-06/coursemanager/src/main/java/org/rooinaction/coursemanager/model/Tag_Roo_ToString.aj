@@ -7,9 +7,9 @@ privileged aspect Tag_Roo_ToString {
     
     public java.lang.String Tag.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Courses: ").append(getCourses() == null ? "null" : getCourses().size()).append(", ");
         sb.append("Description: ").append(getDescription()).append(", ");
-        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Tag: ").append(getTag()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();

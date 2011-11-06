@@ -3,14 +3,13 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import org.rooinaction.coursemanager.model.Course;
 
 privileged aspect Course_Roo_Finder {
     
-    public static TypedQuery<Course> Course.findCoursesByNameLike(String name) {
+    public static TypedQuery<Course> Course.findCoursesByNameLike(java.lang.String name) {
         if (name == null || name.length() == 0) throw new IllegalArgumentException("The name argument is required");
         name = name.replace('*', '%');
         if (name.charAt(0) != '%') {

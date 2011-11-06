@@ -3,7 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -12,9 +11,9 @@ privileged aspect PaymentPK_Roo_Identifier {
     declare @type: PaymentPK: @Embeddable;
     
     @Column(name = "id", nullable = false)
-    private Long PaymentPK.id;
+    private java.lang.Long PaymentPK.id;
     
-    public PaymentPK.new(Long id) {
+    public PaymentPK.new(java.lang.Long id) {
         super();
         this.id = id;
     }
@@ -23,7 +22,7 @@ privileged aspect PaymentPK_Roo_Identifier {
         super();
     }
 
-    public Long PaymentPK.getId() {
+    public java.lang.Long PaymentPK.getId() {
         return id;
     }
     

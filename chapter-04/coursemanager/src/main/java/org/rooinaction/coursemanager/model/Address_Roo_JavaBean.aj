@@ -3,47 +3,45 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Address_Roo_JavaBean {
     
-    public String Address.getAddressLine1() {
+    public java.lang.String Address.getAddressLine1() {
         return this.addressLine1;
     }
     
-    public void Address.setAddressLine1(String addressLine1) {
+    public void Address.setAddressLine1(java.lang.String addressLine1) {
         this.addressLine1 = addressLine1;
     }
     
-    public String Address.getAddressLine2() {
+    public java.lang.String Address.getAddressLine2() {
         return this.addressLine2;
     }
     
-    public void Address.setAddressLine2(String addressLine2) {
+    public void Address.setAddressLine2(java.lang.String addressLine2) {
         this.addressLine2 = addressLine2;
     }
     
-    public String Address.getCity() {
+    public java.lang.String Address.getCity() {
         return this.city;
     }
     
-    public void Address.setCity(String city) {
+    public void Address.setCity(java.lang.String city) {
         this.city = city;
     }
     
-    public String Address.getStateCode() {
+    public java.lang.String Address.getStateCode() {
         return this.stateCode;
     }
     
-    public void Address.setStateCode(String stateCode) {
+    public void Address.setStateCode(java.lang.String stateCode) {
         this.stateCode = stateCode;
     }
     
-    public String Address.getPostalCode() {
+    public java.lang.String Address.getPostalCode() {
         return this.postalCode;
     }
     
-    public void Address.setPostalCode(String postalCode) {
+    public void Address.setPostalCode(java.lang.String postalCode) {
         this.postalCode = postalCode;
     }
     

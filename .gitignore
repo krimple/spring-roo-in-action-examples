@@ -8,4 +8,5 @@ target
 .eclipse
 .settings
 log.roo
+.DS_Store
 
