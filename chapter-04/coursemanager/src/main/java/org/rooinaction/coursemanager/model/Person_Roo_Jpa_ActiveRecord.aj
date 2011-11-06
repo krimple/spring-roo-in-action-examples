@@ -6,73 +6,73 @@ package org.rooinaction.coursemanager.model;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.rooinaction.coursemanager.model.Payment;
-import org.rooinaction.coursemanager.model.PaymentPK;
+import org.rooinaction.coursemanager.model.Person;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Payment_Roo_Entity {
+privileged aspect Person_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Payment.entityManager;
+    transient EntityManager Person.entityManager;
     
     @Transactional
-    public void Payment.persist() {
+    public void Person.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Payment.remove() {
+    public void Person.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Payment attached = Payment.findPayment(this.id);
+            Person attached = Person.findPerson(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Payment.flush() {
+    public void Person.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Payment.clear() {
+    public void Person.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Payment Payment.merge() {
+    public Person Person.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Payment merged = this.entityManager.merge(this);
+        Person merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager Payment.entityManager() {
-        EntityManager em = new Payment().entityManager;
+    public static final EntityManager Person.entityManager() {
+        EntityManager em = new Person() {
+        }.entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Payment.countPayments() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Payment o", Long.class).getSingleResult();
+    public static long Person.countPeople() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Person o", Long.class).getSingleResult();
     }
     
-    public static List<Payment> Payment.findAllPayments() {
-        return entityManager().createQuery("SELECT o FROM Payment o", Payment.class).getResultList();
+    public static List<Person> Person.findAllPeople() {
+        return entityManager().createQuery("SELECT o FROM Person o", Person.class).getResultList();
     }
     
-    public static Payment Payment.findPayment(PaymentPK id) {
+    public static Person Person.findPerson(java.lang.Long id) {
         if (id == null) return null;
-        return entityManager().find(Payment.class, id);
+        return entityManager().find(Person.class, id);
     }
     
-    public static List<Payment> Payment.findPaymentEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Payment o", Payment.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Person> Person.findPersonEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Person o", Person.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

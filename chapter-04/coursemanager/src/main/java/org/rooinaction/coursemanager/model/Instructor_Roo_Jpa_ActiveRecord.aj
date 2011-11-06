@@ -3,12 +3,11 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import org.rooinaction.coursemanager.model.Instructor;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Instructor_Roo_Entity {
+privileged aspect Instructor_Roo_Jpa_ActiveRecord {
     
     @Transactional
     public Instructor Instructor.merge() {
@@ -26,7 +25,7 @@ privileged aspect Instructor_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Instructor o", Instructor.class).getResultList();
     }
     
-    public static Instructor Instructor.findInstructor(Long id) {
+    public static Instructor Instructor.findInstructor(java.lang.Long id) {
         if (id == null) return null;
         return entityManager().find(Instructor.class, id);
     }

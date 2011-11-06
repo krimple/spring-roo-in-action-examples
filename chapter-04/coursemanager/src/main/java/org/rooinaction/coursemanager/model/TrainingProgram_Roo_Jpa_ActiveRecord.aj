@@ -3,76 +3,75 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.rooinaction.coursemanager.model.Course;
+import org.rooinaction.coursemanager.model.TrainingProgram;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Course_Roo_Entity {
+privileged aspect TrainingProgram_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Course.entityManager;
+    transient EntityManager TrainingProgram.entityManager;
     
     @Transactional
-    public void Course.persist() {
+    public void TrainingProgram.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Course.remove() {
+    public void TrainingProgram.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Course attached = Course.findCourse(this.id);
+            TrainingProgram attached = TrainingProgram.findTrainingProgram(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Course.flush() {
+    public void TrainingProgram.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Course.clear() {
+    public void TrainingProgram.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Course Course.merge() {
+    public TrainingProgram TrainingProgram.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Course merged = this.entityManager.merge(this);
+        TrainingProgram merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager Course.entityManager() {
-        EntityManager em = new Course().entityManager;
+    public static final EntityManager TrainingProgram.entityManager() {
+        EntityManager em = new TrainingProgram().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Course.countCourses() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Course o", Long.class).getSingleResult();
+    public static long TrainingProgram.countTrainingPrograms() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM TrainingProgram o", Long.class).getSingleResult();
     }
     
-    public static List<Course> Course.findAllCourses() {
-        return entityManager().createQuery("SELECT o FROM Course o", Course.class).getResultList();
+    public static List<TrainingProgram> TrainingProgram.findAllTrainingPrograms() {
+        return entityManager().createQuery("SELECT o FROM TrainingProgram o", TrainingProgram.class).getResultList();
     }
     
-    public static Course Course.findCourse(Long id) {
+    public static TrainingProgram TrainingProgram.findTrainingProgram(java.lang.Long id) {
         if (id == null) return null;
-        return entityManager().find(Course.class, id);
+        return entityManager().find(TrainingProgram.class, id);
     }
     
-    public static List<Course> Course.findCourseEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Course o", Course.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<TrainingProgram> TrainingProgram.findTrainingProgramEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM TrainingProgram o", TrainingProgram.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

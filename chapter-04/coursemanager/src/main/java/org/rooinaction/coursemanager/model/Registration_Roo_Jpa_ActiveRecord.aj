@@ -3,76 +3,75 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.rooinaction.coursemanager.model.Offering;
+import org.rooinaction.coursemanager.model.Registration;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Offering_Roo_Entity {
+privileged aspect Registration_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Offering.entityManager;
+    transient EntityManager Registration.entityManager;
     
     @Transactional
-    public void Offering.persist() {
+    public void Registration.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Offering.remove() {
+    public void Registration.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Offering attached = Offering.findOffering(this.id);
+            Registration attached = Registration.findRegistration(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Offering.flush() {
+    public void Registration.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Offering.clear() {
+    public void Registration.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Offering Offering.merge() {
+    public Registration Registration.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Offering merged = this.entityManager.merge(this);
+        Registration merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager Offering.entityManager() {
-        EntityManager em = new Offering().entityManager;
+    public static final EntityManager Registration.entityManager() {
+        EntityManager em = new Registration().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Offering.countOfferings() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Offering o", Long.class).getSingleResult();
+    public static long Registration.countRegistrations() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Registration o", Long.class).getSingleResult();
     }
     
-    public static List<Offering> Offering.findAllOfferings() {
-        return entityManager().createQuery("SELECT o FROM Offering o", Offering.class).getResultList();
+    public static List<Registration> Registration.findAllRegistrations() {
+        return entityManager().createQuery("SELECT o FROM Registration o", Registration.class).getResultList();
     }
     
-    public static Offering Offering.findOffering(Long id) {
+    public static Registration Registration.findRegistration(java.lang.Long id) {
         if (id == null) return null;
-        return entityManager().find(Offering.class, id);
+        return entityManager().find(Registration.class, id);
     }
     
-    public static List<Offering> Offering.findOfferingEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Offering o", Offering.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Registration> Registration.findRegistrationEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Registration o", Registration.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

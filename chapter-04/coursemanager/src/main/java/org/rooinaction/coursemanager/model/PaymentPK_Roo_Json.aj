@@ -5,7 +5,6 @@ package org.rooinaction.coursemanager.model;
 
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -13,19 +12,19 @@ import org.rooinaction.coursemanager.model.PaymentPK;
 
 privileged aspect PaymentPK_Roo_Json {
     
-    public String PaymentPK.toJson() {
+    public java.lang.String PaymentPK.toJson() {
         return new JSONSerializer().exclude("*.class").serialize(this);
     }
     
-    public static PaymentPK PaymentPK.fromJsonToPaymentPK(String json) {
+    public static PaymentPK PaymentPK.fromJsonToPaymentPK(java.lang.String json) {
         return new JSONDeserializer<PaymentPK>().use(null, PaymentPK.class).deserialize(json);
     }
     
-    public static String PaymentPK.toJsonArray(Collection<PaymentPK> collection) {
+    public static java.lang.String PaymentPK.toJsonArray(Collection<PaymentPK> collection) {
         return new JSONSerializer().exclude("*.class").serialize(collection);
     }
     
-    public static Collection<PaymentPK> PaymentPK.fromJsonArrayToPaymentPKs(String json) {
+    public static Collection<PaymentPK> PaymentPK.fromJsonArrayToPaymentPKs(java.lang.String json) {
         return new JSONDeserializer<List<PaymentPK>>().use(null, ArrayList.class).use("values", PaymentPK.class).deserialize(json);
     }
     

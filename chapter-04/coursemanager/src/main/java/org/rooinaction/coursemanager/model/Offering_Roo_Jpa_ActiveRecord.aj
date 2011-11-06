@@ -3,76 +3,75 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.rooinaction.coursemanager.model.Tag;
+import org.rooinaction.coursemanager.model.Offering;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Tag_Roo_Entity {
+privileged aspect Offering_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Tag.entityManager;
+    transient EntityManager Offering.entityManager;
     
     @Transactional
-    public void Tag.persist() {
+    public void Offering.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Tag.remove() {
+    public void Offering.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Tag attached = Tag.findTag(this.id);
+            Offering attached = Offering.findOffering(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Tag.flush() {
+    public void Offering.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Tag.clear() {
+    public void Offering.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Tag Tag.merge() {
+    public Offering Offering.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Tag merged = this.entityManager.merge(this);
+        Offering merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager Tag.entityManager() {
-        EntityManager em = new Tag().entityManager;
+    public static final EntityManager Offering.entityManager() {
+        EntityManager em = new Offering().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Tag.countTags() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Tag o", Long.class).getSingleResult();
+    public static long Offering.countOfferings() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Offering o", Long.class).getSingleResult();
     }
     
-    public static List<Tag> Tag.findAllTags() {
-        return entityManager().createQuery("SELECT o FROM Tag o", Tag.class).getResultList();
+    public static List<Offering> Offering.findAllOfferings() {
+        return entityManager().createQuery("SELECT o FROM Offering o", Offering.class).getResultList();
     }
     
-    public static Tag Tag.findTag(Long id) {
+    public static Offering Offering.findOffering(java.lang.Long id) {
         if (id == null) return null;
-        return entityManager().find(Tag.class, id);
+        return entityManager().find(Offering.class, id);
     }
     
-    public static List<Tag> Tag.findTagEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Tag o", Tag.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Offering> Offering.findOfferingEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Offering o", Offering.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

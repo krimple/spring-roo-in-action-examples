@@ -3,12 +3,11 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import org.rooinaction.coursemanager.model.Student;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Student_Roo_Entity {
+privileged aspect Student_Roo_Jpa_ActiveRecord {
     
     @Transactional
     public Student Student.merge() {
@@ -26,7 +25,7 @@ privileged aspect Student_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Student o", Student.class).getResultList();
     }
     
-    public static Student Student.findStudent(Long id) {
+    public static Student Student.findStudent(java.lang.Long id) {
         if (id == null) return null;
         return entityManager().find(Student.class, id);
     }

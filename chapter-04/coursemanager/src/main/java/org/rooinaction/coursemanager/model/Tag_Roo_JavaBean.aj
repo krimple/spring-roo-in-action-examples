@@ -3,25 +3,24 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
 import java.util.Set;
 import org.rooinaction.coursemanager.model.Course;
 
 privileged aspect Tag_Roo_JavaBean {
     
-    public String Tag.getTag() {
+    public java.lang.String Tag.getTag() {
         return this.tag;
     }
     
-    public void Tag.setTag(String tag) {
+    public void Tag.setTag(java.lang.String tag) {
         this.tag = tag;
     }
     
-    public String Tag.getDescription() {
+    public java.lang.String Tag.getDescription() {
         return this.description;
     }
     
-    public void Tag.setDescription(String description) {
+    public void Tag.setDescription(java.lang.String description) {
         this.description = description;
     }
     

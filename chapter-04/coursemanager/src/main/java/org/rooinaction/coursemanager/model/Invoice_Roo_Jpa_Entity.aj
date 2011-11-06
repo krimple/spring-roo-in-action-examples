@@ -3,7 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,13 +19,13 @@ privileged aspect Invoice_Roo_Jpa_Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long Invoice.id;
+    private java.lang.Long Invoice.id;
     
-    public Long Invoice.getId() {
+    public java.lang.Long Invoice.getId() {
         return this.id;
     }
     
-    public void Invoice.setId(Long id) {
+    public void Invoice.setId(java.lang.Long id) {
         this.id = id;
     }
     

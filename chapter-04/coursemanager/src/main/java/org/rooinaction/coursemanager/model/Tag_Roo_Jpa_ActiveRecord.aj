@@ -3,76 +3,75 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.rooinaction.coursemanager.model.TrainingProgram;
+import org.rooinaction.coursemanager.model.Tag;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect TrainingProgram_Roo_Entity {
+privileged aspect Tag_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager TrainingProgram.entityManager;
+    transient EntityManager Tag.entityManager;
     
     @Transactional
-    public void TrainingProgram.persist() {
+    public void Tag.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void TrainingProgram.remove() {
+    public void Tag.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            TrainingProgram attached = TrainingProgram.findTrainingProgram(this.id);
+            Tag attached = Tag.findTag(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void TrainingProgram.flush() {
+    public void Tag.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void TrainingProgram.clear() {
+    public void Tag.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public TrainingProgram TrainingProgram.merge() {
+    public Tag Tag.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        TrainingProgram merged = this.entityManager.merge(this);
+        Tag merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager TrainingProgram.entityManager() {
-        EntityManager em = new TrainingProgram().entityManager;
+    public static final EntityManager Tag.entityManager() {
+        EntityManager em = new Tag().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long TrainingProgram.countTrainingPrograms() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM TrainingProgram o", Long.class).getSingleResult();
+    public static long Tag.countTags() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Tag o", Long.class).getSingleResult();
     }
     
-    public static List<TrainingProgram> TrainingProgram.findAllTrainingPrograms() {
-        return entityManager().createQuery("SELECT o FROM TrainingProgram o", TrainingProgram.class).getResultList();
+    public static List<Tag> Tag.findAllTags() {
+        return entityManager().createQuery("SELECT o FROM Tag o", Tag.class).getResultList();
     }
     
-    public static TrainingProgram TrainingProgram.findTrainingProgram(Long id) {
+    public static Tag Tag.findTag(java.lang.Long id) {
         if (id == null) return null;
-        return entityManager().find(TrainingProgram.class, id);
+        return entityManager().find(Tag.class, id);
     }
     
-    public static List<TrainingProgram> TrainingProgram.findTrainingProgramEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM TrainingProgram o", TrainingProgram.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Tag> Tag.findTagEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Tag o", Tag.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

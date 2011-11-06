@@ -3,79 +3,77 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Person_Roo_JavaBean {
     
-    public String Person.getFirstName() {
+    public java.lang.String Person.getFirstName() {
         return this.firstName;
     }
     
-    public void Person.setFirstName(String firstName) {
+    public void Person.setFirstName(java.lang.String firstName) {
         this.firstName = firstName;
     }
     
-    public String Person.getMiddleNameOrInitial() {
+    public java.lang.String Person.getMiddleNameOrInitial() {
         return this.middleNameOrInitial;
     }
     
-    public void Person.setMiddleNameOrInitial(String middleNameOrInitial) {
+    public void Person.setMiddleNameOrInitial(java.lang.String middleNameOrInitial) {
         this.middleNameOrInitial = middleNameOrInitial;
     }
     
-    public String Person.getLastName() {
+    public java.lang.String Person.getLastName() {
         return this.lastName;
     }
     
-    public void Person.setLastName(String lastName) {
+    public void Person.setLastName(java.lang.String lastName) {
         this.lastName = lastName;
     }
     
-    public String Person.getAddressLine1() {
+    public java.lang.String Person.getAddressLine1() {
         return this.addressLine1;
     }
     
-    public void Person.setAddressLine1(String addressLine1) {
+    public void Person.setAddressLine1(java.lang.String addressLine1) {
         this.addressLine1 = addressLine1;
     }
     
-    public String Person.getAddressLine2() {
+    public java.lang.String Person.getAddressLine2() {
         return this.addressLine2;
     }
     
-    public void Person.setAddressLine2(String addressLine2) {
+    public void Person.setAddressLine2(java.lang.String addressLine2) {
         this.addressLine2 = addressLine2;
     }
     
-    public String Person.getCity() {
+    public java.lang.String Person.getCity() {
         return this.city;
     }
     
-    public void Person.setCity(String city) {
+    public void Person.setCity(java.lang.String city) {
         this.city = city;
     }
     
-    public String Person.getStateCode() {
+    public java.lang.String Person.getStateCode() {
         return this.stateCode;
     }
     
-    public void Person.setStateCode(String stateCode) {
+    public void Person.setStateCode(java.lang.String stateCode) {
         this.stateCode = stateCode;
     }
     
-    public String Person.getPostalCode() {
+    public java.lang.String Person.getPostalCode() {
         return this.postalCode;
     }
     
-    public void Person.setPostalCode(String postalCode) {
+    public void Person.setPostalCode(java.lang.String postalCode) {
         this.postalCode = postalCode;
     }
     
-    public String Person.getEmailAddress() {
+    public java.lang.String Person.getEmailAddress() {
         return this.emailAddress;
     }
     
-    public void Person.setEmailAddress(String emailAddress) {
+    public void Person.setEmailAddress(java.lang.String emailAddress) {
         this.emailAddress = emailAddress;
     }
     

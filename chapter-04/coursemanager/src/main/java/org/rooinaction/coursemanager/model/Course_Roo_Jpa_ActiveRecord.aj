@@ -3,76 +3,75 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.rooinaction.coursemanager.model.Invoice;
+import org.rooinaction.coursemanager.model.Course;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Invoice_Roo_Entity {
+privileged aspect Course_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Invoice.entityManager;
+    transient EntityManager Course.entityManager;
     
     @Transactional
-    public void Invoice.persist() {
+    public void Course.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Invoice.remove() {
+    public void Course.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Invoice attached = Invoice.findInvoice(this.id);
+            Course attached = Course.findCourse(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Invoice.flush() {
+    public void Course.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Invoice.clear() {
+    public void Course.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Invoice Invoice.merge() {
+    public Course Course.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Invoice merged = this.entityManager.merge(this);
+        Course merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager Invoice.entityManager() {
-        EntityManager em = new Invoice().entityManager;
+    public static final EntityManager Course.entityManager() {
+        EntityManager em = new Course().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Invoice.countInvoices() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Invoice o", Long.class).getSingleResult();
+    public static long Course.countCourses() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Course o", Long.class).getSingleResult();
     }
     
-    public static List<Invoice> Invoice.findAllInvoices() {
-        return entityManager().createQuery("SELECT o FROM Invoice o", Invoice.class).getResultList();
+    public static List<Course> Course.findAllCourses() {
+        return entityManager().createQuery("SELECT o FROM Course o", Course.class).getResultList();
     }
     
-    public static Invoice Invoice.findInvoice(Long id) {
+    public static Course Course.findCourse(java.lang.Long id) {
         if (id == null) return null;
-        return entityManager().find(Invoice.class, id);
+        return entityManager().find(Course.class, id);
     }
     
-    public static List<Invoice> Invoice.findInvoiceEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Invoice o", Invoice.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Course> Course.findCourseEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Course o", Course.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

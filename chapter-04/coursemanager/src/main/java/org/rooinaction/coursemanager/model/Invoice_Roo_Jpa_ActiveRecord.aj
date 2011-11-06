@@ -3,76 +3,75 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Long;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.rooinaction.coursemanager.model.Registration;
+import org.rooinaction.coursemanager.model.Invoice;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Registration_Roo_Entity {
+privileged aspect Invoice_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Registration.entityManager;
+    transient EntityManager Invoice.entityManager;
     
     @Transactional
-    public void Registration.persist() {
+    public void Invoice.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Registration.remove() {
+    public void Invoice.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Registration attached = Registration.findRegistration(this.id);
+            Invoice attached = Invoice.findInvoice(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Registration.flush() {
+    public void Invoice.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Registration.clear() {
+    public void Invoice.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Registration Registration.merge() {
+    public Invoice Invoice.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Registration merged = this.entityManager.merge(this);
+        Invoice merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager Registration.entityManager() {
-        EntityManager em = new Registration().entityManager;
+    public static final EntityManager Invoice.entityManager() {
+        EntityManager em = new Invoice().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Registration.countRegistrations() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Registration o", Long.class).getSingleResult();
+    public static long Invoice.countInvoices() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Invoice o", Long.class).getSingleResult();
     }
     
-    public static List<Registration> Registration.findAllRegistrations() {
-        return entityManager().createQuery("SELECT o FROM Registration o", Registration.class).getResultList();
+    public static List<Invoice> Invoice.findAllInvoices() {
+        return entityManager().createQuery("SELECT o FROM Invoice o", Invoice.class).getResultList();
     }
     
-    public static Registration Registration.findRegistration(Long id) {
+    public static Invoice Invoice.findInvoice(java.lang.Long id) {
         if (id == null) return null;
-        return entityManager().find(Registration.class, id);
+        return entityManager().find(Invoice.class, id);
     }
     
-    public static List<Registration> Registration.findRegistrationEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Registration o", Registration.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Invoice> Invoice.findInvoiceEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Invoice o", Invoice.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

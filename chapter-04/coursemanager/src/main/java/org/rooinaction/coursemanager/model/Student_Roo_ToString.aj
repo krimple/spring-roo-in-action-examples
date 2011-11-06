@@ -3,12 +3,11 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Student_Roo_ToString {
     
-    public String Student.toString() {
+    public java.lang.String Student.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("AddressLine1: ").append(getAddressLine1()).append(", ");
         sb.append("AddressLine2: ").append(getAddressLine2()).append(", ");
         sb.append("City: ").append(getCity()).append(", ");
@@ -18,7 +17,6 @@ privileged aspect Student_Roo_ToString {
         sb.append("EmergencyContactName: ").append(getEmergencyContactName()).append(", ");
         sb.append("FirstName: ").append(getFirstName()).append(", ");
         sb.append("FullName: ").append(getFullName()).append(", ");
-        sb.append("Id: ").append(getId()).append(", ");
         sb.append("LastName: ").append(getLastName()).append(", ");
         sb.append("MiddleNameOrInitial: ").append(getMiddleNameOrInitial()).append(", ");
         sb.append("PostalCode: ").append(getPostalCode()).append(", ");
