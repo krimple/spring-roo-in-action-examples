@@ -3,8 +3,6 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.Integer;
-import java.lang.Long;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;

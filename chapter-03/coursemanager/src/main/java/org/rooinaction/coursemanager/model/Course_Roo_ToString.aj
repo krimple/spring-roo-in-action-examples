@@ -3,15 +3,13 @@
 
 package org.rooinaction.coursemanager.model;
 
-import java.lang.String;
-
 privileged aspect Course_Roo_ToString {
     
-    public String Course.toString() {
+    public java.lang.String Course.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("CourseType: ").append(getCourseType()).append(", ");
         sb.append("Description: ").append(getDescription()).append(", ");
-        sb.append("Id: ").append(getId()).append(", ");
         sb.append("ListPrice: ").append(getListPrice()).append(", ");
         sb.append("MaxiumumCapacity: ").append(getMaxiumumCapacity()).append(", ");
         sb.append("Name: ").append(getName()).append(", ");
