@@ -8,8 +8,5 @@
         <field:display field="total" id="s_com_springsource_pizzashop_domain_PizzaOrder_total" object="${pizzaorder}" z="Kz9zmVqdYI0GsU8IP8ffM3/hR0A="/>
         <field:display date="true" dateTimePattern="${pizzaOrder_deliverydate_date_format}" field="deliveryDate" id="s_com_springsource_pizzashop_domain_PizzaOrder_deliveryDate" object="${pizzaorder}" z="eHGqdELhhJ7T8iIuGolcG7wSv3o="/>
         <field:display field="pizzas" id="s_com_springsource_pizzashop_domain_PizzaOrder_pizzas" object="${pizzaorder}" z="mRh/+4swYvogm2+yyeUPCJkM0z4="/>
-        <field:display field="shopCountry" id="s_com_springsource_pizzashop_domain_PizzaOrder_shopCountry" object="${pizzaorder}" z="6xl/UuqWhVc5myW0NKG03gqB3dE="/>
-        <field:display field="shopCity" id="s_com_springsource_pizzashop_domain_PizzaOrder_shopCity" object="${pizzaorder}" z="Y0wNleT8T/KrXH8vnzIAR+fxEBQ="/>
-        <field:display field="shopName" id="s_com_springsource_pizzashop_domain_PizzaOrder_shopName" object="${pizzaorder}" z="oddem64OM/DHZiuwt/mrrgyG2LE="/>
     </page:show>
 </div>

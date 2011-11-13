@@ -1,13 +1,14 @@
 package com.springsource.pizzashop;
 
-import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
+import com.springsource.pizzashop.domain.Topping;
+import org.springframework.roo.addon.web.mvc.controller.json.RooWebJson;
+import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.springsource.pizzashop.domain.Topping;
-
+@RooWebJson(jsonObject = Topping.class)
 @Controller
 @RequestMapping("/toppings")
-@RooWebScaffold(path = "toppings", formBackingObject = Topping.class, exposeJson = true)
+@RooWebScaffold(path = "toppings", formBackingObject = Topping.class)
 public class ToppingController {
 }
