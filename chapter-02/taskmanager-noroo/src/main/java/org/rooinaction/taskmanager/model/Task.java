@@ -1,65 +1,61 @@
 package org.rooinaction.taskmanager.model;
 
-import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Version;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.roo.addon.entity.RooEntity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.transaction.annotation.Transactional;
 
-@Configurable
+import java.util.List;
+
 @Entity
-@RooJavaBean
-@RooToString
-@RooEntity
+@Configurable
 public class Task {
-	
+
     @NotNull
     @Size(max = 40)
     private String task;
 
     @Value("false")
     private Boolean completed;
-    
-
-	public String getTask() {
-        return this.task;
-    }
-
-	public void setTask(String task) {
-        this.task = task;
-    }
-
-	public Boolean getCompleted() {
-        return this.completed;
-    }
-
-	public void setCompleted(Boolean completed) {
-        this.completed = completed;
-    }
-
-	@PersistenceContext
+    @PersistenceContext
     transient EntityManager entityManager;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
+    @Version
+    @Column(name = "version")
+    private Integer version;
 
-	@Transactional
-    public void persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
+    public static final EntityManager entityManager() {
+        EntityManager em = new Task().entityManager;
+        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
+        return em;
     }
 
-	@Transactional
+    public static Task findTask(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Task.class, id);
+    }
+
+    public static long countTasks() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Task o", Long.class).getSingleResult();
+    }
+
+    public static List<Task> findAllTasks() {
+        return entityManager().createQuery("SELECT o FROM Task o", Task.class).getResultList();
+    }
+
+    public static List<Task> findTaskEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Task o", Task.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+
+    @Transactional
     public void remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
@@ -70,19 +66,13 @@ public class Task {
         }
     }
 
-	@Transactional
+    @Transactional
     public void flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
 
-	@Transactional
-    public void clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-
-	@Transactional
+    @Transactional
     public Task merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
         Task merged = this.entityManager.merge(this);
@@ -90,60 +80,52 @@ public class Task {
         return merged;
     }
 
-	public static final EntityManager entityManager() {
-        EntityManager em = new Task().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
+    @Transactional
+    public void clear() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.clear();
     }
 
-	public static long countTasks() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Task o", Long.class).getSingleResult();
+    @Transactional
+    public void persist() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.persist(this);
     }
 
-	public static List<Task> findAllTasks() {
-        return entityManager().createQuery("SELECT o FROM Task o", Task.class).getResultList();
+    public String getTask() {
+        return this.task;
     }
 
-	public static Task findTask(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Task.class, id);
+    public Boolean getCompleted() {
+        return this.completed;
     }
 
-	public static List<Task> findTaskEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Task o", Task.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public void setCompleted(Boolean completed) {
+        this.completed = completed;
     }
 
-	public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Completed: ").append(getCompleted()).append(", ");
-        sb.append("Id: ").append(getId()).append(", ");
-        sb.append("Task: ").append(getTask()).append(", ");
-        sb.append("Version: ").append(getVersion());
-        return sb.toString();
+    public void setTask(String task) {
+        this.task = task;
     }
 
-	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
-
-	@Version
-    @Column(name = "version")
-    private Integer version;
-
-	public Long getId() {
-        return this.id;
+    public String toString() {
+        String str = ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+        return str != null && str.length() > 25 ? str.substring(0, 25) + "..." : str;
     }
 
-	public void setId(Long id) {
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
-	public Integer getVersion() {
+    public Integer getVersion() {
         return this.version;
     }
 
-	public void setVersion(Integer version) {
-        this.version = version;
+    public Long getId() {
+        return this.id;
     }
 }

@@ -62,7 +62,12 @@
     <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
-    <tx:annotation-driven mode="aspectj" transaction-manager="transactionManager"/>
+    <tx:annotation-driven />
+    <!--
+     note:  With Roo, the code runs under Aspect-J.  We removed the
+     mode clause - and the default transaction manager is already
+     'transactionManager'
+     mode="aspectj" transaction-manager="transactionManager" -->
     <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
         <property name="persistenceUnitName" value="persistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
