@@ -1,9 +1,11 @@
 package com.springsource.pizzashop.domain;
 
-import org.springframework.roo.addon.entity.RooIdentifier;
+import org.springframework.roo.addon.equals.RooEquals;
+import org.springframework.roo.addon.jpa.identifier.RooIdentifier;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooToString
+@RooEquals
 @RooIdentifier
 public final class PizzaOrderPk {
 

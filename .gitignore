@@ -10,3 +10,4 @@ target
 .settings
 log.roo
 .idea
+.DS_Store
