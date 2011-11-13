@@ -1,8 +1,8 @@
 package org.rooinaction.taskmanager.repository;
 
 import org.rooinaction.taskmanager.model.Task;
-import org.springframework.roo.addon.layers.repository.jpa.RooRepositoryJpa;
+import org.springframework.roo.addon.layers.repository.jpa.RooJpaRepository;
 
-@RooRepositoryJpa(domainType = Task.class)
+@RooJpaRepository(domainType = Task.class)
 public interface TaskRepository {
 }
