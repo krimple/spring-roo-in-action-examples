@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="taskmanager:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="taskmanager-noroo-0.1.0.BUILD-SNAPSHOT.war">
-      <element id="artifact" artifact-name="taskmanager:war exploded" />
-    </root>
-  </artifact>
-</component>
