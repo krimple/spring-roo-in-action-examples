@@ -1,22 +1,23 @@
 package org.rooina.addons.jqueryui;
 
+import java.io.File;
+import java.io.InputStream;
+
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.springframework.roo.classpath.operations.AbstractOperations;
+import org.springframework.roo.model.JavaType;
 import org.springframework.roo.project.Path;
 import org.springframework.roo.project.PathResolver;
 import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.support.osgi.UrlFindingUtils;
-import org.springframework.roo.support.util.*;
+import org.springframework.roo.support.util.Assert;
+import org.springframework.roo.support.util.XmlElementBuilder;
+import org.springframework.roo.support.util.XmlUtils;
 import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-
-import java.io.*;
-import java.net.URL;
-import java.util.Set;
 
 /**
  * Implementation of {@link JqueryuiOperations} interface.
@@ -36,7 +37,7 @@ public class JqueryuiOperationsImpl extends AbstractOperations implements Jquery
 
 	 /** {@inheritDoc} */
 	public boolean isInstalljQueryCommandAvailable() {
-		String id = projectOperations.getPathResolver().getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
+		String id = projectOperations.getPathResolver().getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
         boolean needsInstall =  !fileManager.exists(id);
         return needsInstall;
 	}
@@ -44,9 +45,11 @@ public class JqueryuiOperationsImpl extends AbstractOperations implements Jquery
     /** {@inheritDoc} */
     public boolean isInstalljQueryUICommandAvailable() {
         PathResolver resolver = projectOperations.getPathResolver();
-        String jQueryFileLocation = resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
-        String jQueryUIFileLocation = resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-ui-1.8.14.custom.min.js");
-        if (projectOperations.isProjectAvailable()) {
+        
+        
+        String jQueryFileLocation = resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
+        String jQueryUIFileLocation = resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-ui-1.8.14.custom.min.js");
+        if (projectOperations.isFocusedProjectAvailable()) {
             return fileManager.exists(jQueryFileLocation) && !fileManager.exists(jQueryUIFileLocation);
         } else {
             return false;
@@ -63,16 +66,16 @@ public class JqueryuiOperationsImpl extends AbstractOperations implements Jquery
 
     public void installjQueryUIApi() {
         PathResolver resolver = projectOperations.getPathResolver();
-        copyDirectoryContents("js/jquery-ui-1.8.14.custom.min.js", resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
-        copyDirectoryContents("js/jquery.validate.js", resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
-        copyDirectoryContents("js/jquery.validate.min.js", resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
-        copyDirectoryContents("js/jquery.maskedinput.js", resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
+        copyDirectoryContents("js/jquery-ui-1.8.14.custom.min.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
+        copyDirectoryContents("js/jquery.validate.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
+        copyDirectoryContents("js/jquery.validate.min.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
+        copyDirectoryContents("js/jquery.maskedinput.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
 
-        copyDirectoryContents("images/*.png", resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/images"), true);
-        copyDirectoryContents("styles/*.css", resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/styles"), true);
+        copyDirectoryContents("images/*.png", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/images"), true);
+        copyDirectoryContents("styles/*.css", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/styles"), true);
 
         String targetDirectory = projectOperations.getPathResolver()
-                .getIdentifier(Path.SRC_MAIN_WEBAPP, "/WEB-INF/tags/util");
+                .getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/WEB-INF/tags/util");
         String loadScriptsTagFile = targetDirectory + "/load-scripts.tagx";
         InputStream loadScriptsTagFileStream = fileManager.getInputStream(loadScriptsTagFile);
         Document document = XmlUtils.readXml(loadScriptsTagFileStream);
@@ -94,10 +97,10 @@ public class JqueryuiOperationsImpl extends AbstractOperations implements Jquery
 	public void installjQueryApi() {
         PathResolver resolver = projectOperations.getPathResolver();
 
-        copyDirectoryContents("js/jquery-1.5.1.min.js", resolver.getIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
+        copyDirectoryContents("js/jquery-1.5.1.min.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
         // now, load the scripts file and modify it to add the relevant javascript and css installation
         String targetDirectory = projectOperations.getPathResolver()
-                .getIdentifier(Path.SRC_MAIN_WEBAPP, "/WEB-INF/tags/util");
+                .getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/WEB-INF/tags/util");
 
         String loadScriptsTagFile = targetDirectory + "/load-scripts.tagx";
         InputStream loadScriptsTagFileStream = fileManager.getInputStream(loadScriptsTagFile);
