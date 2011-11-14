@@ -1,28 +1,20 @@
 package org.rooina.addons.coffeescript;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.springframework.roo.classpath.PhysicalTypeDetails;
-import org.springframework.roo.classpath.PhysicalTypeIdentifier;
-import org.springframework.roo.classpath.PhysicalTypeMetadata;
 import org.springframework.roo.classpath.PhysicalTypeMetadataProvider;
 import org.springframework.roo.classpath.TypeLocationService;
-import org.springframework.roo.classpath.details.MemberFindingUtils;
-import org.springframework.roo.classpath.details.MutableClassOrInterfaceTypeDetails;
-import org.springframework.roo.classpath.details.annotations.AnnotationMetadataBuilder;
 import org.springframework.roo.metadata.MetadataService;
-import org.springframework.roo.model.JavaType;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.*;
-import org.springframework.roo.support.util.Assert;
+import org.springframework.roo.project.GAV;
+import org.springframework.roo.project.Plugin;
+import org.springframework.roo.project.ProjectOperations;
 import org.springframework.roo.support.util.XmlUtils;
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
@@ -59,7 +51,7 @@ public class CoffeescriptOperationsImpl implements CoffeescriptOperations {
 
 	/** {@inheritDoc} */
 	public boolean isSetupCommandAvailable() {
-        if (!projectOperations.isProjectAvailable() ||
+        if (!projectOperations.isFocusedProjectAvailable() ||
             !isProjectWar()) {
             return false;
         }
@@ -69,7 +61,7 @@ public class CoffeescriptOperationsImpl implements CoffeescriptOperations {
 	}
 
     public boolean isRemoveCommandAvailable() {
-        if (!projectOperations.isProjectAvailable() ||
+        if (!projectOperations.isFocusedProjectAvailable() ||        		
             !isProjectWar()) {
             return false;
         }
@@ -79,24 +71,32 @@ public class CoffeescriptOperationsImpl implements CoffeescriptOperations {
     }
 
 	/** {@inheritDoc} */
-	public void setup() {
-        List<Plugin> pluginsToAdd = getPluginList();
-        projectOperations.addBuildPlugins(pluginsToAdd);
+	public void setup() {        
+        String moduleName = projectOperations.getFocusedModuleName();        
+        projectOperations.addBuildPlugins(moduleName, getPlugins());
+        
 	}
 
 
     public void remove() {
-        List<Plugin> pluginsToRemove = getPluginList();
-        projectOperations.removeBuildPlugins(pluginsToRemove);
+    	String moduleName = projectOperations.getFocusedModuleName();        
+        projectOperations.removeBuildPlugins(moduleName, getPlugins());
     }
 
-    private List<Plugin> getPluginList() {
+    /** 
+     * provide access to the build plugins in the file, that way
+     * if additional plugins are needed, you can just add them to the
+     * configuration file.  
+     * 
+     * @return The set of plugins
+     */
+    private Set<Plugin> getPlugins() {
         Element configuration = XmlUtils.getConfiguration(this.getClass());
         Collection<Element> configPlugins = XmlUtils.findElements(
                     "/configuration/coffeescript/plugins/plugin",
                     configuration);
 
-        List<Plugin> plugins = new ArrayList<Plugin>();
+        Set<Plugin> plugins = new HashSet<Plugin>();
         for (Element pluginElement : configPlugins) {
             plugins.add(new Plugin(pluginElement));
         }
@@ -106,14 +106,21 @@ public class CoffeescriptOperationsImpl implements CoffeescriptOperations {
 
     private boolean isCoffeeScriptPluginInstalled() {
         boolean found = false;
-        return projectOperations.getProjectMetadata().isBuildPluginRegistered(
-                new Plugin("com.theoryinpractise", "coffee-maven-plugin", null));
+        
+        // ack, pthhpt - would like to search based on only the groupId and artifactId so that
+        // if the user upgraded the maven plug-in it doesn't get mangled by our command.
+        // see JIRA ROO-2897
+        return projectOperations.getFocusedProjectMetadata().getPom().isPluginRegistered(
+                new GAV("com.theoryinpractise", "coffee-maven-plugin", "1.1.3"));
     }
 
-    private boolean isProjectWar() {
-        return projectOperations.isProjectAvailable() &&
+    private boolean isProjectWar() {    	
+    	return projectOperations.getFocusedProjectMetadata().getPom().getPackaging().equals("pom");
+    	
+        /*return projectOperations.isFocusedProjectAvailable() &&
                 fileManager.exists(
                         projectOperations.getPathResolver()
-                                .getIdentifier(Path.SRC_MAIN_WEBAPP, "WEB-INF/web.xml"));
+                                .getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "WEB-INF/web.xml"));
+                                */
     }
 }
