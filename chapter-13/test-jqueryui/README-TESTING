@@ -1,0 +1,3 @@
+Review the log file (roo.log) to see how we installed the add-on.  We used the osgi start command, 
+using a relative path to the target of the jqueryui12-addon project.
+
