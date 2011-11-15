@@ -11,7 +11,6 @@ import org.springframework.roo.classpath.PhysicalTypeMetadataProvider;
 import org.springframework.roo.classpath.TypeLocationService;
 import org.springframework.roo.metadata.MetadataService;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.GAV;
 import org.springframework.roo.project.Plugin;
 import org.springframework.roo.project.ProjectOperations;
 import org.springframework.roo.support.util.XmlUtils;
@@ -104,23 +103,17 @@ public class CoffeescriptOperationsImpl implements CoffeescriptOperations {
     }
 
 
-    private boolean isCoffeeScriptPluginInstalled() {
-        boolean found = false;
-        
-        // ack, pthhpt - would like to search based on only the groupId and artifactId so that
-        // if the user upgraded the maven plug-in it doesn't get mangled by our command.
-        // see JIRA ROO-2897
-        return projectOperations.getFocusedProjectMetadata().getPom().isPluginRegistered(
-                new GAV("com.theoryinpractise", "coffee-maven-plugin", "1.1.3"));
+    private boolean isCoffeeScriptPluginInstalled() {                        
+        Set<Plugin> pluginsExcludingVersion = 
+        		projectOperations.getFocusedProjectMetadata().getPom()
+        			.getBuildPluginsExcludingVersion(
+        					new Plugin("com.theoryinpractise", 
+        							   "coffee-maven-plugin", 
+        							   "1.3.1")); // required even though not needed...
+        return !pluginsExcludingVersion.isEmpty();
     }
 
     private boolean isProjectWar() {    	
-    	return projectOperations.getFocusedProjectMetadata().getPom().getPackaging().equals("pom");
-    	
-        /*return projectOperations.isFocusedProjectAvailable() &&
-                fileManager.exists(
-                        projectOperations.getPathResolver()
-                                .getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "WEB-INF/web.xml"));
-                                */
+    	return projectOperations.getFocusedProjectMetadata().getPom().getPackaging().equals("war");    	
     }
 }
