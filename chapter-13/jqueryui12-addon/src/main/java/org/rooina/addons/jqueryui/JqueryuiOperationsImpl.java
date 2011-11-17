@@ -1,149 +1,153 @@
 package org.rooina.addons.jqueryui;
 
-import java.io.File;
 import java.io.InputStream;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.springframework.roo.classpath.operations.AbstractOperations;
-import org.springframework.roo.model.JavaType;
 import org.springframework.roo.project.Path;
 import org.springframework.roo.project.PathResolver;
 import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.support.util.Assert;
+import org.springframework.roo.support.util.IOUtils;
 import org.springframework.roo.support.util.XmlElementBuilder;
 import org.springframework.roo.support.util.XmlUtils;
 import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 
 /**
  * Implementation of {@link JqueryuiOperations} interface.
- *
+ * 
  * @since 1.1.1
  */
 @Component
 @Service
-public class JqueryuiOperationsImpl extends AbstractOperations implements JqueryuiOperations {
-	private static final char SEPARATOR = File.separatorChar;
+public class JqueryuiOperationsImpl extends AbstractOperations
+    implements JqueryuiOperations {
 
-	/**
-	 * Get a reference to the ProjectOperations from the underlying OSGi container. Make sure you
-	 * are referencing the Roo bundle which contains this service in your add-on pom.xml.
-	 */
-	@Reference private ProjectOperations projectOperations;
+  /**
+   * Get a reference to the ProjectOperations from the underlying OSGi
+   * container. Make sure you are referencing the Roo bundle which contains this
+   * service in your add-on pom.xml.
+   */
+  @Reference
+  private ProjectOperations projectOperations;
 
-	 /** {@inheritDoc} */
-	public boolean isInstalljQueryCommandAvailable() {
-		String id = projectOperations.getPathResolver().getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
-        boolean needsInstall =  !fileManager.exists(id);
-        return needsInstall;
-	}
+  /**
+   * Most of our methods need the path resolver, so inject this as well, since
+   * it is another SCR component.
+   */
+  @Reference
+  private PathResolver pathResolver;
 
-    /** {@inheritDoc} */
-    public boolean isInstalljQueryUICommandAvailable() {
-        PathResolver resolver = projectOperations.getPathResolver();
-        
-        
-        String jQueryFileLocation = resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-1.5.1.min.js");
-        String jQueryUIFileLocation = resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js/jquery-ui-1.8.14.custom.min.js");
-        if (projectOperations.isFocusedProjectAvailable()) {
-            return fileManager.exists(jQueryFileLocation) && !fileManager.exists(jQueryUIFileLocation);
-        } else {
-            return false;
-        }
+  /** {@inheritDoc} */
+  public boolean isInstalljQueryCommandAvailable() {
+    String jsLocation = pathResolver.getFocusedIdentifier(
+        Path.SRC_MAIN_WEBAPP, "/js");
+
+    return fileManager.findMatchingAntPath(
+        jsLocation + "**/jquery-1.*.min.js").isEmpty();
+  }
+
+  /** {@inheritDoc} */
+  public boolean isInstalljQueryUICommandAvailable() {
+
+    String jsLocation = pathResolver.getFocusedIdentifier(
+        Path.SRC_MAIN_WEBAPP, "/js");
+    if (projectOperations.isFocusedProjectAvailable()) {
+      boolean hasJqueryUI = !fileManager.findMatchingAntPath(
+          jsLocation + "/jquery-ui-*.min.js").isEmpty();
+
+      return !isInstalljQueryCommandAvailable() && !hasJqueryUI;
+    } else {
+      return false;
     }
+  }
 
-	 /** {@inheritDoc} */
-	public String getProperty(String propertyName) {
-		Assert.hasText(propertyName, "Property name required");
-		return System.getProperty(propertyName);
-	}
+  /** {@inheritDoc} */
+  public void installjQueryUIApi() {
+    copyDirectoryContents("js/jqueryui/*.js",
+        pathResolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"),
+        true);
+    copyDirectoryContents("images/*.png",
+        pathResolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP,
+            "/images"), true);
+    copyDirectoryContents("styles/*.css",
+        pathResolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP,
+            "/styles"), true);
 
-	 /** {@inheritDoc} */
+    String targetDirectory = pathResolver.getFocusedIdentifier(
+        Path.SRC_MAIN_WEBAPP, "/WEB-INF/tags/util");
 
-    public void installjQueryUIApi() {
-        PathResolver resolver = projectOperations.getPathResolver();
-        copyDirectoryContents("js/jquery-ui-1.8.14.custom.min.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
-        copyDirectoryContents("js/jquery.validate.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
-        copyDirectoryContents("js/jquery.validate.min.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
-        copyDirectoryContents("js/jquery.maskedinput.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
+    String loadScriptsTagFile = targetDirectory + "/load-scripts.tagx";
 
-        copyDirectoryContents("images/*.png", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/images"), true);
-        copyDirectoryContents("styles/*.css", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/styles"), true);
+    InputStream loadScriptsTagFileStream = fileManager
+        .getInputStream(loadScriptsTagFile);
 
-        String targetDirectory = projectOperations.getPathResolver()
-                .getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/WEB-INF/tags/util");
-        String loadScriptsTagFile = targetDirectory + "/load-scripts.tagx";
-        InputStream loadScriptsTagFileStream = fileManager.getInputStream(loadScriptsTagFile);
-        Document document = XmlUtils.readXml(loadScriptsTagFileStream);
-        Node parentNode = document.getFirstChild();
+    Document document = XmlUtils.readXml(loadScriptsTagFileStream);
 
-        buildAndAddUrlNode(document, "/js/jquery-ui-1.8.14.custom.min.js", "jqueryui_url");
-        buildAndAddUrlNode(document, "/js/jquery.validate.min.js", "jquery_validate_url");
-        buildAndAddUrlNode(document, "/js/additional-methods.min.js", "jquery_validate_add_methods_url");
-        buildAndAddUrlNode(document, "/styles/jquery-ui-1.8.14.custom.css", "jquery_ui_theme_url");
+    buildAndAddJSNode(document,
+        "/js/jqueryui/jquery-ui-1.8.14.custom.min.js");
+    buildAndAddJSNode(document, 
+        "/js/jqueryui/jquery.validate.min.js");
+    buildAndAddJSNode(document,
+        "/js/jqueryui/additional-methods.min.js");
+    buildAndAddCSSNode(document, 
+        "/styles/jquery-ui-1.8.14.custom.css");
 
-        buildAndAddJSNode(document, "${jqueryui_url}");
-        buildAndAddJSNode(document, "${jquery_validate_url}");
-        buildAndAddJSNode(document, "${jquery_validate_add_methods_url}");
-        buildAndAddCSSNode(document, "${jquery_ui_theme_url}");
-        try { loadScriptsTagFileStream.close(); } catch (Exception e) {}
-        fileManager.createOrUpdateTextFileIfRequired(loadScriptsTagFile, XmlUtils.nodeToString(document), false);
-    }
+    IOUtils.closeQuietly(loadScriptsTagFileStream);
+    fileManager.createOrUpdateTextFileIfRequired(loadScriptsTagFile,
+        XmlUtils.nodeToString(document), false);
+  }
 
-	public void installjQueryApi() {
-        PathResolver resolver = projectOperations.getPathResolver();
+  public void installjQueryApi() {
+    String pathIdentifier = pathResolver.getFocusedIdentifier(
+        Path.SRC_MAIN_WEBAPP, "/js");
 
-        copyDirectoryContents("js/jquery-1.5.1.min.js", resolver.getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/js"), true);
-        // now, load the scripts file and modify it to add the relevant javascript and css installation
-        String targetDirectory = projectOperations.getPathResolver()
-                .getFocusedIdentifier(Path.SRC_MAIN_WEBAPP, "/WEB-INF/tags/util");
+    copyDirectoryContents("js/jquery/jquery-1.5.1.min.js",
+        pathIdentifier, true);
 
-        String loadScriptsTagFile = targetDirectory + "/load-scripts.tagx";
-        InputStream loadScriptsTagFileStream = fileManager.getInputStream(loadScriptsTagFile);
+    String targetDirectory = pathResolver.getFocusedIdentifier(
+        Path.SRC_MAIN_WEBAPP, "WEB-INF/tags/util");
 
-        Document document = XmlUtils.readXml(loadScriptsTagFileStream);
-        Node parentNode = document.getFirstChild();
-        // add existence search here to not add this twice...
-        buildAndAddUrlNode(document, "/js/jquery-1.5.1.min.js", "jquery_url");
-        buildAndAddJSNode(document, "${jquery_url}");
-        try { loadScriptsTagFileStream.close(); } catch (Exception e) {}
+    String loadScriptsTagFile = targetDirectory + "/load-scripts.tagx";
 
-        fileManager.createOrUpdateTextFileIfRequired(loadScriptsTagFile, XmlUtils.nodeToString(document), false);
-	}
+    InputStream loadScriptsTagFileStream = fileManager
+        .getInputStream(loadScriptsTagFile);
 
-    private void buildAndAddUrlNode(Document document, String path, String var) {
-        XmlElementBuilder builder = new XmlElementBuilder("spring:url", document);
-        builder.addAttribute("value", path);
-        builder.addAttribute("var", var);
-        Element springURLTag = builder.build();
-        document.getDocumentElement().appendChild(springURLTag);
-    }
+    Document document = XmlUtils.readXml(loadScriptsTagFileStream);
 
-    private void buildAndAddJSNode(Document document, String var) {
-        XmlElementBuilder builder = new XmlElementBuilder("script", document);
-        builder.addAttribute("type", "text/javascript");
-        builder.addAttribute("src", var);
-        addComment(document, builder);
-        Element springJSTag = builder.build();
-        document.getDocumentElement().appendChild(springJSTag);
-    }
+    buildAndAddJSNode(document, "/js/jquery-1.5.1.min.js");
 
-    private void buildAndAddCSSNode(Document document, String fileName) {
-        XmlElementBuilder builder = new XmlElementBuilder("link", document);
-        builder.addAttribute("href", fileName);
-        builder.addAttribute("rel", "stylesheet");
-        builder.addAttribute("type", "text/css");
-        addComment(document, builder);
-        Element springCSSTag = builder.build();
-        document.getDocumentElement().appendChild(springCSSTag);
-    }
+    IOUtils.closeQuietly(loadScriptsTagFileStream);
 
-    private void addComment(Document document, XmlElementBuilder builder) {
-        Comment comment = document.createComment("required for FF3 and Opera");
-        builder.addChild(comment);
-    }
+    fileManager.createOrUpdateTextFileIfRequired(loadScriptsTagFile,
+        XmlUtils.nodeToString(document), false);
+  }
+
+  private void buildAndAddJSNode(Document doc, String var) {
+    XmlElementBuilder builder = new XmlElementBuilder("script", doc);
+    builder.addAttribute("type", "text/javascript");
+    builder.addAttribute("src", var);
+    addComment(doc, builder);
+    Element springJSTag = builder.build();
+    doc.getDocumentElement().appendChild(springJSTag);
+  }
+
+  private void buildAndAddCSSNode(Document document, String fileName) {
+    XmlElementBuilder builder = new XmlElementBuilder("link", document);
+    builder.addAttribute("href", fileName);
+    builder.addAttribute("rel", "stylesheet");
+    builder.addAttribute("type", "text/css");
+    addComment(document, builder);
+    Element springCSSTag = builder.build();
+    document.getDocumentElement().appendChild(springCSSTag);
+  }
+
+  private void addComment(Document document, XmlElementBuilder builder) {
+    Comment comment = document
+        .createComment("required for FF3 and Opera");
+    builder.addChild(comment);
+  }
 }

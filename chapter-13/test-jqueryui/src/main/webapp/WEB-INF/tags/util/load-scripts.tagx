@@ -32,25 +32,19 @@
         <!-- required for FF3 and Opera -->
     </script>
   <script language="JavaScript" type="text/javascript">dojo.require("dojo.parser");</script>
-
-<spring:url value="/js/jquery-1.5.1.min.js" var="jquery_url"/>
-    <script src="${jquery_url}" type="text/javascript">
+<script src="/js/jquery-1.5.1.min.js" type="text/javascript">
         <!--required for FF3 and Opera-->
     </script>
-<spring:url value="/js/jquery-ui-1.8.14.custom.min.js" var="jqueryui_url"/>
-    <spring:url value="/js/jquery.validate.min.js" var="jquery_validate_url"/>
-    <spring:url value="/js/additional-methods.min.js" var="jquery_validate_add_methods_url"/>
-    <spring:url value="/styles/jquery-ui-1.8.14.custom.css" var="jquery_ui_theme_url"/>
-    <script src="${jqueryui_url}" type="text/javascript">
+<script src="/js/jqueryui/jquery-ui-1.8.14.custom.min.js" type="text/javascript">
         <!--required for FF3 and Opera-->
     </script>
-    <script src="${jquery_validate_url}" type="text/javascript">
+    <script src="/js/jqueryui/jquery.validate.min.js" type="text/javascript">
         <!--required for FF3 and Opera-->
     </script>
-    <script src="${jquery_validate_add_methods_url}" type="text/javascript">
+    <script src="/js/jqueryui/additional-methods.min.js" type="text/javascript">
         <!--required for FF3 and Opera-->
     </script>
-    <link href="${jquery_ui_theme_url}" rel="stylesheet" type="text/css">
+    <link href="/styles/jquery-ui-1.8.14.custom.css" rel="stylesheet" type="text/css">
         <!--required for FF3 and Opera-->
     </link>
 </jsp:root>
