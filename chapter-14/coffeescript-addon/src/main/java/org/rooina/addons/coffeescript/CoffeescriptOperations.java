@@ -2,11 +2,11 @@ package org.rooina.addons.coffeescript;
 
 public interface CoffeescriptOperations {
 
-	boolean isSetupCommandAvailable();
+  boolean isSetupCommandAvailable();
 
-    boolean isRemoveCommandAvailable();
+  boolean isRemoveCommandAvailable();
 
-	void setup();
+  void setup();
 
-    void remove();
+  void remove();
 }
