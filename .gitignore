@@ -3,9 +3,11 @@ target
 *.ipr
 *.iws
 *.iml
+*.aj
 .classpath
 .project
 .eclipse
 .settings
 log.roo
 .idea
+.DS_Store

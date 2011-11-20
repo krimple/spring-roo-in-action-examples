@@ -1,63 +1,60 @@
 package org.rooinaction.taskmanager.model;
 
-import java.util.List;
-import junit.framework.Assert;
-
 import org.junit.Test;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.rooinaction.taskmanager.repository.TaskRepository;
 import org.rooinaction.taskmanager.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.roo.addon.test.RooIntegrationTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
+@Configurable
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:/META-INF/spring/applicationContext*.xml")
 @Transactional
-@Configurable
-@RooIntegrationTest(entity = Task.class)
 public class TaskIntegrationTest {
-	
+
+    @Autowired
+    private TaskDataOnDemand dod;
+
+    @Autowired
+    TaskService taskService;
+
+    @Autowired
+    TaskRepository taskRepository;
+
     @Test
     public void testMarkerMethod() {
     }
-    
+
     @Test
-    public void testModifyTaskWhenCompletingFromRepo() {
-    	Task t = new Task();
-    	t.setTask("Click on button");
-    	taskService.saveTask(t);
-    	taskRepository.flush();
-    	t.setCompleted(true);
-    	taskService.updateTask(t);
-    	taskRepository.flush();
-    	Task t2 = taskRepository.findOne(t.getId());
-    	
-    	Assert.assertTrue("Task text does not start with (completed).", 
-    			t2.getTask().startsWith("(completed)"));
-    }    
+      public void testModifyTaskWhenCompletingFromRepo() {
+        Task t = new Task();
+        t.setTask("Click on button");
+        taskService.saveTask(t);
+        taskRepository.flush();
+        t.setCompleted(true);
+        taskService.updateTask(t);
+        taskRepository.flush();
+        Task t2 = taskRepository.findOne(t.getId());
     
+        Assert.assertTrue("Task text does not start with (completed).", 
+            t2.getTask().startsWith("(completed)"));
+      }
 
-	@Autowired
-    private TaskDataOnDemand dod;
-
-	@Autowired
-    TaskService taskService;
-
-	@Autowired
-    TaskRepository taskRepository;
-
-	@Test
+    @Test
     public void testCountAllTasks() {
         Assert.assertNotNull("Data on demand for 'Task' failed to initialize correctly", dod.getRandomTask());
         long count = taskService.countAllTasks();
         Assert.assertTrue("Counter for 'Task' incorrectly reported there were no entries", count > 0);
     }
-
-	@Test
+    
+    @Test
     public void testFindTask() {
         Task obj = dod.getRandomTask();
         Assert.assertNotNull("Data on demand for 'Task' failed to initialize correctly", obj);
@@ -67,8 +64,8 @@ public class TaskIntegrationTest {
         Assert.assertNotNull("Find method for 'Task' illegally returned null for id '" + id + "'", obj);
         Assert.assertEquals("Find method for 'Task' returned the incorrect identifier", id, obj.getId());
     }
-
-	@Test
+    
+    @Test
     public void testFindAllTasks() {
         Assert.assertNotNull("Data on demand for 'Task' failed to initialize correctly", dod.getRandomTask());
         long count = taskService.countAllTasks();
@@ -77,8 +74,8 @@ public class TaskIntegrationTest {
         Assert.assertNotNull("Find all method for 'Task' illegally returned null", result);
         Assert.assertTrue("Find all method for 'Task' failed to return any data", result.size() > 0);
     }
-
-	@Test
+    
+    @Test
     public void testFindTaskEntries() {
         Assert.assertNotNull("Data on demand for 'Task' failed to initialize correctly", dod.getRandomTask());
         long count = taskService.countAllTasks();
@@ -89,8 +86,8 @@ public class TaskIntegrationTest {
         Assert.assertNotNull("Find entries method for 'Task' illegally returned null", result);
         Assert.assertEquals("Find entries method for 'Task' returned an incorrect number of entries", count, result.size());
     }
-
-	@Test
+    
+    @Test
     public void testFlush() {
         Task obj = dod.getRandomTask();
         Assert.assertNotNull("Data on demand for 'Task' failed to initialize correctly", obj);
@@ -103,8 +100,8 @@ public class TaskIntegrationTest {
         taskRepository.flush();
         Assert.assertTrue("Version for 'Task' failed to increment on flush directive", (currentVersion != null && obj.getVersion() > currentVersion) || !modified);
     }
-
-	@Test
+    
+    @Test
     public void testUpdateTaskUpdate() {
         Task obj = dod.getRandomTask();
         Assert.assertNotNull("Data on demand for 'Task' failed to initialize correctly", obj);
@@ -118,8 +115,8 @@ public class TaskIntegrationTest {
         Assert.assertEquals("Identifier of merged object not the same as identifier of original object", merged.getId(), id);
         Assert.assertTrue("Version for 'Task' failed to increment on merge and flush directive", (currentVersion != null && obj.getVersion() > currentVersion) || !modified);
     }
-
-	@Test
+    
+    @Test
     public void testSaveTask() {
         Assert.assertNotNull("Data on demand for 'Task' failed to initialize correctly", dod.getRandomTask());
         Task obj = dod.getNewTransientTask(Integer.MAX_VALUE);
@@ -129,8 +126,8 @@ public class TaskIntegrationTest {
         taskRepository.flush();
         Assert.assertNotNull("Expected 'Task' identifier to no longer be null", obj.getId());
     }
-
-	@Test
+    
+    @Test
     public void testDeleteTask() {
         Task obj = dod.getRandomTask();
         Assert.assertNotNull("Data on demand for 'Task' failed to initialize correctly", obj);
@@ -141,4 +138,6 @@ public class TaskIntegrationTest {
         taskRepository.flush();
         Assert.assertNull("Failed to remove 'Task' with identifier '" + id + "'", taskService.findTask(id));
     }
+    
+
 }

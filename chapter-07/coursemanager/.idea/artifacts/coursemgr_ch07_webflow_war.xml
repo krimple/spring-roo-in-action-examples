@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="coursemgr-ch07-webflow:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="coursemgr-ch07-webflow-0.1.0.BUILD-SNAPSHOT.war">
-      <element id="artifact" artifact-name="coursemgr-ch07-webflow:war exploded" />
-    </root>
-  </artifact>
-</component>

@@ -7,11 +7,10 @@ import java.lang.annotation.Target;
 
 /**
  * Trigger annotation for this add-on.
- 
+ * 
  * @since 1.1
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.SOURCE)
 public @interface RooCoffeescript {
 }
-

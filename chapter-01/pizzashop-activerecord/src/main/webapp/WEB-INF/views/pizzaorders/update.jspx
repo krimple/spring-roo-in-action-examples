@@ -8,8 +8,5 @@
         <field:input field="total" id="c_com_springsource_pizzashop_domain_PizzaOrder_total" validationMessageCode="field_invalid_number" z="6oLp6M3w7dAJHJyfZvM7VWQI5iw="/>
         <field:datetime dateTimePattern="${pizzaOrder_deliverydate_date_format}" field="deliveryDate" id="c_com_springsource_pizzashop_domain_PizzaOrder_deliveryDate" z="wvNNdqzLpR+KpvDhFzJcm2jtW0I="/>
         <field:select field="pizzas" id="c_com_springsource_pizzashop_domain_PizzaOrder_pizzas" itemValue="id" items="${pizzas}" multiple="true" path="/pizzas" z="RcB1CRjdKIIbpAyD3Bzbs2UqIYU="/>
-        <field:input field="shopCountry" id="c_com_springsource_pizzashop_domain_PizzaOrder_shopCountry" z="64NCR6/sC0hQHayLqqY+l2HFrWc="/>
-        <field:input field="shopCity" id="c_com_springsource_pizzashop_domain_PizzaOrder_shopCity" z="1ldejCNl2DKEeusBxjm4iVpbQNg="/>
-        <field:input field="shopName" id="c_com_springsource_pizzashop_domain_PizzaOrder_shopName" z="H5EcJpqxzfi8oJ4eJmFSf6OANcE="/>
     </form:update>
 </div>
