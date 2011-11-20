@@ -8,6 +8,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
@@ -16,7 +17,6 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.rooinaction.coursemanager.model.validations.IsValidPrice;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -40,7 +40,7 @@ public class Course {
   @DecimalMin("0.0")
   @DecimalMax("99999.99")
   @Digits(integer = 5, fraction = 2)
-  //@IsValidPrice
+  // @IsValidPrice
   private BigDecimal listPrice;
 
   @NotNull
@@ -56,4 +56,10 @@ public class Course {
   @NotNull
   @Enumerated(EnumType.STRING)
   private CourseTypeEnum courseType;
+
+  @AssertTrue(message = "Price is invalid - must be between $0 - $10,000 and divisible by .05")
+  public boolean isValid() {
+    if (listPrice == null) return true;
+    return listPrice.remainder(new BigDecimal("0.05")).compareTo(new BigDecimal("0.0")) == 0;
+  }
 }

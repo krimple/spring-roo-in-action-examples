@@ -11,11 +11,14 @@ import javax.validation.metadata.ConstraintDescriptor;
 
 import junit.framework.Assert;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.roo.addon.test.RooIntegrationTest;
 
 @RooIntegrationTest(entity = Course.class)
 public class CourseIntegrationTest {
+  
+  Logger logger = Logger.getLogger(CourseIntegrationTest.class);
 
   @Test
   public void testMarkerMethod() {
@@ -29,11 +32,12 @@ public class CourseIntegrationTest {
     c.setRunDate(new Date());
     c.setName(null);
     c.setDescription(null);
-    c.setListPrice(null);
+    c.setListPrice(new BigDecimal("123.55"));
     try {
       c.persist();
     } catch (ConstraintViolationException cve) {
-      Assert.assertEquals(3, cve.getConstraintViolations().size());
+      logger.debug("Constraint violation thrown - ", cve);
+      Assert.assertEquals(2, cve.getConstraintViolations().size());
       Iterator<ConstraintViolation<?>> it = cve
               .getConstraintViolations().iterator();
       while (it.hasNext()) {
@@ -47,24 +51,28 @@ public class CourseIntegrationTest {
         }
       }
       return;
-    } catch (Exception e) {
-      Assert.fail("Unexpected exception thrown " + e.getMessage());
-      return;
-    }
+    } 
 
     Assert.fail("Exception not thrown.");
   }
 
   @Test
+  public void testValidPrice() {
+    CourseDataOnDemand cDod = new CourseDataOnDemand();
+    Course course = cDod.getNewTransientCourse(0);
+    course.setListPrice(new BigDecimal("2234.05"));
+    course.persist();
+  }
+  
+  @Test
   public void testInvalidPrice() {
-
     try {
       CourseDataOnDemand cDod = new CourseDataOnDemand();
       Course course = cDod.getNewTransientCourse(0);
-      course.setListPrice(new BigDecimal("2234.05"));
+      course.setListPrice(new BigDecimal("2234.07"));
       course.persist();
       course.flush();
-      return;
+      Assert.fail("This test did not throw an invalid price exception.");
     } catch (ConstraintViolationException ve) {
       Iterator<ConstraintViolation<?>> violationsIterator = ve.getConstraintViolations().iterator();
 
@@ -75,6 +83,5 @@ public class CourseIntegrationTest {
         }
       }
     }
-    Assert.fail("This test did not throw an invalid price exception.");
   }
 }
