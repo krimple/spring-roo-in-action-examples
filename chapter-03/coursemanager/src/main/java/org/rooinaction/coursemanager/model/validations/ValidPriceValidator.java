@@ -20,7 +20,7 @@ public class ValidPriceValidator implements
     if (value == null)
       return true;
 
-    return value.remainder(INCREMENT).compareTo(BigDecimal.ZERO) == 0;
+    return value.remainder(INCREMENT).compareTo(new BigDecimal("0.0")) == 0;
   }
 
 }
