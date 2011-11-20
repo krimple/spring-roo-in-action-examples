@@ -1,20 +1,30 @@
 package org.rooinaction.coursemanager.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.roo.addon.entity.RooEntity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.serializable.RooSerializable;
-import org.springframework.roo.addon.tostring.RooToString;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.rooinaction.coursemanager.model.validations.IsValidPrice;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.tostring.RooToString;
+
 @RooJavaBean
 @RooToString
-@RooSerializable
-@RooEntity(finders = { "findCoursesByNameLike" })
+@RooJpaActiveRecord(finders = { "findCoursesByNameLike" })
 public class Course {
 
   @NotNull
@@ -30,6 +40,7 @@ public class Course {
   @DecimalMin("0.0")
   @DecimalMax("99999.99")
   @Digits(integer = 5, fraction = 2)
+  //@IsValidPrice
   private BigDecimal listPrice;
 
   @NotNull
