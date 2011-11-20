@@ -2,9 +2,9 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_org_foo_bar_model_Course" object="${course}" path="/courses" z="hJ8769QxxltdHwYex7lwfK1c+7c=">
-        <field:display field="name" id="s_org_foo_bar_model_Course_name" object="${course}" z="jejMN8WdqPa8f4nzYcaocjGQPPA="/>
-        <field:display field="cost" id="s_org_foo_bar_model_Course_cost" object="${course}" z="aLgJPsc9fzERQewVGktlp2ozG6Y="/>
-        <field:display date="true" dateTimePattern="${course_startdate_date_format}" field="startDate" id="s_org_foo_bar_model_Course_startDate" object="${course}" z="kcGp5VDxkwAS7hoEPuwFnxtr1Tc="/>
+    <page:show id="ps_org_foo_bar_services_db_Course" object="${course}" path="/courses" z="w/ZOxXlASy6QjdHzHnaSqS0gKTY=">
+        <field:display field="name" id="s_org_foo_bar_services_db_Course_name" object="${course}" z="3R1fLCdavksS7S8nWui5fbBjHxo="/>
+        <field:display field="cost" id="s_org_foo_bar_services_db_Course_cost" object="${course}" z="v4eptZZBOmKnzx+inzFfiWi7wLM="/>
+        <field:display field="duration" id="s_org_foo_bar_services_db_Course_duration" object="${course}" z="xXZF0kJm9sbt8QNKUJLX4ueRCi0="/>
     </page:show>
 </div>

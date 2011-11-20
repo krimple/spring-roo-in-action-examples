@@ -1,4 +1,4 @@
-package org.foo.bar.model;
+package org.foo.bar.services.db;
 
 import org.springframework.roo.addon.dod.RooDataOnDemand;
 

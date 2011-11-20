@@ -2,9 +2,9 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_org_foo_bar_model_Course" modelAttribute="course" path="/courses" versionField="Version" z="zr3qJktNIficXTa3jZjF2b/uHg0=">
-        <field:input field="name" id="c_org_foo_bar_model_Course_name" z="buSyeljiv02yq93pFIZMxh8A8sg="/>
-        <field:input field="cost" id="c_org_foo_bar_model_Course_cost" validationMessageCode="field_invalid_number" z="lhTSI2nZ9a5+CrBEL63k3K9iRT0="/>
-        <field:datetime dateTimePattern="${course_startdate_date_format}" field="startDate" id="c_org_foo_bar_model_Course_startDate" z="vGMqoLQmxldQqN8iIofD7PnO2WM="/>
+    <form:update id="fu_org_foo_bar_services_db_Course" modelAttribute="course" path="/courses" versionField="Version" z="PKfA/JTLKLndYTkmBFXnb8ec4pA=">
+        <field:input field="name" id="c_org_foo_bar_services_db_Course_name" z="IXl30n3ECmmvDoPIJHGnvVp9QIU="/>
+        <field:input decimalMin="0.0" field="cost" id="c_org_foo_bar_services_db_Course_cost" required="true" validationMessageCode="field_invalid_number" z="1x3MFXc2UiQ6W6DoSMRow0aAxVI="/>
+        <field:input field="duration" id="c_org_foo_bar_services_db_Course_duration" z="GUWGeiqg8MAwR7RWCqNqmOdyc3Y="/>
     </form:update>
 </div>
