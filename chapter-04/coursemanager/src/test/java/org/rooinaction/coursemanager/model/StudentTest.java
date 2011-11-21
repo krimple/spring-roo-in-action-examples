@@ -1,8 +1,11 @@
 package org.rooinaction.coursemanager.model;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
+import org.springframework.mock.staticmock.MockStaticEntityMethods;
+
+@MockStaticEntityMethods
 public class StudentTest {
 
     private Student student = new Student();

@@ -13,7 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
@@ -22,15 +21,13 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.serializable.RooSerializable;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooSerializable
-@RooEntity(finders = { "findCoursesByNameLike" })
+@RooJpaActiveRecord(finders = { "findCoursesByNameLike" })
 public class Course {
 
     @NotNull
@@ -51,7 +48,7 @@ public class Course {
     @Column(name = "max_capacity")
     @Min(1L)
     @Max(9999L)
-    private java.lang.Integer maxiumumCapacity;
+    private Integer maxiumumCapacity;
 
     @NotNull
     @Enumerated(EnumType.STRING)

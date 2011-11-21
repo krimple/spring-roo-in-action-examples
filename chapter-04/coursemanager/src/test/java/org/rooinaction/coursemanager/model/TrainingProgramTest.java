@@ -1,12 +1,11 @@
 package org.rooinaction.coursemanager.model;
 
-import static junit.framework.Assert.*;
+import static junit.framework.Assert.assertEquals;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 import org.springframework.mock.staticmock.AnnotationDrivenStaticEntityMockingControl;
 import org.springframework.mock.staticmock.MockStaticEntityMethods;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 @MockStaticEntityMethods
 public class TrainingProgramTest {
@@ -22,6 +21,6 @@ public class TrainingProgramTest {
     
     @Test
     public void testSomethingElse() {
-    	TrainingProgram program = mock(TrainingProgram.class);    	    	
+    	TrainingProgram program = Mockito.mock(TrainingProgram.class);    	    	
     }
 }

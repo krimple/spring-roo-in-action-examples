@@ -1,12 +1,10 @@
 package org.rooinaction.coursemanager.types;
 
-import org.apache.commons.lang.StringUtils;
-import org.springframework.binding.convert.ConversionException;
-import org.springframework.format.Formatter;
-import sun.misc.Regexp;
-
 import java.text.ParseException;
 import java.util.Locale;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.format.Formatter;
 
 public class USPhoneNumberFormatter implements Formatter<USPhoneNumber> {
 
