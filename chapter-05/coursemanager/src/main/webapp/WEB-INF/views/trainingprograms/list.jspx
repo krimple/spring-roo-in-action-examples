@@ -5,6 +5,7 @@
     <page:list id="pl_org_rooinaction_coursemanager_model_TrainingProgram" items="${trainingprograms}" z="TSQo4gZuT3TKrzkdarih3HxeCaY=">
         <table:table data="${trainingprograms}" id="l_org_rooinaction_coursemanager_model_TrainingProgram" path="/trainingprograms" z="UoOtyC2nMdmkoX2QVBr5p6wogk8=">
             <table:column id="c_org_rooinaction_coursemanager_model_TrainingProgram_name" property="name" z="nuU+84X4pQXOdkQTyKK4sG8b91E="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_TrainingProgram_courses" property="courses" z="aPRW3+VYYX4g8zCBepHQBMpus30="/>
         </table:table>
     </page:list>
 </div>

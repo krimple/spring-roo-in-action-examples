@@ -5,6 +5,7 @@
     <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
         <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__fooindex_id" messageCode="global_generic" url="/foo/index" z="HOdiyJAkzsHgGxVRCohmHaoz/Jg="/>
+            <menu:item id="i_controller__testdriveindex_id" messageCode="global_generic" url="/testdrive/index" z="mIM6TSGRegKsbzvfJxe24n0/mVo="/>
         </menu:category>
         <menu:category id="c_flows" z="5igpkb/e+HPIN8iUErvmM38Eqqk=">
             <menu:item id="i_flows_sampleflow" messageCode="webflow_menu_enter" url="/sampleflow" z="JMM+dAVQySYHXliwJ5d5AQocPfk="/>
@@ -22,6 +23,7 @@
         <menu:category id="c_course" z="xwPFa1gir7x2AC89oGWk0WgKTE0=">
             <menu:item id="i_course_new" messageCode="global_menu_new" url="/courses?form" z="vR3sAxuatm9tFJBQbX6a5epcJ2U="/>
             <menu:item id="i_course_list" messageCode="global_menu_list" url="/courses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ym6LbWOetujuA2Z1C5Io6i7oW9I="/>
+            <menu:item id="fi_course_namelike" messageCode="global_menu_find" url="/courses?find=ByNameLike&amp;form" z="EUARqjbJj6plaPL0BCxgWoT6G0c="/>
         </menu:category>
         <menu:category id="c_instructor" z="+gDzvJHZJnEAILKLGfDq4AKdOLo=">
             <menu:item id="i_instructor_new" messageCode="global_menu_new" url="/instructors?form" z="4tM3+dXUO35RMRjX+EfKIB5+q6A="/>
@@ -46,6 +48,8 @@
         <menu:category id="c_registration" z="4zf7yvK7ho0iT0xmOM9TE/tFNtY=">
             <menu:item id="i_registration_new" messageCode="global_menu_new" url="/registrations?form" z="PKY2JFhDvFdWVUMxSggdSVA09ck="/>
             <menu:item id="i_registration_list" messageCode="global_menu_list" url="/registrations?page=1&amp;size=${empty param.size ? 10 : param.size}" z="xntfgfEz0GqM24gFN5PhXxBtPCA="/>
+            <menu:item id="fi_registration_studentandoffering" messageCode="global_menu_find" url="/registrations?find=ByStudentAndOffering&amp;form" z="AF0QHDFJL1GMXUsAcn9GaXZTZB4="/>
+            <menu:item id="fi_registration_studentandofferingnot" messageCode="global_menu_find" url="/registrations?find=ByStudentAndOfferingNot&amp;form" z="TMbG17XvMvVBIW4TvKis+Vfipds="/>
         </menu:category>
     </menu:menu>
 </div>
