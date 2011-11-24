@@ -6,7 +6,6 @@
         <field:input disableFormBinding="true" field="id.shopCountry" id="c_com_springsource_pizzashop_domain_PizzaOrder_id_shopCountry" z="gYaMzJza/LPx2BjeuDM9jqGzO6o="/>
         <field:input disableFormBinding="true" field="id.shopCity" id="c_com_springsource_pizzashop_domain_PizzaOrder_id_shopCity" z="hKT6TVdS0rW5gXX++lJxqwim2sc="/>
         <field:input disableFormBinding="true" field="id.shopName" id="c_com_springsource_pizzashop_domain_PizzaOrder_id_shopName" z="jZDuNFtjBLbNeyE7nmwvgltMGuA="/>
-        <field:input disableFormBinding="true" field="id.serialVersionUID" id="c_com_springsource_pizzashop_domain_PizzaOrder_id_serialVersionUID" z="UL2sCKWx3UxXY0teOObKzp5pK/k="/>
         <field:input field="name" id="c_com_springsource_pizzashop_domain_PizzaOrder_name" min="2" required="true" z="FzRS03Kj3igOwUK+UGbj8+mRsP8="/>
         <field:input field="address" id="c_com_springsource_pizzashop_domain_PizzaOrder_address" max="30" z="bxMpFcTrG0522DJO+XX9a9ig+KI="/>
         <field:input field="total" id="c_com_springsource_pizzashop_domain_PizzaOrder_total" validationMessageCode="field_invalid_number" z="6oLp6M3w7dAJHJyfZvM7VWQI5iw="/>
