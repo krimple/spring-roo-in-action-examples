@@ -18,9 +18,7 @@ import org.springframework.roo.addon.test.RooIntegrationTest;
 
 @RooIntegrationTest(entity = Course.class)
 public class CourseIntegrationTest {
-  
-  private CourseRepository courseRepository;
-  
+
   Logger logger = Logger.getLogger(CourseIntegrationTest.class);
 
   @Test
