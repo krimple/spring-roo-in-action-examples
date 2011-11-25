@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_org_rooinaction_coursemanager_model_Payment" items="${payments}" z="upGe3EUI9OED/kjkcmEDPg+A93o=">
-        <table:table data="${payments}" id="l_org_rooinaction_coursemanager_model_Payment" path="/payments" z="P0i7EyjaQc/5ypF0S8Bb0VllpUc="/>
-    </page:list>
-</div>

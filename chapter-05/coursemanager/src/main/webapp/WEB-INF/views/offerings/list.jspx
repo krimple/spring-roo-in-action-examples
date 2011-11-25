@@ -7,7 +7,6 @@
             <table:column date="true" dateTimePattern="${offering_rundate_date_format}" id="c_org_rooinaction_coursemanager_model_Offering_runDate" property="runDate" z="ryvVQ0paH/3Wm00fSmC3sxCRA1k="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Offering_course" property="course" z="RcW4qrZ8XGorSQhtSwksp8IoI1E="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Offering_instructor" property="instructor" z="MXPRKP3T8ATjNjJWKCnCqV51pAw="/>
-            <table:column id="c_org_rooinaction_coursemanager_model_Offering_registrations" property="registrations" z="cI9VHoewhjmgXgciD/ODJ5MDf/E="/>
         </table:table>
     </page:list>
 </div>
