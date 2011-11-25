@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__testdriveindex_id" messageCode="global_generic" url="/testdrive/index" z="mIM6TSGRegKsbzvfJxe24n0/mVo="/>
+            <menu:item id="i_controller__coursenonscaffoldedindex_id" messageCode="global_generic" url="/coursenonscaffolded/index" z="Gg+ZGkasyI3w469Uds0g/r/pZtk="/>
+        </menu:category>
+        <menu:category id="c_course" z="xwPFa1gir7x2AC89oGWk0WgKTE0=">
+            <menu:item id="i_course_new" messageCode="global_menu_new" url="/courses?form" z="vR3sAxuatm9tFJBQbX6a5epcJ2U="/>
+            <menu:item id="i_course_list" messageCode="global_menu_list" url="/courses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ym6LbWOetujuA2Z1C5Io6i7oW9I="/>
+            <menu:item id="fi_course_namelike" messageCode="global_menu_find" url="/courses?find=ByNameLike&amp;form" z="EUARqjbJj6plaPL0BCxgWoT6G0c="/>
+        </menu:category>
+        <menu:category id="c_registration" z="4zf7yvK7ho0iT0xmOM9TE/tFNtY=">
+            <menu:item id="i_registration_new" messageCode="global_menu_new" url="/registrations?form" z="PKY2JFhDvFdWVUMxSggdSVA09ck="/>
+            <menu:item id="i_registration_list" messageCode="global_menu_list" url="/registrations?page=1&amp;size=${empty param.size ? 10 : param.size}" z="xntfgfEz0GqM24gFN5PhXxBtPCA="/>
+        </menu:category>
+        <menu:category id="c_offering" z="j2l4ogz07U93LD5qPyPNtpOsIys=">
+            <menu:item id="i_offering_new" messageCode="global_menu_new" url="/offerings?form" z="EkG2VXvi6pIgYZcjVQ9rhsDM2lY="/>
+            <menu:item id="i_offering_list" messageCode="global_menu_list" url="/offerings?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gCcYkgNjkfleXbiHR1sswI2GbUA="/>
+        </menu:category>
+        <menu:category id="c_instructor" z="+gDzvJHZJnEAILKLGfDq4AKdOLo=">
+            <menu:item id="i_instructor_new" messageCode="global_menu_new" url="/instructors?form" z="4tM3+dXUO35RMRjX+EfKIB5+q6A="/>
+            <menu:item id="i_instructor_list" messageCode="global_menu_list" url="/instructors?page=1&amp;size=${empty param.size ? 10 : param.size}" z="pyiZ+iF148mWu690/n3afysZSVQ="/>
+        </menu:category>
+        <menu:category id="c_tag" z="zbrDBteXk3LlkQMQy3xXpSv2428=">
+            <menu:item id="i_tag_new" messageCode="global_menu_new" url="/tags?form" z="c2MR5d7dttBSgnPxMMH7oOEDl6Q="/>
+            <menu:item id="i_tag_list" messageCode="global_menu_list" url="/tags?page=1&amp;size=${empty param.size ? 10 : param.size}" z="HsTcxZ80PNENgslZ1+b/pv8MYug="/>
+        </menu:category>
+        <menu:category id="c_student" z="VA/5j81jpINYUQQoxpb8LUYLpWk=">
+            <menu:item id="i_student_new" messageCode="global_menu_new" url="/students?form" z="xCEWOyB2txSvWmV9Fxwd+H7BxCM="/>
+            <menu:item id="i_student_list" messageCode="global_menu_list" url="/students?page=1&amp;size=${empty param.size ? 10 : param.size}" z="PSLnBxZ6Z7hXmOglFNorqDjA2H0="/>
+        </menu:category>
+        <menu:category id="c_trainingprogram" z="ra/9z2mJQlWQHYO6WZW1ScX0gt0=">
+            <menu:item id="i_trainingprogram_new" messageCode="global_menu_new" url="/trainingprograms?form" z="ob2ydEe4M3KOTkX1U3Vr9yypj9A="/>
+            <menu:item id="i_trainingprogram_list" messageCode="global_menu_list" url="/trainingprograms?page=1&amp;size=${empty param.size ? 10 : param.size}" z="G/HDFlgX7mVevC50bO74wJouXFU="/>
+        </menu:category>
+    </menu:menu>
+</div>
