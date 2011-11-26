@@ -13,7 +13,4 @@
 <definition extends="default" name="offerings/update">
         <put-attribute name="body" value="/WEB-INF/views/offerings/update.jspx"/>
     </definition>
-<definition extends="default" name="offerings/findOfferingsByCourse">
-        <put-attribute name="body" value="/WEB-INF/views/offerings/findOfferingsByCourse.jspx"/>
-    </definition>
 </tiles-definitions>

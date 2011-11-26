@@ -1,6 +1,5 @@
 package org.rooinaction.coursemanager.model;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,10 +13,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 
 @RooJavaBean
 @RooToString

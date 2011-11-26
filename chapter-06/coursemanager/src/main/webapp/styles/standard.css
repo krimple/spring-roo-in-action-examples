@@ -37,12 +37,12 @@ body {
 }
 
 #menu {
-    background: #eee;
-  	position:relative;
-  	float:left;  	
-  	left:0px;
-  	width:220px;
-  	margin-right:15px;
+	background: #eee;
+	position:relative;
+	float:left;  	
+	left:0px;
+	width:220px;
+	margin-right:15px;
 }
 
 #menu ul{
@@ -126,6 +126,7 @@ input, textarea, select {
 input.image {
 	border: none;
 	height: auto;
+	vertical-align: middle;
 }
 
 submit {
@@ -266,6 +267,8 @@ table thead {
 
 table a:link {color: #303030;}
 
+.utilbox {width: 18px;}
+
 caption {
 	caption-side: top;
 	width: auto;
@@ -348,16 +351,20 @@ fieldset th {
 	color:#888888;
 }
 
+.dijitArrowButton {
+	height: 20px;
+}
+
 .dijitTextArea{
-    min-height:5.5em !important;
-    max-height:22em !important;
-    overflow-y: auto !important;
-    max-width: 175px;
+	min-height:5.5em !important;
+	max-height:22em !important;
+	overflow-y: auto !important;
+	max-width: 175px;
 }
 
 .RichTextEditable{
-    min-height:18em !important;
-    max-height:18em !important;
+	min-height:18em !important;
+	max-height:18em !important;
 }
 
 .flag {

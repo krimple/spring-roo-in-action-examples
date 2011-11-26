@@ -14,10 +14,9 @@ import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 import javax.validation.constraints.AssertTrue;
 
-import org.rooinaction.coursemanager.web.CourseFullException;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.roo.addon.entity.RooJpaActiveRecord;
 import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.serializable.RooSerializable;
 import org.springframework.roo.addon.tostring.RooToString;
 

@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-	<definition extends="default" name="courses/list">
-		<put-attribute name="body" value="/WEB-INF/views/courses/list.jspx" />
-	</definition>
-	<definition extends="default" name="courses/show">
-		<put-attribute name="body" value="/WEB-INF/views/courses/show.jspx" />
-	</definition>
-
-	<definition extends="default" name="courses/create">
-		<put-attribute name="body">
-            <definition template="/WEB-INF/views/courses/create.jspx">
-                <put-attribute name="formfields" value="/WEB-INF/views/courses/form-fields.jspx"/>
-            </definition>
-        </put-attribute>
-	</definition>
-
-	<definition extends="default" name="courses/update">
-        <put-attribute name="body">
-            <definition template="/WEB-INF/views/courses/update.jspx">
-                <put-attribute name="formfields" value="/WEB-INF/views/courses/form-fields.jspx"/>
-            </definition>
-        </put-attribute>
-	</definition>
+    <definition extends="default" name="courses/list">
+        <put-attribute name="body" value="/WEB-INF/views/courses/list.jspx"/>
+    </definition>
+<definition extends="default" name="courses/show">
+        <put-attribute name="body" value="/WEB-INF/views/courses/show.jspx"/>
+    </definition>
+<definition extends="default" name="courses/create">
+        <put-attribute name="body" value="/WEB-INF/views/courses/create.jspx"/>
+    </definition>
+<definition extends="default" name="courses/update">
+        <put-attribute name="body" value="/WEB-INF/views/courses/update.jspx"/>
+    </definition>
+<definition extends="default" name="courses/findCoursesByNameLike">
+        <put-attribute name="body" value="/WEB-INF/views/courses/findCoursesByNameLike.jspx"/>
+    </definition>
 </tiles-definitions>

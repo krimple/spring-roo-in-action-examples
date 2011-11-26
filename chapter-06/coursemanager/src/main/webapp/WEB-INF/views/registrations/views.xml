@@ -13,13 +13,4 @@
 <definition extends="default" name="registrations/update">
         <put-attribute name="body" value="/WEB-INF/views/registrations/update.jspx"/>
     </definition>
-<definition extends="default" name="registrations/findRegistrationsByStudent">
-        <put-attribute name="body" value="/WEB-INF/views/registrations/findRegistrationsByStudent.jspx"/>
-    </definition>
-<definition extends="default" name="registrations/findRegistrationsByStudentAndOffering">
-        <put-attribute name="body" value="/WEB-INF/views/registrations/findRegistrationsByStudentAndOffering.jspx"/>
-    </definition>
-<definition extends="default" name="registrations/findRegistrationsByStudentAndOfferingNot">
-        <put-attribute name="body" value="/WEB-INF/views/registrations/findRegistrationsByStudentAndOfferingNot.jspx"/>
-    </definition>
 </tiles-definitions>

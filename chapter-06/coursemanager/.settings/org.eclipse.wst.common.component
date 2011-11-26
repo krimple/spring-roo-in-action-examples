@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="coursemgrwebflow">
+    <wb-module deploy-name="coursemanager-chapter-05">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
-        <property name="java-output-path" value="/coursemgrwebflow/target/classes"/>
+        <property name="java-output-path" value="/coursemanager-chapter-05/target/classes"/>
         <property name="context-root" value="coursemanager-chapter-06"/>
     </wb-module>
 </project-modules>

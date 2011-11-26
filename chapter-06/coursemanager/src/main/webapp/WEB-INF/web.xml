@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
     
-    <display-name>coursemgrwebflow</display-name>
+    <display-name>coursemanager-chapter-05</display-name>
     
-    <description>Roo generated coursemgrwebflow application</description>
+    <description>Roo generated coursemanager-chapter-05 application</description>
 
     
     <!-- Enable escaping of form submission contents -->
@@ -62,29 +62,19 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     
-    <servlet id="jsp">
-        <servlet-name>jsp</servlet-name>
-        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
-       <init-param>
-            <param-name>keepgenerated</param-name>
-            <param-value>true</param-value>
-       </init-param>
-     </servlet>    
-    
-    
     <!-- Handles Spring requests -->
     <servlet>
-        <servlet-name>coursemgrwebflow</servlet-name>
+        <servlet-name>coursemanager-chapter-05</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/spring/webmvc-config.xml</param-value>
+            <param-value>WEB-INF/spring/webmvc-config.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     
     <servlet-mapping>
-        <servlet-name>coursemgrwebflow</servlet-name>
+        <servlet-name>coursemanager-chapter-05</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     

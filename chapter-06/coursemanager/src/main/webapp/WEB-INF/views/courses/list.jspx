@@ -1,158 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:jsp="http://java.sun.com/JSP/Page"
-     xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
-     xmlns:spring="http://www.springframework.org/tags" version="2.0">
-    <jsp:output omit-xml-declaration="yes"/>
-    <spring:url value="/courses/listdata" var="mydatasource"/>
-    <spring:url value="/courses?form" var="add_course_url" />
-    <spring:url value="/courses" var="courses_url" />
-    <spring:url value="/courses?form" var="add_course_url" />
-
-
-    <util:panel id="titlePane" title="Course DUDE">
-        <div id="addButton" dojoType="dijit.form.Button">Add...</div>
-        <div id="deleteButton" dojoType="dijit.form.Button">Delete...</div>
-        <div id="editButton" dojoType="dijit.form.Button">Edit...</div>
-        <div id="grid" jsId="dataGrid"
-             dojoType="dojox.grid.EnhancedGrid"
-             structure ="[{
-                    field: 'id',
-                    name: 'ID',
-                    width: '55px'
-                },
-                {
-                    field: 'name',
-                    name: 'Name',
-                    width: '230px'
-                },
-                {
-                    field: 'cost',
-                    name: 'Cost',
-                    width: '50px'
-                },
-                {
-                    field: 'numDays',
-                    name: '# Days',
-                    width: '145px'
-                }]"
-             autoWidth="true"
-             autoHeight="true"
-
-             plugins="{
-                	indirectSelection: true, 
-                	pagination: true
-                }"
-             selectionMode="single">
-        </div>
-    </util:panel>
-
-
-    <script type="text/javascript">
-        dojo.require("dojo.data.ItemFileReadStore");
-        dojo.require("dojox.grid.EnhancedGrid");
-        dojo.require("dojo.parser");
-        dojo.require("dijit.form.Button");
-        dojo.require("dojox.grid.enhanced.plugins.IndirectSelection");
-        dojo.require("dijit.Dialog");
-
-        dojo.addOnLoad(function() {
-            dojo.parser.parse();
-
-            var dataGrid = dijit.byId("grid");
-            // install grid in wrapper div
-            loadGrid(dataGrid);
-
-            var addButton = dijit.byId("addButton");
-            dojo.connect(addButton, "onClick", function() {
-                window.location.href="${add_course_url}";
-            });
-
-            dojo.connect(dataGrid, "onRowDblClick", function(event) {
-                console.log("Row Double-Clicked...", event);
-                var id = dataGrid.getItem(event.rowIndex).id;
-                console.log("ID was", id);
-                // For a real ajax dialog treat,
-                // add a new Tiles layout for the edit view with only the body,
-                // and switch from the window.location.href script below to the line
-                // below.  The openDialog script opens a Dialog Dijit - but needs
-                // some work on your part to handle things like closing, refreshing
-                // the parent, etc...
-                // openDialog(id);
-
-                window.location.href="${courses_url}/" + id + "?form";
-            });
-
-            var deleteButton = dijit.byId("deleteButton");
-            dojo.connect(deleteButton, "onClick", function() {
-                if (confirm("Delete selected course?")) {
-                    var id = dataGrid.getItem(dataGrid.selection.selectedIndex).id;
-
-                    dojo.xhrDelete({
-                        url: "${courses_url}/" + id,
-                        load: function() {
-                            loadGrid(dataGrid);
-                        },
-                        error: function(error) {
-                            console.log("delete failed.  Exception...", error);
-                        }
-                    });
-                }
-            });
-        });
-
-        function openDialog(id) {
-            var dialog = new dijit.Dialog({
-                title: "Edit Course",
-                href: "${courses_url}/" + id + "?form",
-                closable: true,
-                style: "width: 600px; height: 400px;"
-            });
-
-            dialog.show();
-        };
-
-        /* Multi-select - remove selectionMode: "single" from grid,
-         and refer to multidelete URL in the CourseController method
-         deleteMulti(). There are errors returned with this approach,
-         in the form of a failed rollback exception.
-
-         dojo.connect(deleteButton, "onClick", function() {
-         if (confirm("Delete selected courses?")) {
-         var items = "";
-         for (var item in pageData.grid.selection.selected) {
-         var idToDelete = pageData.grid.getItem(item).id;
-         items = items + "&amp;ids=" + idToDelete;
-         }
-         dojo.xhrDelete({
-         url: "${courses_url}" + items,
-         prettyPrint: true,
-         load: function() {
-         loadGrid(dataGrid);
-         },
-         error: function(error) {
-         console.log("delete failed.  Exception...", error);
-         }
-         });
-         }
-         }) */
-
-
-
-        function loadGrid(dataGrid) {
-            // load the grid data with xhr
-            dojo.xhrGet({
-                url: "${mydatasource}",
-                handleAs: "json",
-                load: function(jsonData, ioArgs) {
-                    dataGrid.setStore(
-                            new dojo.data.ItemFileReadStore(
-                                    {data: {items : jsonData}}
-                            )
-                    );
-                    dataGrid.resize();
-                    dataGrid.startup();
-                }
-            });
-        }
-    </script>
+  xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+  xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8" />
+  <jsp:output omit-xml-declaration="yes" />
+  <page:list id="pl_org_rooinaction_coursemanager_model_Course"
+    items="${courses}" z="kDGM49dqTosAGHRGStNkryLDcOM=">
+    <table:table data="${courses}"
+      id="l_org_rooinaction_coursemanager_model_Course" path="/courses"
+      z="U0m1wu8eGzG3+wo0U2obtDRhs0o=">
+      <table:column
+        id="c_org_rooinaction_coursemanager_model_Course_name"
+        property="name" z="ufXSBbrxBH90UpAXQVn1uBw4YK8=" />
+      <table:column
+        id="c_org_rooinaction_coursemanager_model_Course_description"
+        property="description" z="HBRpKIt6MM1zEsZ3S1yxVteHv7M=" />
+      <table:column
+        id="c_org_rooinaction_coursemanager_model_Course_cost"
+        property="cost" z="aVfPv3z4b+N4Dn6X7JUIESbMQsg=" />
+      <table:column
+        id="c_org_rooinaction_coursemanager_model_Course_maximumCapacity"
+        property="maximumCapacity" z="Y+Z9J0JoJLBpdDFixlhd9v6QWho=" />
+      <table:column
+        id="c_org_rooinaction_coursemanager_model_Course_courseType"
+        property="courseType" z="qm/dUs/P+qJyWSA9Z3zS7+jxQfc=" />
+      <table:column
+        id="c_org_rooinaction_coursemanager_model_Course_trainingProgram"
+        property="trainingProgram" z="kFLf3ClejXDlKnAzDW2uYDBLnJA=" />
+    </table:table>
+  </page:list>
 </div>

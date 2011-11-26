@@ -24,11 +24,12 @@
     <spring:message code="global_language"/>
     <c:out value=": "/>
   <util:language label="English" locale="en"/>
+    <util:language label="Espanol" locale="es"/>
     </span>
   <util:theme/>
 
   <spring:url value="/resources/images/springsource-logo.png" var="logo"/>
-  <spring:message code="global_sponsored" var="sponsored"/>
+  <spring:message code="global_sponsored" htmlEscape="false" var="sponsored"/>
   <span>
     <a href="http://springsource.com" title="${fn:escapeXml(sponsored)}">
       <img align="right" alt="${fn:escapeXml(sponsored)}" src="${logo}"/>

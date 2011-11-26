@@ -10,6 +10,7 @@
 	     Also registers default Formatters and Validators for use across all @Controllers -->
 	<mvc:annotation-driven conversion-service="applicationConversionService"/>
 	
+
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources -->
 	<mvc:resources location="/, classpath:/META-INF/web-resources/" mapping="/resources/**"/>
 	
@@ -45,7 +46,7 @@
 	<!-- This bean resolves specific types of exceptions to corresponding logical - view names for error views. 
 	     The default behaviour of DispatcherServlet - is to propagate all exceptions to the servlet container: 
 	     this will happen - here with all other types of exceptions. -->
-	<bean class="org.rooinaction.coursemanager.web.FullTraceMappingExceptionResolver" p:defaultErrorView="uncaughtException">
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" p:defaultErrorView="uncaughtException">
 		<property name="exceptionMappings">
 			<props>
 				<prop key=".DataAccessException">dataAccessFailure</prop>
@@ -56,10 +57,10 @@
 		</property>
 	</bean>
 	
-	<!-- allows for integration of file upload functionality -->
+	<!-- enable this for integration of file upload functionality -->
 	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"/>
 <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver">
-    <property name="viewClass" value="org.springframework.webflow.mvc.view.FlowAjaxTilesView"/>
+    <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
   </bean>
     <bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer">
     <property name="definitions">
@@ -70,7 +71,5 @@
       </list>
     </property>
   </bean>
-
-	<!--Installs application converters and formatters-->
-	<bean class="org.rooinaction.coursemanager.web.scaffold.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
+<bean class="org.rooinaction.coursemanager.web.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
 </beans>
