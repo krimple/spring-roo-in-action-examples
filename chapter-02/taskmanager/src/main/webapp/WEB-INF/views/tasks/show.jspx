@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_org_rooinaction_taskmanager_model_Task" object="${task}" path="/tasks" z="mAFKiDwop2jNQL5dSwXyucFP00Y=">
-        <field:display field="task" id="s_org_rooinaction_taskmanager_model_Task_task" object="${task}" z="jKxKVn58Hb1dEFgTbYNKb/xPR/U="/>
+        <field:display field="description" id="s_org_rooinaction_taskmanager_model_Task_description" object="${task}" z="115sIaVdNjn9dqJYUWQ6eZzW0fk="/>
         <field:display field="completed" id="s_org_rooinaction_taskmanager_model_Task_completed" object="${task}" z="xKqjgetc1AztBNz44UE1PAwOkXY="/>
     </page:show>
 </div>

@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_org_rooinaction_taskmanager_model_Task" modelAttribute="task" path="/tasks" versionField="Version" z="ovUivUFcjBJC1XobVj2GRJEJrYw=">
-        <field:textarea field="task" id="c_org_rooinaction_taskmanager_model_Task_task" required="true" z="lWz56bGrGfYcv0jdNcxN+42/cZY="/>
+        <field:textarea field="description" id="c_org_rooinaction_taskmanager_model_Task_description" required="true" z="zNvxTl9doPKsiJUnOX7KJNQpMC8="/>
         <field:checkbox field="completed" id="c_org_rooinaction_taskmanager_model_Task_completed" z="5zv/49txPJAAAPeAgZM62nofTFs="/>
     </form:update>
 </div>

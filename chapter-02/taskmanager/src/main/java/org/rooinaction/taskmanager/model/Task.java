@@ -14,7 +14,7 @@ public class Task {
 
     @NotNull
     @Size(max = 40)
-    private String task;
+    private String description;
 
     @Value("false")
     private Boolean completed;
