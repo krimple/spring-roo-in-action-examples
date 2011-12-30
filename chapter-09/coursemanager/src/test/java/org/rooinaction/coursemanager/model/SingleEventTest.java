@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,16 +7,14 @@ import org.springframework.mock.staticmock.MockStaticEntityMethods;
 
 @RunWith(JUnit4.class)
 @MockStaticEntityMethods
-public class CourseTest {
+public class SingleEventTest {
 
     @Test
     public void testMethod() {
-        CourseDataOnDemand dod = new CourseDataOnDemand();
-        Course course = dod.getNewTransientCourse(3);
         int expectedCount = 13;
-        Course.countCourses();
+        SingleEvent.countSingleEvents();
         org.springframework.mock.staticmock.AnnotationDrivenStaticEntityMockingControl.expectReturn(expectedCount);
         org.springframework.mock.staticmock.AnnotationDrivenStaticEntityMockingControl.playback();
-        org.junit.Assert.assertEquals(expectedCount, Course.countCourses());
+        org.junit.Assert.assertEquals(expectedCount, SingleEvent.countSingleEvents());
     }
 }

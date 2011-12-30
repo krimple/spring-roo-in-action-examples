@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.service;
+package org.rooinaction.coursemanager.service;
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
@@ -18,9 +18,9 @@ import org.mockito.stubbing.Answer;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
-import org.rooina.coursemanager.model.Person;
-import org.rooina.coursemanager.model.Student;
-import org.rooina.coursemanager.model.StudentDataOnDemand;
+import org.rooinaction.coursemanager.model.Person;
+import org.rooinaction.coursemanager.model.Student;
+import org.rooinaction.coursemanager.model.StudentDataOnDemand;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Configurable;
 

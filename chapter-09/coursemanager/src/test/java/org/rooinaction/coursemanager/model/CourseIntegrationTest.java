@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
 import java.lang.annotation.Annotation;
 import java.util.Date;

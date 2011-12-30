@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.web;
+package org.rooinaction.coursemanager.web;
 
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.SeleneseTestCase;

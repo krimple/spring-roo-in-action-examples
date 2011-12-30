@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
 import org.junit.Test;
 import org.springframework.roo.addon.test.RooIntegrationTest;
