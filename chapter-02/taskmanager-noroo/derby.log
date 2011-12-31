@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+Fri Dec 30 20:11:07 EST 2011:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance a816c00e-0134-91ab-9270-00000274c408 
+on database directory /Users/kenrimple/git-repositories/spring-roo-in-action-examples/chapter-02/taskmanager-noroo/taskmanager  with class loader WebAppClassLoader=taskmanager@65988886 
+Loaded from file:/Users/kenrimple/.m2/repository/org/apache/derby/derby/10.8.1.2/derby-10.8.1.2.jar
+java.vendor=Apple Inc.
+java.runtime.version=1.6.0_29-b11-402-11M3527
+user.dir=/Users/kenrimple/git-repositories/spring-roo-in-action-examples/chapter-02/taskmanager-noroo
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

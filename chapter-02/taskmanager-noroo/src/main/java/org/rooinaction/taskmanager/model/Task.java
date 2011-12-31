@@ -18,7 +18,7 @@ public class Task {
 
     @NotNull
     @Size(max = 40)
-    private String task;
+    private String description;
 
     @Value("false")
     private Boolean completed;
@@ -92,8 +92,8 @@ public class Task {
         this.entityManager.persist(this);
     }
 
-    public String getTask() {
-        return this.task;
+    public String getDescription() {
+        return this.description;
     }
 
     public Boolean getCompleted() {
@@ -104,8 +104,8 @@ public class Task {
         this.completed = completed;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String toString() {
