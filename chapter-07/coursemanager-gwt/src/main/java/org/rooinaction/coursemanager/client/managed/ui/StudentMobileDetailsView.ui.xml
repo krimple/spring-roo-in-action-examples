@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+ <ui:style>
+    .outer {
+      padding: 10px;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .value {
+      padding: 4px 0px 15px 15px;
+    }
+  </ui:style>
+
+  <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
+    <div id="id">
+            <div class="{style.label}">Id</div>
+            <div class="{style.value}" ui:field="id"/>
+        </div>
+    <div id="fullName">
+            <div class="{style.label}">Full Name</div>
+            <div class="{style.value}" ui:field="fullName"/>
+        </div>
+    <div id="firstName">
+            <div class="{style.label}">First Name</div>
+            <div class="{style.value}" ui:field="firstName"/>
+        </div>
+    <div id="middleNameOrInitial">
+            <div class="{style.label}">Middle Name Or Initial</div>
+            <div class="{style.value}" ui:field="middleNameOrInitial"/>
+        </div>
+    <div id="lastName">
+            <div class="{style.label}">Last Name</div>
+            <div class="{style.value}" ui:field="lastName"/>
+        </div>
+    <div id="addressLine1">
+            <div class="{style.label}">Address Line1</div>
+            <div class="{style.value}" ui:field="addressLine1"/>
+        </div>
+    <div id="addressLine2">
+            <div class="{style.label}">Address Line2</div>
+            <div class="{style.value}" ui:field="addressLine2"/>
+        </div>
+    <div id="city">
+            <div class="{style.label}">City</div>
+            <div class="{style.value}" ui:field="city"/>
+        </div>
+    <div id="stateCode">
+            <div class="{style.label}">State Code</div>
+            <div class="{style.value}" ui:field="stateCode"/>
+        </div>
+    <div id="postalCode">
+            <div class="{style.label}">Postal Code</div>
+            <div class="{style.value}" ui:field="postalCode"/>
+        </div>
+    <div id="emailAddress">
+            <div class="{style.label}">Email Address</div>
+            <div class="{style.value}" ui:field="emailAddress"/>
+        </div>
+    <div id="version">
+            <div class="{style.label}">Version</div>
+            <div class="{style.value}" ui:field="version"/>
+        </div>
+    <div id="emergencyContactName">
+            <div class="{style.label}">Emergency Contact Name</div>
+            <div class="{style.value}" ui:field="emergencyContactName"/>
+        </div>
+    <div id="emergencyContactInfo">
+            <div class="{style.label}">Emergency Contact Info</div>
+            <div class="{style.value}" ui:field="emergencyContactInfo"/>
+        </div>
+    <div id="dietaryRestrictions">
+            <div class="{style.label}">Dietary Restrictions</div>
+            <div class="{style.value}" ui:field="dietaryRestrictions"/>
+        </div>
+    <div id="registrations">
+            <div class="{style.label}">Registrations</div>
+            <div class="{style.value}" ui:field="registrations"/>
+        </div>
+
+    <g:Button ui:field="delete">Delete</g:Button>
+  </g:HTMLPanel>
+</ui:UiBinder>

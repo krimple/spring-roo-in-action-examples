@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:a="urn:import:org.rooinaction.coursemanager.client.managed.ui" xmlns:d="urn:import:com.google.gwt.user.datepicker.client" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:org.rooinaction.coursemanager.client.scaffold.ui">
+  <ui:style>
+    .outer {
+      padding: 10px;
+    }
+    .error {
+      padding-left: 0.5em;
+      background-color: red;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .value {
+      padding-bottom: 10px;
+    }
+  </ui:style>
+ 
+  <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
+    <div class="{style.error}" ui:field="errors"/>
+    
+    <div id="tag">
+            <div class="{style.label}">Tag</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="tag"/>
+            </div>
+        </div>
+    <div id="description">
+            <div class="{style.label}">Description</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="description"/>
+            </div>
+        </div>
+    <div id="courses">
+            <div class="{style.label}">Courses</div>
+            <div class="{style.value}">
+                <a:CourseSetEditor ui:field="courses"/>
+            </div>
+        </div>
+
+    <g:Button ui:field="save">Save</g:Button>
+  </g:HTMLPanel>
+</ui:UiBinder>

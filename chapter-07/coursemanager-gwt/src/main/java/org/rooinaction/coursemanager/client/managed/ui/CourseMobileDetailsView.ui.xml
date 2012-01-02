@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+ <ui:style>
+    .outer {
+      padding: 10px;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .value {
+      padding: 4px 0px 15px 15px;
+    }
+  </ui:style>
+
+  <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <g:Button ui:field="delete">Delete</g:Button>
+  <div id="id">
+            <div class="{style.label}">Id</div>
+            <div class="{style.value}" ui:field="id"/>
+        </div>
+        <div id="name">
+            <div class="{style.label}">Name</div>
+            <div class="{style.value}" ui:field="name"/>
+        </div>
+        <div id="description">
+            <div class="{style.label}">Description</div>
+            <div class="{style.value}" ui:field="description"/>
+        </div>
+        <div id="cost">
+            <div class="{style.label}">Cost</div>
+            <div class="{style.value}" ui:field="cost"/>
+        </div>
+        <div id="maximumCapacity">
+            <div class="{style.label}">Maximum Capacity</div>
+            <div class="{style.value}" ui:field="maximumCapacity"/>
+        </div>
+        <div id="courseType">
+            <div class="{style.label}">Course Type</div>
+            <div class="{style.value}" ui:field="courseType"/>
+        </div>
+        <div id="trainingProgram">
+            <div class="{style.label}">Training Program</div>
+            <div class="{style.value}" ui:field="trainingProgram"/>
+        </div>
+        <div id="tags">
+            <div class="{style.label}">Tags</div>
+            <div class="{style.value}" ui:field="tags"/>
+        </div>
+        <div id="offerings">
+            <div class="{style.label}">Offerings</div>
+            <div class="{style.value}" ui:field="offerings"/>
+        </div>
+        <div id="version">
+            <div class="{style.label}">Version</div>
+            <div class="{style.value}" ui:field="version"/>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

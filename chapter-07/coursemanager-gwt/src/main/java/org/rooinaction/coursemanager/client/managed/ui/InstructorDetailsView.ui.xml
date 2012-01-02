@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+ <ui:style>
+    .fields {
+      margin-top: 0.5em;
+      margin-left: 1em;
+    }
+    .label {
+      min-height: 25px;
+      font-weight: bold;
+    }
+    .button {
+      margin-right: 1em;
+    }
+    .bar {
+      margin-left: 1em;
+    }
+    .header {
+      margin-left: 1em;
+      color: #4B4A4A;
+      text-shadow: #ddf 1px 1px 0;
+      margin-bottom: 0;
+    }
+    .underline {
+      border-bottom: 2px solid #6F7277;
+    }
+  </ui:style>
+  <g:HTMLPanel>
+    <div class="{style.underline}">
+      <h3 class="{style.header}">
+                <ui:msg>
+                    <span ui:field="displayRenderer"/>
+                </ui:msg>
+            </h3>
+    </div>
+
+    <table class="{style.fields}" id="boundElementHolder">
+      <tr id="id">
+                <td>
+                    <span class="{style.label}">Id:</span>
+                </td>
+                <td>
+                    <span ui:field="id"/>
+                </td>
+            </tr>
+      <tr id="fullName">
+                <td>
+                    <span class="{style.label}">Full Name:</span>
+                </td>
+                <td>
+                    <span ui:field="fullName"/>
+                </td>
+            </tr>
+      <tr id="firstName">
+                <td>
+                    <span class="{style.label}">First Name:</span>
+                </td>
+                <td>
+                    <span ui:field="firstName"/>
+                </td>
+            </tr>
+      <tr id="middleNameOrInitial">
+                <td>
+                    <span class="{style.label}">Middle Name Or Initial:</span>
+                </td>
+                <td>
+                    <span ui:field="middleNameOrInitial"/>
+                </td>
+            </tr>
+      <tr id="lastName">
+                <td>
+                    <span class="{style.label}">Last Name:</span>
+                </td>
+                <td>
+                    <span ui:field="lastName"/>
+                </td>
+            </tr>
+      <tr id="addressLine1">
+                <td>
+                    <span class="{style.label}">Address Line1:</span>
+                </td>
+                <td>
+                    <span ui:field="addressLine1"/>
+                </td>
+            </tr>
+      <tr id="addressLine2">
+                <td>
+                    <span class="{style.label}">Address Line2:</span>
+                </td>
+                <td>
+                    <span ui:field="addressLine2"/>
+                </td>
+            </tr>
+      <tr id="city">
+                <td>
+                    <span class="{style.label}">City:</span>
+                </td>
+                <td>
+                    <span ui:field="city"/>
+                </td>
+            </tr>
+      <tr id="stateCode">
+                <td>
+                    <span class="{style.label}">State Code:</span>
+                </td>
+                <td>
+                    <span ui:field="stateCode"/>
+                </td>
+            </tr>
+      <tr id="postalCode">
+                <td>
+                    <span class="{style.label}">Postal Code:</span>
+                </td>
+                <td>
+                    <span ui:field="postalCode"/>
+                </td>
+            </tr>
+      <tr id="emailAddress">
+                <td>
+                    <span class="{style.label}">Email Address:</span>
+                </td>
+                <td>
+                    <span ui:field="emailAddress"/>
+                </td>
+            </tr>
+      <tr id="version">
+                <td>
+                    <span class="{style.label}">Version:</span>
+                </td>
+                <td>
+                    <span ui:field="version"/>
+                </td>
+            </tr>
+      <tr id="taxNumber">
+                <td>
+                    <span class="{style.label}">Tax Number:</span>
+                </td>
+                <td>
+                    <span ui:field="taxNumber"/>
+                </td>
+            </tr>
+    </table>
+
+  <div class="{style.bar}">
+    <g:Button addStyleNames="{style.button}" ui:field="edit">Edit</g:Button>
+    <g:Anchor ui:field="delete">Delete</g:Anchor>
+   </div>
+  </g:HTMLPanel>
+</ui:UiBinder>
