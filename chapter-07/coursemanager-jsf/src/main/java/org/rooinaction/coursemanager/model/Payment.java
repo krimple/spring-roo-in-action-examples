@@ -7,7 +7,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(identifierType = PaymentPK.class, versionField = "", table = "payment")
 @RooDbManaged(automaticallyDelete = true)
+@RooJpaActiveRecord(versionField = "", table = "payment")
 public class Payment {
 }

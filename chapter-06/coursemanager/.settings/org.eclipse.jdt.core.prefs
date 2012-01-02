@@ -1,9 +1,5 @@
-#Thu Nov 24 21:23:46 EST 2011
-eclipse.preferences.version=1
-org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+#Sun Nov 20 16:27:25 EST 2011
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
-org.eclipse.jdt.core.compiler.compliance=1.6
-org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
-org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
-org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
+eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.source=1.6
+org.eclipse.jdt.core.compiler.compliance=1.6
