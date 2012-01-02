@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_rooinaction_coursemanager_model_Course" items="${courses}" z="kDGM49dqTosAGHRGStNkryLDcOM=">
+        <table:table data="${courses}" id="l_org_rooinaction_coursemanager_model_Course" path="/courses" z="U0m1wu8eGzG3+wo0U2obtDRhs0o=">
+            <table:column id="c_org_rooinaction_coursemanager_model_Course_name" property="name" z="ufXSBbrxBH90UpAXQVn1uBw4YK8="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Course_description" property="description" z="HBRpKIt6MM1zEsZ3S1yxVteHv7M="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Course_cost" property="cost" z="aVfPv3z4b+N4Dn6X7JUIESbMQsg="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Course_maximumCapacity" property="maximumCapacity" z="qaBXJ2JVhhIEjlw0Q3UvRB1xCwQ="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Course_courseType" property="courseType" z="qm/dUs/P+qJyWSA9Z3zS7+jxQfc="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Course_trainingProgram" property="trainingProgram" z="kFLf3ClejXDlKnAzDW2uYDBLnJA="/>
+        </table:table>
+    </page:list>
+</div>
