@@ -1,23 +1,62 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
-import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import org.rooina.coursemanager.model.Course;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.*;
+import javax.validation.constraints.AssertTrue;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @RooJavaBean
 @RooToString
-@RooEntity(inheritanceType = "SINGLE_TABLE")
-@DiscriminatorColumn(name = "course_type", discriminatorType = DiscriminatorType.STRING)
-public abstract class Offering {
+@RooJpaActiveRecord
+public class Offering {
+  @Temporal(TemporalType.TIMESTAMP)
+  @DateTimeFormat(style = "S-")
+  @Column(name = "run_date")
+  private Date runDate;
 
-    @ManyToOne
-    private Course course;
+  @ManyToOne(cascade = CascadeType.ALL)
+  private Course course;
 
-    private String location;
+  @OneToMany(mappedBy = "offering", cascade = CascadeType.ALL)
+  private Set<Registration> registrations = new HashSet<Registration>();
 
-    
+  @ManyToOne(cascade = CascadeType.ALL)
+  private Instructor instructor;
+
+  @AssertTrue(message = "course.full.exception")
+  public boolean isValid() {
+    int maxCapacity = course.getMaxiumumCapacity();
+    return registrations.size() <= maxCapacity;
+  }
+
+  public void addRegistration(Registration registration) {
+    registration.setOffering(this);
+    registrations.add(registration);
+  }
+
+  public long countStudentsRegisteredInOffering() {
+    return entityManager().createQuery("select count(r) from Registration r " +
+        "where r.offering = :offering",
+        Long.class).setParameter("offering", this).getSingleResult();
+  }
+
+  public static TypedQuery<Offering> findOfferingsByCourseId(Long courseId) {
+    if (courseId == null) throw new IllegalArgumentException("The courseID argument is required");
+    EntityManager em = entityManager();
+    TypedQuery<Offering> q = em.createQuery("SELECT Offering FROM Offering AS offering WHERE offering.course.id = :courseId", Offering.class);
+    q.setParameter("courseId", courseId);
+    return q;
+  }
+
+  public String toString() {
+    return getRunDate().toString();
+  }
+
+
 }

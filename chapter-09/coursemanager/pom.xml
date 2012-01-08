@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.rooina.coursemanager</groupId>
-	<artifactId>coursemanagertest</artifactId>
+	<groupId>org.rooinaction.coursemanager</groupId>
+	<artifactId>coursemanager-chapter-09</artifactId>
 	<packaging>war</packaging>
 	<version>0.1.0.BUILD-SNAPSHOT</version>
-	<name>coursemanagertest</name>
+	<name>coursemanager</name>
 	<properties>
-		<roo.version>1.1.4.RELEASE</roo.version>
-		<spring.version>3.0.5.RELEASE</spring.version>
-		<aspectj.version>1.6.11</aspectj.version>
-		<slf4j.version>1.6.1</slf4j.version>
+		<aspectj.version>1.6.12.M2</aspectj.version>
+		<java.version>1.6</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<roo.version>1.2.0.RELEASE</roo.version>
+		<slf4j.version>1.6.2</slf4j.version>
+		<spring.version>3.1.0.RELEASE</spring.version>
 		<powermock.version>1.4.8</powermock.version>
 	</properties>
 	<repositories>
@@ -29,11 +31,6 @@
 			<id>spring-roo-repository</id>
 			<name>Spring Roo Repository</name>
 			<url>http://spring-roo-repository.springsource.org/release</url>
-		</repository>
-		<repository>
-			<id>JBoss Repo</id>
-			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-			<name>JBoss Repo</name>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -58,7 +55,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
+			<version>4.9</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -102,6 +99,11 @@
 			<artifactId>flexjson</artifactId>
 			<version>2.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.0.1</version>
+		</dependency>
 		<!-- ROO dependencies -->
 		<dependency>
 			<groupId>org.springframework.roo</groupId>
@@ -126,12 +128,6 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -149,11 +145,6 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>1.8.0.10</version>
@@ -161,12 +152,12 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>3.6.1.Final</version>
+			<version>3.6.8.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.6.1.Final</version>
+			<version>3.6.8.Final</version>
 			<exclusions>
 				<exclusion>
 					<groupId>cglib</groupId>
@@ -181,12 +172,12 @@
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.0.Final</version>
+			<version>1.0.1.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.1.0.Final</version>
+			<version>4.2.0.Final</version>
 			<exclusions>
 				<exclusion>
 					<groupId>javax.xml.bind</groupId>
@@ -206,7 +197,7 @@
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
-			<version>2.2</version>
+			<version>2.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.transaction</groupId>
@@ -227,12 +218,6 @@
 			<groupId>commons-pool</groupId>
 			<artifactId>commons-pool</artifactId>
 			<version>1.5.4</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -244,18 +229,6 @@
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
 				<exclusion>
-					<groupId>commons-pool</groupId>
-					<artifactId>commons-pool</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>xerces</groupId>
-					<artifactId>xerces</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>xerces</groupId>
-					<artifactId>xercesImpl</artifactId>
-				</exclusion>
-				<exclusion>
 					<groupId>xml-apis</groupId>
 					<artifactId>xml-apis</artifactId>
 				</exclusion>
@@ -263,25 +236,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.webflow</groupId>
@@ -303,16 +259,15 @@
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>jstl-api</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jstl-impl</artifactId>
 			<version>1.2</version>
 		</dependency>
 		<dependency>
@@ -333,6 +288,11 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-core</artifactId>
 			<version>2.2.1</version>
@@ -348,14 +308,12 @@
 			<artifactId>tiles-jsp</artifactId>
 			<version>2.2.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium.client-drivers</groupId>
-			<artifactId>selenium-java-client-driver</artifactId>
-			<version>1.0.2</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- <dependency> <groupId>org.mockito</groupId> <artifactId>mockito-all</artifactId> 
-			<version>1.8.5</version> </dependency> -->
+		<!--<dependency> -->
+		<!--<groupId>org.seleniumhq.selenium.client-drivers</groupId> -->
+		<!--<artifactId>selenium-java-client-driver</artifactId> -->
+		<!--<version>1.0.2</version> -->
+		<!--<scope>test</scope> -->
+		<!--</dependency> -->
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-module-junit4</artifactId>
@@ -367,6 +325,11 @@
 			<artifactId>powermock-api-mockito</artifactId>
 			<version>${powermock.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.16.1</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -382,16 +345,17 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>UTF-8</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
 				<version>1.2</version>
-				<!-- NB: do use 1.3 or 1.3.x due to MASPECTJ-90 - wait for 1.4 -->
+				<!-- NB: do not use 1.3 or 1.3.x due to MASPECTJ-90 and do not use 1.4 
+					due to declare parents issue -->
 				<dependencies>
 					<!-- NB: You must use Maven 2.0.9 or above or these are ignored (see 
 						MNG-2972) -->
@@ -422,8 +386,8 @@
 							<artifactId>spring-aspects</artifactId>
 						</aspectLibrary>
 					</aspectLibraries>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -431,17 +395,20 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.5</version>
 				<configuration>
-					<encoding>UTF-8</encoding>
+					<outputDirectory>${project.build.outputDirectory}</outputDirectory>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.7.2</version>
+				<version>2.9</version>
 				<configuration>
 					<printSummary>false</printSummary>
+					<redirectTestOutputToFile>true</redirectTestOutputToFile>
 					<excludes>
 						<exclude>**/*_Roo_*</exclude>
+						<exclude>**/IT*</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
@@ -458,7 +425,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.5</version>
+				<version>2.7</version>
 			</plugin>
 			<!-- IDE -->
 			<plugin>
@@ -505,156 +472,64 @@
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>7.3.0.v20110203</version>
+				<version>8.1.0.RC2</version>
 				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<stopKey>stop</stopKey>
+					<stopPort>9999</stopPort>
 					<webAppConfig>
 						<contextPath>/${project.name}</contextPath>
 					</webAppConfig>
 				</configuration>
-<!--
 				<executions>
 					<execution>
-						<id>pre-test-start-jetty</id>
+						<id>start-jetty</id>
 						<goals>
 							<goal>run</goal>
 						</goals>
-						<phase>test-compile</phase>
+						<phase>pre-integration-test</phase>
 						<configuration>
+							<scanIntervalSeconds>0</scanIntervalSeconds>
 							<daemon>true</daemon>
 						</configuration>
 					</execution>
 					<execution>
-						<id>post-test-stop-jetty</id>
+						<id>stop-jetty</id>
 						<goals>
 							<goal>stop</goal>
 						</goals>
-						<phase>test</phase>
-					</execution>
-				</executions>
-				-->
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>selenium-maven-plugin</artifactId>
-				<version>1.1</version>
-				<configuration>
-					<suite>src/main/webapp/selenium/test-suite2.xhtml</suite>
-					<browser>*firefox</browser>
-					<results>${project.build.directory}/surefire-reports/selenium.html</results>
-					<startURL>http://localhost:4444/</startURL>
-				</configuration>
-				<!--
-				<executions>
-				          <execution>
-				            <phase>pre-integration-test</phase>
-				            <goals>
-				              <goal>start-server</goal>
-				            </goals>
-				            <configuration>
-				              <background>true</background>
-				            </configuration>
-				          </execution>
-				        </executions>
-				<executions> <execution> <id>pre-x</id> <goals> <goal>start-server</goal> 
-					</goals> <phase>test-compile</phase> <configuration> <background>true</background> 
-					</configuration> </execution> <execution> <id>post-test</id> <goals> <goal>stop-server</goal> 
-					</goals> <phase>test</phase> </execution> </executions> -->
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>3.0-beta-3</version>
-				<configuration>
-					<reportPlugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-project-info-reports-plugin</artifactId>
-							<version>2.3.1</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-surefire-report-plugin</artifactId>
-							<version>2.8.1</version>
-						</plugin>
-					</reportPlugins>
-				</configuration>
-			</plugin>
-			<!--<plugin> -->
-			<!--<groupId>org.codehaus.groovy.maven</groupId> -->
-			<!--<artifactId>gmaven-plugin</artifactId> -->
-			<!--<version>1.0</version> -->
-			<!--<executions> -->
-			<!--<execution> -->
-			<!--<id>copy-selenium-report</id> -->
-			<!--<phase>pre-site</phase> -->
-			<!--<goals> -->
-			<!--<goal>execute</goal> -->
-			<!--</goals> -->
-			<!--<configuration> -->
-			<!--<source> -->
-			<!--project.dependencies.each { dependency -> -->
-			<!--println "Dependency: ${dependency.groupId}:${dependency.artifactId}:${dependency.version}" -->
-			<!--} -->
-			<!--</source> -->
-			<!--</configuration> -->
-			<!--</execution> -->
-			<!--</executions> -->
-			<!--</plugin> -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.3</version>
-				<dependencies>
-					<!-- for antrun plugin -->
-					<dependency>
-						<groupId>org.tigris.antelope</groupId>
-						<artifactId>antelopetasks</artifactId>
-						<version>3.2.10</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<id>pre-site-setup</id>
-						<phase>pre-site</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-
+						<phase>post-integration-test</phase>
 						<configuration>
-							<tasks>
-								<!--<taskdef resource="net/sf/antcontrib/antcontrib.properties" -->
-								<!--classpathref="maven.plugin.classpath"/> -->
-								<taskdef classname="ise.antelope.tasks.IfTask" name="if"/>
-								<if>
-									<bool>
-										<available file="${project.basedir}/target/surefire-reports/selenium.html"/>
-									</bool>
-									<copy file="${project.basedir}/target/surefire-reports/selenium.html" todir="${project.basedir}/target/site"/>
-								</if>
-							</tasks>
+							<stopKey>stop</stopKey>
+							<stopPort>9999</stopPort>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-			  <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-failsafe-plugin</artifactId>
-				  <version>2.8.1</version>
-				    <executions>
-					    <execution>
-						      <id>integration-test</id>
-							        <goals>
-									        <goal>integration-test</goal>
-											      </goals>
-												      </execution>
-													      <execution>
-														        <id>verify</id>
-																      <goals>
-																	          <goal>verify</goal>
-																			        </goals>
-																					    </execution>
-																						  </executions>
-																						  </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.8.1</version>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+						<configuration>
+							<includes>
+								<include>**/IT*</include>
+							</includes>
+						</configuration>
+					</execution>
+					<execution>
+						<id>verify</id>
+						<goals>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>

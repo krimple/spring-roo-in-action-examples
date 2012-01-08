@@ -1,4 +1,4 @@
-package org.rooina.coursemanager.service;
+package org.rooinaction.coursemanager.service;
 
 import java.math.BigDecimal;
 

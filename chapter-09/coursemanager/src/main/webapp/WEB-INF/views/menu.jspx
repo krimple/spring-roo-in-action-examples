@@ -14,15 +14,10 @@
         <menu:category id="c_course" z="xwPFa1gir7x2AC89oGWk0WgKTE0=">
             <menu:item id="i_course_new" messageCode="global_menu_new" url="/courses?form" z="vR3sAxuatm9tFJBQbX6a5epcJ2U="/>
             <menu:item id="i_course_list" messageCode="global_menu_list" url="/courses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ym6LbWOetujuA2Z1C5Io6i7oW9I="/>
-            <menu:item id="fi_course_namelike" messageCode="global_menu_find" url="/courses?find=ByNameLike&amp;form" z="EUARqjbJj6plaPL0BCxgWoT6G0c="/>
         </menu:category>
-        <menu:category id="c_singleevent" z="SroVeLOb3aPOkE6OUY39crJT4rw=">
-            <menu:item id="i_singleevent_new" messageCode="global_menu_new" url="/singleevents?form" z="+gkJP6GhxqIdzbgJaYLdmu4Bk4s="/>
-            <menu:item id="i_singleevent_list" messageCode="global_menu_list" url="/singleevents?page=1&amp;size=${empty param.size ? 10 : param.size}" z="v4pmz4oq7Pj2KD+avmTWhJxwS58="/>
-        </menu:category>
-        <menu:category id="c_periodiccourse" z="9isKN5lquehAZLLlct9WjGFNg00=">
-            <menu:item id="i_periodiccourse_new" messageCode="global_menu_new" url="/periodiccourses?form" z="vtZV4hnYbnBNBtRv2q2EnOYNGy0="/>
-            <menu:item id="i_periodiccourse_list" messageCode="global_menu_list" url="/periodiccourses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="V5S/vEM3vfAVR5heGU/Yu0gwY28="/>
+        <menu:category id="c_offering" z="j2l4ogz07U93LD5qPyPNtpOsIys=">
+            <menu:item id="i_offering_new" messageCode="global_menu_new" url="/offerings?form" z="EkG2VXvi6pIgYZcjVQ9rhsDM2lY="/>
+            <menu:item id="i_offering_list" messageCode="global_menu_list" url="/offerings?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gCcYkgNjkfleXbiHR1sswI2GbUA="/>
         </menu:category>
         <menu:category id="c_student" z="VA/5j81jpINYUQQoxpb8LUYLpWk=">
             <menu:item id="i_student_new" messageCode="global_menu_new" url="/students?form" z="xCEWOyB2txSvWmV9Fxwd+H7BxCM="/>

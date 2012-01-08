@@ -1,17 +1,17 @@
-package org.rooina.coursemanager.model;
+package org.rooinaction.coursemanager.model;
 
-import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import java.util.Set;
-import org.rooina.coursemanager.model.Course;
-import java.util.HashSet;
-import javax.persistence.OneToMany;
+
 import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 @RooJavaBean
 @RooToString
-@RooEntity
+@RooJpaActiveRecord
 public class TrainingProgram {
 
     private String name;

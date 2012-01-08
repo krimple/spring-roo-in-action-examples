@@ -1,32 +1,35 @@
 package org.rooinaction.coursemanager.web;
 
-import com.thoughtworks.selenium.*;
+import java.util.concurrent.TimeUnit;
+
+import com.thoughtworks.selenium.DefaultSelenium;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import java.util.regex.Pattern;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class ITTagSelenium extends SeleneseTestCase {
-	@Before
+public class ITTagSelenium {
+	
+  private WebDriver webDriver;
+  
+  @Before
 	public void setUp() throws Exception {
-		selenium = new DefaultSelenium("localhost", 4444, "*firefox", "http://localhost:8080/");
-		selenium.start();
+    webDriver = new FirefoxDriver();
 	}
 
 	@Test
-	public void testUntitled() throws Exception {
-		selenium.open("http://localhost:8080/coursemanagertest/tags?form&lang=en_US");
-		selenium.type("_tag_id", "someTag1");
-		selenium.type("_description_id", "someDescription1");
-		selenium.click("//input[@id='proceed']");
-		selenium.waitForPageToLoad("30000");
-		assertTrue(selenium.isTextPresent(""));
-		verifyEquals("someTag1", selenium.getText("//div[@id='_s_org_rooina_coursemanager_model_Tag_tag_tag_id']"));
-		verifyEquals("someDescription1", selenium.getText("//div[@id='_s_org_rooina_coursemanager_model_Tag_description_description_id']"));
+	public void testCreateTag() throws Exception {
+		webDriver.get("http://localhost:8080/coursemanager/tags?form&lang=en_US");
+    webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    
+    webDriver.findElement(By.id("_name_id")).sendKeys("someTag1");
+    webDriver.findElement(By.id("_description_id")).sendKeys("someDescription1");
+		webDriver.findElement(By.id("proceed")).click();
+    Assert.assertEquals(true, 0 < webDriver.getPageSource().indexOf("Show Tag"));
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		selenium.stop();
-	}
 }

@@ -2,13 +2,14 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_org_rooina_coursemanager_model_Course" object="${course}" path="/courses" z="Qrf8vecfH2gWwxWHG3q4QtjF0Zg=">
-        <field:display field="name" id="s_org_rooina_coursemanager_model_Course_name" object="${course}" z="k6vilxSyD8vQwd4un1clBGrNjXI="/>
-        <field:display field="description" id="s_org_rooina_coursemanager_model_Course_description" object="${course}" z="xJ5FmXhKpHUB540/gl4Z7Ybos98="/>
-        <field:display field="maxiumumCapacity" id="s_org_rooina_coursemanager_model_Course_maxiumumCapacity" object="${course}" z="xu44dfzDQoWL9YqTx0WCuNQu/0s="/>
-        <field:display field="courseType" id="s_org_rooina_coursemanager_model_Course_courseType" object="${course}" z="2Zps3qQqWwod6sujEYUhStzrr6g="/>
-        <field:display field="trainingProgram" id="s_org_rooina_coursemanager_model_Course_trainingProgram" object="${course}" z="VSvnt5OzE4DnUUWRH5S037n6mgk="/>
-        <field:display field="tags" id="s_org_rooina_coursemanager_model_Course_tags" object="${course}" z="BjWe6lwmHACs2c3cQ5RcWV/eke0="/>
-        <field:display date="true" dateTimePattern="${course_createddate_date_format}" field="createdDate" id="s_org_rooina_coursemanager_model_Course_createdDate" object="${course}" z="uyoaxe5c+8iI3WQ6+E0v0D0Ssf0="/>
+    <page:show id="ps_org_rooinaction_coursemanager_model_Course" object="${course}" path="/courses" z="eBafIdGrFi8BjAepyA3D3xRWZMw=">
+        <field:display field="name" id="s_org_rooinaction_coursemanager_model_Course_name" object="${course}" z="yZD4KdR6ciSu6TW2468SYcFMVGA="/>
+        <field:display field="description" id="s_org_rooinaction_coursemanager_model_Course_description" object="${course}" z="/EYozAzYNULXsSjBiK0ngVBEvxE="/>
+        <field:display field="maxiumumCapacity" id="s_org_rooinaction_coursemanager_model_Course_maxiumumCapacity" object="${course}" z="djnqup5QkAnKeDPS00VDotS+vdc="/>
+        <field:display field="courseType" id="s_org_rooinaction_coursemanager_model_Course_courseType" object="${course}" z="xcREAwaX3ObsyMtt8vXxXmYeW14="/>
+        <field:display field="trainingProgram" id="s_org_rooinaction_coursemanager_model_Course_trainingProgram" object="${course}" z="+298sFDo7eErz5vYftitwThd11Q="/>
+        <field:display field="tags" id="s_org_rooinaction_coursemanager_model_Course_tags" object="${course}" z="IVOBSk9nfBO3+ew5GDNLEAaGhiY="/>
+        <field:display date="true" dateTimePattern="${course_createddate_date_format}" field="createdDate" id="s_org_rooinaction_coursemanager_model_Course_createdDate" object="${course}" z="y8pYVNEBOwcqGScPqNEsvmjOL6I="/>
+        <field:display field="offerings" id="s_org_rooinaction_coursemanager_model_Course_offerings" object="${course}" z="9bxn6TvXxiS05DssrpmHkDTlh0A="/>
     </page:show>
 </div>
