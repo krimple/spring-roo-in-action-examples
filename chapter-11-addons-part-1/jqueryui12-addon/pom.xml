@@ -19,7 +19,7 @@
   <description>Installs jQuery UI</description>
   <url>http://www.rimple.com/sillyweasel</url>
   <properties>
-    <roo.version>1.2.0.RC1</roo.version>
+    <roo.version>1.2.0.RELEASE</roo.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <google.code.project.name>${project.name}</google.code.project.name>
     <repo.folder>org/rooina/addons/jqueryui</repo.folder>
@@ -43,18 +43,18 @@
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
-      <version>4.1.0</version>
+      <version>4.2.0</version>
     </dependency>
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.compendium</artifactId>
-      <version>4.1.0</version>
+      <version>4.2.0</version>
     </dependency>
     <!-- Apache Felix -->
     <dependency>
       <groupId>org.apache.felix</groupId>
       <artifactId>org.apache.felix.scr.annotations</artifactId>
-      <version>1.2.0</version>
+      <version>1.6.0</version>
     </dependency>
     <!-- Spring Roo modules -->
     <dependency>
@@ -158,6 +158,20 @@
         </configuration>
       </plugin>
       <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.1.2</version>
+          <executions>
+              <execution>
+                  <id>attach-sources</id>
+                  <phase>package</phase>
+                  <goals>
+                      <goal>jar-no-fork</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
         <version>2.2</version>
@@ -207,7 +221,7 @@
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-scr-plugin</artifactId>
-        <version>1.4.2</version>
+        <version>1.7.2</version>
         <executions>
           <execution>
             <id>generate-scr-scrdescriptor</id>
