@@ -1,9 +1,5 @@
 package org.rooina.addons.coffeescript;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -15,6 +11,10 @@ import org.springframework.roo.project.Plugin;
 import org.springframework.roo.project.ProjectOperations;
 import org.springframework.roo.support.util.XmlUtils;
 import org.w3c.dom.Element;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Implementation of operations this add-on offers.
@@ -115,8 +115,9 @@ public class CoffeescriptOperationsImpl implements
         .getFocusedProjectMetadata()
         .getPom()
         .getBuildPluginsExcludingVersion(
+
             new Plugin("com.theoryinpractise", "coffee-maven-plugin",
-                "1.3.1")); // required even though not needed...
+                "1.2.0")); // version specified is ignored (tested with 1.4.0 add-on installed)...
     return !pluginsExcludingVersion.isEmpty();
   }
 
