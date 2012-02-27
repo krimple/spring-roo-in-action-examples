@@ -31,5 +31,10 @@ public class ITTagSelenium {
 		webDriver.findElement(By.id("proceed")).click();
     Assert.assertEquals(true, 0 < webDriver.getPageSource().indexOf("Show Tag"));
 	}
+	
+	@After
+	public void tearDown() throws Exception {
+	  webDriver.close();
+	}
 
 }

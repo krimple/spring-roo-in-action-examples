@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.rooinaction.coursemanager</groupId>
 	<artifactId>coursemanager-chapter-09</artifactId>
@@ -11,7 +10,7 @@
 		<aspectj.version>1.6.12.M2</aspectj.version>
 		<java.version>1.6</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<roo.version>1.2.0.RELEASE</roo.version>
+		<roo.version>1.2.1.RELEASE</roo.version>
 		<slf4j.version>1.6.2</slf4j.version>
 		<spring.version>3.1.0.RELEASE</spring.version>
 		<powermock.version>1.4.8</powermock.version>
@@ -308,12 +307,6 @@
 			<artifactId>tiles-jsp</artifactId>
 			<version>2.2.1</version>
 		</dependency>
-		<!--<dependency> -->
-		<!--<groupId>org.seleniumhq.selenium.client-drivers</groupId> -->
-		<!--<artifactId>selenium-java-client-driver</artifactId> -->
-		<!--<version>1.0.2</version> -->
-		<!--<scope>test</scope> -->
-		<!--</dependency> -->
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-module-junit4</artifactId>
@@ -330,6 +323,7 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>2.16.1</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>
@@ -408,7 +402,6 @@
 					<redirectTestOutputToFile>true</redirectTestOutputToFile>
 					<excludes>
 						<exclude>**/*_Roo_*</exclude>
-						<exclude>**/IT*</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
