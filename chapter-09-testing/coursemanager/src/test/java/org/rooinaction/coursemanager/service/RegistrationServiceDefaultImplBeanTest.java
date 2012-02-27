@@ -38,6 +38,7 @@ public class RegistrationServiceDefaultImplBeanTest {
 
     Offering.findOffering(1L);
     AnnotationDrivenStaticEntityMockingControl.expectReturn(offering);
+
     List<Long> ids = new ArrayList<Long>();
     List<Student> testStudents = new ArrayList<Student>();
 
