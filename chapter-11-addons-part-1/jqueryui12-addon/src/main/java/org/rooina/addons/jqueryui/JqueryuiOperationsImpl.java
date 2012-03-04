@@ -1,7 +1,6 @@
 package org.rooina.addons.jqueryui;
 
-import java.io.InputStream;
-
+import org.apache.commons.io.IOUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -9,12 +8,13 @@ import org.springframework.roo.classpath.operations.AbstractOperations;
 import org.springframework.roo.project.Path;
 import org.springframework.roo.project.PathResolver;
 import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.support.util.IOUtils;
 import org.springframework.roo.support.util.XmlElementBuilder;
 import org.springframework.roo.support.util.XmlUtils;
 import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import java.io.InputStream;
 
 /**
  * Implementation of {@link JqueryuiOperations} interface.
@@ -120,10 +120,12 @@ public class JqueryuiOperationsImpl extends AbstractOperations
 
     buildAndAddJSNode(document, "/js/jquery-1.5.1.min.js");
 
-    IOUtils.closeQuietly(loadScriptsTagFileStream);
 
     fileManager.createOrUpdateTextFileIfRequired(loadScriptsTagFile,
         XmlUtils.nodeToString(document), false);
+
+    fileManager.commit();
+
   }
 
   private void buildAndAddJSNode(Document doc, String var) {
