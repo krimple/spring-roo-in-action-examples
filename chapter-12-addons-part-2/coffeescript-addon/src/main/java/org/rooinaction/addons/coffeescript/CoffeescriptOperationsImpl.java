@@ -1,4 +1,4 @@
-package org.rooina.addons.coffeescript;
+package org.rooinaction.addons.coffeescript;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;

@@ -1,12 +1,10 @@
-package org.rooina.addons.coffeescript;
+package org.rooinaction.addons.coffeescript;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.springframework.roo.model.JavaType;
 import org.springframework.roo.shell.CliAvailabilityIndicator;
 import org.springframework.roo.shell.CliCommand;
-import org.springframework.roo.shell.CliOption;
 import org.springframework.roo.shell.CommandMarker;
 
 /**

@@ -1,4 +1,4 @@
-package org.rooina.addons.coffeescript;
+package org.rooinaction.addons.coffeescript;
 
 public interface CoffeescriptOperations {
 

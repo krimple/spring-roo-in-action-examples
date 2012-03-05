@@ -1,4 +1,4 @@
-package org.rooina.addons.coffeescript;
+package org.rooinaction.addons.coffeescript;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
