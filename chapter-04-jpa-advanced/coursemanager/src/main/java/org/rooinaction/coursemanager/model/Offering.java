@@ -42,7 +42,7 @@ public class Offering {
     
     @AssertTrue(message="course.full.exception")
     public boolean isValid() {
-    	int maxCapacity = course.getMaxiumumCapacity();
+    	int maxCapacity = course.getMaximumCapacity();
     	return registrations.size() <= maxCapacity;
     }
     

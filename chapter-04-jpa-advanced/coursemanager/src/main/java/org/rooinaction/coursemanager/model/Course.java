@@ -40,15 +40,15 @@ public class Course {
 
     @NotNull
     @DecimalMin("0.0")
-    @DecimalMax("99999.00") //see JIRA ROO-2027
-    @Digits(integer = 10, fraction = 2) // upped from 5,2 
+    @DecimalMax("99999.00")
+    @Digits(integer = 5, fraction = 2)
     private BigDecimal cost;
     
     @NotNull
     @Column(name = "max_capacity")
     @Min(1L)
     @Max(9999L)
-    private Integer maxiumumCapacity;
+    private Integer maximumCapacity;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -74,9 +74,5 @@ public class Course {
     	offering.setCourse(this);
     	this.offerings.add(offering);
     }
-    
-    @Override
-    public String toString() {
-        return getName();
-    }
+
 }
