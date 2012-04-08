@@ -19,7 +19,7 @@ import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileAc
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public abstract class InstructorEditActivityWrapper_Roo_Gwt implements Activity, IsScaffoldMobileActivity {
 

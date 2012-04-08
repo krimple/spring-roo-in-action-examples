@@ -16,15 +16,12 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public abstract class InstructorMobileDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<InstructorProxy> {
 
     @UiField
     Element id;
-
-    @UiField
-    Element fullName;
 
     @UiField
     Element firstName;
@@ -64,7 +61,6 @@ public abstract class InstructorMobileDetailsView_Roo_Gwt extends Composite impl
     public void setValue(InstructorProxy proxy) {
         this.proxy = proxy;
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
-        fullName.setInnerText(proxy.getFullName() == null ? "" : String.valueOf(proxy.getFullName()));
         firstName.setInnerText(proxy.getFirstName() == null ? "" : String.valueOf(proxy.getFirstName()));
         middleNameOrInitial.setInnerText(proxy.getMiddleNameOrInitial() == null ? "" : String.valueOf(proxy.getMiddleNameOrInitial()));
         lastName.setInnerText(proxy.getLastName() == null ? "" : String.valueOf(proxy.getLastName()));

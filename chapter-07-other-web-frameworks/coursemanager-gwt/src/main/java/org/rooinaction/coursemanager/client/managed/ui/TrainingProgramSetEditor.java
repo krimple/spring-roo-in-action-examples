@@ -30,8 +30,7 @@ import java.util.List;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.ui.TrainingProgramSetEditor.NameLabel;
 import org.rooinaction.coursemanager.client.scaffold.ui.CollectionRenderer;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public class TrainingProgramSetEditor extends TrainingProgramSetEditor_Roo_Gwt {
 
@@ -100,7 +99,7 @@ public class TrainingProgramSetEditor extends TrainingProgramSetEditor_Roo_Gwt {
     }
 
     @Override
-    public Set<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy> getValue() {
+    public Set<org.rooinaction.coursemanager.proxy.TrainingProgramProxy> getValue() {
         if (values == null && displayedList.size() == 0) {
             return null;
         }
@@ -115,16 +114,16 @@ public class TrainingProgramSetEditor extends TrainingProgramSetEditor_Roo_Gwt {
     public void onPropertyChange(String... strings) {
     }
 
-    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy> proxies) {
+    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.proxy.TrainingProgramProxy> proxies) {
         picker.setAcceptableValues(proxies);
     }
 
     @Override
-    public void setDelegate(EditorDelegate<java.util.Set<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy>> editorDelegate) {
+    public void setDelegate(EditorDelegate<java.util.Set<org.rooinaction.coursemanager.proxy.TrainingProgramProxy>> editorDelegate) {
     }
 
     @Override
-    public void setValue(Set<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy> values) {
+    public void setValue(Set<org.rooinaction.coursemanager.proxy.TrainingProgramProxy> values) {
         this.values = values;
         makeEditable(editing = false);
         if (displayedList != null) {
@@ -150,7 +149,7 @@ public class TrainingProgramSetEditor extends TrainingProgramSetEditor_Roo_Gwt {
         }
     }
 
-    private String makeFlatList(Collection<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy> values) {
+    private String makeFlatList(Collection<org.rooinaction.coursemanager.proxy.TrainingProgramProxy> values) {
         return CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.TrainingProgramProxyRenderer.instance()).render(values);
     }
 

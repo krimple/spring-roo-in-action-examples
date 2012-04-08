@@ -11,11 +11,11 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public class InstructorListActivity extends InstructorListActivity_Roo_Gwt {
 
-    public InstructorListActivity(ApplicationRequestFactory requests, ProxyListView<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy> view, PlaceController placeController) {
+    public InstructorListActivity(ApplicationRequestFactory requests, ProxyListView<org.rooinaction.coursemanager.proxy.InstructorProxy> view, PlaceController placeController) {
         super(placeController, view, InstructorProxy.class);
         this.requests = requests;
     }
@@ -40,7 +40,7 @@ public class InstructorListActivity extends InstructorListActivity_Roo_Gwt {
         return false;
     }
 
-    protected Request<java.util.List<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy>> createRangeRequest(Range range) {
+    protected Request<java.util.List<org.rooinaction.coursemanager.proxy.InstructorProxy>> createRangeRequest(Range range) {
         return requests.instructorRequest().findInstructorEntries(range.getStart(), range.getLength());
     }
 }

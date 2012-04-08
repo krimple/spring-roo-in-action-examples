@@ -15,13 +15,9 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
 import org.rooinaction.coursemanager.shared.CourseTypeEnum;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
 
 public abstract class CourseMobileDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<CourseProxy> {
 
@@ -44,15 +40,6 @@ public abstract class CourseMobileDetailsView_Roo_Gwt extends Composite implemen
     Element courseType;
 
     @UiField
-    Element trainingProgram;
-
-    @UiField
-    Element tags;
-
-    @UiField
-    Element offerings;
-
-    @UiField
     Element version;
 
     CourseProxy proxy;
@@ -65,9 +52,6 @@ public abstract class CourseMobileDetailsView_Roo_Gwt extends Composite implemen
         cost.setInnerText(proxy.getCost() == null ? "" : String.valueOf(proxy.getCost()));
         maximumCapacity.setInnerText(proxy.getMaximumCapacity() == null ? "" : String.valueOf(proxy.getMaximumCapacity()));
         courseType.setInnerText(proxy.getCourseType() == null ? "" : String.valueOf(proxy.getCourseType()));
-        trainingProgram.setInnerText(proxy.getTrainingProgram() == null ? "" : org.rooinaction.coursemanager.client.managed.ui.TrainingProgramProxyRenderer.instance().render(proxy.getTrainingProgram()));
-        tags.setInnerText(proxy.getTags() == null ? "" : org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.TagProxyRenderer.instance()).render(proxy.getTags()));
-        offerings.setInnerText(proxy.getOfferings() == null ? "" : org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.OfferingProxyRenderer.instance()).render(proxy.getOfferings()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
     }
 }

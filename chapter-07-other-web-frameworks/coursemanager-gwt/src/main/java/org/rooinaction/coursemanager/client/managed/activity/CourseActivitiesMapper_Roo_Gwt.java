@@ -6,25 +6,19 @@ import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.web.bindery.requestfactory.shared.EntityProxyId;
 import com.google.web.bindery.requestfactory.shared.RequestContext;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
 import org.rooinaction.coursemanager.client.managed.ui.CourseDetailsView;
 import org.rooinaction.coursemanager.client.managed.ui.CourseEditView;
 import org.rooinaction.coursemanager.client.managed.ui.CourseListView;
 import org.rooinaction.coursemanager.client.managed.ui.CourseMobileDetailsView;
 import org.rooinaction.coursemanager.client.managed.ui.CourseMobileEditView;
-import org.rooinaction.coursemanager.client.managed.ui.OfferingSetEditor;
-import org.rooinaction.coursemanager.client.managed.ui.TagSetEditor;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
 import org.rooinaction.coursemanager.client.scaffold.place.CreateAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
+import org.rooinaction.coursemanager.request.CourseRequest;
 import org.rooinaction.coursemanager.shared.CourseTypeEnum;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
-import org.rooinaction.coursemanager.web.gwt.requests.CourseRequest;
 
 public abstract class CourseActivitiesMapper_Roo_Gwt {
 
@@ -47,7 +41,7 @@ public abstract class CourseActivitiesMapper_Roo_Gwt {
     }
 
     @SuppressWarnings("unchecked")
-    protected EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy> coerceId(ProxyPlace place) {
+    protected EntityProxyId<org.rooinaction.coursemanager.proxy.CourseProxy> coerceId(ProxyPlace place) {
         return (EntityProxyId<CourseProxy>) place.getProxyId();
     }
 

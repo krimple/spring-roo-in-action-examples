@@ -25,12 +25,6 @@
                 <g:TextBox ui:field="name"/>
             </div>
         </div>
-    <div id="courses">
-            <div class="{style.label}">Courses</div>
-            <div class="{style.value}">
-                <a:CourseSetEditor ui:field="courses"/>
-            </div>
-        </div>
 
     <g:Button ui:field="save">Save</g:Button>
   </g:HTMLPanel>

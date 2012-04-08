@@ -13,8 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.ui.MobileProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public class TrainingProgramMobileListView extends TrainingProgramMobileListView_Roo_Gwt {
 

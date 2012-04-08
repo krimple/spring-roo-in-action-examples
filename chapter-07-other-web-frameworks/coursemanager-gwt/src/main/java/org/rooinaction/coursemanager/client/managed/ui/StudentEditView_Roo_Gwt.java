@@ -28,18 +28,13 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.StudentEditActivityWrapper;
 import org.rooinaction.coursemanager.client.managed.activity.StudentEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public abstract class StudentEditView_Roo_Gwt extends Composite implements View<StudentEditView> {
-
-    @UiField
-    TextBox fullName;
 
     @UiField
     TextBox firstName;
@@ -76,11 +71,4 @@ public abstract class StudentEditView_Roo_Gwt extends Composite implements View<
 
     @UiField
     TextBox dietaryRestrictions;
-
-    @UiField
-    RegistrationSetEditor registrations;
-
-    public void setRegistrationsPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> values) {
-        registrations.setAcceptableValues(values);
-    }
 }

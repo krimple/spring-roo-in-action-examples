@@ -30,9 +30,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.ui.CollectionRenderer;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public abstract class RegistrationListEditor_Roo_Gwt extends Composite implements ValueAwareEditor<List<RegistrationProxy>>, LeafValueEditor<List<RegistrationProxy>> {
 }

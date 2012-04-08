@@ -51,14 +51,6 @@
                     <span ui:field="name"/>
                 </td>
             </tr>
-      <tr id="courses">
-                <td>
-                    <span class="{style.label}">Courses:</span>
-                </td>
-                <td>
-                    <span ui:field="courses"/>
-                </td>
-            </tr>
       <tr id="version">
                 <td>
                     <span class="{style.label}">Version:</span>

@@ -19,18 +19,6 @@
   <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
     <div class="{style.error}" ui:field="errors"/>
     
-    <div id="student">
-            <div class="{style.label}">Student</div>
-            <div class="{style.value}">
-                <g:ValueListBox ui:field="student"/>
-            </div>
-        </div>
-    <div id="offering">
-            <div class="{style.label}">Offering</div>
-            <div class="{style.value}">
-                <g:ValueListBox ui:field="offering"/>
-            </div>
-        </div>
 
     <g:Button ui:field="save">Save</g:Button>
   </g:HTMLPanel>

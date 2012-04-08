@@ -17,14 +17,6 @@
             <div class="{style.label}">Id</div>
             <div class="{style.value}" ui:field="id"/>
         </div>
-    <div id="student">
-            <div class="{style.label}">Student</div>
-            <div class="{style.value}" ui:field="student"/>
-        </div>
-    <div id="offering">
-            <div class="{style.label}">Offering</div>
-            <div class="{style.value}" ui:field="offering"/>
-        </div>
     <div id="version">
             <div class="{style.label}">Version</div>
             <div class="{style.value}" ui:field="version"/>

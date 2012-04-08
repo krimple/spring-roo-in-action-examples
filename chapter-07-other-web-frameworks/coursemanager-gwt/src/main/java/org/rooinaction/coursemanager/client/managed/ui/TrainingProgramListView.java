@@ -16,8 +16,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public class TrainingProgramListView extends TrainingProgramListView_Roo_Gwt {
 

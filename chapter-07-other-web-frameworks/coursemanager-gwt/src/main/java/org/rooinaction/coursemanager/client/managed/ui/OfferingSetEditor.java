@@ -30,10 +30,7 @@ import java.util.List;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.ui.OfferingSetEditor.NameLabel;
 import org.rooinaction.coursemanager.client.scaffold.ui.CollectionRenderer;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
+import org.rooinaction.coursemanager.proxy.OfferingProxy;
 
 public class OfferingSetEditor extends OfferingSetEditor_Roo_Gwt {
 
@@ -102,7 +99,7 @@ public class OfferingSetEditor extends OfferingSetEditor_Roo_Gwt {
     }
 
     @Override
-    public Set<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> getValue() {
+    public Set<org.rooinaction.coursemanager.proxy.OfferingProxy> getValue() {
         if (values == null && displayedList.size() == 0) {
             return null;
         }
@@ -117,16 +114,16 @@ public class OfferingSetEditor extends OfferingSetEditor_Roo_Gwt {
     public void onPropertyChange(String... strings) {
     }
 
-    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> proxies) {
+    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.proxy.OfferingProxy> proxies) {
         picker.setAcceptableValues(proxies);
     }
 
     @Override
-    public void setDelegate(EditorDelegate<java.util.Set<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy>> editorDelegate) {
+    public void setDelegate(EditorDelegate<java.util.Set<org.rooinaction.coursemanager.proxy.OfferingProxy>> editorDelegate) {
     }
 
     @Override
-    public void setValue(Set<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> values) {
+    public void setValue(Set<org.rooinaction.coursemanager.proxy.OfferingProxy> values) {
         this.values = values;
         makeEditable(editing = false);
         if (displayedList != null) {
@@ -152,7 +149,7 @@ public class OfferingSetEditor extends OfferingSetEditor_Roo_Gwt {
         }
     }
 
-    private String makeFlatList(Collection<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> values) {
+    private String makeFlatList(Collection<org.rooinaction.coursemanager.proxy.OfferingProxy> values) {
         return CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.OfferingProxyRenderer.instance()).render(values);
     }
 

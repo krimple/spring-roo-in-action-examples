@@ -15,7 +15,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public class InstructorDetailsView extends InstructorDetailsView_Roo_Gwt {
 

@@ -13,13 +13,13 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public abstract class InstructorListActivity_Roo_Gwt extends AbstractProxyListActivity<InstructorProxy> implements IsScaffoldMobileActivity {
 
     protected ApplicationRequestFactory requests;
 
-    public InstructorListActivity_Roo_Gwt(PlaceController placeController, ProxyListView<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy> view, Class<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy> proxyType) {
+    public InstructorListActivity_Roo_Gwt(PlaceController placeController, ProxyListView<org.rooinaction.coursemanager.proxy.InstructorProxy> view, Class<org.rooinaction.coursemanager.proxy.InstructorProxy> proxyType) {
         super(placeController, view, proxyType);
     }
 

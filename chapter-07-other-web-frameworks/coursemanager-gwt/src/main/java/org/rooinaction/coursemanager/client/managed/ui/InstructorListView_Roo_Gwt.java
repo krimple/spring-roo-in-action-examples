@@ -18,7 +18,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public abstract class InstructorListView_Roo_Gwt extends AbstractProxyListView<InstructorProxy> {
 
@@ -43,21 +43,6 @@ public abstract class InstructorListView_Roo_Gwt extends AbstractProxyListView<I
                 return renderer.render(object.getId());
             }
         }, "Id");
-        paths.add("fullName");
-        table.addColumn(new TextColumn<InstructorProxy>() {
-
-            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
-
-                public String render(java.lang.String obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(InstructorProxy object) {
-                return renderer.render(object.getFullName());
-            }
-        }, "Full Name");
         paths.add("firstName");
         table.addColumn(new TextColumn<InstructorProxy>() {
 

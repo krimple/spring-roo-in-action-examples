@@ -32,12 +32,9 @@ import org.rooinaction.coursemanager.client.managed.activity.InstructorEditActiv
 import org.rooinaction.coursemanager.client.managed.activity.InstructorEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public abstract class InstructorEditView_Roo_Gwt extends Composite implements View<InstructorEditView> {
-
-    @UiField
-    TextBox fullName;
 
     @UiField
     TextBox firstName;

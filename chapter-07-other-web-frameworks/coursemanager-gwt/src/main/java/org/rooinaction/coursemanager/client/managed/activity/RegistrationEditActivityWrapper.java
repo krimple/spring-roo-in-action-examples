@@ -16,15 +16,13 @@ import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileAc
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public class RegistrationEditActivityWrapper extends RegistrationEditActivityWrapper_Roo_Gwt {
 
     private final EntityProxyId<RegistrationProxy> proxyId;
 
-    public RegistrationEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> proxyId) {
+    public RegistrationEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<org.rooinaction.coursemanager.proxy.RegistrationProxy> proxyId) {
         this.requests = requests;
         this.view = view;
         this.wrapped = activity;
@@ -66,10 +64,6 @@ public class RegistrationEditActivityWrapper extends RegistrationEditActivityWra
         wrapped.onStop();
     }
 
-    public interface View<V extends org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy, V>> extends ProxyEditView<RegistrationProxy, V> {
-
-        void setStudentPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> values);
-
-        void setOfferingPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> values);
+    public interface View<V extends org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView<org.rooinaction.coursemanager.proxy.RegistrationProxy, V>> extends ProxyEditView<RegistrationProxy, V> {
     }
 }

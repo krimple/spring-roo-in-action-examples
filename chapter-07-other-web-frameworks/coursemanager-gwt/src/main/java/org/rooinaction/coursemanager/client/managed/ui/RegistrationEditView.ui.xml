@@ -43,22 +43,6 @@
     <div class="{style.errors}" ui:field="errors"/>
 
     <table class="{style.fields}" id="boundElementHolder">
-      <tr id="student">
-                <td>
-                    <div class="{style.label}">Student:</div>
-                </td>
-                <td>
-                    <g:ValueListBox ui:field="student"/>
-                </td>
-            </tr>
-      <tr id="offering">
-                <td>
-                    <div class="{style.label}">Offering:</div>
-                </td>
-                <td>
-                    <g:ValueListBox ui:field="offering"/>
-                </td>
-            </tr>
     </table>
 
     <div class="{style.bar}">

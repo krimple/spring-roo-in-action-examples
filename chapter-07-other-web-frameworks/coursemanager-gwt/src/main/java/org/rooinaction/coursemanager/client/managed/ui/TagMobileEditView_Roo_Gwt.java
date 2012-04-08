@@ -28,13 +28,11 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.TagEditActivityWrapper;
 import org.rooinaction.coursemanager.client.managed.activity.TagEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
+import org.rooinaction.coursemanager.proxy.TagProxy;
 
 public abstract class TagMobileEditView_Roo_Gwt extends Composite implements View<TagMobileEditView> {
 
@@ -43,11 +41,4 @@ public abstract class TagMobileEditView_Roo_Gwt extends Composite implements Vie
 
     @UiField
     TextBox description;
-
-    @UiField
-    CourseSetEditor courses;
-
-    public void setCoursesPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy> values) {
-        courses.setAcceptableValues(values);
-    }
 }

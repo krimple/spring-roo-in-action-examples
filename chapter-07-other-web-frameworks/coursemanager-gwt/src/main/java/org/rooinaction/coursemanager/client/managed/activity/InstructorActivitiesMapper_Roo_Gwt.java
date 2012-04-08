@@ -16,8 +16,8 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
 import org.rooinaction.coursemanager.client.scaffold.place.CreateAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.requests.InstructorRequest;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
+import org.rooinaction.coursemanager.request.InstructorRequest;
 
 public abstract class InstructorActivitiesMapper_Roo_Gwt {
 
@@ -40,7 +40,7 @@ public abstract class InstructorActivitiesMapper_Roo_Gwt {
     }
 
     @SuppressWarnings("unchecked")
-    protected EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy> coerceId(ProxyPlace place) {
+    protected EntityProxyId<org.rooinaction.coursemanager.proxy.InstructorProxy> coerceId(ProxyPlace place) {
         return (EntityProxyId<InstructorProxy>) place.getProxyId();
     }
 

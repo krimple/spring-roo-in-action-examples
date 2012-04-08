@@ -13,10 +13,8 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public class StudentMobileDetailsView extends StudentMobileDetailsView_Roo_Gwt {
 

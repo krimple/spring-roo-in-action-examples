@@ -16,13 +16,11 @@ import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace.Operation;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public class RegistrationDetailsActivity extends RegistrationDetailsActivity_Roo_Gwt {
 
-    public RegistrationDetailsActivity(EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> proxyId, ApplicationRequestFactory requests, PlaceController placeController, ProxyDetailsView<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> view) {
+    public RegistrationDetailsActivity(EntityProxyId<org.rooinaction.coursemanager.proxy.RegistrationProxy> proxyId, ApplicationRequestFactory requests, PlaceController placeController, ProxyDetailsView<org.rooinaction.coursemanager.proxy.RegistrationProxy> view) {
         this.placeController = placeController;
         this.proxyId = proxyId;
         this.requests = requests;

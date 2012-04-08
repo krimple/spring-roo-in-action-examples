@@ -1,11 +1,7 @@
 package org.rooinaction.coursemanager.client.managed.ui;
 
 import com.google.web.bindery.requestfactory.gwt.ui.client.ProxyRenderer;
-import java.util.Set;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
+import org.rooinaction.coursemanager.proxy.OfferingProxy;
 
 public class OfferingProxyRenderer extends ProxyRenderer<OfferingProxy> {
 

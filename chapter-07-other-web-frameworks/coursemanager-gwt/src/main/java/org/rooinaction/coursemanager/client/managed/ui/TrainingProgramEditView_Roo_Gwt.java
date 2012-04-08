@@ -28,23 +28,14 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.TrainingProgramEditActivityWrapper;
 import org.rooinaction.coursemanager.client.managed.activity.TrainingProgramEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public abstract class TrainingProgramEditView_Roo_Gwt extends Composite implements View<TrainingProgramEditView> {
 
     @UiField
     TextBox name;
-
-    @UiField
-    CourseSetEditor courses;
-
-    public void setCoursesPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy> values) {
-        courses.setAcceptableValues(values);
-    }
 }

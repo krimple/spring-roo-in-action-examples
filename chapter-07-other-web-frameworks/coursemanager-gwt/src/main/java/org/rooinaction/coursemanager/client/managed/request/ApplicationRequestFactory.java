@@ -2,14 +2,14 @@
 
 package org.rooinaction.coursemanager.client.managed.request;
 
+import org.rooinaction.coursemanager.request.CourseRequest;
+import org.rooinaction.coursemanager.request.InstructorRequest;
+import org.rooinaction.coursemanager.request.OfferingRequest;
+import org.rooinaction.coursemanager.request.RegistrationRequest;
+import org.rooinaction.coursemanager.request.StudentRequest;
+import org.rooinaction.coursemanager.request.TagRequest;
+import org.rooinaction.coursemanager.request.TrainingProgramRequest;
 import org.rooinaction.coursemanager.shared.scaffold.ScaffoldRequestFactory;
-import org.rooinaction.coursemanager.web.gwt.requests.CourseRequest;
-import org.rooinaction.coursemanager.web.gwt.requests.InstructorRequest;
-import org.rooinaction.coursemanager.web.gwt.requests.OfferingRequest;
-import org.rooinaction.coursemanager.web.gwt.requests.RegistrationRequest;
-import org.rooinaction.coursemanager.web.gwt.requests.StudentRequest;
-import org.rooinaction.coursemanager.web.gwt.requests.TagRequest;
-import org.rooinaction.coursemanager.web.gwt.requests.TrainingProgramRequest;
 
 public interface ApplicationRequestFactory extends ScaffoldRequestFactory {
 

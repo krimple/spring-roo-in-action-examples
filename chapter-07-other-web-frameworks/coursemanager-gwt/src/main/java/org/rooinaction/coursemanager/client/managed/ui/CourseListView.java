@@ -16,10 +16,8 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
+import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public class CourseListView extends CourseListView_Roo_Gwt {
 

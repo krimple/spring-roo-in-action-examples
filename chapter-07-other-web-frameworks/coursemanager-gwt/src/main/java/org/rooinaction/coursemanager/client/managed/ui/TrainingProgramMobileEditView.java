@@ -26,12 +26,10 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.TrainingProgramEditActivityWrapper;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public class TrainingProgramMobileEditView extends TrainingProgramMobileEditView_Roo_Gwt {
 
@@ -59,7 +57,7 @@ public class TrainingProgramMobileEditView extends TrainingProgramMobileEditView
     }
 
     @Override
-    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy, org.rooinaction.coursemanager.client.managed.ui.TrainingProgramMobileEditView> createEditorDriver() {
+    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.proxy.TrainingProgramProxy, org.rooinaction.coursemanager.client.managed.ui.TrainingProgramMobileEditView> createEditorDriver() {
         RequestFactoryEditorDriver<TrainingProgramProxy, TrainingProgramMobileEditView> driver = GWT.create(Driver.class);
         driver.initialize(this);
         return driver;

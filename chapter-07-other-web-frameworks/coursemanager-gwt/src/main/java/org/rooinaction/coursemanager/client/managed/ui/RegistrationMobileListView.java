@@ -13,9 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.ui.MobileProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public class RegistrationMobileListView extends RegistrationMobileListView_Roo_Gwt {
 
@@ -50,7 +48,12 @@ public class RegistrationMobileListView extends RegistrationMobileListView_Roo_G
             }
         };
 
-        private final Renderer<StudentProxy> secondaryRenderer = org.rooinaction.coursemanager.client.managed.ui.StudentProxyRenderer.instance();
+        private final Renderer<Integer> secondaryRenderer = new AbstractRenderer<Integer>() {
+
+            public String render(java.lang.Integer obj) {
+                return obj == null ? "" : String.valueOf(obj);
+            }
+        };
 
         @Override
         public SafeHtml render(RegistrationProxy value) {
@@ -63,8 +66,8 @@ public class RegistrationMobileListView extends RegistrationMobileListView_Roo_G
             }
             sb.appendHtmlConstant("<div style=\"position:relative;\">");
             sb.appendHtmlConstant("<div class=\"" + secondaryStyle + "\">");
-            if (value.getStudent() != null) {
-                sb.appendEscaped(secondaryRenderer.render(value.getStudent()));
+            if (value.getVersion() != null) {
+                sb.appendEscaped(secondaryRenderer.render(value.getVersion()));
             }
             sb.appendHtmlConstant("</div>");
             sb.appendHtmlConstant("<div class=\"" + dateStyle + "\">");

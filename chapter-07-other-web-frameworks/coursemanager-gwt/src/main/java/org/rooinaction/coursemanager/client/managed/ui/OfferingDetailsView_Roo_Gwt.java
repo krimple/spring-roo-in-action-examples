@@ -15,13 +15,9 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
+import org.rooinaction.coursemanager.proxy.OfferingProxy;
 
 public abstract class OfferingDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<OfferingProxy> {
 
@@ -30,15 +26,6 @@ public abstract class OfferingDetailsView_Roo_Gwt extends Composite implements P
 
     @UiField
     SpanElement runDate;
-
-    @UiField
-    SpanElement course;
-
-    @UiField
-    SpanElement registrations;
-
-    @UiField
-    SpanElement instructor;
 
     @UiField
     SpanElement version;
@@ -52,9 +39,6 @@ public abstract class OfferingDetailsView_Roo_Gwt extends Composite implements P
         this.proxy = proxy;
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
         runDate.setInnerText(proxy.getRunDate() == null ? "" : DateTimeFormat.getFormat(DateTimeFormat.PredefinedFormat.DATE_SHORT).format(proxy.getRunDate()));
-        course.setInnerText(proxy.getCourse() == null ? "" : org.rooinaction.coursemanager.client.managed.ui.CourseProxyRenderer.instance().render(proxy.getCourse()));
-        registrations.setInnerText(proxy.getRegistrations() == null ? "" : org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.RegistrationProxyRenderer.instance()).render(proxy.getRegistrations()));
-        instructor.setInnerText(proxy.getInstructor() == null ? "" : org.rooinaction.coursemanager.client.managed.ui.InstructorProxyRenderer.instance().render(proxy.getInstructor()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
         displayRenderer.setInnerText(OfferingProxyRenderer.instance().render(proxy));
     }

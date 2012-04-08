@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.rooinaction.coursemanager</groupId>
-	<artifactId>coursemanager-chapter-04</artifactId>
+	<artifactId>coursemanager-chapter-06</artifactId>
 	<packaging>jar</packaging>
 	<version>0.1.0.BUILD-SNAPSHOT</version>
-	<name>coursemanager-chapter-04</name>
+	<name>coursemanager-chapter-06</name>
 	<properties>
 		<aspectj.version>1.6.12.M2</aspectj.version>
 		<java.version>1.6</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<roo.version>1.2.1.BUILD-SNAPSHOT</roo.version>
+		<roo.version>1.2.1.RELEASE</roo.version>
 		<slf4j.version>1.6.2</slf4j.version>
 		<spring.version>3.1.0.RELEASE</spring.version>
 	</properties>
@@ -485,43 +485,7 @@
                     </execution>
                 </executions>
             </plugin>
-        <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>gwt-maven-plugin</artifactId>
-                <version>2.2.0</version>
-                <configuration>
-                    <logLevel>INFO</logLevel>
-                    <style>PRETTY</style>
-                    <runTarget>/ApplicationScaffold.html</runTarget>
-                    <hostedWebapp>${project.build.directory}/${project.build.finalName}</hostedWebapp>
-                    <modules>
-                        <module>${project.groupId}.ApplicationScaffold</module>
-                    </modules>
-                    <copyWebapp>true</copyWebapp>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>gwtcompile</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-dev</artifactId>
-                        <version>2.4.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-user</artifactId>
-                        <version>2.4.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        <plugin>
+         <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <version>2.2.0</version>

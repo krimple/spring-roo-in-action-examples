@@ -13,15 +13,13 @@ import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.Request;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.RegistrationSetEditor;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView.Delegate;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace.Operation;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public abstract class StudentDetailsActivity_Roo_Gwt extends AbstractActivity implements Delegate, IsScaffoldMobileActivity {
 
@@ -51,6 +49,6 @@ public abstract class StudentDetailsActivity_Roo_Gwt extends AbstractActivity im
     }
 
     protected void find(Receiver<com.google.web.bindery.requestfactory.shared.EntityProxy> callback) {
-        requests.find(proxyId).with("registrations").fire(callback);
+        requests.find(proxyId).with().fire(callback);
     }
 }

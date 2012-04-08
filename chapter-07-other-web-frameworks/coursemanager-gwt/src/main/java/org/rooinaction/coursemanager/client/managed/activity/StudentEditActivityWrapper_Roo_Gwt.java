@@ -13,16 +13,13 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.StudentEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.RegistrationSetEditor;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public abstract class StudentEditActivityWrapper_Roo_Gwt implements Activity, IsScaffoldMobileActivity {
 
@@ -34,16 +31,6 @@ public abstract class StudentEditActivityWrapper_Roo_Gwt implements Activity, Is
 
     @Override
     public void start(AcceptsOneWidget display, EventBus eventBus) {
-        view.setRegistrationsPickerValues(Collections.<RegistrationProxy>emptyList());
-        requests.registrationRequest().findRegistrationEntries(0, 50).with(org.rooinaction.coursemanager.client.managed.ui.RegistrationProxyRenderer.instance().getPaths()).fire(new Receiver<List<RegistrationProxy>>() {
-
-            public void onSuccess(List<RegistrationProxy> response) {
-                List<RegistrationProxy> values = new ArrayList<RegistrationProxy>();
-                values.add(null);
-                values.addAll(response);
-                view.setRegistrationsPickerValues(values);
-            }
-        });
         wrapped.start(display, eventBus);
     }
 }

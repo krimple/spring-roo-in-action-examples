@@ -26,12 +26,10 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.TagEditActivityWrapper;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
+import org.rooinaction.coursemanager.proxy.TagProxy;
 
 public class TagMobileEditView extends TagMobileEditView_Roo_Gwt {
 
@@ -59,7 +57,7 @@ public class TagMobileEditView extends TagMobileEditView_Roo_Gwt {
     }
 
     @Override
-    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.web.gwt.proxies.TagProxy, org.rooinaction.coursemanager.client.managed.ui.TagMobileEditView> createEditorDriver() {
+    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.proxy.TagProxy, org.rooinaction.coursemanager.client.managed.ui.TagMobileEditView> createEditorDriver() {
         RequestFactoryEditorDriver<TagProxy, TagMobileEditView> driver = GWT.create(Driver.class);
         driver.initialize(this);
         return driver;

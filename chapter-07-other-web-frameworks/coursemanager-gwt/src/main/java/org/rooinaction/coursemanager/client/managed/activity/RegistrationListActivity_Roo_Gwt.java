@@ -13,15 +13,13 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public abstract class RegistrationListActivity_Roo_Gwt extends AbstractProxyListActivity<RegistrationProxy> implements IsScaffoldMobileActivity {
 
     protected ApplicationRequestFactory requests;
 
-    public RegistrationListActivity_Roo_Gwt(PlaceController placeController, ProxyListView<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> view, Class<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> proxyType) {
+    public RegistrationListActivity_Roo_Gwt(PlaceController placeController, ProxyListView<org.rooinaction.coursemanager.proxy.RegistrationProxy> view, Class<org.rooinaction.coursemanager.proxy.RegistrationProxy> proxyType) {
         super(placeController, view, proxyType);
     }
 

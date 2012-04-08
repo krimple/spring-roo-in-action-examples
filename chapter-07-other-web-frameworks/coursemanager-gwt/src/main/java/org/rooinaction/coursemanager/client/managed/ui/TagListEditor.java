@@ -30,8 +30,7 @@ import java.util.List;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.ui.TagListEditor.NameLabel;
 import org.rooinaction.coursemanager.client.scaffold.ui.CollectionRenderer;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
+import org.rooinaction.coursemanager.proxy.TagProxy;
 
 public class TagListEditor extends TagListEditor_Roo_Gwt {
 
@@ -100,7 +99,7 @@ public class TagListEditor extends TagListEditor_Roo_Gwt {
     }
 
     @Override
-    public List<org.rooinaction.coursemanager.web.gwt.proxies.TagProxy> getValue() {
+    public List<org.rooinaction.coursemanager.proxy.TagProxy> getValue() {
         if (values == null && displayedList.size() == 0) {
             return null;
         }
@@ -115,16 +114,16 @@ public class TagListEditor extends TagListEditor_Roo_Gwt {
     public void onPropertyChange(String... strings) {
     }
 
-    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.TagProxy> proxies) {
+    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.proxy.TagProxy> proxies) {
         picker.setAcceptableValues(proxies);
     }
 
     @Override
-    public void setDelegate(EditorDelegate<java.util.List<org.rooinaction.coursemanager.web.gwt.proxies.TagProxy>> editorDelegate) {
+    public void setDelegate(EditorDelegate<java.util.List<org.rooinaction.coursemanager.proxy.TagProxy>> editorDelegate) {
     }
 
     @Override
-    public void setValue(List<org.rooinaction.coursemanager.web.gwt.proxies.TagProxy> values) {
+    public void setValue(List<org.rooinaction.coursemanager.proxy.TagProxy> values) {
         this.values = values;
         makeEditable(editing = false);
         if (displayedList != null) {
@@ -150,7 +149,7 @@ public class TagListEditor extends TagListEditor_Roo_Gwt {
         }
     }
 
-    private String makeFlatList(Collection<org.rooinaction.coursemanager.web.gwt.proxies.TagProxy> values) {
+    private String makeFlatList(Collection<org.rooinaction.coursemanager.proxy.TagProxy> values) {
         return CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.TagProxyRenderer.instance()).render(values);
     }
 

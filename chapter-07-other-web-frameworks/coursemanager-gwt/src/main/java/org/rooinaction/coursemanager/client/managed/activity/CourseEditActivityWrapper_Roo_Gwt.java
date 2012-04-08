@@ -13,20 +13,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.CourseEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.OfferingSetEditor;
-import org.rooinaction.coursemanager.client.managed.ui.TagSetEditor;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
 import org.rooinaction.coursemanager.shared.CourseTypeEnum;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
 
 public abstract class CourseEditActivityWrapper_Roo_Gwt implements Activity, IsScaffoldMobileActivity {
 
@@ -39,36 +33,6 @@ public abstract class CourseEditActivityWrapper_Roo_Gwt implements Activity, IsS
     @Override
     public void start(AcceptsOneWidget display, EventBus eventBus) {
         view.setCourseTypePickerValues(Arrays.asList(CourseTypeEnum.values()));
-        view.setTrainingProgramPickerValues(Collections.<TrainingProgramProxy>emptyList());
-        requests.trainingProgramRequest().findTrainingProgramEntries(0, 50).with(org.rooinaction.coursemanager.client.managed.ui.TrainingProgramProxyRenderer.instance().getPaths()).fire(new Receiver<List<TrainingProgramProxy>>() {
-
-            public void onSuccess(List<TrainingProgramProxy> response) {
-                List<TrainingProgramProxy> values = new ArrayList<TrainingProgramProxy>();
-                values.add(null);
-                values.addAll(response);
-                view.setTrainingProgramPickerValues(values);
-            }
-        });
-        view.setTagsPickerValues(Collections.<TagProxy>emptyList());
-        requests.tagRequest().findTagEntries(0, 50).with(org.rooinaction.coursemanager.client.managed.ui.TagProxyRenderer.instance().getPaths()).fire(new Receiver<List<TagProxy>>() {
-
-            public void onSuccess(List<TagProxy> response) {
-                List<TagProxy> values = new ArrayList<TagProxy>();
-                values.add(null);
-                values.addAll(response);
-                view.setTagsPickerValues(values);
-            }
-        });
-        view.setOfferingsPickerValues(Collections.<OfferingProxy>emptyList());
-        requests.offeringRequest().findOfferingEntries(0, 50).with(org.rooinaction.coursemanager.client.managed.ui.OfferingProxyRenderer.instance().getPaths()).fire(new Receiver<List<OfferingProxy>>() {
-
-            public void onSuccess(List<OfferingProxy> response) {
-                List<OfferingProxy> values = new ArrayList<OfferingProxy>();
-                values.add(null);
-                values.addAll(response);
-                view.setOfferingsPickerValues(values);
-            }
-        });
         wrapped.start(display, eventBus);
     }
 }

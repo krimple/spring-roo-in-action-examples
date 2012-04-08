@@ -18,11 +18,8 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
 import org.rooinaction.coursemanager.shared.CourseTypeEnum;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
 
 public abstract class CourseListView_Roo_Gwt extends AbstractProxyListView<CourseProxy> {
 
@@ -122,36 +119,6 @@ public abstract class CourseListView_Roo_Gwt extends AbstractProxyListView<Cours
                 return renderer.render(object.getCourseType());
             }
         }, "Course Type");
-        paths.add("trainingProgram");
-        table.addColumn(new TextColumn<CourseProxy>() {
-
-            Renderer<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy> renderer = org.rooinaction.coursemanager.client.managed.ui.TrainingProgramProxyRenderer.instance();
-
-            @Override
-            public String getValue(CourseProxy object) {
-                return renderer.render(object.getTrainingProgram());
-            }
-        }, "Training Program");
-        paths.add("tags");
-        table.addColumn(new TextColumn<CourseProxy>() {
-
-            Renderer<java.util.Set> renderer = org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.TagProxyRenderer.instance());
-
-            @Override
-            public String getValue(CourseProxy object) {
-                return renderer.render(object.getTags());
-            }
-        }, "Tags");
-        paths.add("offerings");
-        table.addColumn(new TextColumn<CourseProxy>() {
-
-            Renderer<java.util.Set> renderer = org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.OfferingProxyRenderer.instance());
-
-            @Override
-            public String getValue(CourseProxy object) {
-                return renderer.render(object.getOfferings());
-            }
-        }, "Offerings");
         paths.add("version");
         table.addColumn(new TextColumn<CourseProxy>() {
 

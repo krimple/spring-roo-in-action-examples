@@ -18,8 +18,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public abstract class TrainingProgramListView_Roo_Gwt extends AbstractProxyListView<TrainingProgramProxy> {
 
@@ -59,16 +58,6 @@ public abstract class TrainingProgramListView_Roo_Gwt extends AbstractProxyListV
                 return renderer.render(object.getName());
             }
         }, "Name");
-        paths.add("courses");
-        table.addColumn(new TextColumn<TrainingProgramProxy>() {
-
-            Renderer<java.util.Set> renderer = org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.CourseProxyRenderer.instance());
-
-            @Override
-            public String getValue(TrainingProgramProxy object) {
-                return renderer.render(object.getCourses());
-            }
-        }, "Courses");
         paths.add("version");
         table.addColumn(new TextColumn<TrainingProgramProxy>() {
 

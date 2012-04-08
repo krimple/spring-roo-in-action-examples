@@ -29,7 +29,7 @@ import java.util.List;
 import org.rooinaction.coursemanager.client.managed.activity.InstructorEditActivityWrapper;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public class InstructorEditView extends InstructorEditView_Roo_Gwt {
 
@@ -66,7 +66,7 @@ public class InstructorEditView extends InstructorEditView_Roo_Gwt {
     }
 
     @Override
-    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy, org.rooinaction.coursemanager.client.managed.ui.InstructorEditView> createEditorDriver() {
+    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.proxy.InstructorProxy, org.rooinaction.coursemanager.client.managed.ui.InstructorEditView> createEditorDriver() {
         RequestFactoryEditorDriver<InstructorProxy, InstructorEditView> driver = GWT.create(Driver.class);
         driver.initialize(this);
         return driver;

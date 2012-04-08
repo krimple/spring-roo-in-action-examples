@@ -14,8 +14,8 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
 import org.rooinaction.coursemanager.client.scaffold.place.CreateAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.requests.InstructorRequest;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
+import org.rooinaction.coursemanager.request.InstructorRequest;
 
 public class InstructorActivitiesMapper extends InstructorActivitiesMapper_Roo_Gwt {
 

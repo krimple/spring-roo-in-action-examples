@@ -25,10 +25,6 @@
             <div class="{style.label}">Description</div>
             <div class="{style.value}" ui:field="description"/>
         </div>
-    <div id="courses">
-            <div class="{style.label}">Courses</div>
-            <div class="{style.value}" ui:field="courses"/>
-        </div>
     <div id="version">
             <div class="{style.label}">Version</div>
             <div class="{style.value}" ui:field="version"/>

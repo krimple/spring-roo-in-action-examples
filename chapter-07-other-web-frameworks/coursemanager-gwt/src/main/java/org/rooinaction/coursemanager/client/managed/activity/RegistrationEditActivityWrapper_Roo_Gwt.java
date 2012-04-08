@@ -19,9 +19,7 @@ import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileAc
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public abstract class RegistrationEditActivityWrapper_Roo_Gwt implements Activity, IsScaffoldMobileActivity {
 
@@ -33,26 +31,6 @@ public abstract class RegistrationEditActivityWrapper_Roo_Gwt implements Activit
 
     @Override
     public void start(AcceptsOneWidget display, EventBus eventBus) {
-        view.setStudentPickerValues(Collections.<StudentProxy>emptyList());
-        requests.studentRequest().findStudentEntries(0, 50).with(org.rooinaction.coursemanager.client.managed.ui.StudentProxyRenderer.instance().getPaths()).fire(new Receiver<List<StudentProxy>>() {
-
-            public void onSuccess(List<StudentProxy> response) {
-                List<StudentProxy> values = new ArrayList<StudentProxy>();
-                values.add(null);
-                values.addAll(response);
-                view.setStudentPickerValues(values);
-            }
-        });
-        view.setOfferingPickerValues(Collections.<OfferingProxy>emptyList());
-        requests.offeringRequest().findOfferingEntries(0, 50).with(org.rooinaction.coursemanager.client.managed.ui.OfferingProxyRenderer.instance().getPaths()).fire(new Receiver<List<OfferingProxy>>() {
-
-            public void onSuccess(List<OfferingProxy> response) {
-                List<OfferingProxy> values = new ArrayList<OfferingProxy>();
-                values.add(null);
-                values.addAll(response);
-                view.setOfferingPickerValues(values);
-            }
-        });
         wrapped.start(display, eventBus);
     }
 }

@@ -51,30 +51,6 @@
                     <span ui:field="runDate"/>
                 </td>
             </tr>
-      <tr id="course">
-                <td>
-                    <span class="{style.label}">Course:</span>
-                </td>
-                <td>
-                    <span ui:field="course"/>
-                </td>
-            </tr>
-      <tr id="registrations">
-                <td>
-                    <span class="{style.label}">Registrations:</span>
-                </td>
-                <td>
-                    <span ui:field="registrations"/>
-                </td>
-            </tr>
-      <tr id="instructor">
-                <td>
-                    <span class="{style.label}">Instructor:</span>
-                </td>
-                <td>
-                    <span ui:field="instructor"/>
-                </td>
-            </tr>
       <tr id="version">
                 <td>
                     <span class="{style.label}">Version:</span>

@@ -30,8 +30,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.ui.CollectionRenderer;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
+import org.rooinaction.coursemanager.proxy.TagProxy;
 
 public abstract class TagListEditor_Roo_Gwt extends Composite implements ValueAwareEditor<List<TagProxy>>, LeafValueEditor<List<TagProxy>> {
 }

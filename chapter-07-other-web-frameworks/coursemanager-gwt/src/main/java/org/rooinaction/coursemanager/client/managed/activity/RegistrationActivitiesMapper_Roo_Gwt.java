@@ -16,10 +16,8 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
 import org.rooinaction.coursemanager.client.scaffold.place.CreateAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
-import org.rooinaction.coursemanager.web.gwt.requests.RegistrationRequest;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
+import org.rooinaction.coursemanager.request.RegistrationRequest;
 
 public abstract class RegistrationActivitiesMapper_Roo_Gwt {
 
@@ -42,7 +40,7 @@ public abstract class RegistrationActivitiesMapper_Roo_Gwt {
     }
 
     @SuppressWarnings("unchecked")
-    protected EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> coerceId(ProxyPlace place) {
+    protected EntityProxyId<org.rooinaction.coursemanager.proxy.RegistrationProxy> coerceId(ProxyPlace place) {
         return (EntityProxyId<RegistrationProxy>) place.getProxyId();
     }
 

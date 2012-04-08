@@ -1,9 +1,7 @@
 package org.rooinaction.coursemanager.client.managed.ui;
 
 import com.google.web.bindery.requestfactory.gwt.ui.client.ProxyRenderer;
-import java.util.Set;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public class StudentProxyRenderer extends ProxyRenderer<StudentProxy> {
 
@@ -24,6 +22,6 @@ public class StudentProxyRenderer extends ProxyRenderer<StudentProxy> {
         if (object == null) {
             return "";
         }
-        return object.getFullName() + " (" + object.getFullName() + ")";
+        return object.getLastName() + " (" + object.getLastName() + ")";
     }
 }

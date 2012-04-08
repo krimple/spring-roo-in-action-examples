@@ -8,13 +8,13 @@ import com.google.inject.Inject;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationEntityTypesProcessor;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.OfferingProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
+import org.rooinaction.coursemanager.proxy.TagProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public class ApplicationDetailsActivities extends ApplicationDetailsActivities_Roo_Gwt {
 

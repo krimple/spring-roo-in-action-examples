@@ -21,10 +21,6 @@
             <div class="{style.label}">Name</div>
             <div class="{style.value}" ui:field="name"/>
         </div>
-    <div id="courses">
-            <div class="{style.label}">Courses</div>
-            <div class="{style.value}" ui:field="courses"/>
-        </div>
     <div id="version">
             <div class="{style.label}">Version</div>
             <div class="{style.value}" ui:field="version"/>

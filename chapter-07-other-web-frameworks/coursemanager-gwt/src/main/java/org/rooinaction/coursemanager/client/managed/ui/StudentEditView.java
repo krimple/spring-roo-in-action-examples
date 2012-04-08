@@ -26,12 +26,10 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.StudentEditActivityWrapper;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public class StudentEditView extends StudentEditView_Roo_Gwt {
 
@@ -68,7 +66,7 @@ public class StudentEditView extends StudentEditView_Roo_Gwt {
     }
 
     @Override
-    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy, org.rooinaction.coursemanager.client.managed.ui.StudentEditView> createEditorDriver() {
+    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.proxy.StudentProxy, org.rooinaction.coursemanager.client.managed.ui.StudentEditView> createEditorDriver() {
         RequestFactoryEditorDriver<StudentProxy, StudentEditView> driver = GWT.create(Driver.class);
         driver.initialize(this);
         return driver;

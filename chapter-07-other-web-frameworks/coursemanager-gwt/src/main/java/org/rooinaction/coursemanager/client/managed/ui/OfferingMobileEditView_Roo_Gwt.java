@@ -28,39 +28,14 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.OfferingEditActivityWrapper;
 import org.rooinaction.coursemanager.client.managed.activity.OfferingEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
+import org.rooinaction.coursemanager.proxy.OfferingProxy;
 
 public abstract class OfferingMobileEditView_Roo_Gwt extends Composite implements View<OfferingMobileEditView> {
 
     @UiField
     DateBox runDate;
-
-    @UiField(provided = true)
-    ValueListBox<CourseProxy> course = new ValueListBox<CourseProxy>(org.rooinaction.coursemanager.client.managed.ui.CourseProxyRenderer.instance(), new com.google.web.bindery.requestfactory.gwt.ui.client.EntityProxyKeyProvider<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy>());
-
-    @UiField
-    RegistrationSetEditor registrations;
-
-    @UiField(provided = true)
-    ValueListBox<InstructorProxy> instructor = new ValueListBox<InstructorProxy>(org.rooinaction.coursemanager.client.managed.ui.InstructorProxyRenderer.instance(), new com.google.web.bindery.requestfactory.gwt.ui.client.EntityProxyKeyProvider<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy>());
-
-    public void setInstructorPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy> values) {
-        instructor.setAcceptableValues(values);
-    }
-
-    public void setCoursePickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy> values) {
-        course.setAcceptableValues(values);
-    }
-
-    public void setRegistrationsPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> values) {
-        registrations.setAcceptableValues(values);
-    }
 }

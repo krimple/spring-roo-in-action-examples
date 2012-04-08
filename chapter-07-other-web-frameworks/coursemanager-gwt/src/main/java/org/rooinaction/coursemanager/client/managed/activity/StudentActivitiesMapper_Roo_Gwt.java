@@ -6,9 +6,7 @@ import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.web.bindery.requestfactory.shared.EntityProxyId;
 import com.google.web.bindery.requestfactory.shared.RequestContext;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.RegistrationSetEditor;
 import org.rooinaction.coursemanager.client.managed.ui.StudentDetailsView;
 import org.rooinaction.coursemanager.client.managed.ui.StudentEditView;
 import org.rooinaction.coursemanager.client.managed.ui.StudentListView;
@@ -18,9 +16,8 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
 import org.rooinaction.coursemanager.client.scaffold.place.CreateAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
-import org.rooinaction.coursemanager.web.gwt.requests.StudentRequest;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
+import org.rooinaction.coursemanager.request.StudentRequest;
 
 public abstract class StudentActivitiesMapper_Roo_Gwt {
 
@@ -43,7 +40,7 @@ public abstract class StudentActivitiesMapper_Roo_Gwt {
     }
 
     @SuppressWarnings("unchecked")
-    protected EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> coerceId(ProxyPlace place) {
+    protected EntityProxyId<org.rooinaction.coursemanager.proxy.StudentProxy> coerceId(ProxyPlace place) {
         return (EntityProxyId<StudentProxy>) place.getProxyId();
     }
 

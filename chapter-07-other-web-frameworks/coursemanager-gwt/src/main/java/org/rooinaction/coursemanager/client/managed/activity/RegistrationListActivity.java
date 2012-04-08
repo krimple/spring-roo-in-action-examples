@@ -11,13 +11,11 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public class RegistrationListActivity extends RegistrationListActivity_Roo_Gwt {
 
-    public RegistrationListActivity(ApplicationRequestFactory requests, ProxyListView<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> view, PlaceController placeController) {
+    public RegistrationListActivity(ApplicationRequestFactory requests, ProxyListView<org.rooinaction.coursemanager.proxy.RegistrationProxy> view, PlaceController placeController) {
         super(placeController, view, RegistrationProxy.class);
         this.requests = requests;
     }
@@ -42,7 +40,7 @@ public class RegistrationListActivity extends RegistrationListActivity_Roo_Gwt {
         return false;
     }
 
-    protected Request<java.util.List<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy>> createRangeRequest(Range range) {
+    protected Request<java.util.List<org.rooinaction.coursemanager.proxy.RegistrationProxy>> createRangeRequest(Range range) {
         return requests.registrationRequest().findRegistrationEntries(range.getStart(), range.getLength());
     }
 }

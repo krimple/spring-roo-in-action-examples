@@ -4,9 +4,7 @@ import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.web.bindery.requestfactory.shared.EntityProxyId;
 import com.google.web.bindery.requestfactory.shared.RequestContext;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.CourseSetEditor;
 import org.rooinaction.coursemanager.client.managed.ui.TagDetailsView;
 import org.rooinaction.coursemanager.client.managed.ui.TagEditView;
 import org.rooinaction.coursemanager.client.managed.ui.TagListView;
@@ -16,9 +14,8 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
 import org.rooinaction.coursemanager.client.scaffold.place.CreateAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.requests.TagRequest;
+import org.rooinaction.coursemanager.proxy.TagProxy;
+import org.rooinaction.coursemanager.request.TagRequest;
 
 public class TagActivitiesMapper extends TagActivitiesMapper_Roo_Gwt {
 

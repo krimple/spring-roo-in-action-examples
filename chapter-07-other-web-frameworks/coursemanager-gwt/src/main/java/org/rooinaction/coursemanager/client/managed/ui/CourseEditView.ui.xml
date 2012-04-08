@@ -43,14 +43,7 @@
     <div class="{style.errors}" ui:field="errors"/>
 
     <table class="{style.fields}" id="boundElementHolder">
-      
-      
-      
-      
-      
-      
-      
-    <tr id="name">
+      <tr id="name">
                 <td>
                     <div class="{style.label}">Name:</div>
                 </td>
@@ -58,7 +51,7 @@
                     <g:TextBox ui:field="name"/>
                 </td>
             </tr>
-            <tr id="description">
+      <tr id="description">
                 <td>
                     <div class="{style.label}">Description:</div>
                 </td>
@@ -66,7 +59,7 @@
                     <g:TextBox ui:field="description"/>
                 </td>
             </tr>
-            <tr id="cost">
+      <tr id="cost">
                 <td>
                     <div class="{style.label}">Cost:</div>
                 </td>
@@ -74,7 +67,7 @@
                     <r:BigDecimalBox ui:field="cost"/>
                 </td>
             </tr>
-            <tr id="maximumCapacity">
+      <tr id="maximumCapacity">
                 <td>
                     <div class="{style.label}">Maximum Capacity:</div>
                 </td>
@@ -82,7 +75,7 @@
                     <g:IntegerBox ui:field="maximumCapacity"/>
                 </td>
             </tr>
-            <tr id="courseType">
+      <tr id="courseType">
                 <td>
                     <div class="{style.label}">Course Type:</div>
                 </td>
@@ -90,31 +83,7 @@
                     <g:ValueListBox ui:field="courseType"/>
                 </td>
             </tr>
-            <tr id="trainingProgram">
-                <td>
-                    <div class="{style.label}">Training Program:</div>
-                </td>
-                <td>
-                    <g:ValueListBox ui:field="trainingProgram"/>
-                </td>
-            </tr>
-            <tr id="tags">
-                <td>
-                    <div class="{style.label}">Tags:</div>
-                </td>
-                <td>
-                    <a:TagSetEditor ui:field="tags"/>
-                </td>
-            </tr>
-            <tr id="offerings">
-                <td>
-                    <div class="{style.label}">Offerings:</div>
-                </td>
-                <td>
-                    <a:OfferingSetEditor ui:field="offerings"/>
-                </td>
-            </tr>
-        </table>
+    </table>
 
     <div class="{style.bar}">
       <g:Button addStyleNames="{style.button}" ui:field="save">Save</g:Button>

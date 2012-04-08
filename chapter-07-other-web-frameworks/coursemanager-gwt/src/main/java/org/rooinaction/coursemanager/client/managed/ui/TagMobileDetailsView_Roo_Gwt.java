@@ -15,10 +15,8 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
+import org.rooinaction.coursemanager.proxy.TagProxy;
 
 public abstract class TagMobileDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<TagProxy> {
 
@@ -32,9 +30,6 @@ public abstract class TagMobileDetailsView_Roo_Gwt extends Composite implements 
     Element description;
 
     @UiField
-    Element courses;
-
-    @UiField
     Element version;
 
     TagProxy proxy;
@@ -44,7 +39,6 @@ public abstract class TagMobileDetailsView_Roo_Gwt extends Composite implements 
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
         tag.setInnerText(proxy.getTag() == null ? "" : String.valueOf(proxy.getTag()));
         description.setInnerText(proxy.getDescription() == null ? "" : String.valueOf(proxy.getDescription()));
-        courses.setInnerText(proxy.getCourses() == null ? "" : org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.CourseProxyRenderer.instance()).render(proxy.getCourses()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
     }
 }

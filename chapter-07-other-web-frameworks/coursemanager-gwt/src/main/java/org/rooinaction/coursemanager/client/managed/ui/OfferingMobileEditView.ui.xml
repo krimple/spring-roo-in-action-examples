@@ -25,24 +25,6 @@
                 <d:DateBox ui:field="runDate"/>
             </div>
         </div>
-    <div id="course">
-            <div class="{style.label}">Course</div>
-            <div class="{style.value}">
-                <g:ValueListBox ui:field="course"/>
-            </div>
-        </div>
-    <div id="registrations">
-            <div class="{style.label}">Registrations</div>
-            <div class="{style.value}">
-                <a:RegistrationSetEditor ui:field="registrations"/>
-            </div>
-        </div>
-    <div id="instructor">
-            <div class="{style.label}">Instructor</div>
-            <div class="{style.value}">
-                <g:ValueListBox ui:field="instructor"/>
-            </div>
-        </div>
 
     <g:Button ui:field="save">Save</g:Button>
   </g:HTMLPanel>

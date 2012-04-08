@@ -37,7 +37,7 @@ import java.util.logging.Logger;
  */
 public class ScaffoldMobileApp extends ScaffoldApp {
 	
-	// Constants
+	
 	private static final Logger log = Logger.getLogger(Scaffold.class.getName());
 	public static final Place ROOT_PLACE = new Place() {};
 

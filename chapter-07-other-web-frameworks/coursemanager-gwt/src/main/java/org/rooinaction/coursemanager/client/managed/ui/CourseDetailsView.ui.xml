@@ -35,16 +35,7 @@
     </div>
 
     <table class="{style.fields}" id="boundElementHolder">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    <tr id="id">
+      <tr id="id">
                 <td>
                     <span class="{style.label}">Id:</span>
                 </td>
@@ -52,7 +43,7 @@
                     <span ui:field="id"/>
                 </td>
             </tr>
-            <tr id="name">
+      <tr id="name">
                 <td>
                     <span class="{style.label}">Name:</span>
                 </td>
@@ -60,7 +51,7 @@
                     <span ui:field="name"/>
                 </td>
             </tr>
-            <tr id="description">
+      <tr id="description">
                 <td>
                     <span class="{style.label}">Description:</span>
                 </td>
@@ -68,7 +59,7 @@
                     <span ui:field="description"/>
                 </td>
             </tr>
-            <tr id="cost">
+      <tr id="cost">
                 <td>
                     <span class="{style.label}">Cost:</span>
                 </td>
@@ -76,7 +67,7 @@
                     <span ui:field="cost"/>
                 </td>
             </tr>
-            <tr id="maximumCapacity">
+      <tr id="maximumCapacity">
                 <td>
                     <span class="{style.label}">Maximum Capacity:</span>
                 </td>
@@ -84,7 +75,7 @@
                     <span ui:field="maximumCapacity"/>
                 </td>
             </tr>
-            <tr id="courseType">
+      <tr id="courseType">
                 <td>
                     <span class="{style.label}">Course Type:</span>
                 </td>
@@ -92,31 +83,7 @@
                     <span ui:field="courseType"/>
                 </td>
             </tr>
-            <tr id="trainingProgram">
-                <td>
-                    <span class="{style.label}">Training Program:</span>
-                </td>
-                <td>
-                    <span ui:field="trainingProgram"/>
-                </td>
-            </tr>
-            <tr id="tags">
-                <td>
-                    <span class="{style.label}">Tags:</span>
-                </td>
-                <td>
-                    <span ui:field="tags"/>
-                </td>
-            </tr>
-            <tr id="offerings">
-                <td>
-                    <span class="{style.label}">Offerings:</span>
-                </td>
-                <td>
-                    <span ui:field="offerings"/>
-                </td>
-            </tr>
-            <tr id="version">
+      <tr id="version">
                 <td>
                     <span class="{style.label}">Version:</span>
                 </td>
@@ -124,7 +91,7 @@
                     <span ui:field="version"/>
                 </td>
             </tr>
-        </table>
+    </table>
 
   <div class="{style.bar}">
     <g:Button addStyleNames="{style.button}" ui:field="edit">Edit</g:Button>

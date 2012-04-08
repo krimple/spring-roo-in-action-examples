@@ -8,25 +8,19 @@ import com.google.gwt.view.client.Range;
 import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.Request;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.OfferingSetEditor;
-import org.rooinaction.coursemanager.client.managed.ui.TagSetEditor;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
 import org.rooinaction.coursemanager.shared.CourseTypeEnum;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
 
 public abstract class CourseListActivity_Roo_Gwt extends AbstractProxyListActivity<CourseProxy> implements IsScaffoldMobileActivity {
 
     protected ApplicationRequestFactory requests;
 
-    public CourseListActivity_Roo_Gwt(PlaceController placeController, ProxyListView<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy> view, Class<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy> proxyType) {
+    public CourseListActivity_Roo_Gwt(PlaceController placeController, ProxyListView<org.rooinaction.coursemanager.proxy.CourseProxy> view, Class<org.rooinaction.coursemanager.proxy.CourseProxy> proxyType) {
         super(placeController, view, proxyType);
     }
 

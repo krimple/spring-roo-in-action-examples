@@ -16,19 +16,18 @@ import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.ui.MobileProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public abstract class StudentMobileListView_Roo_Gwt extends MobileProxyListView<StudentProxy> {
 
     protected Set<String> paths = new HashSet<String>();
 
-    public StudentMobileListView_Roo_Gwt(String buttonText, SafeHtmlRenderer<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> renderer) {
+    public StudentMobileListView_Roo_Gwt(String buttonText, SafeHtmlRenderer<org.rooinaction.coursemanager.proxy.StudentProxy> renderer) {
         super(buttonText, renderer);
     }
 
     public void init() {
-        paths.add("fullName");
         paths.add("firstName");
+        paths.add("middleNameOrInitial");
     }
 }

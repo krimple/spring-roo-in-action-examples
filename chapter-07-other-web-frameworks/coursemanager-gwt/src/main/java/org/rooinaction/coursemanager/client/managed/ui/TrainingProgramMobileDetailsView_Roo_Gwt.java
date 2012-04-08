@@ -15,10 +15,8 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public abstract class TrainingProgramMobileDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<TrainingProgramProxy> {
 
@@ -29,9 +27,6 @@ public abstract class TrainingProgramMobileDetailsView_Roo_Gwt extends Composite
     Element name;
 
     @UiField
-    Element courses;
-
-    @UiField
     Element version;
 
     TrainingProgramProxy proxy;
@@ -40,7 +35,6 @@ public abstract class TrainingProgramMobileDetailsView_Roo_Gwt extends Composite
         this.proxy = proxy;
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
         name.setInnerText(proxy.getName() == null ? "" : String.valueOf(proxy.getName()));
-        courses.setInnerText(proxy.getCourses() == null ? "" : org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.CourseProxyRenderer.instance()).render(proxy.getCourses()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
     }
 }

@@ -29,9 +29,7 @@ import java.util.List;
 import org.rooinaction.coursemanager.client.managed.activity.RegistrationEditActivityWrapper;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public class RegistrationMobileEditView extends RegistrationMobileEditView_Roo_Gwt {
 
@@ -59,7 +57,7 @@ public class RegistrationMobileEditView extends RegistrationMobileEditView_Roo_G
     }
 
     @Override
-    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy, org.rooinaction.coursemanager.client.managed.ui.RegistrationMobileEditView> createEditorDriver() {
+    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.proxy.RegistrationProxy, org.rooinaction.coursemanager.client.managed.ui.RegistrationMobileEditView> createEditorDriver() {
         RequestFactoryEditorDriver<RegistrationProxy, RegistrationMobileEditView> driver = GWT.create(Driver.class);
         driver.initialize(this);
         return driver;

@@ -13,19 +13,14 @@ import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.Request;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.OfferingSetEditor;
-import org.rooinaction.coursemanager.client.managed.ui.TagSetEditor;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView.Delegate;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace.Operation;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
 import org.rooinaction.coursemanager.shared.CourseTypeEnum;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
 
 public abstract class CourseDetailsActivity_Roo_Gwt extends AbstractActivity implements Delegate, IsScaffoldMobileActivity {
 
@@ -55,6 +50,6 @@ public abstract class CourseDetailsActivity_Roo_Gwt extends AbstractActivity imp
     }
 
     protected void find(Receiver<com.google.web.bindery.requestfactory.shared.EntityProxy> callback) {
-        requests.find(proxyId).with("trainingProgram", "tags", "offerings").fire(callback);
+        requests.find(proxyId).with().fire(callback);
     }
 }

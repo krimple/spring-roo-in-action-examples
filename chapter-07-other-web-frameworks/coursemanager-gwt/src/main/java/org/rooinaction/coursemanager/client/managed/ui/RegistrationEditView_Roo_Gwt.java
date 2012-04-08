@@ -32,23 +32,7 @@ import org.rooinaction.coursemanager.client.managed.activity.RegistrationEditAct
 import org.rooinaction.coursemanager.client.managed.activity.RegistrationEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public abstract class RegistrationEditView_Roo_Gwt extends Composite implements View<RegistrationEditView> {
-
-    @UiField(provided = true)
-    ValueListBox<StudentProxy> student = new ValueListBox<StudentProxy>(org.rooinaction.coursemanager.client.managed.ui.StudentProxyRenderer.instance(), new com.google.web.bindery.requestfactory.gwt.ui.client.EntityProxyKeyProvider<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy>());
-
-    @UiField(provided = true)
-    ValueListBox<OfferingProxy> offering = new ValueListBox<OfferingProxy>(org.rooinaction.coursemanager.client.managed.ui.OfferingProxyRenderer.instance(), new com.google.web.bindery.requestfactory.gwt.ui.client.EntityProxyKeyProvider<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy>());
-
-    public void setOfferingPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> values) {
-        offering.setAcceptableValues(values);
-    }
-
-    public void setStudentPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> values) {
-        student.setAcceptableValues(values);
-    }
 }

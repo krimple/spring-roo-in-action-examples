@@ -26,14 +26,11 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.CourseEditActivityWrapper;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
+import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public class CourseMobileEditView extends CourseMobileEditView_Roo_Gwt {
 
@@ -61,7 +58,7 @@ public class CourseMobileEditView extends CourseMobileEditView_Roo_Gwt {
     }
 
     @Override
-    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy, org.rooinaction.coursemanager.client.managed.ui.CourseMobileEditView> createEditorDriver() {
+    public RequestFactoryEditorDriver<org.rooinaction.coursemanager.proxy.CourseProxy, org.rooinaction.coursemanager.client.managed.ui.CourseMobileEditView> createEditorDriver() {
         RequestFactoryEditorDriver<CourseProxy, CourseMobileEditView> driver = GWT.create(Driver.class);
         driver.initialize(this);
         return driver;

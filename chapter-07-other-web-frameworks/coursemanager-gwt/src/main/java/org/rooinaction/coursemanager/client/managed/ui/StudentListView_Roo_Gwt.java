@@ -18,8 +18,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public abstract class StudentListView_Roo_Gwt extends AbstractProxyListView<StudentProxy> {
 
@@ -44,21 +43,6 @@ public abstract class StudentListView_Roo_Gwt extends AbstractProxyListView<Stud
                 return renderer.render(object.getId());
             }
         }, "Id");
-        paths.add("fullName");
-        table.addColumn(new TextColumn<StudentProxy>() {
-
-            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
-
-                public String render(java.lang.String obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(StudentProxy object) {
-                return renderer.render(object.getFullName());
-            }
-        }, "Full Name");
         paths.add("firstName");
         table.addColumn(new TextColumn<StudentProxy>() {
 
@@ -254,15 +238,5 @@ public abstract class StudentListView_Roo_Gwt extends AbstractProxyListView<Stud
                 return renderer.render(object.getDietaryRestrictions());
             }
         }, "Dietary Restrictions");
-        paths.add("registrations");
-        table.addColumn(new TextColumn<StudentProxy>() {
-
-            Renderer<java.util.Set> renderer = org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.RegistrationProxyRenderer.instance());
-
-            @Override
-            public String getValue(StudentProxy object) {
-                return renderer.render(object.getRegistrations());
-            }
-        }, "Registrations");
     }
 }

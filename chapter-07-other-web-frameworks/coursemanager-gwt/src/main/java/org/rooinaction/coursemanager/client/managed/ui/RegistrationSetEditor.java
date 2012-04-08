@@ -30,9 +30,7 @@ import java.util.List;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.ui.RegistrationSetEditor.NameLabel;
 import org.rooinaction.coursemanager.client.scaffold.ui.CollectionRenderer;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public class RegistrationSetEditor extends RegistrationSetEditor_Roo_Gwt {
 
@@ -101,7 +99,7 @@ public class RegistrationSetEditor extends RegistrationSetEditor_Roo_Gwt {
     }
 
     @Override
-    public Set<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> getValue() {
+    public Set<org.rooinaction.coursemanager.proxy.RegistrationProxy> getValue() {
         if (values == null && displayedList.size() == 0) {
             return null;
         }
@@ -116,16 +114,16 @@ public class RegistrationSetEditor extends RegistrationSetEditor_Roo_Gwt {
     public void onPropertyChange(String... strings) {
     }
 
-    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> proxies) {
+    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.proxy.RegistrationProxy> proxies) {
         picker.setAcceptableValues(proxies);
     }
 
     @Override
-    public void setDelegate(EditorDelegate<java.util.Set<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy>> editorDelegate) {
+    public void setDelegate(EditorDelegate<java.util.Set<org.rooinaction.coursemanager.proxy.RegistrationProxy>> editorDelegate) {
     }
 
     @Override
-    public void setValue(Set<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> values) {
+    public void setValue(Set<org.rooinaction.coursemanager.proxy.RegistrationProxy> values) {
         this.values = values;
         makeEditable(editing = false);
         if (displayedList != null) {
@@ -151,7 +149,7 @@ public class RegistrationSetEditor extends RegistrationSetEditor_Roo_Gwt {
         }
     }
 
-    private String makeFlatList(Collection<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> values) {
+    private String makeFlatList(Collection<org.rooinaction.coursemanager.proxy.RegistrationProxy> values) {
         return CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.RegistrationProxyRenderer.instance()).render(values);
     }
 

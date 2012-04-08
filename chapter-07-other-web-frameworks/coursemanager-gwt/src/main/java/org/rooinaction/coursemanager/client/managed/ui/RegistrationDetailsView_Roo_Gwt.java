@@ -17,20 +17,12 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public abstract class RegistrationDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<RegistrationProxy> {
 
     @UiField
     SpanElement id;
-
-    @UiField
-    SpanElement student;
-
-    @UiField
-    SpanElement offering;
 
     @UiField
     SpanElement version;
@@ -43,8 +35,6 @@ public abstract class RegistrationDetailsView_Roo_Gwt extends Composite implemen
     public void setValue(RegistrationProxy proxy) {
         this.proxy = proxy;
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
-        student.setInnerText(proxy.getStudent() == null ? "" : org.rooinaction.coursemanager.client.managed.ui.StudentProxyRenderer.instance().render(proxy.getStudent()));
-        offering.setInnerText(proxy.getOffering() == null ? "" : org.rooinaction.coursemanager.client.managed.ui.OfferingProxyRenderer.instance().render(proxy.getOffering()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
         displayRenderer.setInnerText(RegistrationProxyRenderer.instance().render(proxy));
     }

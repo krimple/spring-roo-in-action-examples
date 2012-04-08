@@ -21,18 +21,6 @@
             <div class="{style.label}">Run Date</div>
             <div class="{style.value}" ui:field="runDate"/>
         </div>
-    <div id="course">
-            <div class="{style.label}">Course</div>
-            <div class="{style.value}" ui:field="course"/>
-        </div>
-    <div id="registrations">
-            <div class="{style.label}">Registrations</div>
-            <div class="{style.value}" ui:field="registrations"/>
-        </div>
-    <div id="instructor">
-            <div class="{style.label}">Instructor</div>
-            <div class="{style.value}" ui:field="instructor"/>
-        </div>
     <div id="version">
             <div class="{style.label}">Version</div>
             <div class="{style.value}" ui:field="version"/>

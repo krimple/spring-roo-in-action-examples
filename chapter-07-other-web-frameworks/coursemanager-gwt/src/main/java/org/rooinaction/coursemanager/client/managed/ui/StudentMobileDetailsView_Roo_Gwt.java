@@ -15,18 +15,13 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public abstract class StudentMobileDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<StudentProxy> {
 
     @UiField
     Element id;
-
-    @UiField
-    Element fullName;
 
     @UiField
     Element firstName;
@@ -67,15 +62,11 @@ public abstract class StudentMobileDetailsView_Roo_Gwt extends Composite impleme
     @UiField
     Element dietaryRestrictions;
 
-    @UiField
-    Element registrations;
-
     StudentProxy proxy;
 
     public void setValue(StudentProxy proxy) {
         this.proxy = proxy;
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
-        fullName.setInnerText(proxy.getFullName() == null ? "" : String.valueOf(proxy.getFullName()));
         firstName.setInnerText(proxy.getFirstName() == null ? "" : String.valueOf(proxy.getFirstName()));
         middleNameOrInitial.setInnerText(proxy.getMiddleNameOrInitial() == null ? "" : String.valueOf(proxy.getMiddleNameOrInitial()));
         lastName.setInnerText(proxy.getLastName() == null ? "" : String.valueOf(proxy.getLastName()));
@@ -89,6 +80,5 @@ public abstract class StudentMobileDetailsView_Roo_Gwt extends Composite impleme
         emergencyContactName.setInnerText(proxy.getEmergencyContactName() == null ? "" : String.valueOf(proxy.getEmergencyContactName()));
         emergencyContactInfo.setInnerText(proxy.getEmergencyContactInfo() == null ? "" : String.valueOf(proxy.getEmergencyContactInfo()));
         dietaryRestrictions.setInnerText(proxy.getDietaryRestrictions() == null ? "" : String.valueOf(proxy.getDietaryRestrictions()));
-        registrations.setInnerText(proxy.getRegistrations() == null ? "" : org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.RegistrationProxyRenderer.instance()).render(proxy.getRegistrations()));
     }
 }

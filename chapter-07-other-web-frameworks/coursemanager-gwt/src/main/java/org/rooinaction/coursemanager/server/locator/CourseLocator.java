@@ -1,23 +1,23 @@
 package org.rooinaction.coursemanager.server.locator;
 
 import com.google.web.bindery.requestfactory.shared.Locator;
-import org.rooinaction.coursemanager.model.Course;
+import org.rooinaction.coursemanager.shared.model.Course;
 import org.springframework.roo.addon.gwt.RooGwtLocator;
 import org.springframework.stereotype.Component;
 
-@RooGwtLocator("org.rooinaction.coursemanager.model.Course")
+@RooGwtLocator("org.rooinaction.coursemanager.shared.model.Course")
 @Component
 public class CourseLocator extends Locator<Course, Long> {
 
-    public Course create(Class<? extends org.rooinaction.coursemanager.model.Course> clazz) {
+    public Course create(Class<? extends org.rooinaction.coursemanager.shared.model.Course> clazz) {
         return new Course();
     }
 
-    public Course find(Class<? extends org.rooinaction.coursemanager.model.Course> clazz, Long id) {
+    public Course find(Class<? extends org.rooinaction.coursemanager.shared.model.Course> clazz, Long id) {
         return Course.findCourse(id);
     }
 
-    public Class<org.rooinaction.coursemanager.model.Course> getDomainType() {
+    public Class<org.rooinaction.coursemanager.shared.model.Course> getDomainType() {
         return Course.class;
     }
 

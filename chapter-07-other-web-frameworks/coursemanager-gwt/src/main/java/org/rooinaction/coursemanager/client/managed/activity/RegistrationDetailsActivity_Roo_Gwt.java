@@ -19,9 +19,7 @@ import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView.Dele
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace.Operation;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public abstract class RegistrationDetailsActivity_Roo_Gwt extends AbstractActivity implements Delegate, IsScaffoldMobileActivity {
 
@@ -51,6 +49,6 @@ public abstract class RegistrationDetailsActivity_Roo_Gwt extends AbstractActivi
     }
 
     protected void find(Receiver<com.google.web.bindery.requestfactory.shared.EntityProxy> callback) {
-        requests.find(proxyId).with("student", "offering").fire(callback);
+        requests.find(proxyId).with().fire(callback);
     }
 }

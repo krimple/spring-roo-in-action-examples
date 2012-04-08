@@ -11,21 +11,18 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.RegistrationSetEditor;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public class StudentEditActivityWrapper extends StudentEditActivityWrapper_Roo_Gwt {
 
     private final EntityProxyId<StudentProxy> proxyId;
 
-    public StudentEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> proxyId) {
+    public StudentEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<org.rooinaction.coursemanager.proxy.StudentProxy> proxyId) {
         this.requests = requests;
         this.view = view;
         this.wrapped = activity;
@@ -67,8 +64,6 @@ public class StudentEditActivityWrapper extends StudentEditActivityWrapper_Roo_G
         wrapped.onStop();
     }
 
-    public interface View<V extends org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy, V>> extends ProxyEditView<StudentProxy, V> {
-
-        void setRegistrationsPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> values);
+    public interface View<V extends org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView<org.rooinaction.coursemanager.proxy.StudentProxy, V>> extends ProxyEditView<StudentProxy, V> {
     }
 }

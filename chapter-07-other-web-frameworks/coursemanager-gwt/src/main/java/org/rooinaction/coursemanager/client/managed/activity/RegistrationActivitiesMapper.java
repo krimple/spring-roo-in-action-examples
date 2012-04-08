@@ -14,10 +14,8 @@ import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
 import org.rooinaction.coursemanager.client.scaffold.place.CreateAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
-import org.rooinaction.coursemanager.web.gwt.requests.RegistrationRequest;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
+import org.rooinaction.coursemanager.request.RegistrationRequest;
 
 public class RegistrationActivitiesMapper extends RegistrationActivitiesMapper_Roo_Gwt {
 

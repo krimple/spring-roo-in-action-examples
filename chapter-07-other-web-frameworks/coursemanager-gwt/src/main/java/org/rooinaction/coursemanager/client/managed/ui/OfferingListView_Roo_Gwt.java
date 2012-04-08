@@ -18,10 +18,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
+import org.rooinaction.coursemanager.proxy.OfferingProxy;
 
 public abstract class OfferingListView_Roo_Gwt extends AbstractProxyListView<OfferingProxy> {
 
@@ -56,36 +53,6 @@ public abstract class OfferingListView_Roo_Gwt extends AbstractProxyListView<Off
                 return renderer.render(object.getRunDate());
             }
         }, "Run Date");
-        paths.add("course");
-        table.addColumn(new TextColumn<OfferingProxy>() {
-
-            Renderer<org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy> renderer = org.rooinaction.coursemanager.client.managed.ui.CourseProxyRenderer.instance();
-
-            @Override
-            public String getValue(OfferingProxy object) {
-                return renderer.render(object.getCourse());
-            }
-        }, "Course");
-        paths.add("registrations");
-        table.addColumn(new TextColumn<OfferingProxy>() {
-
-            Renderer<java.util.Set> renderer = org.rooinaction.coursemanager.client.scaffold.place.CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.RegistrationProxyRenderer.instance());
-
-            @Override
-            public String getValue(OfferingProxy object) {
-                return renderer.render(object.getRegistrations());
-            }
-        }, "Registrations");
-        paths.add("instructor");
-        table.addColumn(new TextColumn<OfferingProxy>() {
-
-            Renderer<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy> renderer = org.rooinaction.coursemanager.client.managed.ui.InstructorProxyRenderer.instance();
-
-            @Override
-            public String getValue(OfferingProxy object) {
-                return renderer.render(object.getInstructor());
-            }
-        }, "Instructor");
         paths.add("version");
         table.addColumn(new TextColumn<OfferingProxy>() {
 

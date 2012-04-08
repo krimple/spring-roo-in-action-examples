@@ -23,13 +23,13 @@ import org.rooinaction.coursemanager.client.managed.ui.TrainingProgramListView;
 import org.rooinaction.coursemanager.client.managed.ui.TrainingProgramMobileListView;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.OfferingProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
+import org.rooinaction.coursemanager.proxy.TagProxy;
+import org.rooinaction.coursemanager.proxy.TrainingProgramProxy;
 
 public final class ApplicationMasterActivities extends ApplicationMasterActivities_Roo_Gwt {
 

@@ -43,22 +43,6 @@
                     <span ui:field="id"/>
                 </td>
             </tr>
-      <tr id="student">
-                <td>
-                    <span class="{style.label}">Student:</span>
-                </td>
-                <td>
-                    <span ui:field="student"/>
-                </td>
-            </tr>
-      <tr id="offering">
-                <td>
-                    <span class="{style.label}">Offering:</span>
-                </td>
-                <td>
-                    <span ui:field="offering"/>
-                </td>
-            </tr>
       <tr id="version">
                 <td>
                     <span class="{style.label}">Version:</span>

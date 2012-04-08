@@ -51,14 +51,6 @@
                     <g:TextBox ui:field="name"/>
                 </td>
             </tr>
-      <tr id="courses">
-                <td>
-                    <div class="{style.label}">Courses:</div>
-                </td>
-                <td>
-                    <a:CourseSetEditor ui:field="courses"/>
-                </td>
-            </tr>
     </table>
 
     <div class="{style.bar}">

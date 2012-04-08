@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.ui.MobileProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public class InstructorMobileListView extends InstructorMobileListView_Roo_Gwt {
 
@@ -61,8 +61,8 @@ public class InstructorMobileListView extends InstructorMobileListView_Roo_Gwt {
                 return SafeHtmlUtils.EMPTY_SAFE_HTML;
             }
             SafeHtmlBuilder sb = new SafeHtmlBuilder();
-            if (value.getFullName() != null) {
-                sb.appendEscaped(primaryRenderer.render(value.getFullName()));
+            if (value.getLastName() != null) {
+                sb.appendEscaped(primaryRenderer.render(value.getLastName()));
             }
             sb.appendHtmlConstant("<div style=\"position:relative;\">");
             sb.appendHtmlConstant("<div class=\"" + secondaryStyle + "\">");

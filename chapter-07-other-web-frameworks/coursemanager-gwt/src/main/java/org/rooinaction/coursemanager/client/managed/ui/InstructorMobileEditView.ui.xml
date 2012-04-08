@@ -19,73 +19,79 @@
   <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
     <div class="{style.error}" ui:field="errors"/>
     
-    <div id="fullName">
-            <div class="{style.label}">Full Name</div>
-            <div class="{style.value}">
-                <g:TextBox ui:field="fullName"/>
-            </div>
-        </div>
-    <div id="firstName">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <g:Button ui:field="save">Save</g:Button>
+  
+        <div id="firstName">
             <div class="{style.label}">First Name</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="firstName"/>
             </div>
         </div>
-    <div id="middleNameOrInitial">
+        <div id="middleNameOrInitial">
             <div class="{style.label}">Middle Name Or Initial</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="middleNameOrInitial"/>
             </div>
         </div>
-    <div id="lastName">
+        <div id="lastName">
             <div class="{style.label}">Last Name</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="lastName"/>
             </div>
         </div>
-    <div id="addressLine1">
+        <div id="addressLine1">
             <div class="{style.label}">Address Line1</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="addressLine1"/>
             </div>
         </div>
-    <div id="addressLine2">
+        <div id="addressLine2">
             <div class="{style.label}">Address Line2</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="addressLine2"/>
             </div>
         </div>
-    <div id="city">
+        <div id="city">
             <div class="{style.label}">City</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="city"/>
             </div>
         </div>
-    <div id="stateCode">
+        <div id="stateCode">
             <div class="{style.label}">State Code</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="stateCode"/>
             </div>
         </div>
-    <div id="postalCode">
+        <div id="postalCode">
             <div class="{style.label}">Postal Code</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="postalCode"/>
             </div>
         </div>
-    <div id="emailAddress">
+        <div id="emailAddress">
             <div class="{style.label}">Email Address</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="emailAddress"/>
             </div>
         </div>
-    <div id="taxNumber">
+        <div id="taxNumber">
             <div class="{style.label}">Tax Number</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="taxNumber"/>
             </div>
         </div>
-
-    <g:Button ui:field="save">Save</g:Button>
-  </g:HTMLPanel>
+    </g:HTMLPanel>
 </ui:UiBinder>

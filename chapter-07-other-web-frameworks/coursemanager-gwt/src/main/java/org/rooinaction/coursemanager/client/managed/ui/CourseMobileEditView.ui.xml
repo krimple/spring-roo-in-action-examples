@@ -19,62 +19,37 @@
   <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
     <div class="{style.error}" ui:field="errors"/>
     
-    
-    
-    
-    
-    
-    
-    
-
-    <g:Button ui:field="save">Save</g:Button>
-  <div id="name">
+    <div id="name">
             <div class="{style.label}">Name</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="name"/>
             </div>
         </div>
-        <div id="description">
+    <div id="description">
             <div class="{style.label}">Description</div>
             <div class="{style.value}">
                 <g:TextBox ui:field="description"/>
             </div>
         </div>
-        <div id="cost">
+    <div id="cost">
             <div class="{style.label}">Cost</div>
             <div class="{style.value}">
                 <r:BigDecimalBox ui:field="cost"/>
             </div>
         </div>
-        <div id="maximumCapacity">
+    <div id="maximumCapacity">
             <div class="{style.label}">Maximum Capacity</div>
             <div class="{style.value}">
                 <g:IntegerBox ui:field="maximumCapacity"/>
             </div>
         </div>
-        <div id="courseType">
+    <div id="courseType">
             <div class="{style.label}">Course Type</div>
             <div class="{style.value}">
                 <g:ValueListBox ui:field="courseType"/>
             </div>
         </div>
-        <div id="trainingProgram">
-            <div class="{style.label}">Training Program</div>
-            <div class="{style.value}">
-                <g:ValueListBox ui:field="trainingProgram"/>
-            </div>
-        </div>
-        <div id="tags">
-            <div class="{style.label}">Tags</div>
-            <div class="{style.value}">
-                <a:TagSetEditor ui:field="tags"/>
-            </div>
-        </div>
-        <div id="offerings">
-            <div class="{style.label}">Offerings</div>
-            <div class="{style.value}">
-                <a:OfferingSetEditor ui:field="offerings"/>
-            </div>
-        </div>
-    </g:HTMLPanel>
+
+    <g:Button ui:field="save">Save</g:Button>
+  </g:HTMLPanel>
 </ui:UiBinder>

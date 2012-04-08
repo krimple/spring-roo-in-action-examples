@@ -16,13 +16,13 @@ import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileAc
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.proxy.InstructorProxy;
 
 public class InstructorEditActivityWrapper extends InstructorEditActivityWrapper_Roo_Gwt {
 
     private final EntityProxyId<InstructorProxy> proxyId;
 
-    public InstructorEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy> proxyId) {
+    public InstructorEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<org.rooinaction.coursemanager.proxy.InstructorProxy> proxyId) {
         this.requests = requests;
         this.view = view;
         this.wrapped = activity;
@@ -64,6 +64,6 @@ public class InstructorEditActivityWrapper extends InstructorEditActivityWrapper
         wrapped.onStop();
     }
 
-    public interface View<V extends org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy, V>> extends ProxyEditView<InstructorProxy, V> {
+    public interface View<V extends org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView<org.rooinaction.coursemanager.proxy.InstructorProxy, V>> extends ProxyEditView<InstructorProxy, V> {
     }
 }

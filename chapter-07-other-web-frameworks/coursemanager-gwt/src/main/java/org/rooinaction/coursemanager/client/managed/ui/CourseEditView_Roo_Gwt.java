@@ -28,16 +28,12 @@ import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriv
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.activity.CourseEditActivityWrapper;
 import org.rooinaction.coursemanager.client.managed.activity.CourseEditActivityWrapper.View;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
+import org.rooinaction.coursemanager.proxy.CourseProxy;
 import org.rooinaction.coursemanager.shared.CourseTypeEnum;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TagProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
 
 public abstract class CourseEditView_Roo_Gwt extends Composite implements View<CourseEditView> {
 
@@ -61,28 +57,7 @@ public abstract class CourseEditView_Roo_Gwt extends Composite implements View<C
         }
     });
 
-    @UiField(provided = true)
-    ValueListBox<TrainingProgramProxy> trainingProgram = new ValueListBox<TrainingProgramProxy>(org.rooinaction.coursemanager.client.managed.ui.TrainingProgramProxyRenderer.instance(), new com.google.web.bindery.requestfactory.gwt.ui.client.EntityProxyKeyProvider<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy>());
-
-    @UiField
-    TagSetEditor tags;
-
-    @UiField
-    OfferingSetEditor offerings;
-
-    public void setTrainingProgramPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy> values) {
-        trainingProgram.setAcceptableValues(values);
-    }
-
     public void setCourseTypePickerValues(Collection<org.rooinaction.coursemanager.shared.CourseTypeEnum> values) {
         courseType.setAcceptableValues(values);
-    }
-
-    public void setOfferingsPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> values) {
-        offerings.setAcceptableValues(values);
-    }
-
-    public void setTagsPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.TagProxy> values) {
-        tags.setAcceptableValues(values);
     }
 }

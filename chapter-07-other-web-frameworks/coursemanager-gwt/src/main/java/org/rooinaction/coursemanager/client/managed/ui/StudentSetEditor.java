@@ -30,8 +30,7 @@ import java.util.List;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.ui.StudentSetEditor.NameLabel;
 import org.rooinaction.coursemanager.client.scaffold.ui.CollectionRenderer;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.StudentProxy;
 
 public class StudentSetEditor extends StudentSetEditor_Roo_Gwt {
 
@@ -82,7 +81,7 @@ public class StudentSetEditor extends StudentSetEditor_Roo_Gwt {
             return;
         }
         for (StudentProxy proxy : displayedList) {
-            if (proxy.getFullName().equals(picker.getValue().getFullName())) {
+            if (proxy.getLastName().equals(picker.getValue().getLastName())) {
                 return;
             }
         }
@@ -100,7 +99,7 @@ public class StudentSetEditor extends StudentSetEditor_Roo_Gwt {
     }
 
     @Override
-    public Set<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> getValue() {
+    public Set<org.rooinaction.coursemanager.proxy.StudentProxy> getValue() {
         if (values == null && displayedList.size() == 0) {
             return null;
         }
@@ -115,16 +114,16 @@ public class StudentSetEditor extends StudentSetEditor_Roo_Gwt {
     public void onPropertyChange(String... strings) {
     }
 
-    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> proxies) {
+    public void setAcceptableValues(Collection<org.rooinaction.coursemanager.proxy.StudentProxy> proxies) {
         picker.setAcceptableValues(proxies);
     }
 
     @Override
-    public void setDelegate(EditorDelegate<java.util.Set<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy>> editorDelegate) {
+    public void setDelegate(EditorDelegate<java.util.Set<org.rooinaction.coursemanager.proxy.StudentProxy>> editorDelegate) {
     }
 
     @Override
-    public void setValue(Set<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> values) {
+    public void setValue(Set<org.rooinaction.coursemanager.proxy.StudentProxy> values) {
         this.values = values;
         makeEditable(editing = false);
         if (displayedList != null) {
@@ -150,7 +149,7 @@ public class StudentSetEditor extends StudentSetEditor_Roo_Gwt {
         }
     }
 
-    private String makeFlatList(Collection<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> values) {
+    private String makeFlatList(Collection<org.rooinaction.coursemanager.proxy.StudentProxy> values) {
         return CollectionRenderer.of(org.rooinaction.coursemanager.client.managed.ui.StudentProxyRenderer.instance()).render(values);
     }
 

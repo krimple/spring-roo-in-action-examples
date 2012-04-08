@@ -51,30 +51,6 @@
                     <d:DateBox ui:field="runDate"/>
                 </td>
             </tr>
-      <tr id="course">
-                <td>
-                    <div class="{style.label}">Course:</div>
-                </td>
-                <td>
-                    <g:ValueListBox ui:field="course"/>
-                </td>
-            </tr>
-      <tr id="registrations">
-                <td>
-                    <div class="{style.label}">Registrations:</div>
-                </td>
-                <td>
-                    <a:RegistrationSetEditor ui:field="registrations"/>
-                </td>
-            </tr>
-      <tr id="instructor">
-                <td>
-                    <div class="{style.label}">Instructor:</div>
-                </td>
-                <td>
-                    <g:ValueListBox ui:field="instructor"/>
-                </td>
-            </tr>
     </table>
 
     <div class="{style.bar}">

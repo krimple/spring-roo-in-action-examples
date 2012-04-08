@@ -18,9 +18,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.proxy.RegistrationProxy;
 
 public abstract class RegistrationListView_Roo_Gwt extends AbstractProxyListView<RegistrationProxy> {
 
@@ -45,26 +43,6 @@ public abstract class RegistrationListView_Roo_Gwt extends AbstractProxyListView
                 return renderer.render(object.getId());
             }
         }, "Id");
-        paths.add("student");
-        table.addColumn(new TextColumn<RegistrationProxy>() {
-
-            Renderer<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> renderer = org.rooinaction.coursemanager.client.managed.ui.StudentProxyRenderer.instance();
-
-            @Override
-            public String getValue(RegistrationProxy object) {
-                return renderer.render(object.getStudent());
-            }
-        }, "Student");
-        paths.add("offering");
-        table.addColumn(new TextColumn<RegistrationProxy>() {
-
-            Renderer<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> renderer = org.rooinaction.coursemanager.client.managed.ui.OfferingProxyRenderer.instance();
-
-            @Override
-            public String getValue(RegistrationProxy object) {
-                return renderer.render(object.getOffering());
-            }
-        }, "Offering");
         paths.add("version");
         table.addColumn(new TextColumn<RegistrationProxy>() {
 
