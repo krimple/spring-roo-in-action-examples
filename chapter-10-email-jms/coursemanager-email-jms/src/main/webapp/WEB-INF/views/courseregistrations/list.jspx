@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_rooinaction_coursemanager_domain_CourseRegistration" items="${courseregistrations}" z="rueAAte66n4jGourQunbz6ooLaI=">
+        <table:table data="${courseregistrations}" id="l_org_rooinaction_coursemanager_domain_CourseRegistration" path="/courseregistrations" typeIdFieldName="_id" z="37rY3VWJYyEQtEQhARSj7kRmbHM=">
+            <table:column id="c_org_rooinaction_coursemanager_domain_CourseRegistration_id" property="id" z="wmnyoi66QekRXvZCTR2i3WNu1Xo="/>
+            <table:column id="c_org_rooinaction_coursemanager_domain_CourseRegistration_name" property="name" z="yChu5UmDwozNhA7WGkSAeHX1Vik="/>
+            <table:column id="c_org_rooinaction_coursemanager_domain_CourseRegistration_studentId" property="studentId" z="bnU2EpsD+mevvARk610UfLA11/g="/>
+            <table:column id="c_org_rooinaction_coursemanager_domain_CourseRegistration_courseId" property="courseId" z="77htEMyfDgtnnhmfoANZs9RYRSg="/>
+        </table:table>
+    </page:list>
+</div>
