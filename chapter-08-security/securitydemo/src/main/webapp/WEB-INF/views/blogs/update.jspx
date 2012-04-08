@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-    <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_com_rooina_samples_security_model_Blog" modelAttribute="blog" path="/blogs" z="MwKU05XnD5diz7GtB1CL6Plno1g=">
-        <field:textarea field="blogName" id="c_com_rooina_samples_security_model_Blog_blogName" z="41OtxrXnDa+caN81Kxb5DlDyHr0="/>
-        <field:simple field="posts" id="c_com_rooina_samples_security_model_Blog_posts" messageCode="entity_reference_not_managed" messageCodeAttribute="Blog Post" z="vhMsvoXUt+esBJPDPpL3BgMgN00="/>
-    </form:update>
-</div>
