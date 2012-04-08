@@ -17,38 +17,38 @@ import java.util.Set;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(finders = { "findCoursesByNameLike" })
+@RooJpaActiveRecord(finders = {"findCoursesByNameLike"})
 public class Course {
 
-    @NotNull
-    @Column(name = "course_name")
-    @Size(min = 1, max = 60)
-    private String name;
+  @NotNull
+  @Column(name = "course_name")
+  @Size(min = 1, max = 60)
+  private String name;
 
-    @NotNull
-    @Size(max = 1000)
-    private String description;
+  @NotNull
+  @Size(max = 1000)
+  private String description;
 
-    @NotNull
-    @Column(name = "max_capacity")
-    @Min(1L)
-    @Max(9999L)
-    private Integer maxiumumCapacity;
+  @NotNull
+  @Column(name = "max_capacity")
+  @Min(1L)
+  @Max(9999L)
+  private Integer maximumCapacity;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private CourseTypeEnum courseType;
+  @NotNull
+  @Enumerated(EnumType.STRING)
+  private CourseTypeEnum courseType;
 
-    @ManyToOne
-    private TrainingProgram trainingProgram;
+  @ManyToOne
+  private TrainingProgram trainingProgram;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "courses")
-    private Set<Tag> tags = new HashSet<Tag>();
+  @ManyToMany(cascade = CascadeType.ALL, mappedBy = "courses")
+  private Set<Tag> tags = new HashSet<Tag>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "course")
-    private Set<Offering> offerings = new HashSet<Offering>();
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "course")
+  private Set<Offering> offerings = new HashSet<Offering>();
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(style = "S-")
-	private Date createdDate; 
+  @Temporal(TemporalType.TIMESTAMP)
+  @DateTimeFormat(style = "S-")
+  private Date createdDate;
 }

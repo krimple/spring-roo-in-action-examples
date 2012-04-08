@@ -1,18 +1,15 @@
 package org.rooinaction.coursemanager.model;
 
-import java.lang.annotation.Annotation;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import junit.framework.Assert;
+import org.junit.Test;
+import org.springframework.roo.addon.test.RooIntegrationTest;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.metadata.ConstraintDescriptor;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
-import org.springframework.roo.addon.test.RooIntegrationTest;
+import java.lang.annotation.Annotation;
+import java.util.Iterator;
+import java.util.List;
 
 @RooIntegrationTest(entity = Course.class)
 public class CourseIntegrationTest {
@@ -27,7 +24,7 @@ public class CourseIntegrationTest {
     	c.setCourseType(CourseTypeEnum.CONTINUING_EDUCATION);
     	c.setName("Stand-up Comedy");
     	c.setDescription("You'll laugh, you'll cry, it will become a part of you.");
-    	c.setMaxiumumCapacity(10);    	
+    	c.setMaximumCapacity(10);
     	c.persist();    	
 
     	c.flush();
@@ -38,7 +35,7 @@ public class CourseIntegrationTest {
     	Assert.assertNotNull(c2);
     	Assert.assertEquals(c.getName(), c2.getName());
     	Assert.assertEquals(c2.getDescription(), c.getDescription());
-    	Assert.assertEquals(c.getMaxiumumCapacity(), c2.getMaxiumumCapacity());
+    	Assert.assertEquals(c.getMaximumCapacity(), c2.getMaximumCapacity());
     	Assert.assertEquals(c.getCourseType(), c2.getCourseType());
     }
     
@@ -69,7 +66,7 @@ public class CourseIntegrationTest {
     public void testSpecificException() {
     	Course c = new Course();
     	c.setCourseType(CourseTypeEnum.CONTINUING_EDUCATION);
-    	c.setMaxiumumCapacity(10);
+    	c.setMaximumCapacity(10);
     	//c.setRunDate(new Date());
     	c.setName(null);
     	c.setDescription(null);    	
@@ -101,7 +98,7 @@ public class CourseIntegrationTest {
     	c.setName("Basket Weaving");
     	c.setCourseType(CourseTypeEnum.SEMINAR);
     	c.setDescription("Weaving baskets is an essential skill.");
-    	c.setMaxiumumCapacity(100);
+    	c.setMaximumCapacity(100);
     	c.persist();
     	
     	c.flush();

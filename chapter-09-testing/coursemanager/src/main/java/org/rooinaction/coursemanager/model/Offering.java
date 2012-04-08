@@ -30,8 +30,8 @@ public class Offering {
   private Instructor instructor;
 
   @AssertTrue(message = "course.full.exception")
-  public boolean isValid() {
-    int maxCapacity = course.getMaxiumumCapacity();
+  public boolean assertTrue() {
+    int maxCapacity = course.getMaximumCapacity();
     return registrations.size() <= maxCapacity;
   }
 
