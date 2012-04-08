@@ -311,16 +311,6 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.1.1</version>
                 <!-- <configuration> <webXml>target/web.xml</webXml> </configuration> -->
-                <configuration>
-                    <webResources>
-                        <resource>
-                            <excludes>
-                                <exclude>dbre.xml</exclude>
-                            </excludes>
-                            <directory>src/main/resources</directory>
-                        </resource>
-                    </webResources>
-                </configuration>
             </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

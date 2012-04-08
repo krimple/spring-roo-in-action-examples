@@ -40,11 +40,11 @@ public class Offering {
     @ManyToOne(cascade = CascadeType.ALL)
     private Instructor instructor;
     
-    @AssertTrue(message="course.full.exception")
-    public boolean isValid() {
-    	int maxCapacity = course.getMaxiumumCapacity();
-    	return registrations.size() <= maxCapacity;
-    }
+//    @AssertTrue(message="course.full.exception")
+//    public boolean isValid() {
+//    	int maxCapacity = course.getMaximumCapacity();
+//    	return registrations.size() <= maxCapacity;
+//    }
     
     public void addRegistration(Registration registration) {
     	registration.setOffering(this);
