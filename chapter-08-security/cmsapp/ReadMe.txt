@@ -36,5 +36,5 @@ Refer to the Security tutorial available at the following link, on how to add th
 SecureJavaEE6App Tutorial - NetBeans Wiki (http://wiki.netbeans.org/SecureJavaEE6App)
 
 The base DN used for the sample application is:
-dc=cmsapp,dc=com
+dc=coursemanager,dc=org
 
