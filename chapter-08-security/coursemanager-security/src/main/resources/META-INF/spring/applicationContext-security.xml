@@ -28,6 +28,12 @@
 
     </http>
 
+
+	<!--
+		Uncomment the LDAP server authentication provider configuration
+		below and comment other authentication providers
+		to authenticate against OpenDS LDAP repository.
+	-->
     <!--
     <ldap-server id="ldapServer"
         url="ldap://localhost:389"
@@ -53,6 +59,11 @@
         <authentication-provider>
             <password-encoder hash="sha-256" />
             
+			<!--
+				Uncomment the JDBC authentication provider configuration
+				below and comment other authentication providers
+				to authenticate against a relational database.
+			-->
             <!--
             	<jdbc-user-service data-source-ref="inMemoryTestDataSource"
 		users-by-username-query="
