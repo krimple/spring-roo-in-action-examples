@@ -1,17 +1,21 @@
 
+REM ---------------------------------------------------------------------
+REM  Roo Add-on Commands to configure the Spring Integration Components:
+REM ---------------------------------------------------------------------
 
 
-REM integration project --name cms-app-spring-int --rootDomain com.rooinaction.cmsapp
+REM integration project --name coursemanager-spring-int --rootDomain org.rooinaction.coursemanager
 
 integration flow start --name course-mgmt-int
 
-produce via channel-adapter jms --name cmsapp-jms-input-adapter
+produce via channel-adapter jms --name coursemanager-jms-input-adapter
 
-transform --name cmsapp-transformer
+transform --name coursemanager-transformer
 
-route --name cmsapp-router
+route --name coursemanager-router
 
-send via adapter mail --name cmsapp-mail-output-adapter
+send via adapter mail --name coursemanager-mail-output-adapter
 
 diagram
+
 
