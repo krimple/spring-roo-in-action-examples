@@ -5,6 +5,7 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.springframework.roo.classpath.operations.AbstractOperations;
+import org.springframework.roo.process.manager.MutableFile;
 import org.springframework.roo.project.Path;
 import org.springframework.roo.project.PathResolver;
 import org.springframework.roo.project.ProjectOperations;
@@ -15,6 +16,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import java.io.InputStream;
+import java.io.PrintWriter;
 
 /**
  * Implementation of {@link JqueryuiOperations} interface.
@@ -120,11 +122,8 @@ public class JqueryuiOperationsImpl extends AbstractOperations
 
     buildAndAddJSNode(document, "/js/jquery-1.5.1.min.js");
 
-
     fileManager.createOrUpdateTextFileIfRequired(loadScriptsTagFile,
         XmlUtils.nodeToString(document), false);
-
-    fileManager.commit();
 
   }
 
@@ -151,5 +150,14 @@ public class JqueryuiOperationsImpl extends AbstractOperations
     Comment comment = document
         .createComment("required for FF3 and Opera");
     builder.addChild(comment);
+  }
+
+  private void dosomething() {
+    String jsLocation = pathResolver.getFocusedIdentifier(
+        Path.SRC_MAIN_WEBAPP, "/js");
+    MutableFile file = fileManager.createFile(jsLocation);
+    PrintWriter writer = new PrintWriter(file.getOutputStream());
+    writer.println("var myvar = 10; alert (myvar);");
+    IOUtils.closeQuietly(writer);
   }
 }
