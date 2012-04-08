@@ -7,9 +7,9 @@
             <table:column id="c_org_rooinaction_coursemanager_model_Course_name" property="name" z="ufXSBbrxBH90UpAXQVn1uBw4YK8="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Course_description" property="description" z="HBRpKIt6MM1zEsZ3S1yxVteHv7M="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Course_cost" property="cost" z="aVfPv3z4b+N4Dn6X7JUIESbMQsg="/>
-            <table:column id="c_org_rooinaction_coursemanager_model_Course_maxiumumCapacity" property="maxiumumCapacity" z="Y+Z9J0JoJLBpdDFixlhd9v6QWho="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Course_courseType" property="courseType" z="qm/dUs/P+qJyWSA9Z3zS7+jxQfc="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Course_trainingProgram" property="trainingProgram" z="kFLf3ClejXDlKnAzDW2uYDBLnJA="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Course_maximumCapacity" property="maximumCapacity" z="qaBXJ2JVhhIEjlw0Q3UvRB1xCwQ="/>
         </table:table>
     </page:list>
 </div>
