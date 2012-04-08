@@ -1,0 +1,81 @@
+
+
+Spring Roo Commands to deploy the sample application to Cloud Foundry:
+------------------------------------------------------------------------
+
+
+REM Enable, install the add-on and then disable PGM trust
+
+pgp automatic trust
+addon install bundle --bundleSymbolicName org.springframework.roo.addon.cloud.foundry
+pgp automatic trust 
+
+
+REM Verify the cloud foundry command from Roo shell
+
+cloud foundry
+
+
+REM To login to Cloud Foundry
+
+cloud foundry login --email CLOUD_FOUNDRY_EMAIL_ADDRESS --password CLOUD_FOUNDRY_PASSWORD
+
+
+REM Cloud Foundry Helper Commands
+
+cloud foundry info
+cloud foundry list apps
+cloud foundry list services
+
+
+REM To deploy a new app to Cloud Foundry
+
+cloud foundry deploy --appName APP_NAME --path CREATE
+
+
+REM Check the deployed apps again
+
+cloud foundry list apps
+
+
+REM Check application stats of the new app
+
+cloud foundry view app stats --appName APP_NAME
+
+
+REM Create a new Service
+
+cloud foundry create service --serviceName mymongodb --serviceType mongodb
+
+
+REM Get the list of available services
+
+cloud foundry list services
+
+
+REM Binding Services
+
+cloud foundry bind service --serviceName mymongodb --appName APP_NAME
+
+
+REM Restart the app
+
+cloud foundry restart app --appName APP_NAME
+
+
+REM View app logs and application crashes
+
+cloud foundry view logs --appName APP_NAME --instance 0.
+cloud foundry view crashes --appName APP_NAME
+
+
+REM Add memory
+
+cloud foundry update app memory --appName APP_NAME
+
+
+REM Stop the app
+
+cloud foundry start app --appName APP_NAME
+
+
