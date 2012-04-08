@@ -46,7 +46,7 @@ public class Course {
     @Column(name = "max_capacity")
     @Min(1L)
     @Max(9999L)
-    private Integer maxiumumCapacity;
+    private Integer maximumCapacity;
 
     @NotNull
     @Enumerated(EnumType.STRING)

@@ -37,7 +37,7 @@ public abstract class Person {
     @Column(name = "address_line1")
     private String addressLine1;
 
-    @Size(min = 1, max = 60)
+    @Size(min = 0, max = 60)
     @Column(name = "address_line2")
     private String addressLine2;
 
