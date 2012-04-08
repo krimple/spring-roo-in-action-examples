@@ -1,0 +1,133 @@
+
+c:
+set JAVA_HOME=c:\dev\java\jdk1.6.0_26
+set PATH=%JAVA_HOME%\bin
+
+set MAVEN_HOME=C:\dev\tools\apache-maven-3.0.3
+set PATH=%PATH%;%MAVEN_HOME%\bin
+
+set ROO_HOME=C:\dev\frameworks\spring-roo-1.2.0.RELEASE
+set PATH=%PATH%;%ROO_HOME%\bin
+
+cd C:\dev\projects\spring-roo-in-action-examples\chapter-08-security\coursemanager-security
+
+roo
+
+hint
+
+project --topLevelPackage org.rooinaction.coursemanager
+
+hint
+
+persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+
+hint
+
+
+// STEP 3: Define domain model.
+entity jpa --class ~.domain.Course --testAutomatically
+field string --fieldName name --sizeMin 2 --notNull --class ~.domain.Course
+field date --fieldName startDate --type java.util.Date
+field date --fieldName endDate --type java.util.Date
+field number --fieldName fee --type java.lang.Float
+
+entity jpa --class ~.domain.CourseCatalog --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity jpa --class ~.domain.CourseDetail --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity jpa --class ~.domain.Instructor --testAutomatically
+field string --fieldName name --notNull --sizeMin 2 --class ~.domain.Instructor
+field set --fieldName courses --type ~.domain.Course
+
+entity jpa --class ~.domain.Student --testAutomatically
+field string --fieldName name --notNull --sizeMin 2 --class ~.domain.Student
+field string --fieldName address --sizeMax 30
+field set --fieldName courses --type ~.domain.Course
+
+entity jpa --class ~.domain.CourseRegistration --testAutomatically
+field number --fieldName id --type java.lang.Integer
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName studentId --type java.lang.Long
+field number --fieldName courseId --type java.lang.Long
+
+-------------------------------------------
+entity jpa --class ~.domain.CourseCatalog --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity jpa --class ~.domain.CourseDetail --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity jpa --class ~.domain.Student --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName age --type java.lang.Integer
+field number --fieldName id --type java.lang.Long
+
+entity jpa --class ~.domain.CourseRegistration --testAutomatically
+field number --fieldName id --type java.lang.Integer
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName studentId --type java.lang.Long
+field number --fieldName courseId --type java.lang.Long
+-------------------------------------------
+
+perform tests
+
+perform eclipse
+
+web mvc setup
+
+web mvc all --package ~.web
+
+security setup
+
+==========================================================
+
+c:
+set JAVA_HOME=c:\dev\java\jdk1.6.0_26
+set PATH=%JAVA_HOME%\bin
+
+set MAVEN_HOME=C:\dev\tools\apache-maven-3.0.3
+set PATH=%PATH%;%MAVEN_HOME%\bin
+
+set ROO_HOME=C:\dev\frameworks\spring-roo-1.2.0.RELEASE
+set PATH=%PATH%;%ROO_HOME%\bin
+
+cd C:\dev\projects\spring-roo-in-action-examples\chapter-08-security\coursemanager-security
+
+mvn clean
+
+mvn eclipse:clean eclipse:eclipse
+
+mvn package
+
+mvn tomcat:run
+
+
+
+Course Manager Main URL:
+http://localhost:8080/coursemanager
+
+Login URL:
+http://localhost:8080/coursemanager/login
+
+
+OpenDS Commands:
+-----------------
+
+c:
+set JAVA_HOME=c:\dev\java\jdk1.6.0_26
+set PATH=%JAVA_HOME%\bin
+
+set MAVEN_HOME=C:\dev\tools\apache-maven-3.0.3
+set PATH=%PATH%;%MAVEN_HOME%\bin
+
+set OPEN_DS_HOME=C:\dev\servers\OpenDS-2.2.0
+cd %OPEN_DS_HOME%\bat
+control-panel.bat
+
+cn=Directory Manager
+test123
+
+dc=coursemanager,dc=org
+

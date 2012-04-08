@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_rooinaction_coursemanager_domain_Course" items="${courses}" z="9vOWnXJWd4eiiHsqR8fs8OH9uqQ=">
+        <table:table data="${courses}" id="l_org_rooinaction_coursemanager_domain_Course" path="/courses" z="fsZnsu0tx30sfMBuFdd4a177zyA=">
+            <table:column id="c_org_rooinaction_coursemanager_domain_Course_name" property="name" z="0cUhfIRVWudTyWWsjYneJ67qWNs="/>
+            <table:column date="true" dateTimePattern="${course_startdate_date_format}" id="c_org_rooinaction_coursemanager_domain_Course_startDate" property="startDate" z="oMinPIrVXQYmDV/gartqgYjAqmI="/>
+            <table:column date="true" dateTimePattern="${course_enddate_date_format}" id="c_org_rooinaction_coursemanager_domain_Course_endDate" property="endDate" z="PsuZ21JCPuUKGbXmej3XVc2xQ2A="/>
+            <table:column id="c_org_rooinaction_coursemanager_domain_Course_fee" property="fee" z="FscZt4rs0xu5mHezckzw3O5gyUA="/>
+        </table:table>
+    </page:list>
+</div>
