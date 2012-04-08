@@ -1,4 +1,8 @@
 
+To build and deploy the application, follow the commands listed in BuildCommands.txt file in this directory.
+
+If you want to test the security against an LDAP server, you can use the commands listed below to launch OpenDS LDAP server and uncomment the LDAP authentication provider in the spring security context file, and re-deploy the application.
+
 
 Tool Installation:
 
