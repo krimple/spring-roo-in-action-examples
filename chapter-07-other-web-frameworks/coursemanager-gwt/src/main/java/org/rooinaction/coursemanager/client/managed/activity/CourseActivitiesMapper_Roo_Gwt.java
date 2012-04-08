@@ -18,7 +18,6 @@ import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
 import org.rooinaction.coursemanager.request.CourseRequest;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseActivitiesMapper_Roo_Gwt {
 

@@ -75,14 +75,7 @@
                     <g:IntegerBox ui:field="maximumCapacity"/>
                 </td>
             </tr>
-      <tr id="courseType">
-                <td>
-                    <div class="{style.label}">Course Type:</div>
-                </td>
-                <td>
-                    <g:ValueListBox ui:field="courseType"/>
-                </td>
-            </tr>
+      
     </table>
 
     <div class="{style.bar}">

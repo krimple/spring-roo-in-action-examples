@@ -30,9 +30,5 @@ public interface CourseProxy extends EntityProxy {
 
     abstract void setMaximumCapacity(Integer maximumCapacity);
 
-    abstract CourseTypeEnum getCourseType();
-
-    abstract void setCourseType(CourseTypeEnum courseType);
-
     abstract Integer getVersion();
 }

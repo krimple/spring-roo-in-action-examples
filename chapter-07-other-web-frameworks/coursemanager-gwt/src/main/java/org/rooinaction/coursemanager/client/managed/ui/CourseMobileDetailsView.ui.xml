@@ -33,10 +33,7 @@
             <div class="{style.label}">Maximum Capacity</div>
             <div class="{style.value}" ui:field="maximumCapacity"/>
         </div>
-    <div id="courseType">
-            <div class="{style.label}">Course Type</div>
-            <div class="{style.value}" ui:field="courseType"/>
-        </div>
+    
     <div id="version">
             <div class="{style.label}">Version</div>
             <div class="{style.value}" ui:field="version"/>

@@ -20,7 +20,6 @@ import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseEditActivityWrapper_Roo_Gwt implements Activity, IsScaffoldMobileActivity {
 
@@ -32,7 +31,6 @@ public abstract class CourseEditActivityWrapper_Roo_Gwt implements Activity, IsS
 
     @Override
     public void start(AcceptsOneWidget display, EventBus eventBus) {
-        view.setCourseTypePickerValues(Arrays.asList(CourseTypeEnum.values()));
         wrapped.start(display, eventBus);
     }
 }

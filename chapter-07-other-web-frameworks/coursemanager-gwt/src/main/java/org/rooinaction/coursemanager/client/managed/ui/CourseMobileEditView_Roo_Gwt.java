@@ -33,7 +33,6 @@ import org.rooinaction.coursemanager.client.managed.activity.CourseEditActivityW
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.ui.*;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseMobileEditView_Roo_Gwt extends Composite implements View<CourseMobileEditView> {
 
@@ -48,16 +47,4 @@ public abstract class CourseMobileEditView_Roo_Gwt extends Composite implements 
 
     @UiField
     IntegerBox maximumCapacity;
-
-    @UiField(provided = true)
-    ValueListBox<CourseTypeEnum> courseType = new ValueListBox<CourseTypeEnum>(new AbstractRenderer<org.rooinaction.coursemanager.shared.CourseTypeEnum>() {
-
-        public String render(org.rooinaction.coursemanager.shared.CourseTypeEnum obj) {
-            return obj == null ? "" : String.valueOf(obj);
-        }
-    });
-
-    public void setCourseTypePickerValues(Collection<org.rooinaction.coursemanager.shared.CourseTypeEnum> values) {
-        courseType.setAcceptableValues(values);
-    }
 }

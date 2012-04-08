@@ -20,7 +20,6 @@ import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace.Operation;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseDetailsActivity_Roo_Gwt extends AbstractActivity implements Delegate, IsScaffoldMobileActivity {
 

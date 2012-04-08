@@ -17,7 +17,6 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseMobileDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<CourseProxy> {
 
@@ -37,9 +36,6 @@ public abstract class CourseMobileDetailsView_Roo_Gwt extends Composite implemen
     Element maximumCapacity;
 
     @UiField
-    Element courseType;
-
-    @UiField
     Element version;
 
     CourseProxy proxy;
@@ -51,7 +47,6 @@ public abstract class CourseMobileDetailsView_Roo_Gwt extends Composite implemen
         description.setInnerText(proxy.getDescription() == null ? "" : String.valueOf(proxy.getDescription()));
         cost.setInnerText(proxy.getCost() == null ? "" : String.valueOf(proxy.getCost()));
         maximumCapacity.setInnerText(proxy.getMaximumCapacity() == null ? "" : String.valueOf(proxy.getMaximumCapacity()));
-        courseType.setInnerText(proxy.getCourseType() == null ? "" : String.valueOf(proxy.getCourseType()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
     }
 }

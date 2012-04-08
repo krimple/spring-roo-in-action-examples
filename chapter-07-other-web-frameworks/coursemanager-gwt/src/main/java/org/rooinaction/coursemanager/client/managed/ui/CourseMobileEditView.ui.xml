@@ -43,12 +43,7 @@
                 <g:IntegerBox ui:field="maximumCapacity"/>
             </div>
         </div>
-    <div id="courseType">
-            <div class="{style.label}">Course Type</div>
-            <div class="{style.value}">
-                <g:ValueListBox ui:field="courseType"/>
-            </div>
-        </div>
+    
 
     <g:Button ui:field="save">Save</g:Button>
   </g:HTMLPanel>

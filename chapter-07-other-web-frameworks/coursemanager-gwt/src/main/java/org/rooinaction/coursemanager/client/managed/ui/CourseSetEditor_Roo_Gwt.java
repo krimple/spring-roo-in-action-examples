@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.ui.CollectionRenderer;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseSetEditor_Roo_Gwt extends Composite implements ValueAwareEditor<Set<CourseProxy>>, LeafValueEditor<Set<CourseProxy>> {
 }

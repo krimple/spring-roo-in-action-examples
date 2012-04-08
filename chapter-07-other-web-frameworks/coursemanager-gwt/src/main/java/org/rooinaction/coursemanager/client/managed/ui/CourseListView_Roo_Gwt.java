@@ -19,7 +19,6 @@ import java.util.HashSet;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListView;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseListView_Roo_Gwt extends AbstractProxyListView<CourseProxy> {
 
@@ -104,21 +103,6 @@ public abstract class CourseListView_Roo_Gwt extends AbstractProxyListView<Cours
                 return renderer.render(object.getMaximumCapacity());
             }
         }, "Maximum Capacity");
-        paths.add("courseType");
-        table.addColumn(new TextColumn<CourseProxy>() {
-
-            Renderer<org.rooinaction.coursemanager.shared.CourseTypeEnum> renderer = new AbstractRenderer<org.rooinaction.coursemanager.shared.CourseTypeEnum>() {
-
-                public String render(org.rooinaction.coursemanager.shared.CourseTypeEnum obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(CourseProxy object) {
-                return renderer.render(object.getCourseType());
-            }
-        }, "Course Type");
         paths.add("version");
         table.addColumn(new TextColumn<CourseProxy>() {
 

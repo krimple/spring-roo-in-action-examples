@@ -17,7 +17,6 @@ import java.util.Set;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.ui.MobileProxyListView;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseMobileListView_Roo_Gwt extends MobileProxyListView<CourseProxy> {
 

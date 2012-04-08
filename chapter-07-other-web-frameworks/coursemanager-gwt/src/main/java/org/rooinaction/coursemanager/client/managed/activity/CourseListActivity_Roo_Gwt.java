@@ -14,7 +14,6 @@ import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileAc
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
 import org.rooinaction.coursemanager.proxy.CourseProxy;
-import org.rooinaction.coursemanager.shared.CourseTypeEnum;
 
 public abstract class CourseListActivity_Roo_Gwt extends AbstractProxyListActivity<CourseProxy> implements IsScaffoldMobileActivity {
 

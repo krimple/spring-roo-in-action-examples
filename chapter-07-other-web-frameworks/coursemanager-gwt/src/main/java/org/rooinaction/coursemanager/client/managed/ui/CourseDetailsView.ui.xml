@@ -75,14 +75,7 @@
                     <span ui:field="maximumCapacity"/>
                 </td>
             </tr>
-      <tr id="courseType">
-                <td>
-                    <span class="{style.label}">Course Type:</span>
-                </td>
-                <td>
-                    <span ui:field="courseType"/>
-                </td>
-            </tr>
+      
       <tr id="version">
                 <td>
                     <span class="{style.label}">Version:</span>
