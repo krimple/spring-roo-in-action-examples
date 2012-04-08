@@ -1,0 +1,21 @@
+
+c:
+cd\
+
+set JAVA_HOME=C:\dev\java\jdk1.6.0_26
+set PATH=%JAVA_HOME%\bin
+
+set MAVEN_HOME=C:\dev\tools\apache-maven-3.0.3
+set PATH=%PATH%;%MAVEN_HOME%\bin
+
+set PROJECT_HOME=C:\dev\projects\spring-roo-in-action-examples\chapter-12\coursemanager-spring-int
+cd %PROJECT_HOME%
+
+mvn clean
+
+mvn eclipse:clean eclipse:eclipse
+
+mvn package
+
+mvn exec:java -Dexec.mainClass="org.rooinaction.coursemanager.integration.CourseRegistrationSpringIntegrationTestClient"
+
