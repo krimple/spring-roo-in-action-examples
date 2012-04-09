@@ -2,9 +2,9 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
     
-    <display-name>coursemanager-chapter-05</display-name>
+    <display-name>coursemanager-chapter-06-gwt</display-name>
     
-    <description>Roo generated coursemanager-chapter-05 application</description>
+    <description>Roo generated coursemanager-chapter-06-gwt application</description>
 
     
     <!-- Enable escaping of form submission contents -->
@@ -64,7 +64,7 @@
     
     <!-- Handles Spring requests -->
     <servlet>
-        <servlet-name>coursemanager-chapter-05</servlet-name>
+        <servlet-name>coursemanager-chapter-06-gwt</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
@@ -80,7 +80,7 @@
         <servlet-class>org.rooinaction.coursemanager.server.CustomRequestFactoryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>coursemanager-chapter-05</servlet-name>
+        <servlet-name>coursemanager-chapter-06-gwt</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     
