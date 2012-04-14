@@ -11,3 +11,5 @@ target
 log.roo
 .idea
 .DS_Store
+*/*/*.script
+*/*/*.properties
