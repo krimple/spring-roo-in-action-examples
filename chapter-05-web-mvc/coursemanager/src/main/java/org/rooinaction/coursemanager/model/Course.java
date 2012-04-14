@@ -39,8 +39,8 @@ public class Course {
     @NotNull
     @DecimalMin("0.0")
     @DecimalMax("99999.00")
-    @Digits(integer = 10, fraction = 2)
-    private BigDecimal cost;
+    @Digits(integer = 7, fraction = 2)
+    private BigDecimal listPrice;    
 
     @NotNull
     @Column(name = "max_capacity")
