@@ -5,11 +5,11 @@
     <form:update id="fu_org_rooinaction_coursemanager_model_Course" modelAttribute="course" path="/courses" versionField="Version" z="6Y9GFhgVFgmCzMZkYPHatg5Pc8Q=">
         <field:textarea field="name" id="c_org_rooinaction_coursemanager_model_Course_name" required="true" z="6aq/bVTy+KcU9NlufAcbAsSt/9Y="/>
         <field:textarea field="description" id="c_org_rooinaction_coursemanager_model_Course_description" required="true" z="Q9ukgXh+wGR3LOcC4ckjUaS0Aw8="/>
+        <field:input decimalMax="99999.00" decimalMin="0.0" field="listPrice" id="c_org_rooinaction_coursemanager_model_Course_listPrice" required="true" validationMessageCode="field_invalid_number" z="lLtkuV4ioFJDxVZ9sFszAoDxcRo="/>
         <field:input field="maxiumumCapacity" id="c_org_rooinaction_coursemanager_model_Course_maxiumumCapacity" max="9999" min="1" required="true" validationMessageCode="field_invalid_integer" z="hf2xBBpmWBfb0v8nQ6vIIGyOfbE="/>
         <field:select field="courseType" id="c_org_rooinaction_coursemanager_model_Course_courseType" items="${coursetypeenums}" path="coursetypeenums" required="true" z="izXSG9CROOC8Ud1vFTb3n8PKWiI="/>
         <field:select field="trainingProgram" id="c_org_rooinaction_coursemanager_model_Course_trainingProgram" itemValue="id" items="${trainingprograms}" path="/trainingprograms" z="InOEl023pHhlmDWj1j/cAevUoGE="/>
         <field:select field="tags" id="c_org_rooinaction_coursemanager_model_Course_tags" itemValue="id" items="${tags}" multiple="true" path="/tags" z="stmsyVrEj2NkIQTq0M2bbUV+RlY="/>
         <field:simple field="offerings" id="c_org_rooinaction_coursemanager_model_Course_offerings" messageCode="entity_reference_not_managed" messageCodeAttribute="Offering" z="pRQ3ulagclhkiH6ttrMWyLi10AA="/>
-        <field:input decimalMax="99999.00" decimalMin="0.0" field="listPrice" id="c_org_rooinaction_coursemanager_model_Course_listPrice" required="true" validationMessageCode="field_invalid_number" z="lLtkuV4ioFJDxVZ9sFszAoDxcRo="/>
     </form:update>
 </div>
