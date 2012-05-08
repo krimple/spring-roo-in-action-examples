@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Spring Roo in Action Errata</title>
+    <style>
+      body {
+        font-size: 12pt;
+        margin: 1.5em;
+        background-color: white;
+        color: black;
+        font-family: Arial, Helvetica;
+      }
+      h1 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 2em;
+      }
+      h2 {
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      h3 {
+        font-size: 1.0em;
+        font-weight: bold;
+      }
+      fieldset {
+        width: 740px;
+        margin-bottom: 12px;
+        border-color: #00457b;
+        background-color: #cfeace;
+      }
+
+      fieldset div {
+        margin-bottom: 6px;
+        font-weight: normal;
+      }
+
+      legend {
+        border: 2px ridge #00457b;
+        font-size: 1.2em;
+        font-weight: bold;
+        background-color: #e36a51;
+        color: white;
+        padding: 8px 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <fieldset>
+      <legend>Spring Roo in Action Errata</legend>
+
+      
+      <p>This is a list of errata that has been found and / or corrected in each release of Spring Roo</p>
+
+      <p>Readers: If you find a problem with the text of the book, please log onto our author forum at <a href="http://manning.com/SpringRooInAction">http://manning.com/SpringRooInAction</a>. Please review this list below before you post, and check the e-book if you downloaded it to see if the issue has been corrected before you post. </p>
+
+      <p>If you need to log a bug against the code samples, please create a GitHub account at <a href="http://github.com">GitHub</a>, and watch krimple's spring-roo-in-action-examples repo at <a href="https://github.com/krimple/spring-roo-in-action-examples">https://github.com/krimple/spring-roo-in-action-examples</a>, and file a bug by clicking on the Issues tab. We'll take a look at it as soon as we can. Please only log bugs if you can reproduce them, and they seem to truly represent a problem with the code as it currently exists.</p>
+
+      <p>Important note: The samples may diverge from the book code naturally as a result of an error in the original samples (documented below) or because of upgrades to Roo that break the examples. We will provide tags representing release dates and will be attempting to document everything as much</p>
+      <h2>Preface</h2>
+      <ul>
+      <li><h3>Code samples - Added to the end of paragraph 1</h3>
+      
+      <p>"Review the root directory of each source project. If it contains a readme.txt file, please review it before running the sample. This file may contain instructions on how to build, run, or review the individual sample."</p>
+      </li>
+      </ul>
+      <h2>About this book...</h2>
+      <ul>
+        <li><h3>p. xxvii - Added Gordon Dickens' last name...</h3>
+          <p>Gordon's last name was missing from the credits for the STS RefCard.</p>
+        </li>
+        <li><h3>p. xxix - Add comment about readme.txt files</h3>
+          <p>Since the Roo API changes periodically and the book may 
+            become out of sync with examples, we use the convention 
+            of a readme.txt file in the root of a sample project to 
+            convey any late breaking changes not in the manuscript.
+            Added a comment about this on this page.</p>
+            </li>
+      </ul>
+      
+      <h2>All Chapters</h2>
+      <ul>
+      <li><h3>Added package to <code>jetty:run</code> Maven commands</h3>
+      <p>Changed from <pre>mvn jetty:run</pre> to <pre>mvn package jetty:run</pre> to reflect the recent updates to the jetty maven plugin (which no longer runs package automatically). Pages affected include p 13, 32, 135, 155, 231, 303. Also changed <pre>mvn tomcat:run</pre> to <pre>mvn package tomcat:run</pre> where encountered.</p></li>
+      <li><h3>Cleaned up code sample formatting</h3>
+        <p>Throughout the book code samples have been cleaned up as 
+          code indentation was skewed when transformed into the final
+          manuscript.</p>
+        </li>
+      </ul>
+<h2>Chapter 1</h2>
+      <ul>
+        <li><h3>Page 7</h3>
+          <p>Changed jdbcTemplate example to use <code>queryForInt</code> rather than <code>queryForString</code></p>
+        </li>
+        
+      <li><h3>page 13</h3>
+        <p>Added a note:  "Executing the Maven package goal guarantees that you are running against the latest changes to your application"</p>
+      </li>
+      <li><h3>page 20</h3>
+        <p>Cleaned up language in first and second full paragraph.</p>
+      </li>
+      <li><h3>Page 21</h3>
+        <p>Removed DAO from text. We were describing a Data Access Layer, not
+          a Data Access Object</p>
+          </li>
+          <li><h3>Page 22</h3>
+            <p>Cleaned up sentence structure.</p>
+            </li>
+      </ul>
+      <h2>Chapter 2</h2>
+      <ul>
+        <li><h3>Page 32 - Psst.. If you're using Git</h3>
+          <p>Remove the first line continuation arrow as it is a single line Roo command.</p>
+          </li>
+          <li><h3>Page 33</h3>
+            <p>Bolden the Roo command in the second code snippet of the page to make it stand out.</p>
+          </li>
+          <li><h3>Page 43</h3>
+            <p>The <pre>infrastructure roo></pre> prompt was incorrect and has been fixed to now state the prompt is <pre>taskmanager-data roo></pre></p>
+          </li>
+        </ul>
+        <h2>Chapter 3</h2>
+        <ul>
+          <li>
+            <h3>Page 61</h3>
+          <p>Inversed bolding of commands themselves and output. The output was bolded, almost pointing to the wrong thing. The commands are the center or focus here.</p>
+          </li>
+          <li>
+            <h3>Page 74</h3>
+            <p>Cleaned up formatting of code example. Some lines were not properly aligned with others of the same level of indentation</p>
+          </li>
+          <li>
+            <h3>Page 77</h3>
+            <p>Pull back <code>c.setDescription(null);</code> to align with rest of the indented block</p>
+          </li>          
+          </ul>
+      <h2>Chapter 4</h2>
+      <ul>
+        <li><h3>Page 102</h3>
+          <p>Code cleanup - first method line was incorrectly indented an extra space.</p>
+        </li>
+        <li><h3>Page 103</h3>
+          <p>Continuation arrow in initial snippet on page was too close to code sample line. Listing 4.4 indentation was wrong and is corrected.</p>
+        </li>        
+        <li>      
+        <h3>Page 107</h3>
+        <p>Corrected the annotation for addressLine2 to: @Size(min = 0, max = 40) to allow for a nullable value. It currently has a minimum size of 1.</p> 
+      </li>
+      <li>
+        <h3>Page 118</h3>
+        <p>Listing 4.6 code alignment issues have been corrected.</p>
+      </li>
+    </ul>
+    <h2>Chapter 5</h2>
+    <ul>      
+      <li><h3>p. 142 - Missing fields in later examples</h3>
+        <p>Added the listPrice field to Listing 5.5. Added after the description table:column tag and before the maximumCapacity tag:</p>
+       <pre>
+       &lt;table:column 
+          id=&quot;c_org_rooinaction_coursemanager_model_Course_listPrice&quot; 
+          property=&quot;listPrice&quot;
+          z=&quot;I0Pv164k6o5/Ts1K+c2DMlwD1KE=&quot;/&gt;
+          </pre>
+      </li>
+    
+          <li><h3>Page 143 - missing List Price field in listing 5.7</h3>
+            <p>Updated snapshot of listing page to include listPrice
+         <p>Added field:input between description and maximumCapacity field: tags as shown:</p>
+         <pre>
+        &lt;field:input decimalMax=&quot;99999.00&quot; decimalMin=&quot;0.0&quot;    
+           field=&quot;listPrice&quot; 
+           id=&quot;c_org_rooinaction_coursemanager_model_Course_listPrice&quot; 
+           required=&quot;true&quot; 
+           validationMessageCode=&quot;field_invalid_number&quot; 
+           z=&quot;lLtkuV4ioFJDxVZ9sFszAoDxcRo=&quot;/&gt;
+           </pre>
+           </li>
+      <li>
+        <h3>Page 149</h3>
+        <p>Listing 5.8 - extra space between last two lines of form opening tag.</p>
+      </li>
+        </ul>
+        <h2>Chapter 6</h2>
+        <ul><h3>Page 165 - locale sample</h3>
+          <p>Page 165 - locale sample before 6.2.5 - replaced sample below "In your view:" with this:</p>
+          <pre>
+      &lt;table:column date=&quot;true&quot; dateTimePattern=&quot;${short.date.format}&quot;
+        id=&quot;c_org_rooinaction_coursemanager_model_Offering_runDate&quot;
+        property=&quot;runDate&quot; z=&quot;user-managed&quot;/&gt;
+        </pre>
+        </li>
+        <li><h3>Page 165</h3>
+          <p>Just below the sample in the last bullet, but before "Roo may also have problems..." added a quick note that states: "Refer to the chapter 6 coursemanager example’s list.jspx file for the offering entity for an example"</p>
+          </li>
+          <li><h3>Page 166</h3>
+            <p>Paragraph before second bullet. Added to end of paragraph "To populate the list, you can use something like this:" - then embed informal snippet with one line:</p>
+            <pre>
+uiModel.addAttribute("coursetypeenums", (line broken on errata only)
+   Arrays.asList(CourseTypeEnum.values()));
+</pre>
+</li>
+</ul>
+<h2>Chapter 8</h2>
+  <ul>
+      <li>
+        <h3>Page 191</h3>
+        <p>Listing 8.1 had formatting issues, and an extra '<' character in the 
+          schema location attribute which showed up in the manuscript. This
+          has been corrected.</p>
+      </li>
+      <li>
+        <h3>Page 199</h3>
+        <p>Principal entity manipulation snippets were missing line continuation characters where the Roo lines were more than one physical text line long. Corrected.</p>
+      </li>
+      <li>
+        <h3>Page 202</h3>
+        <p>The line starting with <pre>server-ref</pre> was indented incorrectly.</p>
+      </li>
+      <li>
+        <h3>Page 204</h3>
+        <p>Moved entire code sample back to align with the start of the comment line on the first line.</p>
+      </li>
+      <li>
+        <h3>Page 239</h3>
+        <p>Removed entire hint and logging setup tab tutorial as this was covered in chapter 2.</p>
+      </li>        
+      </ul>
+      <h2>Chapter 9</h2>
+      <ul>
+        <li>
+          <h3>Page 219</h3>
+          <p>Mockito was showing up as a blue hyperlink color, and none of the others were blue. Removed color in formatting.</p>
+        </li>
+        <li>
+          <h3>Page 221</h3>
+          <p>The line starting with <pre>public class</pre> was indented when it should have been aligned flush with the line above it.</p>
+        </li>
+        <li>
+          <h3>Page 225</h3>
+          <p>The code sample was incorrectly indented after the annotated line <pre>@Test</pre> and it should have been indented only at the elipses '...'.</p>
+        </li>
+        <li>
+          <h3>Page 227</h3>
+          <p>The <code>CourseIntegrationTest</code> code sample was mis-formatted.</p>
+        </li>
+      </ul>
+      <h2>Chapter 10</h2>
+      <ul>
+        <li>
+          <h3>Pages 248-249</h3>
+          <p>The dependencies list was formatted incorrectly.</p>
+        </li>
+        <li>
+          <h3>Page 250</h3>
+          <p>The formatting of the code sample in Listing 10.2 has been cleaned up.</p>
+        </li>
+        <li>
+          <h3>Page 253</h3>
+          <p>Listing 10.5 - pulled back }) to left margin.</p>
+        </li>
+        <li>
+          <h3>Page 259</h3>
+          <p>Listing 10.10 - pulled back }) to left margin</p>
+        </li>
+        <li>
+          <h3>Page 260</h3>
+          <p>Example just before JMS LISTENER section - joined last two lines (they made up a roo command line prompt)</p>
+        </li>
+      </ul>
+<h2>Chapter 11</h2>
+<ul>
+      <li>
+        <h3>p. 11.8.3, bottom of p.283 - p.284</h3>
+        <p>Replaced every occurrence of the name JqueryaddonOperations with JqueryuiOperations as I had renamed that class but the change didn't make it into this section. This includes the code snippet.</p>
+        </li>
+        </ul>
+        <h2>Chapter 12</h2>
+        <ul>
+          <li><h3>p. 308 - heading 12.3.3</h3>
+            <p>Changed to "The FileManager"</p>
+          </li>
+        </ul>
+        <h2>Chapter 12</h2>
+        <ul>
+          <li><h3>Page 303</h3>
+            <p>Removed statement that the Maven jetty:run command depends on the 
+              Maven package lifecycle phase. This is no longer true.</p>
+          </li>
+          <li><h3>Page 304</h3>
+            <p>Listing 12.4 - cleaned up formatting.</p>
+          </li>
+          <li>
+            <h3>Page 305</h3>
+            <p>Fixed hyphenated line (--removeScripts needed to stay together)</p>
+          </li>
+          <li>
+            <h3>Page 312</h3>
+            <p>Changed 2nd to last line of page from "which you're referencing" to "which we are referencing" as we are reviewing an example that we provide in unix format, but the user may be on Windows.</p>
+          </li>
+          <li>
+            <h3>Page 314</h3>
+            <p>Added "In this example" to first paragraph before "We use Google Code" to make sure people know that this is not their only option.</p>
+          </li>
+        </ul>
+        <h2>Chapter 14</h2>
+        <li>
+          <h3>Page 350</h3>
+          <p>Aligned the two lists of Roo commands.</p>
+        </li>
+      </ul>
+      <ul>
+      <h2>Index</h2>
+        <li><h3>Course Manager cleanup</h3>
+          <p>Merged all competing variants of CourseManager (Course Manager, CourseMgr) etc... to clean up those index entries.
+            </p>
+        </li>
+    </ul>
+  </fieldset>
+</body>
+</html>
