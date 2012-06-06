@@ -28,7 +28,7 @@ public class ITCourseSelenium {
 
     webDriver.findElement(By.id("_name_id")).sendKeys("someName1");    
     webDriver.findElement(By.id("_description_id")).sendKeys("someDescription1");
-    webDriver.findElement(By.id("_maxiumumCapacity_id")).sendKeys("1");
+    webDriver.findElement(By.id("_maximumCapacity_id")).sendKeys("1");
     webDriver.findElement(By.id("_createdDate_id")).sendKeys("5/1/11");
     webDriver.findElement(By.id("proceed")).click();
     Assert.assertEquals(true, 0 < webDriver.getPageSource().indexOf("Show Course"));

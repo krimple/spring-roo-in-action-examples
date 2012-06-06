@@ -5,7 +5,7 @@
     <form:update id="fu_org_rooinaction_coursemanager_model_Course" modelAttribute="course" path="/courses" versionField="Version" z="6Y9GFhgVFgmCzMZkYPHatg5Pc8Q=">
         <field:textarea field="name" id="c_org_rooinaction_coursemanager_model_Course_name" required="true" z="6aq/bVTy+KcU9NlufAcbAsSt/9Y="/>
         <field:textarea field="description" id="c_org_rooinaction_coursemanager_model_Course_description" required="true" z="Q9ukgXh+wGR3LOcC4ckjUaS0Aw8="/>
-        <field:input field="maxiumumCapacity" id="c_org_rooinaction_coursemanager_model_Course_maxiumumCapacity" max="9999" min="1" required="true" validationMessageCode="field_invalid_integer" z="hf2xBBpmWBfb0v8nQ6vIIGyOfbE="/>
+        <field:input field="maximumCapacity" id="c_org_rooinaction_coursemanager_model_Course_maximumCapacity" max="9999" min="1" required="true" validationMessageCode="field_invalid_integer" z="hf2xBBpmWBfb0v8nQ6vIIGyOfbE="/>
         <field:select field="courseType" id="c_org_rooinaction_coursemanager_model_Course_courseType" items="${coursetypeenums}" path="coursetypeenums" required="true" z="izXSG9CROOC8Ud1vFTb3n8PKWiI="/>
         <field:input field="trainingProgram" id="c_org_rooinaction_coursemanager_model_Course_trainingProgram" z="8WiQTyNlzLGmT7kULWa95MQ3ZcI="/>
         <field:input field="tags" id="c_org_rooinaction_coursemanager_model_Course_tags" z="XGZQA4Z4ZtWk+X6syPv5GQnTNww="/>
