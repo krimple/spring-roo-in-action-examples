@@ -24,10 +24,12 @@ public class Task {
     private Boolean completed;
     @PersistenceContext
     transient EntityManager entityManager;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+
     @Version
     @Column(name = "version")
     private Integer version;

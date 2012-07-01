@@ -40,7 +40,7 @@ public class CoffeescriptCommands implements CommandMarker { // All command
 
   @CliAvailabilityIndicator({ "coffeescript remove" })
   public boolean isRemoveCommandAvailable() {
-    return !operations.isSetupCommandAvailable();
+    return operations.isRemoveCommandAvailable();
   }
 
   @CliCommand(value = "coffeescript setup", help = "Install the CoffeeScript compiler")

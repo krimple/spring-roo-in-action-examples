@@ -7,8 +7,8 @@
 	<version>0.1.0.BUILD-SNAPSHOT</version>
 	<name>coursemanager-email-jms</name>
 	<properties>
-		<roo.version>1.2.0.M1</roo.version>
-		<spring.version>3.0.5.RELEASE</spring.version>
+		<roo.version>1.2.2.RELEASE</roo.version>
+		<spring.version>3.1.0.RELEASE</spring.version>
 		<aspectj.version>1.6.11.M1</aspectj.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

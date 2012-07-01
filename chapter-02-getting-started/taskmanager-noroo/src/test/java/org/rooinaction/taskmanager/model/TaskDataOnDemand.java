@@ -31,7 +31,7 @@ public class TaskDataOnDemand {
     public Task getNewTransientTask(int index) {
         Task obj = new Task();
         setCompleted(obj, index);
-        setTask(obj, index);
+        setDescription(obj, index);
         return obj;
     }
     
@@ -40,12 +40,12 @@ public class TaskDataOnDemand {
         obj.setCompleted(completed);
     }
     
-    public void setTask(Task obj, int index) {
-        String task = "task_" + index;
-        if (task.length() > 40) {
-            task = task.substring(0, 40);
+    public void setDescription(Task obj, int index) {
+        String description = "description_" + index;
+        if (description.length() > 40) {
+            description = description.substring(0, 40);
         }
-        obj.setTask(task);
+        obj.setDescription(description);
     }
     
     public Task getSpecificTask(int index) {

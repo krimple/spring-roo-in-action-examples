@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.rooinaction.coursemanager</groupId>
-	<artifactId>coursemanager-chapter-04</artifactId>
+	<artifactId>coursemanager-07-jsf</artifactId>
 	<packaging>war</packaging>
 	<version>0.1.0.BUILD-SNAPSHOT</version>
 	<name>coursemanager-chapter-04</name>
@@ -10,7 +10,7 @@
 		<aspectj.version>1.6.12.M2</aspectj.version>
 		<java.version>1.6</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<roo.version>1.2.0.RELEASE</roo.version>
+		<roo.version>1.2.2.RELEASE</roo.version>
 		<slf4j.version>1.6.2</slf4j.version>
 		<spring.version>3.1.0.RELEASE</spring.version>
 	</properties>
@@ -154,12 +154,12 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>3.6.8.Final</version>
+            <version>3.6.9.Final</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.6.8.Final</version>
+            <version>3.6.9.Final</version>
             <exclusions>
                 <exclusion>
                     <groupId>cglib</groupId>
@@ -219,7 +219,7 @@
         <dependency>
             <groupId>commons-pool</groupId>
             <artifactId>commons-pool</artifactId>
-            <version>1.5.4</version>
+            <version>1.5.6</version>
         </dependency>
         <dependency>
             <groupId>commons-dbcp</groupId>
@@ -247,11 +247,6 @@
             <version>1.8.5</version>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.18</version>
-        </dependency>
-    <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-api</artifactId>
             <version>2.1.2</version>
@@ -298,10 +293,20 @@
                 </exclusion>
             </exclusions>
         </dependency>
-    <dependency>
+        <dependency>
             <groupId>org.primefaces.themes</groupId>
             <artifactId>blitzer</artifactId>
             <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>1.8.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
         </dependency>
     </dependencies>
 	<build>

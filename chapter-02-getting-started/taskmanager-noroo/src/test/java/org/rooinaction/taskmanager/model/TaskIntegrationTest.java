@@ -35,7 +35,7 @@ public class TaskIntegrationTest {
     @Test
       public void testModifyTaskWhenCompletingFromRepo() {
         Task t = new Task();
-        t.setTask("Click on button");
+        t.setDescription("Click on button");
         taskService.saveTask(t);
         taskRepository.flush();
         t.setCompleted(true);
@@ -44,7 +44,7 @@ public class TaskIntegrationTest {
         Task t2 = taskRepository.findOne(t.getId());
     
         Assert.assertTrue("Task text does not start with (completed).", 
-            t2.getTask().startsWith("(completed)"));
+            t2.getDescription().startsWith("(completed)"));
       }
 
     @Test

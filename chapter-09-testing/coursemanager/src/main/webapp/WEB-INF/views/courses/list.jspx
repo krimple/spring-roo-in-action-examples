@@ -6,7 +6,7 @@
         <table:table data="${courses}" id="l_org_rooinaction_coursemanager_model_Course" path="/courses" z="U0m1wu8eGzG3+wo0U2obtDRhs0o=">
             <table:column id="c_org_rooinaction_coursemanager_model_Course_name" property="name" z="ufXSBbrxBH90UpAXQVn1uBw4YK8="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Course_description" property="description" z="HBRpKIt6MM1zEsZ3S1yxVteHv7M="/>
-            <table:column id="c_org_rooinaction_coursemanager_model_Course_maximumCapacity" property="maximumCapacity" z="Y+Z9J0JoJLBpdDFixlhd9v6QWho="/>
+            <table:column id="c_org_rooinaction_coursemanager_model_Course_maximumCapacity" property="maximumCapacity" z="user-managed"/>
             <table:column id="c_org_rooinaction_coursemanager_model_Course_courseType" property="courseType" z="qm/dUs/P+qJyWSA9Z3zS7+jxQfc="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Course_trainingProgram" property="trainingProgram" z="kFLf3ClejXDlKnAzDW2uYDBLnJA="/>
             <table:column id="c_org_rooinaction_coursemanager_model_Course_tags" property="tags" z="kOtGL6vPaS4MTz7UhGV2RYZMkv0="/>

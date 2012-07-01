@@ -8,6 +8,21 @@
 	<name>Roo In Action Builder</name>
 
   <modules>
-    <module>chapter-01</module>
+    <module>chapter-01-intro</module>
+    <module>chapter-02-getting-started</module>
+    <module>chapter-03-jpa</module>
+    <module>chapter-04-jpa-advanced</module>
+    <module>chapter-05-web-mvc</module>
+    <module>chapter-06-advanced-web-mvc</module>
+    <module>chapter-07-other-web-frameworks</module>
+    <module>chapter-08-security</module>
+    <module>chapter-09-testing</module>
+    <!--
+    <module>chapter-10-email-jms</module>
+    <module>chapter-11-addons-part-1</module>
+    <module>chapter-12-addons-part-2</module>
+    <module>chapter-13-cloud-computing</module>
+    <module>chapter-13-integration</module>
+    -->
   </modules>
 </project>
