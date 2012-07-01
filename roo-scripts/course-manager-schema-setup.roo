@@ -1,0 +1,62 @@
+project --topLevelPackage org.rooinaction.coursemanager --projectName coursemanager
+jpa setup --database HYPERSONIC_PERSISTENT --provider HIBERNATE
+enum type --class ~.model.CourseTypeEnum
+enum constant --name SEMINAR
+enum constant --name CREDIT
+enum constant --name CONTINUING_EDUCATION
+entity jpa --class ~.model.Course --testAutomatically
+field string --fieldName name --sizeMin 1 --sizeMax 60 --column course_name
+field string --fieldName description --notNull --sizeMax 1000
+field number --fieldName listPrice --type java.math.BigDecimal --decimalMin 0.0 --decimalMax 99999.99 --digitsFraction 2 --digitsInteger 5 --notNull
+field number --fieldName maximumCapacity --type java.lang.Integer --min 1 --max 9999 --notNull --column max_capacity
+field date --fieldName runDate --type java.util.Date --dateTimeFormatPattern MM/dd/yyyy
+field enum --fieldName courseType --type ~.model.CourseTypeEnum --enumType STRING --notNull
+finder add --finderName findCoursesByNameLike
+finder add --finderName findCoursesByCourseTypeAndRunDateBetween
+
+entity jpa --class ~.model.TrainingProgram --testAutomatically
+field string --fieldName name
+field set --fieldName courses --type ~.model.Course --cardinality ONE_TO_MANY --mappedBy trainingProgram
+
+focus --class ~.model.Course
+field reference --fieldName trainingProgram --type ~.model.TrainingProgram --cardinality MANY_TO_ONE
+
+entity jpa --class ~.model.Tag --testAutomatically
+field string --fieldName tag --sizeMin 1 --sizeMax 25 --notNull
+field string --fieldName description --sizeMax 250 --notNull
+field set --fieldName courses --type ~.model.Course --cardinality MANY_TO_MANY
+
+focus --class ~.model.Course
+field set --fieldName tags --type ~.model.Tag --cardinality MANY_TO_MANY --mappedBy courses
+
+entity jpa --class ~.model.Person --abstract --inheritanceType TABLE_PER_CLASS
+field string --fieldName firstName --sizeMin 1 --sizeMax 30
+field string --fieldName middleNameOrInitial --sizeMin 1 --sizeMax 30
+field string --fieldName addressLine1 --notNull --sizeMin 1 --sizeMax 60
+field string --fieldName addressLine2 --sizeMin 0 --sizeMax 60
+field string --fieldName city --sizeMin 0 --sizeMax 40
+field string --fieldName stateCode --sizeMin 2 --sizeMax 2
+field string --fieldName postalCode --notNull --sizeMin 1 --sizeMax 10
+field string --fieldName emailAddress --notNull --sizeMin 1 --sizeMax 80
+
+entity jpa --class ~.model.Student --extends ~.model.Person --testAutomatically
+field string --fieldName emergencyContactName --notNull --sizeMin 1 --sizeMax 30
+field string --fieldName emergencyContactInfo --notNull --sizeMin 1 --sizeMax 80
+field string --fieldName dietaryRestrictions --sizeMax 30
+
+entity jpa --class ~.model.Instructor --extends ~.model.Person --testAutomatically
+field string --fieldName taxNumber --sizeMin 9 --sizeMax 9 --notNull
+field boolean --fieldName active
+
+entity jpa --class ~.model.Offering --testAutomatically
+field date --fieldName offerDate --notNull --type java.util.Date --dateTimeFormatPattern MM/DD/YYYY
+field string --fieldName locationName --notNull --sizeMin 1 --sizeMax 80
+field reference --fieldName course --type ~.model.Course --cardinality MANY_TO_ONE 
+field reference --fieldName instructor --type ~.model.Instructor --cardinality MANY_TO_ONE
+
+entity jpa --class ~.model.Registration --testAutomatically
+field reference --fieldName student --type ~.model.Student --cardinality MANY_TO_ONE
+field reference --fieldName course --type ~.model.Course --cardinality MANY_TO_ONE
+field boolean --fieldName paymentMade
+field boolean --fieldName attended
+
