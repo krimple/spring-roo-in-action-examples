@@ -17,10 +17,10 @@
     <module>chapter-07-other-web-frameworks</module>
     <module>chapter-08-security</module>
     <module>chapter-09-testing</module>
-    <!--
-    <module>chapter-10-email-jms</module>
     <module>chapter-11-addons-part-1</module>
     <module>chapter-12-addons-part-2</module>
+    <!--
+    <module>chapter-10-email-jms</module>
     <module>chapter-13-cloud-computing</module>
     <module>chapter-13-integration</module>
     -->
