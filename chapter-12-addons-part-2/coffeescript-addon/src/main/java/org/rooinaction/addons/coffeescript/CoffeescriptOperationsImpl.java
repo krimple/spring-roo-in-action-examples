@@ -15,6 +15,8 @@ import org.w3c.dom.Element;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Implementation of operations this add-on offers.
@@ -79,35 +81,35 @@ public class CoffeescriptOperationsImpl implements
     return isCoffeeScriptPluginInstalled();
 
   }
-
-  /** {@inheritDoc} */
-  public void setup() {
-    String moduleName = projectOperations.getFocusedModuleName();
-    projectOperations.addBuildPlugins(moduleName, getPlugins());
-
-  }
-
-  public void remove() {
-    String moduleName = projectOperations.getFocusedModuleName();
-    projectOperations.removeBuildPlugins(moduleName, getPlugins());
-  }
-
+	public void setup() {
+	 Collection<Plugin> pluginsToAdd = getPluginsFromConfigurationXml();
+	 projectOperations.addBuildPlugins(
+	   projectOperations.getFocusedModuleName(), pluginsToAdd);
+	}
+	
   /**
    * provide access to the build plugins in the file, that way if additional
    * plugins are needed, you can just add them to the configuration file.
    * 
    * @return The set of plugins
    */
-  private Set<Plugin> getPlugins() {
-    Element configuration = XmlUtils.getConfiguration(this.getClass());
-    Collection<Element> configPlugins = XmlUtils.findElements(
-        "/configuration/coffeescript/plugins/plugin", configuration);
+	private List<Plugin> getPluginsFromConfigurationXml() {
+	  Element configuration = XmlUtils.getConfiguration(this.getClass());
+	  Collection<Element> configPlugins = XmlUtils.findElements(
+	     "/configuration/coffeescript/plugins/plugin",
+	     configuration);
 
-    Set<Plugin> plugins = new HashSet<Plugin>();
-    for (Element pluginElement : configPlugins) {
-      plugins.add(new Plugin(pluginElement));
-    }
-    return plugins;
+	  List<Plugin> plugins = new ArrayList<Plugin>();
+	  for (Element pluginXml : configPlugins) {
+	    plugins.add(new Plugin(pluginXml));
+	  }
+	  return plugins;
+	}
+
+  public void remove() {
+    String moduleName = projectOperations.getFocusedModuleName();
+    projectOperations.removeBuildPlugins(moduleName, 
+		getPluginsFromConfigurationXml());
   }
 
   private boolean isCoffeeScriptPluginInstalled() {
