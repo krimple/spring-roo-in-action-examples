@@ -13,5 +13,5 @@ log.roo
 .DS_Store
 */*/*.script
 */*/*.properties
-chapter-02-getting-started/taskmanager/taskmanager/*
+chapter-02-getting-started/taskmanager/taskmanager/
 chapter-02-getting-started/taskmanager-noroo/taskmanager/
