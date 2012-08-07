@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_org_rooinaction_coursemanager_model_Course" modelAttribute="course" path="/courses" versionField="Version" z="6Y9GFhgVFgmCzMZkYPHatg5Pc8Q=">
+        <field:textarea field="name" id="c_org_rooinaction_coursemanager_model_Course_name" required="true" z="6aq/bVTy+KcU9NlufAcbAsSt/9Y="/>
+        <field:textarea field="description" id="c_org_rooinaction_coursemanager_model_Course_description" required="true" z="Q9ukgXh+wGR3LOcC4ckjUaS0Aw8="/>
+        <field:input decimalMax="99999.00" decimalMin="0.0" field="cost" id="c_org_rooinaction_coursemanager_model_Course_cost" required="true" validationMessageCode="field_invalid_number" z="m6u5VApX0nK0QdwJ51lIgvxsFbg="/>
+        <field:input field="maximumCapacity" id="c_org_rooinaction_coursemanager_model_Course_maximumCapacity" max="9999" min="1" required="true" validationMessageCode="field_invalid_integer" z="aJHo77+YUL+8ouQNoZh0rfggAPY="/>
+        <field:select field="courseType" id="c_org_rooinaction_coursemanager_model_Course_courseType" items="${coursetypeenums}" path="coursetypeenums" required="true" z="izXSG9CROOC8Ud1vFTb3n8PKWiI="/>
+        <field:select field="trainingProgram" id="c_org_rooinaction_coursemanager_model_Course_trainingProgram" itemValue="id" items="${trainingprograms}" path="/trainingprograms" z="InOEl023pHhlmDWj1j/cAevUoGE="/>
+        <field:select field="tags" id="c_org_rooinaction_coursemanager_model_Course_tags" itemValue="id" items="${tags}" multiple="true" path="/tags" z="stmsyVrEj2NkIQTq0M2bbUV+RlY="/>
+        <field:simple field="offerings" id="c_org_rooinaction_coursemanager_model_Course_offerings" messageCode="entity_reference_not_managed" messageCodeAttribute="Offering" z="pRQ3ulagclhkiH6ttrMWyLi10AA="/>
+        <field:input field="duration" id="c_org_rooinaction_coursemanager_model_Course_duration" validationMessageCode="field_invalid_integer" z="IHlFK1Qu8+/ipGpuG4ScyFYzeYY="/>
+    </form:update>
+</div>
