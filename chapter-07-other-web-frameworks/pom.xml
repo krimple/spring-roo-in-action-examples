@@ -8,7 +8,7 @@
 	<name>Roo In Action Builder - Chapter 07</name>
 
   <modules>
-    <!--    <module>coursemanager-ajax</module> -->
+    <module>coursemanager-ajax</module>
     <module>coursemanager-jsf</module>
 
     <!--<module>coursemanager-gwt</module> -->
