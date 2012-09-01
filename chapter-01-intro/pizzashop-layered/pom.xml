@@ -441,7 +441,7 @@
                 <version>8.0.1.v20110908</version>
                 <configuration>
                     <webAppConfig>
-                        <contextPath>/${project.name}</contextPath>
+                      <contextPath>/pizzashop-layered</contextPath>
                     </webAppConfig>
                 </configuration>
             </plugin>
