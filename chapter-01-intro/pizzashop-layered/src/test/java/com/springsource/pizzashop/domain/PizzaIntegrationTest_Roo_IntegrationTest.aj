@@ -25,7 +25,7 @@ privileged aspect PizzaIntegrationTest_Roo_IntegrationTest {
     declare @type: PizzaIntegrationTest: @Transactional;
     
     @Autowired
-    private PizzaDataOnDemand PizzaIntegrationTest.dod;
+    PizzaDataOnDemand PizzaIntegrationTest.dod;
     
     @Autowired
     PizzaService PizzaIntegrationTest.pizzaService;

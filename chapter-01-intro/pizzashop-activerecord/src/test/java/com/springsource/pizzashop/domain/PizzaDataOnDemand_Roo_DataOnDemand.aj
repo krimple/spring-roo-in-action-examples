@@ -26,7 +26,7 @@ privileged aspect PizzaDataOnDemand_Roo_DataOnDemand {
     private List<Pizza> PizzaDataOnDemand.data;
     
     @Autowired
-    private BaseDataOnDemand PizzaDataOnDemand.baseDataOnDemand;
+    BaseDataOnDemand PizzaDataOnDemand.baseDataOnDemand;
     
     public Pizza PizzaDataOnDemand.getNewTransientPizza(int index) {
         Pizza obj = new Pizza();

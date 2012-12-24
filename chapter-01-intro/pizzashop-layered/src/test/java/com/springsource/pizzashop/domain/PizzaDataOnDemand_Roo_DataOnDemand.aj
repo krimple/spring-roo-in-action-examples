@@ -28,7 +28,7 @@ privileged aspect PizzaDataOnDemand_Roo_DataOnDemand {
     private List<Pizza> PizzaDataOnDemand.data;
     
     @Autowired
-    private BaseDataOnDemand PizzaDataOnDemand.baseDataOnDemand;
+    BaseDataOnDemand PizzaDataOnDemand.baseDataOnDemand;
     
     @Autowired
     PizzaService PizzaDataOnDemand.pizzaService;

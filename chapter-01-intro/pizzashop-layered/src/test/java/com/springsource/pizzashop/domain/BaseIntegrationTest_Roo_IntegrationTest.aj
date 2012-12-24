@@ -25,7 +25,7 @@ privileged aspect BaseIntegrationTest_Roo_IntegrationTest {
     declare @type: BaseIntegrationTest: @Transactional;
     
     @Autowired
-    private BaseDataOnDemand BaseIntegrationTest.dod;
+    BaseDataOnDemand BaseIntegrationTest.dod;
     
     @Autowired
     BaseService BaseIntegrationTest.baseService;

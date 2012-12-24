@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Mon Jul 02 06:39:28 EDT 2012:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance a816c00e-0138-4746-09b7-000004ca22c0 
-on database directory /Users/kenrimple/git-repositories/spring-roo-in-action-examples/chapter-02-getting-started/taskmanager/taskmanager  with class loader sun.misc.Launcher$AppClassLoader@1f3e8d89 
+Mon Dec 24 11:16:35 EST 2012:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance a816c00e-013b-cdb3-9058-0000061e23f0 
+on database directory /Users/kenrimple/git-repositories/spring-roo-in-action-examples/chapter-02-getting-started/taskmanager/taskmanager  with class loader sun.misc.Launcher$AppClassLoader@1c8697ce 
 Loaded from file:/Users/kenrimple/.m2/repository/org/apache/derby/derby/10.8.1.2/derby-10.8.1.2.jar
-java.vendor=Apple Inc.
-java.runtime.version=1.6.0_33-b03-424-11M3720
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_10-b18
 user.dir=/Users/kenrimple/git-repositories/spring-roo-in-action-examples/chapter-02-getting-started/taskmanager
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

@@ -25,7 +25,7 @@ privileged aspect ToppingIntegrationTest_Roo_IntegrationTest {
     declare @type: ToppingIntegrationTest: @Transactional;
     
     @Autowired
-    private ToppingDataOnDemand ToppingIntegrationTest.dod;
+    ToppingDataOnDemand ToppingIntegrationTest.dod;
     
     @Autowired
     ToppingService ToppingIntegrationTest.toppingService;
