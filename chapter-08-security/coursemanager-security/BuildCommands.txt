@@ -19,7 +19,7 @@ project --topLevelPackage org.rooinaction.coursemanager
 
 hint
 
-persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
 
 hint
 
@@ -52,7 +52,6 @@ field string --fieldName name --notNull --sizeMin 2
 field number --fieldName studentId --type java.lang.Long
 field number --fieldName courseId --type java.lang.Long
 
--------------------------------------------
 entity jpa --class ~.domain.CourseCatalog --testAutomatically
 field string --fieldName name --notNull --sizeMin 2
 
@@ -69,7 +68,6 @@ field number --fieldName id --type java.lang.Integer
 field string --fieldName name --notNull --sizeMin 2
 field number --fieldName studentId --type java.lang.Long
 field number --fieldName courseId --type java.lang.Long
--------------------------------------------
 
 perform tests
 
@@ -82,6 +80,11 @@ web mvc all --package ~.web
 security setup
 
 ==========================================================
+REM
+REM  Open a new command prompt and run the following
+REM  commands to build and deploy the sample application
+REM  in a servlet container (Tomcat) to test the web application.
+REM
 
 c:
 set JAVA_HOME=c:\dev\java\jdk1.6.0_26
