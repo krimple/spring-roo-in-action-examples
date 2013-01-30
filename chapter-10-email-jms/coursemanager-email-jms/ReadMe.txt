@@ -2,7 +2,7 @@
 Build and Deploy the Sample Application for Email and JMS:
 -----------------------------------------------------------------
 
-To build and deploy the application, follow the commands listed in BuildCommands.txt file in this directory.
+To generate the sample application from scratch, you can run the commands listed in RooCommands.txt file. Or you can copy the coursemanager application created in Chapter 8 to start with a baseline and then run the JMS and Email commands listed in BuildCommands.txt file in this directory.
 
 Once the code is compiled, you can run the JUnit tests from the IDE (Eclipse) or the command line.
 
