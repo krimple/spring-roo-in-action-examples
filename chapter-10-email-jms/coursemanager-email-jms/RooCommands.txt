@@ -1,0 +1,126 @@
+
+cd\
+c:
+set JAVA_HOME=C:\dev\java\jdk1.6.0_35
+set PATH=%JAVA_HOME%\bin
+
+set MAVEN_HOME=C:\dev\tools\apache-maven-3.0.4
+set PATH=%PATH%;%MAVEN_HOME%\bin
+
+set ROO_HOME=C:\dev\frameworks\spring-roo-1.2.3.RELEASE
+set PATH=%PATH%;%ROO_HOME%\bin
+
+set PROJECT_HOME=C:\dev\projects\spring-roo-in-action-examples\chapter-10-email-jms\coursemanager-email-jms
+cd %PROJECT_HOME%
+
+roo
+
+hint
+
+project --topLevelPackage org.rooinaction.coursemanager
+
+hint
+
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+
+hint
+
+
+// STEP 3: Define domain model.
+
+entity jpa --class ~.domain.Course --testAutomatically
+field string --fieldName name --sizeMin 2 --notNull --class ~.domain.Course
+field date --fieldName startDate --type java.util.Date
+field date --fieldName endDate --type java.util.Date
+field number --fieldName fee --type java.lang.Float
+
+entity jpa --class ~.domain.CourseCatalog --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity jpa --class ~.domain.CourseDetail --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity jpa --class ~.domain.Instructor --testAutomatically
+field string --fieldName name --notNull --sizeMin 2 --class ~.domain.Instructor
+field set --fieldName courses --type ~.domain.Course
+
+entity jpa --class ~.domain.Student --testAutomatically
+field string --fieldName name --notNull --sizeMin 2 --class ~.domain.Student
+field string --fieldName address --sizeMax 30
+field set --fieldName courses --type ~.domain.Course
+
+entity jpa --class ~.domain.CourseRegistration --testAutomatically
+field number --fieldName id --type java.lang.Integer
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName studentId --type java.lang.Long
+field number --fieldName courseId --type java.lang.Long
+
+
+entity jpa --class ~.domain.CourseCatalog --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity jpa --class ~.domain.CourseDetail --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+
+entity jpa --class ~.domain.Student --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName age --type java.lang.Integer
+field number --fieldName id --type java.lang.Long
+
+entity jpa --class ~.domain.CourseRegistration --testAutomatically
+field number --fieldName id --type java.lang.Integer
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName studentId --type java.lang.Long
+field number --fieldName courseId --type java.lang.Long
+
+
+perform tests
+
+perform eclipse
+
+web mvc setup
+
+web mvc all --package ~.web
+
+security setup
+
+REM
+REM  JMS Commands
+REM
+
+jms setup --provider ACTIVEMQ_IN_MEMORY --destinationType TOPIC --destinationName jms.topic.CourseCatalogUpdateAlerts
+
+focus --class ~.web.CourseCatalogController
+
+field jms template
+
+jms listener class --class ~.messaging.JmsCourseCatalogUpdateTopicListener --destinationType TOPIC --destinationName jms.topic.CourseCatalogUpdateAlerts
+
+REM 
+REM  E-mail Example
+REM
+
+interface --class ~.email.NotificationService
+
+class --class ~.email.NotificationServiceImpl
+
+email sender setup --hostServer smtp.gmail.com --protocol SMTP --port 587 --username rooinaction --password yourpassword
+
+properties list --name email.properties --path SPRING_CONFIG_ROOT
+
+email template setup --from rooinaction@rooinaction.com --subject "Course Registration Confirmation"
+
+field email template --fieldName mailTemplate --class ~.email.NotificationServiceImpl
+
+REM 
+REM  JMS Queue Example
+REM
+
+jms setup --provider ACTIVEMQ_IN_MEMORY --destinationType QUEUE --destinationName jms.queue.CourseRegistrationWaitListQueue
+
+class --class ~.web.CourseRegistrationNotificationHelper
+
+field jms template --fieldName jmsTemplate --class ~.web.CourseRegistrationNotificationHelper
+
+jms listener class --class ~.messaging.JmsCourseRegistrationWaitListQueueListener --destinationType QUEUE --destinationName jms.queue.CourseRegistrationWaitListQueue
+

@@ -2,11 +2,14 @@
 c:
 cd\
 
-set JAVA_HOME=C:\dev\java\jdk1.6.0_26
+set JAVA_HOME=C:\dev\java\jdk1.6.0_35
 set PATH=%JAVA_HOME%\bin
 
-set MAVEN_HOME=C:\dev\tools\apache-maven-3.0.3
+set MAVEN_HOME=C:\dev\tools\apache-maven-3.0.4
 set PATH=%PATH%;%MAVEN_HOME%\bin
+
+set ROO_HOME=C:\dev\frameworks\spring-roo-1.2.3.RELEASE
+set PATH=%PATH%;%ROO_HOME%\bin
 
 set PROJECT_HOME=C:\dev\projects\spring-roo-in-action-examples\chapter-10-email-jms\coursemanager-email-jms
 cd %PROJECT_HOME%
@@ -17,10 +20,18 @@ mvn eclipse:clean eclipse:eclipse
 
 mvn package -Dmaven.test.skip=true
 
+mvn tomcat:run
+
+Course Manager Main URL:
+http://localhost:8080/coursemanager
+
+Login URL:
+http://localhost:8080/coursemanager/login
+
+
 mvn test -Dtest=CourseCatalogUpdateEventPublisherTest
 
 mvn exec:java -Dexec.mainClass="org.rooinaction.coursemanager.integration.CourseRegistrationSpringIntegrationTestClient"
-
 
 
 JMX JConsole Commands:
