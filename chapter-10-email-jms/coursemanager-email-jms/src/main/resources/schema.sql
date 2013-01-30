@@ -1,4 +1,3 @@
-
 --CREATE TABLE security_users (id INTEGER IDENTITY, username VARCHAR(50), password VARCHAR(50), enabled BOOLEAN );
 
 --CREATE TABLE security_authorities (id INTEGER IDENTITY, authority VARCHAR(50) );
