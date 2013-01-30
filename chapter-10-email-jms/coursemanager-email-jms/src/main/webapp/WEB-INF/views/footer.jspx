@@ -9,19 +9,7 @@
       <spring:message code="button_home"/>
     </a>
   </span>
-
-    <!--  Login link in the footer tile.  -->
-    <c:if test="${pageContext['request'].userPrincipal == null}">
-        <c:out value=" | "/>
-        <span>
-            <spring:url value="login" var="login"/>
-            <a href="${login}">
-                <spring:message code="security_login"/>
-            </a>
-        </span>
-    </c:if>
-    
-    <c:if test="${pageContext['request'].userPrincipal != null}">
+  <c:if test="${pageContext['request'].userPrincipal != null}">
     <c:out value=" | "/>
     <span>
       <spring:url value="/resources/j_spring_security_logout" var="logout"/>
@@ -40,7 +28,7 @@
   <util:theme/>
 
   <spring:url value="/resources/images/springsource-logo.png" var="logo"/>
-  <spring:message code="global_sponsored" var="sponsored"/>
+  <spring:message code="global_sponsored" htmlEscape="false" var="sponsored"/>
   <span>
     <a href="http://springsource.com" title="${fn:escapeXml(sponsored)}">
       <img align="right" alt="${fn:escapeXml(sponsored)}" src="${logo}"/>
