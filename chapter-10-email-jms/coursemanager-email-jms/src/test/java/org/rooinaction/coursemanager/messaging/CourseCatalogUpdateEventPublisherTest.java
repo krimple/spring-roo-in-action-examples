@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package org.rooinaction.coursemanager.messaging;
 
 import org.apache.commons.logging.Log;
@@ -11,31 +14,29 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * @author Srini
+ *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {
-		"classpath:/META-INF/spring/applicationContext.xml",
-		"classpath:/META-INF/spring/applicationContext-jms.xml"
-	})
+@ContextConfiguration(locations={
+"classpath:/META-INF/spring/applicationContext.xml",
+"classpath:/META-INF/spring/applicationContext-jms.xml"
+})
 public class CourseCatalogUpdateEventPublisherTest {
-
 	private static final Log log = LogFactory.getLog(CourseCatalogUpdateEventPublisherTest.class);
 
-    @Autowired
-    private transient JmsTemplate jmsTopicTemplate;
+	@Autowired
+	private transient JmsTemplate jmsTopicTemplate;
 
-    @Test
+	@Test
 	public void verifyCourseCatalogUpdateEventIsSuccessful() {
+		String courseCatalogEvent = "TestCourseCatalogEventMessage.";
+		log.debug("CourseCatalogEvent: " + courseCatalogEvent);
 
-    	String courseCatalogEvent = "Test CourseCatalogEvent Message.";
-
-    	log.debug("CourseCatalogEvent: " + courseCatalogEvent);
-
-    	// Post the message to JMS Destination
-    	sendMessage(courseCatalogEvent);
-    }
+		// Post the message to JMS Destination
+		sendMessage(courseCatalogEvent);
+	}
 
 	private void sendMessage(Object messageObject) {
 		jmsTopicTemplate.convertAndSend(messageObject);
-    }
+	}
 }
