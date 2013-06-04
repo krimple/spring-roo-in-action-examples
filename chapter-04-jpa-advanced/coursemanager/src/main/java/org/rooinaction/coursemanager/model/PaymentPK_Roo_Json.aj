@@ -16,12 +16,20 @@ privileged aspect PaymentPK_Roo_Json {
         return new JSONSerializer().exclude("*.class").serialize(this);
     }
     
+    public String PaymentPK.toJson(String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").serialize(this);
+    }
+    
     public static PaymentPK PaymentPK.fromJsonToPaymentPK(String json) {
         return new JSONDeserializer<PaymentPK>().use(null, PaymentPK.class).deserialize(json);
     }
     
     public static String PaymentPK.toJsonArray(Collection<PaymentPK> collection) {
         return new JSONSerializer().exclude("*.class").serialize(collection);
+    }
+    
+    public static String PaymentPK.toJsonArray(Collection<PaymentPK> collection, String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").serialize(collection);
     }
     
     public static Collection<PaymentPK> PaymentPK.fromJsonArrayToPaymentPKs(String json) {
