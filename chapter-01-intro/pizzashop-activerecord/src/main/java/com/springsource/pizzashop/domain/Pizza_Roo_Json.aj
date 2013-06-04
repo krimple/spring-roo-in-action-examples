@@ -16,12 +16,20 @@ privileged aspect Pizza_Roo_Json {
         return new JSONSerializer().exclude("*.class").deepSerialize(this);
     }
     
+    public String Pizza.toJson(String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").deepSerialize(this);
+    }
+    
     public static Pizza Pizza.fromJsonToPizza(String json) {
         return new JSONDeserializer<Pizza>().use(null, Pizza.class).deserialize(json);
     }
     
     public static String Pizza.toJsonArray(Collection<Pizza> collection) {
         return new JSONSerializer().exclude("*.class").deepSerialize(collection);
+    }
+    
+    public static String Pizza.toJsonArray(Collection<Pizza> collection, String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").deepSerialize(collection);
     }
     
     public static Collection<Pizza> Pizza.fromJsonArrayToPizzas(String json) {

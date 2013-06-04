@@ -7,7 +7,10 @@ import com.springsource.pizzashop.domain.BaseDataOnDemand;
 import com.springsource.pizzashop.domain.BaseIntegrationTest;
 import com.springsource.pizzashop.repository.BaseRepository;
 import com.springsource.pizzashop.service.BaseService;
+import java.util.Iterator;
 import java.util.List;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +23,7 @@ privileged aspect BaseIntegrationTest_Roo_IntegrationTest {
     
     declare @type: BaseIntegrationTest: @RunWith(SpringJUnit4ClassRunner.class);
     
-    declare @type: BaseIntegrationTest: @ContextConfiguration(locations = "classpath:/META-INF/spring/applicationContext*.xml");
+    declare @type: BaseIntegrationTest: @ContextConfiguration(locations = "classpath*:/META-INF/spring/applicationContext*.xml");
     
     declare @type: BaseIntegrationTest: @Transactional;
     
@@ -108,7 +111,16 @@ privileged aspect BaseIntegrationTest_Roo_IntegrationTest {
         Base obj = dod.getNewTransientBase(Integer.MAX_VALUE);
         Assert.assertNotNull("Data on demand for 'Base' failed to provide a new transient entity", obj);
         Assert.assertNull("Expected 'Base' identifier to be null", obj.getId());
-        baseService.saveBase(obj);
+        try {
+            baseService.saveBase(obj);
+        } catch (final ConstraintViolationException e) {
+            final StringBuilder msg = new StringBuilder();
+            for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext();) {
+                final ConstraintViolation<?> cv = iter.next();
+                msg.append("[").append(cv.getRootBean().getClass().getName()).append(".").append(cv.getPropertyPath()).append(": ").append(cv.getMessage()).append(" (invalid value = ").append(cv.getInvalidValue()).append(")").append("]");
+            }
+            throw new IllegalStateException(msg.toString(), e);
+        }
         baseRepository.flush();
         Assert.assertNotNull("Expected 'Base' identifier to no longer be null", obj.getId());
     }

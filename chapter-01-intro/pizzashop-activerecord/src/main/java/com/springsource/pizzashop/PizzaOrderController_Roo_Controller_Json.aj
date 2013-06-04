@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect PizzaOrderController_Roo_Controller_Json {
     
-    @RequestMapping(value = "/{id}", headers = "Accept=application/json")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
     public ResponseEntity<String> PizzaOrderController.showJson(@PathVariable("id") PizzaOrderPk id) {
         PizzaOrder pizzaOrder = PizzaOrder.findPizzaOrder(id);
@@ -58,25 +58,13 @@ privileged aspect PizzaOrderController_Roo_Controller_Json {
         return new ResponseEntity<String>(headers, HttpStatus.CREATED);
     }
     
-    @RequestMapping(method = RequestMethod.PUT, headers = "Accept=application/json")
-    public ResponseEntity<String> PizzaOrderController.updateFromJson(@RequestBody String json) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers = "Accept=application/json")
+    public ResponseEntity<String> PizzaOrderController.updateFromJson(@RequestBody String json, @PathVariable("id") PizzaOrderPk id) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         PizzaOrder pizzaOrder = PizzaOrder.fromJsonToPizzaOrder(json);
         if (pizzaOrder.merge() == null) {
             return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<String>(headers, HttpStatus.OK);
-    }
-    
-    @RequestMapping(value = "/jsonArray", method = RequestMethod.PUT, headers = "Accept=application/json")
-    public ResponseEntity<String> PizzaOrderController.updateFromJsonArray(@RequestBody String json) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json");
-        for (PizzaOrder pizzaOrder: PizzaOrder.fromJsonArrayToPizzaOrders(json)) {
-            if (pizzaOrder.merge() == null) {
-                return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-            }
         }
         return new ResponseEntity<String>(headers, HttpStatus.OK);
     }

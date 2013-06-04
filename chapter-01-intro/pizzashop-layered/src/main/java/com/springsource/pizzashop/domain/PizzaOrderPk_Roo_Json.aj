@@ -16,12 +16,20 @@ privileged aspect PizzaOrderPk_Roo_Json {
         return new JSONSerializer().exclude("*.class").serialize(this);
     }
     
+    public String PizzaOrderPk.toJson(String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").serialize(this);
+    }
+    
     public static PizzaOrderPk PizzaOrderPk.fromJsonToPizzaOrderPk(String json) {
         return new JSONDeserializer<PizzaOrderPk>().use(null, PizzaOrderPk.class).deserialize(json);
     }
     
     public static String PizzaOrderPk.toJsonArray(Collection<PizzaOrderPk> collection) {
         return new JSONSerializer().exclude("*.class").serialize(collection);
+    }
+    
+    public static String PizzaOrderPk.toJsonArray(Collection<PizzaOrderPk> collection, String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").serialize(collection);
     }
     
     public static Collection<PizzaOrderPk> PizzaOrderPk.fromJsonArrayToPizzaOrderPks(String json) {

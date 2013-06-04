@@ -7,7 +7,10 @@ import com.springsource.pizzashop.domain.ToppingDataOnDemand;
 import com.springsource.pizzashop.domain.ToppingIntegrationTest;
 import com.springsource.pizzashop.repository.ToppingRepository;
 import com.springsource.pizzashop.service.ToppingService;
+import java.util.Iterator;
 import java.util.List;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +23,7 @@ privileged aspect ToppingIntegrationTest_Roo_IntegrationTest {
     
     declare @type: ToppingIntegrationTest: @RunWith(SpringJUnit4ClassRunner.class);
     
-    declare @type: ToppingIntegrationTest: @ContextConfiguration(locations = "classpath:/META-INF/spring/applicationContext*.xml");
+    declare @type: ToppingIntegrationTest: @ContextConfiguration(locations = "classpath*:/META-INF/spring/applicationContext*.xml");
     
     declare @type: ToppingIntegrationTest: @Transactional;
     
@@ -108,7 +111,16 @@ privileged aspect ToppingIntegrationTest_Roo_IntegrationTest {
         Topping obj = dod.getNewTransientTopping(Integer.MAX_VALUE);
         Assert.assertNotNull("Data on demand for 'Topping' failed to provide a new transient entity", obj);
         Assert.assertNull("Expected 'Topping' identifier to be null", obj.getId());
-        toppingService.saveTopping(obj);
+        try {
+            toppingService.saveTopping(obj);
+        } catch (final ConstraintViolationException e) {
+            final StringBuilder msg = new StringBuilder();
+            for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext();) {
+                final ConstraintViolation<?> cv = iter.next();
+                msg.append("[").append(cv.getRootBean().getClass().getName()).append(".").append(cv.getPropertyPath()).append(": ").append(cv.getMessage()).append(" (invalid value = ").append(cv.getInvalidValue()).append(")").append("]");
+            }
+            throw new IllegalStateException(msg.toString(), e);
+        }
         toppingRepository.flush();
         Assert.assertNotNull("Expected 'Topping' identifier to no longer be null", obj.getId());
     }

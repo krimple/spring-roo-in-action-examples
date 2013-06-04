@@ -7,7 +7,10 @@ import com.springsource.pizzashop.domain.PizzaOrder;
 import com.springsource.pizzashop.domain.PizzaOrderDataOnDemand;
 import com.springsource.pizzashop.domain.PizzaOrderIntegrationTest;
 import com.springsource.pizzashop.domain.PizzaOrderPk;
+import java.util.Iterator;
 import java.util.List;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +23,7 @@ privileged aspect PizzaOrderIntegrationTest_Roo_IntegrationTest {
     
     declare @type: PizzaOrderIntegrationTest: @RunWith(SpringJUnit4ClassRunner.class);
     
-    declare @type: PizzaOrderIntegrationTest: @ContextConfiguration(locations = "classpath:/META-INF/spring/applicationContext*.xml");
+    declare @type: PizzaOrderIntegrationTest: @ContextConfiguration(locations = "classpath*:/META-INF/spring/applicationContext*.xml");
     
     declare @type: PizzaOrderIntegrationTest: @Transactional;
     
@@ -101,7 +104,16 @@ privileged aspect PizzaOrderIntegrationTest_Roo_IntegrationTest {
         Assert.assertNotNull("Data on demand for 'PizzaOrder' failed to initialize correctly", dod.getRandomPizzaOrder());
         PizzaOrder obj = dod.getNewTransientPizzaOrder(Integer.MAX_VALUE);
         Assert.assertNotNull("Data on demand for 'PizzaOrder' failed to provide a new transient entity", obj);
-        obj.persist();
+        try {
+            obj.persist();
+        } catch (final ConstraintViolationException e) {
+            final StringBuilder msg = new StringBuilder();
+            for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext();) {
+                final ConstraintViolation<?> cv = iter.next();
+                msg.append("[").append(cv.getRootBean().getClass().getName()).append(".").append(cv.getPropertyPath()).append(": ").append(cv.getMessage()).append(" (invalid value = ").append(cv.getInvalidValue()).append(")").append("]");
+            }
+            throw new IllegalStateException(msg.toString(), e);
+        }
         obj.flush();
         Assert.assertNotNull("Expected 'PizzaOrder' identifier to no longer be null", obj.getId());
     }

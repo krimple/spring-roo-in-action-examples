@@ -16,12 +16,20 @@ privileged aspect Base_Roo_Json {
         return new JSONSerializer().exclude("*.class").deepSerialize(this);
     }
     
+    public String Base.toJson(String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").deepSerialize(this);
+    }
+    
     public static Base Base.fromJsonToBase(String json) {
         return new JSONDeserializer<Base>().use(null, Base.class).deserialize(json);
     }
     
     public static String Base.toJsonArray(Collection<Base> collection) {
         return new JSONSerializer().exclude("*.class").deepSerialize(collection);
+    }
+    
+    public static String Base.toJsonArray(Collection<Base> collection, String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").deepSerialize(collection);
     }
     
     public static Collection<Base> Base.fromJsonArrayToBases(String json) {

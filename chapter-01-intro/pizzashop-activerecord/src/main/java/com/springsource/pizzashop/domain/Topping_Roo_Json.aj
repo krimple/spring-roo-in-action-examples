@@ -16,12 +16,20 @@ privileged aspect Topping_Roo_Json {
         return new JSONSerializer().exclude("*.class").deepSerialize(this);
     }
     
+    public String Topping.toJson(String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").deepSerialize(this);
+    }
+    
     public static Topping Topping.fromJsonToTopping(String json) {
         return new JSONDeserializer<Topping>().use(null, Topping.class).deserialize(json);
     }
     
     public static String Topping.toJsonArray(Collection<Topping> collection) {
         return new JSONSerializer().exclude("*.class").deepSerialize(collection);
+    }
+    
+    public static String Topping.toJsonArray(Collection<Topping> collection, String[] fields) {
+        return new JSONSerializer().include(fields).exclude("*.class").deepSerialize(collection);
     }
     
     public static Collection<Topping> Topping.fromJsonArrayToToppings(String json) {
