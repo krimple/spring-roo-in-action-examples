@@ -6,7 +6,10 @@
         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
     <!-- HTTP security configurations -->
     <http auto-config="true" use-expressions="true">
-        <form-login login-processing-url="/resources/j_spring_security_check" login-page="/login" authentication-failure-url="/login?login_error=t" />
+        <form-login
+                login-processing-url="/resources/j_spring_security_check"
+                login-page="/login"
+                authentication-failure-url="/login?login_error=t" />
         <logout logout-url="/resources/j_spring_security_logout" />
         <!-- Configure these elements to secure URIs in your application -->
 
