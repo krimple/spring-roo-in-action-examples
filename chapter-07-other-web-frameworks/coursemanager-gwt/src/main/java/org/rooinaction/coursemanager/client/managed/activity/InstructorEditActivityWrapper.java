@@ -1,5 +1,4 @@
 package org.rooinaction.coursemanager.client.managed.activity;
-
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
@@ -12,17 +11,18 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
+import org.rooinaction.coursemanager.client.managed.ui.InstructorEditView;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
+import org.rooinaction.coursemanager.web.proxy.InstructorProxy;
 
 public class InstructorEditActivityWrapper extends InstructorEditActivityWrapper_Roo_Gwt {
 
     private final EntityProxyId<InstructorProxy> proxyId;
 
-    public InstructorEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy> proxyId) {
+    public InstructorEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<InstructorProxy> proxyId) {
         this.requests = requests;
         this.view = view;
         this.wrapped = activity;
@@ -64,6 +64,6 @@ public class InstructorEditActivityWrapper extends InstructorEditActivityWrapper
         wrapped.onStop();
     }
 
-    public interface View<V extends org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView<org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy, V>> extends ProxyEditView<InstructorProxy, V> {
+    public interface View<V extends org.rooinaction.coursemanager.client.managed.ui.InstructorEditView<V>> extends View_Roo_Gwt<V> {
     }
 }

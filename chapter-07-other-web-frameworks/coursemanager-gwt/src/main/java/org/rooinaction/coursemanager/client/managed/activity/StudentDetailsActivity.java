@@ -1,5 +1,4 @@
 package org.rooinaction.coursemanager.client.managed.activity;
-
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
@@ -11,18 +10,16 @@ import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.Request;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.RegistrationSetEditor;
+import org.rooinaction.coursemanager.client.managed.ui.StudentDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
-import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace.Operation;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.web.proxy.StudentProxy;
 
 public class StudentDetailsActivity extends StudentDetailsActivity_Roo_Gwt {
 
-    public StudentDetailsActivity(EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> proxyId, ApplicationRequestFactory requests, PlaceController placeController, ProxyDetailsView<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> view) {
+    public StudentDetailsActivity(EntityProxyId<StudentProxy> proxyId, ApplicationRequestFactory requests, PlaceController placeController, StudentDetailsView view) {
         this.placeController = placeController;
         this.proxyId = proxyId;
         this.requests = requests;
@@ -68,6 +65,7 @@ public class StudentDetailsActivity extends StudentDetailsActivity_Roo_Gwt {
 
             public void onSuccess(EntityProxy proxy) {
                 if (proxy == null) {
+                    // Deleted entity, bad bookmark, that kind of thing
                     placeController.goTo(getBackButtonPlace());
                     return;
                 }

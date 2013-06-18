@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:d="urn:import:com.google.gwt.user.datepicker.client" xmlns:e="urn:import:org.rooinaction.coursemanager.client.managed.ui.editor" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:org.rooinaction.coursemanager.client.scaffold.ui">
+
+  <ui:style>
+   .errors {
+      padding-left: 0.5em;
+      background-color: red;
+    }
+    .fields {
+      margin-top: 0.5em;
+      margin-left: 1em;
+    }
+    .label {
+      min-height: 25px;
+      font-weight: bold;
+    }
+    .button {
+      margin-right: 1em;
+    }
+    .bar {
+      margin-left: 1em;
+    }
+    .header {
+      margin-left: 1em;
+      color: #4B4A4A;
+      text-shadow: #ddf 1px 1px 0;
+      margin-bottom: 0;
+    }
+    .underline {
+      border-bottom: 2px solid #6F7277;
+    }
+  </ui:style>
+ 
+  <g:HTMLPanel>
+    <div class="{style.underline}">    
+      <h3 class="{style.header}" ui:field="editTitle">
+        <ui:msg>Edit Course</ui:msg>
+      </h3>
+      <h3 class="{style.header}" ui:field="createTitle">
+                <ui:msg>New Course</ui:msg>
+            </h3>
+    </div>
+    <div class="{style.errors}" ui:field="errors"/>
+    <table class="{style.fields}" id="boundElementHolder">
+    	
+      	<tr id="name">
+      		<td>
+                    <div class="{style.label}">Name:</div>
+                </td>
+      		<td>
+                    <g:TextBox ui:field="name"/>
+                </td>
+      	</tr>
+      	
+      	<tr id="description">
+      		<td>
+                    <div class="{style.label}">Description:</div>
+                </td>
+      		<td>
+                    <g:TextBox ui:field="description"/>
+                </td>
+      	</tr>
+      	
+      	<tr id="listPrice">
+      		<td>
+                    <div class="{style.label}">List Price:</div>
+                </td>
+      		<td>
+                    <r:BigDecimalBox ui:field="listPrice"/>
+                </td>
+      	</tr>
+      	
+      	<tr id="maxiumumCapacity">
+      		<td>
+                    <div class="{style.label}">Maxiumum Capacity:</div>
+                </td>
+      		<td>
+                    <g:IntegerBox ui:field="maxiumumCapacity"/>
+                </td>
+      	</tr>
+      	
+    </table>
+    <div class="{style.bar}">
+      <g:Button addStyleNames="{style.button}" ui:field="save">Save</g:Button>
+      <g:Button addStyleNames="{style.button}" ui:field="cancel">Cancel</g:Button>
+    </div>
+  </g:HTMLPanel>
+</ui:UiBinder>

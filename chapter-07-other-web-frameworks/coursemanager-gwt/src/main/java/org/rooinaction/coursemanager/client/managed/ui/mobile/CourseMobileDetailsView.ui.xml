@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+ <ui:style>
+    .outer {
+      padding: 10px;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .value {
+      padding: 4px 0px 15px 15px;
+    }
+  </ui:style>
+
+  <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
+  	
+    <div id="id">
+            <div class="{style.label}">Id</div>
+            <div class="{style.value}" ui:field="id"/>
+        </div>
+    
+    <div id="name">
+            <div class="{style.label}">Name</div>
+            <div class="{style.value}" ui:field="name"/>
+        </div>
+    
+    <div id="description">
+            <div class="{style.label}">Description</div>
+            <div class="{style.value}" ui:field="description"/>
+        </div>
+    
+    <div id="listPrice">
+            <div class="{style.label}">List Price</div>
+            <div class="{style.value}" ui:field="listPrice"/>
+        </div>
+    
+    <div id="maxiumumCapacity">
+            <div class="{style.label}">Maxiumum Capacity</div>
+            <div class="{style.value}" ui:field="maxiumumCapacity"/>
+        </div>
+    
+    <div id="version">
+            <div class="{style.label}">Version</div>
+            <div class="{style.value}" ui:field="version"/>
+        </div>
+    
+
+    <g:Button ui:field="delete">Delete</g:Button>
+  </g:HTMLPanel>
+</ui:UiBinder>

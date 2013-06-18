@@ -1,5 +1,4 @@
 package org.rooinaction.coursemanager.server.locator;
-
 import com.google.web.bindery.requestfactory.shared.Locator;
 import org.rooinaction.coursemanager.model.Course;
 import org.springframework.roo.addon.gwt.RooGwtLocator;
@@ -17,7 +16,7 @@ public class CourseLocator extends Locator<Course, Long> {
         return Course.findCourse(id);
     }
 
-    public Class<org.rooinaction.coursemanager.model.Course> getDomainType() {
+    public Class<Course> getDomainType() {
         return Course.class;
     }
 
@@ -25,7 +24,7 @@ public class CourseLocator extends Locator<Course, Long> {
         return course.getId();
     }
 
-    public Class<java.lang.Long> getIdType() {
+    public Class<Long> getIdType() {
         return Long.class;
     }
 

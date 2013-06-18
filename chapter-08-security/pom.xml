@@ -9,7 +9,7 @@
 
   <modules>
     <module>coursemanager-security</module>
-    <!-- TODO - fix votesecure - bad maven dependency -->
+    <module>votesecure</module>
   </modules>
 
 </project>

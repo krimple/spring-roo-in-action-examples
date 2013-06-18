@@ -1,5 +1,4 @@
 package org.rooinaction.coursemanager.client.managed.activity;
-
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
@@ -11,20 +10,16 @@ import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.Request;
 import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.RegistrationSetEditor;
+import org.rooinaction.coursemanager.client.managed.ui.OfferingDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
-import org.rooinaction.coursemanager.client.scaffold.place.ProxyDetailsView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace.Operation;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.InstructorProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
+import org.rooinaction.coursemanager.web.proxy.OfferingProxy;
 
 public class OfferingDetailsActivity extends OfferingDetailsActivity_Roo_Gwt {
 
-    public OfferingDetailsActivity(EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> proxyId, ApplicationRequestFactory requests, PlaceController placeController, ProxyDetailsView<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> view) {
+    public OfferingDetailsActivity(EntityProxyId<OfferingProxy> proxyId, ApplicationRequestFactory requests, PlaceController placeController, OfferingDetailsView view) {
         this.placeController = placeController;
         this.proxyId = proxyId;
         this.requests = requests;
@@ -70,6 +65,7 @@ public class OfferingDetailsActivity extends OfferingDetailsActivity_Roo_Gwt {
 
             public void onSuccess(EntityProxy proxy) {
                 if (proxy == null) {
+                    // Deleted entity, bad bookmark, that kind of thing
                     placeController.goTo(getBackButtonPlace());
                     return;
                 }

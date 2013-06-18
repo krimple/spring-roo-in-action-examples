@@ -25,13 +25,13 @@ import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Configurable;
 
 
-//@RunWith(PowerMockRunner.class)
-//@PrepareForTest({Student.class, Person.class})
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({Student.class, Person.class})
 public class StudentServiceBeanTest {
 
     private StudentServiceBean studentServiceBean = new StudentServiceBean();
     private final Map<Long, Student> students = new HashMap<Long, Student>();
-    /*
+    
     @Before
     public void setup() {
     	PowerMockito.mockStatic(Student.class, new Answer() {
@@ -113,5 +113,5 @@ public class StudentServiceBeanTest {
     		Assert.assertEquals("Key West", student.getCity());
     	}
     }
-*/
+
 }

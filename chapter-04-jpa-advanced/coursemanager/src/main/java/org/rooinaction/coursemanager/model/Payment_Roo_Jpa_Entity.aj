@@ -6,8 +6,6 @@ package org.rooinaction.coursemanager.model;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import org.rooinaction.coursemanager.model.Payment;
-import org.rooinaction.coursemanager.model.PaymentPK;
 
 privileged aspect Payment_Roo_Jpa_Entity {
     
@@ -23,7 +21,6 @@ privileged aspect Payment_Roo_Jpa_Entity {
     }
     
     public void Payment.setId(PaymentPK id) {
-        this.id = id;
     }
     
 }

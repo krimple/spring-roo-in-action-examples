@@ -3,7 +3,7 @@ package com.springsource.votesecure.domain;
 import javax.persistence.Entity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import com.springsource.votesecure.domain.Choice;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
@@ -17,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @RooJavaBean
 @RooToString
-@RooEntity
+@RooJpaActiveRecord
 public class Vote {
 
     @ManyToOne(targetEntity = Choice.class)

@@ -1,36 +1,30 @@
 package org.rooinaction.coursemanager.client.managed.activity;
-
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.web.bindery.requestfactory.shared.EntityProxyId;
 import com.google.web.bindery.requestfactory.shared.RequestContext;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.CourseSetEditor;
-import org.rooinaction.coursemanager.client.managed.ui.TrainingProgramDetailsView;
-import org.rooinaction.coursemanager.client.managed.ui.TrainingProgramEditView;
-import org.rooinaction.coursemanager.client.managed.ui.TrainingProgramListView;
-import org.rooinaction.coursemanager.client.managed.ui.TrainingProgramMobileDetailsView;
-import org.rooinaction.coursemanager.client.managed.ui.TrainingProgramMobileEditView;
+import org.rooinaction.coursemanager.client.managed.ui.desktop.TrainingProgramDesktopDetailsView;
+import org.rooinaction.coursemanager.client.managed.ui.desktop.TrainingProgramDesktopEditView;
+import org.rooinaction.coursemanager.client.managed.ui.desktop.TrainingProgramDesktopListView;
+import org.rooinaction.coursemanager.client.managed.ui.mobile.TrainingProgramMobileDetailsView;
+import org.rooinaction.coursemanager.client.managed.ui.mobile.TrainingProgramMobileEditView;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldApp;
-import org.rooinaction.coursemanager.client.scaffold.place.CreateAndEditProxy;
-import org.rooinaction.coursemanager.client.scaffold.place.FindAndEditProxy;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
-import org.rooinaction.coursemanager.web.gwt.requests.TrainingProgramRequest;
+import org.rooinaction.coursemanager.web.proxy.TrainingProgramProxy;
+import org.rooinaction.coursemanager.web.request.TrainingProgramRequest;
 
 public class TrainingProgramActivitiesMapper extends TrainingProgramActivitiesMapper_Roo_Gwt {
 
-    public TrainingProgramActivitiesMapper(ApplicationRequestFactory requests, PlaceController placeController) {
-        this.requests = requests;
+    public TrainingProgramActivitiesMapper(ApplicationRequestFactory factory, PlaceController placeController) {
+        this.factory = factory;
         this.placeController = placeController;
     }
 
     public Activity getActivity(ProxyPlace place) {
-        switch(place.getOperation()) {
+        switch(((place.getOperation()))) {
             case DETAILS:
-                return new TrainingProgramDetailsActivity((EntityProxyId<TrainingProgramProxy>) place.getProxyId(), requests, placeController, ScaffoldApp.isMobile() ? TrainingProgramMobileDetailsView.instance() : TrainingProgramDetailsView.instance());
+                return new TrainingProgramDetailsActivity((EntityProxyId<TrainingProgramProxy>) place.getProxyId(), factory, placeController, ScaffoldApp.isMobile() ? TrainingProgramMobileDetailsView.instance() : TrainingProgramDesktopDetailsView.instance());
             case EDIT:
                 return makeEditActivity(place);
             case CREATE:

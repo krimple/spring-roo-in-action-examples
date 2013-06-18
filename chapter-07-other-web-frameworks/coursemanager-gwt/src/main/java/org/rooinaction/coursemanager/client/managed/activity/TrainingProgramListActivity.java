@@ -1,24 +1,20 @@
 package org.rooinaction.coursemanager.client.managed.activity;
-
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.view.client.Range;
 import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.Request;
 import java.util.List;
-import java.util.Set;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.CourseSetEditor;
 import org.rooinaction.coursemanager.client.scaffold.ScaffoldMobileApp;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.AbstractProxyListActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListView;
-import org.rooinaction.coursemanager.web.gwt.proxies.CourseProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy;
+import org.rooinaction.coursemanager.web.proxy.TrainingProgramProxy;
 
 public class TrainingProgramListActivity extends TrainingProgramListActivity_Roo_Gwt {
 
-    public TrainingProgramListActivity(ApplicationRequestFactory requests, ProxyListView<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy> view, PlaceController placeController) {
+    public TrainingProgramListActivity(ApplicationRequestFactory requests, ProxyListView<TrainingProgramProxy> view, PlaceController placeController) {
         super(placeController, view, TrainingProgramProxy.class);
         this.requests = requests;
     }
@@ -43,7 +39,7 @@ public class TrainingProgramListActivity extends TrainingProgramListActivity_Roo
         return false;
     }
 
-    protected Request<java.util.List<org.rooinaction.coursemanager.web.gwt.proxies.TrainingProgramProxy>> createRangeRequest(Range range) {
+    protected Request<List<TrainingProgramProxy>> createRangeRequest(Range range) {
         return requests.trainingProgramRequest().findTrainingProgramEntries(range.getStart(), range.getLength());
     }
 }

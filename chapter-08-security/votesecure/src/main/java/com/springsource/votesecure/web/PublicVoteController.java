@@ -8,13 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@RequestMapping("/public/**")
+@RequestMapping("/public")
 @Controller
 public class PublicVoteController {
-
-    @RequestMapping
-    public void get(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
-    }
 
     @RequestMapping(method = RequestMethod.POST, value = "{id}")
     public void post(@PathVariable Long id, ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {

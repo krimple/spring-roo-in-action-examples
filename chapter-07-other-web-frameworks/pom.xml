@@ -9,7 +9,7 @@
 
   <modules>
     <module>coursemanager-ajax</module>
-    <module>coursemanager-jsf</module>
+    <!-- <module>coursemanager-jsf</module> -->
 
     <!--<module>coursemanager-gwt</module> -->
   </modules>

@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.rooinaction.coursemanager.model.Invoice;
 
 privileged aspect Invoice_Roo_Jpa_Entity {
     
@@ -27,7 +26,6 @@ privileged aspect Invoice_Roo_Jpa_Entity {
     }
     
     public void Invoice.setId(Long id) {
-        this.id = id;
     }
     
 }

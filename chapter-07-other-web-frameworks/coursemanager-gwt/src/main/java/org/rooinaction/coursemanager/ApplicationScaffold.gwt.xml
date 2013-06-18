@@ -10,10 +10,11 @@
 	<inherits name="com.google.gwt.inject.Inject"/>
 	<inherits name="com.google.gwt.text.Text"/>
 
-	<source path="web.gwt.requests"/>
-    <source path="web.gwt.proxies"/>
+	<source path="org/rooinaction/coursemanager/web/request"/>
+    <source path="org/rooinaction/coursemanager/web/proxy"/>
     <source path="client"/>
 	<source path="shared"/>
+
 	<public path="public"/>
 
 	<!-- Logging Configuration -->

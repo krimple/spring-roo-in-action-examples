@@ -2,7 +2,7 @@ package org.rooinaction.coursemanager.client.scaffold;
 
 import org.rooinaction.coursemanager.client.managed.activity.*;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
-import org.rooinaction.coursemanager.client.managed.ui.ApplicationListPlaceRenderer;
+import org.rooinaction.coursemanager.client.managed.ui.renderer.ApplicationListPlaceRenderer;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.*;
 import org.rooinaction.coursemanager.client.scaffold.gae.GaeHelper;
@@ -37,7 +37,7 @@ import java.util.logging.Logger;
  */
 public class ScaffoldMobileApp extends ScaffoldApp {
 	
-	// Constants
+	
 	private static final Logger log = Logger.getLogger(Scaffold.class.getName());
 	public static final Place ROOT_PLACE = new Place() {};
 

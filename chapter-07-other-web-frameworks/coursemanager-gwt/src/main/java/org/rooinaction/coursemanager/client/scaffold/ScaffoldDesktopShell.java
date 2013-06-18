@@ -1,6 +1,6 @@
 package org.rooinaction.coursemanager.client.scaffold;
 
-import org.rooinaction.coursemanager.client.managed.ui.ApplicationListPlaceRenderer;
+import org.rooinaction.coursemanager.client.managed.ui.renderer.ApplicationListPlaceRenderer;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.ui.LoginWidget;
 import com.google.gwt.core.client.GWT;

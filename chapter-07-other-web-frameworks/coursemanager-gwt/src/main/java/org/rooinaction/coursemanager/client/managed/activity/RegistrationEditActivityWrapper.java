@@ -1,5 +1,4 @@
 package org.rooinaction.coursemanager.client.managed.activity;
-
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
@@ -12,19 +11,18 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import org.rooinaction.coursemanager.client.managed.request.ApplicationRequestFactory;
+import org.rooinaction.coursemanager.client.managed.ui.RegistrationEditView;
 import org.rooinaction.coursemanager.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyListPlace;
 import org.rooinaction.coursemanager.client.scaffold.place.ProxyPlace;
-import org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy;
-import org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy;
+import org.rooinaction.coursemanager.web.proxy.RegistrationProxy;
 
 public class RegistrationEditActivityWrapper extends RegistrationEditActivityWrapper_Roo_Gwt {
 
     private final EntityProxyId<RegistrationProxy> proxyId;
 
-    public RegistrationEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy> proxyId) {
+    public RegistrationEditActivityWrapper(ApplicationRequestFactory requests, View<?> view, Activity activity, EntityProxyId<RegistrationProxy> proxyId) {
         this.requests = requests;
         this.view = view;
         this.wrapped = activity;
@@ -66,10 +64,6 @@ public class RegistrationEditActivityWrapper extends RegistrationEditActivityWra
         wrapped.onStop();
     }
 
-    public interface View<V extends org.rooinaction.coursemanager.client.scaffold.place.ProxyEditView<org.rooinaction.coursemanager.web.gwt.proxies.RegistrationProxy, V>> extends ProxyEditView<RegistrationProxy, V> {
-
-        void setStudentPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.StudentProxy> values);
-
-        void setOfferingPickerValues(Collection<org.rooinaction.coursemanager.web.gwt.proxies.OfferingProxy> values);
+    public interface View<V extends org.rooinaction.coursemanager.client.managed.ui.RegistrationEditView<V>> extends View_Roo_Gwt<V> {
     }
 }
