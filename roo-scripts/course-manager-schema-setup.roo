@@ -22,7 +22,7 @@ focus --class ~.model.Course
 field reference --fieldName trainingProgram --type ~.model.TrainingProgram --cardinality MANY_TO_ONE
 
 entity jpa --class ~.model.Tag --testAutomatically
-field string --fieldName tag --sizeMin 1 --sizeMax 25 --notNull
+field string --fieldName tagName --sizeMin 1 --sizeMax 25 --notNull
 field string --fieldName description --sizeMax 250 --notNull
 field set --fieldName courses --type ~.model.Course --cardinality MANY_TO_MANY
 
